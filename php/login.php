@@ -41,9 +41,7 @@
 			$smarty->assign("error", $error);
 		}
 	} 
-	if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-	}
+
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";
 	
