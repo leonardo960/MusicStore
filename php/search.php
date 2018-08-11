@@ -53,6 +53,21 @@
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";
 
+	//Impostiamo i valori di default per i campi della pagina che generiamo e rispediamo a ricerca fatta
+	if(isset($_GET['MIN'])){
+		$smarty->assign("min", $_GET['MIN']);
+	}
+	if(isset($_GET['MAX'])){
+		$smarty->assign("max", $_GET['MAX']);
+	}
+	if(isset($_GET['filter'])){
+		$smarty->assign("filter", $_GET['filter']);
+	}
+	if(isset($_GET['query'])){
+		$smarty->assign("query", $_GET['query']);
+	}
+	
+	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	$smarty->display("../templates/frame_public.html");

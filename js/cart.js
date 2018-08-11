@@ -16,3 +16,7 @@ function quantity_change(item_name, quantity, max_quantity){
 function checkout(){
 	document.getElementById("cart_form").submit();
 }
+
+function test(){
+	alert("CIAOH COME VAH");
+}

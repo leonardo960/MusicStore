@@ -1,8 +1,8 @@
 <?php
 session_start();
-if(isset($_GET['id']) & !empty($_GET['id'])){
-	$id = $_GET['id'];
-	unset($_SESSION['cart'][$id]);
+if(isset($_GET['index']) & !empty($_GET['index'])){
+	$index = $_GET['index'];
+	unset($_SESSION['cart'][$index]);
 	header('location: cart.php');
 }
 ?>

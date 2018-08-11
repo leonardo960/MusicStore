@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 14:41:06
+/* Smarty version 3.1.32, created on 2018-08-11 09:06:41
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6b01022e4586_74433824',
+  'unifunc' => 'content_5b6ea7218508c6_28569414',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1533739250,
+      1 => 1533978386,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6b01022e4586_74433824 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b6ea7218508c6_28569414 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
@@ -40,39 +40,39 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 					<ul>
 						<div class="single-cart-item">
 							
-							<div class="cart-item-image-box">
-								<img src="<?php echo $_smarty_tpl->tpl_vars['item']->value->item-'image'-'path';?>
+						<div class="cart-item-image-box">
+							<img src="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_image_path'];?>
 " title="cart-item-image"/>
-							</div>
+						</div>
 								
-							<div class="cart-item-description-box">
-								<div class="cart-item-description-box-head">
-									<label for="cart-item-name">Product :</label>
-									<a class="cart-item-name" id="cart-item-name"><?php echo $_smarty_tpl->tpl_vars['item']->value->item-'name';?>
+						<div class="cart-item-description-box">
+							<div class="cart-item-description-box-head">
+								<label for="cart-item-name">Product :</label>
+								<a class="cart-item-name" id="cart-item-name"><?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
 </a> <!-- max 30 caratteri -->
-								</div>
-								<div class="cart-item-description-box-body">
-									<label for="cart-item-description">Description :</label>
-									<textarea class="cart-item-description" id="cart-item-description" disabled><?php echo $_smarty_tpl->tpl_vars['item']->value->item-'description';?>
+							</div>
+							<div class="cart-item-description-box-body">
+								<label for="cart-item-description">Description :</label>
+								<textarea class="cart-item-description" id="cart-item-description" disabled><?php echo $_smarty_tpl->tpl_vars['item']->value['item_description'];?>
 </textarea>
-								</div>
-							</div> 
-								
-							<div class="cart-item-price-box">
-								<label for="cart-item-price">Price : EUR</label>
-								<input class="cart-item-price" id="cart-item-price" type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value->item-'price';?>
-" disabled></input> <!-- i numeri decimali devono essere inseriti in <item-price> con il punto e non la virgola  -->
 							</div>
+						</div> 
 								
-							<div class="cart-item-input-box">
-								<label for="cart-item-amount">Quantity</label>
-								<input class="cart-item-amount" id="cart-item-amount" name="<?php echo $_smarty_tpl->tpl_vars['item']->value->item-'name';?>
-" type="number" max="<?php echo $_smarty_tpl->tpl_vars['item']->value->in-'stock';?>
+						<div class="cart-item-price-box">
+							<label for="cart-item-price">Price : EUR</label>
+							<input class="cart-item-price" id="cart_item_price" type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+" disabled></input> <!-- i numeri decimali devono essere inseriti in $item.item_price con il punto e non la virgola  -->
+						</div>
+								
+						<div class="cart-item-input-box">
+							<label for="cart-item-amount">Quantity</label>
+							<input class="cart-item-amount" id="cart-item-amount" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
+" type="number" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
 " min="1" value="1" onchange="quantity_change(this.name, this.value, this.max)"></input>
-								<a href="<[item-detail-page]>">Details</a>
-								<input class="cart-remove-button" type="button" name="<?php echo $_smarty_tpl->tpl_vars['item']->value->item-'name';?>
+							<a href="#">Details</a>
+							<input class="cart-remove-button" type="button" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
 " value="Remove" onclick="remove_item(this.name)"></input> <!-- da modificare -->
-							</div>
+						</div>
 						
 						</div>
 					</ul>

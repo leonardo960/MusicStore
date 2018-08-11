@@ -3,6 +3,7 @@
 			$_GET['page_id'] = 1;
 		}
 		
+		
 		$totalItems = 0;
 		$offset = 10 * ($_GET['page_id']-1);
 		$_SESSION['search'] = array();

@@ -35,10 +35,11 @@ foreach ($cart as $value) {
 	$cartsql = "SELECT * FROM album WHERE nome_album like '{$value['item_name']}'";
 	$result = $db->getResult($cartsql)[0];
 	$total += ($result['prezzo']*$value['item_quantity']);
-	$cart_content[] = (object)array("item-name" => $result['nome_album'], "item-price" => $result['prezzo'], "item-image-path" => $result['img_path'], "item-description" => "\"" . substr($result['descrizione'], 0, 100) . "...\"", "in-stock" => $result['stock']); 
+	$cart_content[] = array("item_name" => $result['nome_album'], "item_price" => $result['prezzo'], "item_image_path" => $result['img_path'], "item_description" => "\"" . substr($result['descrizione'], 0, 100) . "...\"", "in_stock" => $result['stock']); 
+	//echo '<pre>'; print_r($cart_content); echo '</pre>';
 }
 $smarty->assign("total-item-price", $total);
-$smarty->assign("cart_content", $cart);
+$smarty->assign("cart_content", $cart_content);
 
 require "include/set_logged_header.inc.php";
 require "include/set_cart_header.inc.php";
