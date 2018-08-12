@@ -2,6 +2,13 @@
 	session_start();
 	
 	require "init_smarty.php";
+	function test_input($data) {
+		$data = trim($data);
+		$data = stripslashes($data);
+		$data = htmlspecialchars($data);
+		return $data;
+	}
+	$_GET['query'] = test_input($_GET['query']);	
 	require "include/dbms.inc.php";
 	require "include/search.inc.php";
 
@@ -30,10 +37,10 @@
 	//Genero i numeretti corrispondenti alle pagine dei risultati
 	//Calcolo le pagine necessarie a mostrare i risultati
 	$pagesNeeded = ceil($totalItems / 10);
-	//Controllo se mi trovo nella ricerca semplice o advanced
+	
 	$smarty->assign("query", $_GET['query']);
 	
-	
+	//Controllo se mi trovo nella ricerca semplice o advanced
 	if ( isset($_GET['MIN']) ) {
 		$smarty->assign("min", $_GET['MIN']);
 		$smarty->assign("max", $_GET['MAX']);

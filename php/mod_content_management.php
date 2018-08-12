@@ -14,6 +14,9 @@
 		case "song_inserted":
 			$smarty->assign("message", "La canzone è stata inserita con successo nel sistema.");
 			break;
+		case "modify_artist_error":
+			$smarty->assign("message", "Errore nella selezione dell'artista per la modifica.");
+			break;
 	}
 	
 	require "include/set_logged_header.inc.php";
