@@ -1,6 +1,8 @@
 <?php
 
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
 	
 	$result = $db->getResult("SELECT * FROM moderatori WHERE username = '{$_POST["username"]}'");
 	

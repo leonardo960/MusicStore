@@ -1,6 +1,8 @@
 <?php
 
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
 	
 	$result = $db->query("INSERT INTO album (nome_album, fk_genere, fk_artista, descrizione, prezzo, pubblicazione, dischi, tracce, etichetta, stock, img_path) VALUES ('{$_POST["nome_album"]}',
 															  '{$_POST["fk_genere"]}',

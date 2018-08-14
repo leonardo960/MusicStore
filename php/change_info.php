@@ -1,8 +1,8 @@
 <?php
+	require 'include/check_service_permission.inc.php';
+	
 	if(isset($_POST['username_input']) or isset($_POST['name_input']) or isset($_POST['surname_input']) or isset($_POST['email_input'])){
 		require "include/dbms.inc.php";
-		
-		session_start();
 		
 		
 		function test_input($data) {

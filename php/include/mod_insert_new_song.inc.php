@@ -1,6 +1,7 @@
 <?php
-
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
 	//TODO: aggiungere la preview (file mp3 nel file system che viene associato tipo l'immagine, quindi è un path)
 	$result = $db->query("INSERT INTO canzoni (fk_genere, fk_album, fk_artista, descrizione, nome_canzone, pubblicazione, durata, song_path) VALUES ('{$_POST["fk_genere"]}', //DA MODIFICARE CON I DATI DELLA CANZONE
 															  '{$_POST["fk_album"]}',

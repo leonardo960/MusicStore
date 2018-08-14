@@ -1,6 +1,8 @@
 <?php
 
-    session_start(); // attiva la gestione sessione 
+    if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	} // attiva la gestione sessione 
         
   
 

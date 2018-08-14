@@ -4,18 +4,14 @@
 	
 	session_start();
 	
-	$head = "../templates/index_head.html";
-	$content = "../templates/index_content.html";
+	$head = "../templates/recent_albums_head.html";
+	$content = "../templates/recent_albums_content.html";
 	
-	//Recuperiamo le ultime uscite e gli album in offerta
-	/*$result = $db->query("select * from album order by data_inserimento limit 5");
+	//Recuperiamo le ultime uscite
+	$result = $db->query("select * from album order by data_inserimento limit 20");
 	if($result){
 		$smarty->assign("recent_albums", $result);
 	}
-	$result = $db->query("select * from offerte_speciali limit 5");
-	if($result){
-		$smarty->assign("special_offers", $result);
-	}*/
 	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);

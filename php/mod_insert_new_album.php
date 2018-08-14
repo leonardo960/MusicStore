@@ -1,4 +1,5 @@
 <?php
+	require 'include/check_service_permission.inc.php';
 	//Init view
 	require "init_smarty.php";
 	

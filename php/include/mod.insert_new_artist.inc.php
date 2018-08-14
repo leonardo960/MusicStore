@@ -1,6 +1,8 @@
 <?php
 
-	session_start();
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
 	
 	$result = $db->query("INSERT INTO artisti (nome_artista, biografia, inizio_attivita, fine_attivita, genere, img_path) VALUES ('{$_POST["nome_artista"]}', 
 															  '{$_POST["biografia"]}',

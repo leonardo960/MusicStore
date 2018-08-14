@@ -1,4 +1,7 @@
 <?php
+		if (session_status() == PHP_SESSION_NONE) {
+			session_start();
+		}
 		if(!isset($_GET['page_id'])){
 			$_GET['page_id'] = 1;
 		}

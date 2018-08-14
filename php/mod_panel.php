@@ -1,4 +1,6 @@
 <?php
+	require 'include/check_service_permission.inc.php';
+	
 	require "init_smarty.php";
 	
 	$head = "../templates/mod_panel_head.html";
