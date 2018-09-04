@@ -64,14 +64,17 @@
     
 
     switch ($_SERVER['SERVER_NAME']) {
+
         case "localhost":
             $db = new DB("localhost", "root", "lorenzo96", "music_store");
             break;
         case "www.prova.it":
             $db = DB("sql.aruba.com", "username", "password", "dbname");
+            break;
+        default:
+            $db = new DB("localhost", "root", "", "music_store");
     }
-    
-    
+
     
 
 /*
