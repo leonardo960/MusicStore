@@ -19,7 +19,6 @@
 		$_SESSION['new_song_data'] = ["fk_genere"=>$_POST['fk_genere'], "fk_album"=>$_POST['fk_album'], "fk_artista"=>$_POST['fk_artista'], "descrizione"=>$_POST['descrizione'], "nome_canzone"=>$_POST['nome_canzone'], "pubblicazione"=>$_POST['pubblicazione'], "durata"=>$_POST['durata'], "song_path"=>$_POST['song_path']];
 		Header("Location: mod_insert_new_song.php?error=databaseerror");
 		exit();
-	}
 }
 
 ?>

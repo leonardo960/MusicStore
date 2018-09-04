@@ -9,6 +9,7 @@
 	
 	//Recuperiamo le ultime uscite
 	$result = $db->query("select * from album order by data_inserimento limit 20");
+
 	if($result){
 		$smarty->assign("recent_albums", $result);
 	}

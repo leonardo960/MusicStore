@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-20 12:10:42
+/* Smarty version 3.1.32, created on 2018-09-04 13:22:55
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b7aafc28a9e85_53216818',
+  'unifunc' => 'content_5b8e872fbbe674_27953570',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd3789739f5157777c14b396694b9eeee0d78a191' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\account_content.html',
-      1 => 1534767039,
+      1 => 1534767048,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b7aafc28a9e85_53216818 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8e872fbbe674_27953570 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="your-account-container">
 		<div class="account-box">
@@ -62,7 +62,7 @@ function content_5b7aafc28a9e85_53216818 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				
 			</form>
-			<form id="logout_form" action="logout.php" method="GET">
+			<form id="logout_form" action="logout.php" method="POST">
 				<div class="account-button-box-1">
 					<ul>
 						<li id="logout_btn"><a>Logout</a></li>
