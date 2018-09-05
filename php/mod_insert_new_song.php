@@ -24,7 +24,6 @@
 		$_POST['durata'] = test_input($_POST['durata']);
 		
 		$target_dir = "../songs";
-		$target_file = $target_dir . basename($_FILES["song_file"]["name"]);
 		require "include/mod.insert_new_song.inc.php";
 		
 		
