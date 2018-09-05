@@ -8,14 +8,14 @@
 	$content = "../templates/index_content.html";
 	
 	//Recuperiamo le ultime uscite e gli album in offerta
-	/*$result = $db->query("select * from album order by data_inserimento limit 5");
+	$result = $db->query("SELECT * FROM album ORDER BY data_inserimento LIMIT 5");
 	if($result){
 		$smarty->assign("recent_albums", $result);
 	}
-	$result = $db->query("select * from offerte_speciali limit 5");
+	$result = $db->query("SELECT * FROM offerte_speciali LIMIT 5");
 	if($result){
 		$smarty->assign("special_offers", $result);
-	}*/
+	}
 	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);

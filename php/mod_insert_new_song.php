@@ -45,7 +45,6 @@
 		$smarty->assign("nome_canzone", $_SESSION['new_song_data']['nome_canzone']);
 		$smarty->assign("pubblicazione", $_SESSION['new_song_data']['pubblicazione']);
 		$smarty->assign("durata", $_SESSION['new_song_data']['durata']);
-	}
 } 
 	
 	require "include/mod.set_logged_header.inc.php";
