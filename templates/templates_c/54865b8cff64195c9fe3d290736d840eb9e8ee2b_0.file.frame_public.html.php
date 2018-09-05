@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-11 12:33:25
+/* Smarty version 3.1.32, created on 2018-09-04 13:25:20
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6ed79525d228_85284987',
+  'unifunc' => 'content_5b8e87c0e57067_99990311',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54865b8cff64195c9fe3d290736d840eb9e8ee2b' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\frame_public.html',
-      1 => 1533989104,
+      1 => 1536067520,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6ed79525d228_85284987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8e87c0e57067_99990311 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -80,7 +80,7 @@ function content_5b6ed79525d228_85284987 (Smarty_Internal_Template $_smarty_tpl)
 				<ul>
 					<li class="active1"><a href="index.php">Home</a></li>
 					<li><a href="../favorites.html">Favourites</a></li>
-					<li><a href="../artists.html">Artists</a></li>
+					<li><a href="../artists.">Artists</a></li>
 					<li><a href="../specials.html">Specials</a></li>
 					<li><a href="../specials.html">Recent-albums</a></li>
 					<li><a href="../contact.html">Feedback</a></li>
