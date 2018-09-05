@@ -57,6 +57,7 @@
 		exit();
 	} else {
 		Header("Location: mod_content_management.php?message=modify_album_url_error");
+		exit();
 		}
 	}
  ?>

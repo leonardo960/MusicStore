@@ -51,6 +51,7 @@
 		exit();
 	} else {
 		Header("Location: mod_content_management.php?message=modify_song_url_error");
+		exit();
 		}
 	}
  ?>

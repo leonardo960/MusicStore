@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 13:54:30
+/* Smarty version 3.1.32, created on 2018-09-05 14:02:40
   from 'C:\wamp64\www\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6af616400851_38062813',
+  'unifunc' => 'content_5b8fe200832678_41774760',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2e98c0b5ae67c8c9fe3826ce5d80ac4f24e98fb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\frame_public.html',
-      1 => 1533736433,
+      1 => 1536156058,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6af616400851_38062813 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8fe200832678_41774760 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -69,7 +69,7 @@ function content_5b6af616400851_38062813 (Smarty_Internal_Template $_smarty_tpl)
 						<?php echo $_smarty_tpl->tpl_vars['logged']->value;?>
 
 						<li><a href="account.php">Your account</a></li>
-						<li><a href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
+						<li><a id="cart-text" href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
 <img src="../images/cart.png" title="cart" /></a></li>
 					</ul>
 				</div>
@@ -80,7 +80,7 @@ function content_5b6af616400851_38062813 (Smarty_Internal_Template $_smarty_tpl)
 				<ul>
 					<li class="active1"><a href="index.php">Home</a></li>
 					<li><a href="../favorites.html">Favourites</a></li>
-					<li><a href="../artists.html">Artists</a></li>
+					<li><a href="../artists.">Artists</a></li>
 					<li><a href="../specials.html">Specials</a></li>
 					<li><a href="../specials.html">Recent-albums</a></li>
 					<li><a href="../contact.html">Feedback</a></li>

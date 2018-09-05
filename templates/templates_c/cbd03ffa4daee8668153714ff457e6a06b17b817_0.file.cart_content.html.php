@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-11 09:06:41
+/* Smarty version 3.1.32, created on 2018-09-05 13:41:42
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6ea7218508c6_28569414',
+  'unifunc' => 'content_5b8fdd1668ac89_89015050',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1533978386,
+      1 => 1536154899,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6ea7218508c6_28569414 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b8fdd1668ac89_89015050 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
@@ -80,6 +80,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+				<?php if (count($_smarty_tpl->tpl_vars['cart_content']->value) == 0) {?>
+				<h1 style="text-align: center; color: white">No items here!</h1>
+				<?php }?>
 			</div>
 			<div class="cart-page-divider-1">
 			</div>
