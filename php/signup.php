@@ -8,7 +8,7 @@
 		$data = trim($data);
 		$data = stripslashes($data);
 		$data = htmlspecialchars($data);
-		return $data;
+		return $data; 
 	}
 	$_POST['username'] = test_input($_POST['username']);
 	$_POST['name'] = test_input($_POST['name']);
