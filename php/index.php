@@ -12,7 +12,7 @@
 	if($result){
 		$smarty->assign("recent_albums", $result);
 	}
-	$result = $db->query("SELECT * FROM offerte_speciali LIMIT 5");
+    $result = $db->query("SELECT * FROM album JOIN offerte_speciali ON album.id_album = offerte_speciali.album LIMIT 5");
 	if($result){
 		$smarty->assign("special_offers", $result);
 	}

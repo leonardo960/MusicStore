@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-04 13:25:20
+/* Smarty version 3.1.32, created on 2018-09-06 08:11:31
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8e87c0e57067_99990311',
+  'unifunc' => 'content_5b90e1333adaf5_68738918',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54865b8cff64195c9fe3d290736d840eb9e8ee2b' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\frame_public.html',
-      1 => 1536067520,
+      1 => 1536220150,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8e87c0e57067_99990311 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -69,7 +69,7 @@ function content_5b8e87c0e57067_99990311 (Smarty_Internal_Template $_smarty_tpl)
 						<?php echo $_smarty_tpl->tpl_vars['logged']->value;?>
 
 						<li><a href="account.php">Your account</a></li>
-						<li><a href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
+						<li><a id="cart-text" href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
 <img src="../images/cart.png" title="cart" /></a></li>
 					</ul>
 				</div>

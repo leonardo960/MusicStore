@@ -23,7 +23,6 @@
 	} else {
 		Header("Location: mod_content_management.php?message=song_modify_error");
 		exit();
-	}
 }
 
 ?>
