@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e245437e-1a47-4193-a66d-89bc799a61d0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d973b8d8-9789-462f-9c77-0fc01a0bca3a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d973b8d8-9789-462f-9c77-0fc01a0bca3a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/include/mod.modify_song.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/include/mod.modify_song.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/templates_c/4758c229fae4da1614c903acd2517462a4df782d_0.file.index_content.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/templates_c/4758c229fae4da1614c903acd2517462a4df782d_0.file.index_content.html.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/songs/test.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/songs/1.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/albumpage_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/albumpage_content.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/templates_c/53c04df941ac6377a5b9cd3856641f3cb4fc1638_0.file.albumpage_content.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/templates_c/53c04df941ac6377a5b9cd3856641f3cb4fc1638_0.file.albumpage_content.html.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/templates_c/54865b8cff64195c9fe3d290736d840eb9e8ee2b_0.file.frame_public.html.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/templates_c/54865b8cff64195c9fe3d290736d840eb9e8ee2b_0.file.frame_public.html.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +50,13 @@
         <item name="music_store: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="album: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="music_store@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="music_store: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="canzoni: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -74,82 +77,70 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="canzoni" value="2" />
-          <entry key="html" value="50" />
+          <entry key="album" value="2" />
+          <entry key="canzoni" value="4" />
+          <entry key="html" value="51" />
           <entry key="js" value="1" />
           <entry key="md" value="4" />
-          <entry key="php" value="62" />
+          <entry key="php" value="64" />
           <entry key="sql" value="3" />
-          <entry key="txt" value="3" />
+          <entry key="txt" value="4" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="2" />
-          <entry key="HTML" value="50" />
+          <entry key="Database Element" value="6" />
+          <entry key="HTML" value="51" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="4" />
-          <entry key="PHP" value="62" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="PHP" value="64" />
+          <entry key="PLAIN_TEXT" value="4" />
           <entry key="Scratch" value="3" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="JavaScript Console" value="27" />
-          <entry key="html" value="676" />
+          <entry key="cell" value="25" />
+          <entry key="html" value="831" />
           <entry key="php" value="488" />
-          <entry key="txt" value="455" />
+          <entry key="txt" value="463" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="676" />
+          <entry key="HTML" value="831" />
           <entry key="JavaScript" value="27" />
           <entry key="PHP" value="488" />
-          <entry key="PLAIN_TEXT" value="455" />
+          <entry key="PLAIN_TEXT" value="463" />
+          <entry key="Scratch" value="25" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4523179">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/php/index.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
-                  <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/cart_content.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/templates/index_content.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/albumpage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/albumpage_content.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -176,7 +167,6 @@
         <option value="$PROJECT_DIR$/templates/albumpage_head.html" />
         <option value="$PROJECT_DIR$/templates/artistpage_content.html" />
         <option value="$PROJECT_DIR$/php/artistpage.php" />
-        <option value="$PROJECT_DIR$/templates/albumpage_content.html" />
         <option value="$PROJECT_DIR$/php/albumpage.php" />
         <option value="$PROJECT_DIR$/php/include/mod_insert_new_song.inc.php" />
         <option value="$PROJECT_DIR$/php/recent_albums.php" />
@@ -185,6 +175,7 @@
         <option value="$PROJECT_DIR$/php/include/mod.modify_song.inc.php" />
         <option value="$PROJECT_DIR$/php/index.php" />
         <option value="$PROJECT_DIR$/templates/index_content.html" />
+        <option value="$PROJECT_DIR$/templates/albumpage_content.html" />
       </list>
     </option>
   </component>
@@ -196,9 +187,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -216,6 +208,11 @@
               <item name="MusicStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="MusicStore" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MusicStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MusicStore" type="462c0819:PsiDirectoryNode" />
+              <item name="songs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="MusicStore" type="b2602c69:ProjectViewProjectNode" />
@@ -307,7 +304,7 @@
       <workItem from="1536065905994" duration="11806000" />
       <workItem from="1536142001280" duration="257000" />
       <workItem from="1536142285526" duration="4085000" />
-      <workItem from="1536222792347" duration="751000" />
+      <workItem from="1536222792347" duration="5314000" />
     </task>
     <task id="LOCAL-00001" summary="Album Page">
       <created>1536078700263</created>
@@ -316,11 +313,18 @@
       <option name="project" value="LOCAL" />
       <updated>1536078700263</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="HomePage">
+      <created>1536223593585</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536223593585</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26519000" />
+    <option name="totallyTimeSpent" value="31082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -350,13 +354,13 @@
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286334" />
       <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3286334" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="11" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.3275488" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.3275488" />
       <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" weight="0.32952183" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.32889125" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32889125" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,16 +407,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Album Page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Album Page" />
+    <MESSAGE value="HomePage" />
+    <option name="LAST_COMMIT_MESSAGE" value="HomePage" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/logged_in_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/add_to_cart.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -618,20 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d973b8d8-9789-462f-9c77-0fc01a0bca3a/schema/music_store/table/canzoni">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/albumpage_content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="33" column="48" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/recent_albums.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -660,20 +644,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/include/mod_insert_new_song.inc.php" />
-    <entry file="file://$PROJECT_DIR$/php/mod_insert_new_song.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/include/mod.modify_song.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -681,31 +651,69 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index_content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/mod_insert_new_song.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="46" column="2" lean-forward="true" selection-start-line="46" selection-start-column="2" selection-end-line="46" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/cart_content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="272">
           <caret line="31" column="49" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d973b8d8-9789-462f-9c77-0fc01a0bca3a/schema/music_store/table/album">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d973b8d8-9789-462f-9c77-0fc01a0bca3a/schema/music_store/table/canzoni">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/albumpage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index_content.html">
+    <entry file="file://$PROJECT_DIR$/templates/albumpage_content.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+          <caret line="34" column="69" selection-start-line="34" selection-start-column="69" selection-end-line="34" selection-end-column="69" />
         </state>
       </provider>
     </entry>

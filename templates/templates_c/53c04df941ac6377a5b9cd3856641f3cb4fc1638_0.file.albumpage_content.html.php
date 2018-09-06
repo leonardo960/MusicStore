@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-06 08:39:33
+/* Smarty version 3.1.32, created on 2018-09-06 13:04:40
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b90e7c56321b9_22526184',
+  'unifunc' => 'content_5b9125e895ebc2_08139274',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53c04df941ac6377a5b9cd3856641f3cb4fc1638' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536077664,
+      1 => 1536239077,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b90e7c56321b9_22526184 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9125e895ebc2_08139274 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
-	<!-- TODO completare -->
 					<div class="single-page"><br />
 						<div class="clear"> </div>
 						<div class="product-info">
@@ -48,68 +47,44 @@ function content_5b90e7c56321b9_22526184 (Smarty_Internal_Template $_smarty_tpl)
 							</div>	
 						</div>
 							</div>
-							<audio controls controlsList="nodownload">
-								<source src="../songs/test.mp3" type="audio/mpeg">
-								Your browser does not support the audio element.
-							</audio>
-							<?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
-
-							<?php
+							<div class="product-price-info">
+									<div class="product-value">
+									<h4>Product-Complete Details With Value</h4>
+									<ul>
+										<li><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
+</li>
+										<br>
+										<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['songs']->value, 'song');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 ?>
-							<?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
-
-							<?php
+										<br>
+										<li><?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
+</li>
+										<audio controls controlsList="nodownload">
+											<source src="<?php echo $_smarty_tpl->tpl_vars['song']->value['song_path'];?>
+" type="audio/mpeg">
+											Your browser does not support the audio element.
+										</audio>
+										<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-							<div class="product-price-info">
-								<div class="product-catrgory-pagenation">
-									<ul>
-										<li><h3>Categories :</h3></li>
-										<li class="active3"><a href="#">Productname</a></li>
-										<li><a href="#">Product2</a></li>
-										<li><a href="#">Product3</a></li>
-									</ul>
-								</div>
-									<div class="product-value">
-									<h4>Product-Complete Details With Value</h4>
-									<ul>
 										<li><h2>Price :</h2></li>
-										<li><span>$350</span></li>
-										<li><h5>$500</h5></li>
-										<li><a href="#">Instock</a></li>
+										<li><span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+</span></li>
+										<li><h5><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+</h5></li>
+										<li><a href="#"><?php echo $_smarty_tpl->tpl_vars['album']->value['stock'];?>
+</a></li>
 									</ul>
-									<ul>
-										<li><h3>Not rated</h3></li>
-										<li><h5>No reviews</h5></li>
-									</ul>
-								</div>
-								<div class="product-shipping">
-									<span>Shipping :</span>
-									<p><lable>FREE</lable> - Flat Rate Courier - Delivery anywhere in the world</p>
-									<div class="clear"> </div>
-								</div>
-								<div class="product-payments">
-									<span>Payments: :</span>
-									<p><lable>paypal</lable> - (Credit card, EMI, Debit card, Online Bank Transfer), PaisaPay COD  </p>
-									<div class="clear"> </div>
 								</div>
 								<div class="product-description">
 									<h3>Description :</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-									<a href="#">Addcart</a>
-								</div>
-								<div class="product-share">
-									<h3>share on:</h3>
-									<ul>
-										<li><a href="#"><img src="../images/facebook.png" title="facebook" />Facebook</a></li>
-										<li><a href="#"><img src="../images/twitter.png" title="Twitter" />Twitter</a></li>
-										<li><a href="#"><img src="../images/rss.png" title="Rss" />Rss</a></li>
-										<li><a href="#"><img src="../images/gpluse.png" title="Googlepluse" />Google+</a></li>
-									</ul>
+									<p><?php echo $_smarty_tpl->tpl_vars['album']->value['descrizione'];?>
+</p>
+									<a href="#">Adcart</a>
 								</div>
 							</div>
 							<div class="clear"> </div>
