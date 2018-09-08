@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 13:58:51
+/* Smarty version 3.1.32, created on 2018-09-08 14:10:24
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b93d59ba12b21_43456909',
+  'unifunc' => 'content_5b93d850084a95_71015500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5086596fa0a79de9127225ea388477cd5cd0aed3' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\frame_public.html',
-      1 => 1536415035,
+      1 => 1536415785,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b93d59ba12b21_43456909 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b93d850084a95_71015500 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -36,11 +36,8 @@ function content_5b93d59ba12b21_43456909 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				<div class="top-header-right">
 					<ul>
-						<?php if (isset($_smarty_tpl->tpl_vars['logged']->value)) {?>
-							<li>Logged in as: <a id="header-auth-info"><?php echo $_smarty_tpl->tpl_vars['logged']->value;?>
-</a></li>
-							<li><a href="account.php">Your account</a></li>
-						<?php }?>
+						<?php echo $_smarty_tpl->tpl_vars['logged']->value;?>
+
 						<li><a id="cart-text" href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
 <img src="../images/cart.png" title="cart" /></a></li>
 					</ul>

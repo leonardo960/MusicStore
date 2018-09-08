@@ -12,10 +12,7 @@
 				</div>
 				<div class="top-header-right">
 					<ul>
-						{if isset($logged)}
-							<li>Logged in as: <a id="header-auth-info">{$logged}</a></li>
-							<li><a href="account.php">Your account</a></li>
-						{/if}
+						{$logged}
 						<li><a id="cart-text" href="cart.php">{$cart}<img src="../images/cart.png" title="cart" /></a></li>
 					</ul>
 				</div>
