@@ -8,7 +8,8 @@
 		$data = htmlspecialchars($data);
 		return $data;
 	}
-	$_GET['query'] = test_input($_GET['query']);	
+	if(isset($_GET['query'])){
+		$_GET['query'] = test_input($_GET['query']);	
 	require "include/dbms.inc.php";
 	require "include/search.inc.php";
 
@@ -78,4 +79,9 @@
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	$smarty->display("../templates/frame_public.html");
+	} else {
+		header("Location: index.php");
+		exit();
+	}
+	
 ?>

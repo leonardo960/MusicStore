@@ -1,12 +1,11 @@
  <?php
-	require 'include/check_service_permission.inc.php';
 	require "include/dbms.inc.php";
 	require "init_smarty.php";
  
 	$head = "../templates/cart_cashout_head.html";
 	$content = "../templates/cart_cashout_content.html";
-	
-	if(isset($_SESSION['cart'][0])){
+	if(isset($_SESSION['auth'])){
+		if(isset($_SESSION['cart'][0])){
 			$smarty->assign("head", $head);
 			$smarty->assign("cart", $_SESSION['cart']);
 			$smarty->assign("content", $content);
@@ -18,8 +17,8 @@
 			Header("Location: cart.php");
 			exit();
 		}
-	if($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['paese']) && isset($_POST['indirizzo']) && isset($_POST['citta']) && isset($_POST['provincia']) && isset($_POST['cap']) && isset($_POST['recapito'])) { //I campi dell'ordine
-		//modifica le info dell'album
+	if(isset($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['paese']) && isset($_POST['indirizzo']) && isset($_POST['citta']) && isset($_POST['provincia']) && isset($_POST['cap']) && isset($_POST['recapito'])) { //I campi dell'ordine
+		//Prevenzione dall'SQL injection sui dati specificati dal cliente per l'ordine
 		function test_input($data) {
 		$data = trim($data);
 		$data = stripslashes($data);
@@ -41,6 +40,7 @@
 		$_POST['cap'] = test_input($_POST['cap']);
 		$_POST['recapito'] = test_input($_POST['recapito']);
 		
+		require 'include/cart_cashout.inc.php';
 		
 		$head = "../templates/order_confirm_head.html";
 		$content = "../templates/order_confirm_content.html";
@@ -75,7 +75,7 @@
 			}
 		}
 		
-		
+		require "include/set_cart_header.inc.php";
 		require "include/set_logged_header.inc.php";
 	
 		$smarty->assign("head", $head);
@@ -85,6 +85,10 @@
 	} else {
 		Header("Location: cart.php");
 		exit();
-		}
+	}
+	} else {
+		//Per comprare bisogna essere registrati
+		header("location: login.php");
+		exit();
 	}
  ?>
