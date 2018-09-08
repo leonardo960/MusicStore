@@ -600,13 +600,11 @@ body{
 }
 .cartire-grid {
 	border: 1px solid #EEE;
-	padding: 10px 16px 0px 16px;
+	padding: 15px;
 	box-shadow: 0px 0px 0px rgba(238, 238, 238, 0.08);
 	margin-top: 21px;
 }
 .Cartires{
-	padding:0 15px;
-	padding-bottom: 3em;
 }
 .Cartires h5{
 	display: block;
@@ -625,8 +623,10 @@ body{
 }
 .cartire-grid-img{
 	float:left;
-	width:20%;
+	width: calc(20% - 20px);
+	padding-right: 20px;
 }
+
 .cartire-grid-info{
 	float:left;
 	width:59%;
@@ -650,6 +650,7 @@ body{
 	line-height: 1.6em;
 	font-family: verdana, arial, helvetica, helve, sans-serif;
 	width: 91%;
+	height: 100px;
 }
 .cartire-grid-info ul li span{
 	color:#000;
@@ -708,6 +709,18 @@ body{
 	color: #989898;
 	line-height: 1.6em;
 	font-family: verdana, arial, helvetica, helve, sans-serif;
+}
+.cartire-pagination-box{
+	margin-top: 25px; 
+	height: 60px;
+	background: red;
+}
+.cartire-pagination-box ul{
+	background: green;
+	min-width: 100px;
+	width: fit-content;
+	height: 100%;
+	margin: auto;
 }
 /*----contact-----*/
 .contact{

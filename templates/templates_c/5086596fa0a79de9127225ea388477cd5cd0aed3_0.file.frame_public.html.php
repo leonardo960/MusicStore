@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 12:11:21
+/* Smarty version 3.1.32, created on 2018-09-08 13:58:51
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b93bc69467919_49526804',
+  'unifunc' => 'content_5b93d59ba12b21_43456909',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5086596fa0a79de9127225ea388477cd5cd0aed3' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\frame_public.html',
-      1 => 1536408679,
+      1 => 1536415035,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b93bc69467919_49526804 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b93d59ba12b21_43456909 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -52,7 +52,7 @@ function content_5b93bc69467919_49526804 (Smarty_Internal_Template $_smarty_tpl)
 			<!--start-sub-header-->
 			<div class="sub-header">
 				<div class="logo">
-					<a href="index.html"><img src="../images/logo2.png" title="logo" /></a>
+					<a href="index.php"><img src="../images/logo2.png" title="logo" /></a>
 				</div>
 				<div class="sub-header-center">
 					<form class="search" action="search.php" type="GET">
@@ -69,10 +69,10 @@ function content_5b93bc69467919_49526804 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="top-nav">
 				<ul>
 					<li class="active1"><a href="index.php">Home</a></li>
-					<li><a href="../artists.">Artists</a></li>
-					<li><a href="../specials.html">Recent albums</a></li>
-					<li><a href="../specials.html">Specials</a></li>
-					<li><a href="../contact.html">Contact us</a></li>
+					<li><a href="artists.php">Artists</a></li>
+					<li><a href="recent_albums.php">Recent albums</a></li>
+					<li><a href="special_offers.php">Specials</a></li>
+					<li><a href="contacts.php">Contact us</a></li>
 				</ul>
 				<div class="clear"> </div>
 			</div>

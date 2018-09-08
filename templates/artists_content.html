@@ -1,0 +1,38 @@
+<div class="content">
+					<!--start-cartires-page---->
+					<div class="Cartires">
+						<h5><span>Our</span> Artists</h5>
+						<div class="cartires-grids">
+						{foreach $artists as $artist}
+							<div class="cartire-grid">
+								<div class="cartire-grid-img">
+									<img src="{$artist.img_path}" title="artist-image" />
+								</div>
+								<div class="cartire-grid-info">
+									<ul>
+										<li>{$artist.nome_artista}</li>
+									</ul>
+									<h3>Bio:</h3>
+									<p>{$artist.biografia}</p>
+								</div>
+								<div class="cartire-grid-cartinfo">
+									<h4>General Info</h4>
+									<a href="">Go to Info</a>
+									<h4>Related Albums</h4>
+									<a href="">View All</a>
+								</div>
+								<div class="clear"> </div>
+							</div><br />
+						{/foreach}
+						</div>
+						<div class="cartire-pagination-box">
+						
+							<ul>
+							le info per la paginazione vanno qui
+								<li><a></a></li>
+							</ul>
+							
+						</div>
+					</div>
+	<!--End-cartires-page---->
+</div>
