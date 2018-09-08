@@ -15,7 +15,7 @@
 						<h5><span>Recent</span> Albums</h5>
 						<div class="section group">
 							{foreach $recent_albums as $album}
-							<div class="grid_1_of_5 images_1_of_5">
+							<div class="grid_1_of_5 images_1_of_5 displayed-item">
 								<img src="{$album.img_path}">
 								<h3>{$album.nome_album}</h3>
 								<p>{$album.descrizione}</p>
@@ -24,13 +24,19 @@
 							</div>
 							{/foreach}
 						</div>
-						<a class="button1" href="#">View all</a>
+						<div class="viewall-button-container">
+							<ul>
+								<li><a class="button1" href="#">View all</a></li>
+							</ul>
+						</div>
+						
 						<div class="clear"> </div>
 					</div>
 					<div class="products products-secondbox">
 						<h5><span>Big</span> Deals</h5>
+						<div class="section group">
 						{foreach $special_offers as $album}
-							<div class="grid_1_of_5 images_1_of_5">
+							<div class="grid_1_of_5 images_1_of_5 displayed-item">
 								 <img src="{$album.img_path}">
 								 <h3>{$album.nome_album}</h3>
 								 <p>{$album.descrizione}</p>
@@ -38,7 +44,12 @@
 							     <div class="button"><span><a href="albumpage.php?id_album={$album.id_album}">Read More</a></span></div>
 							</div>
 						{/foreach}
-							<a class="button1" href="#">View all</a>
+						</div>
+						<div class="viewall-button-container">
+							<ul>
+								<li><a class="button1" href="#">View all</a></li>
+							</ul>
+						</div>
 						<div class="clear"> </div>
 						</div>
 					</div>

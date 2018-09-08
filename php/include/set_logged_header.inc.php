@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if ( isset($_SESSION['auth']) ) {
 		$logged_in_header = $smarty->fetch("../templates/logged_in_header.html");
-		$smarty->assign("logged", "logged in as: " . $_SESSION['auth']['username']);
+		$smarty->assign("logged", $_SESSION['auth']['username']);
 	} else {
 		$not_logged_in_header = $smarty->fetch("../templates/not_logged_in_header.html");
 		$smarty->assign("logged", $not_logged_in_header);
