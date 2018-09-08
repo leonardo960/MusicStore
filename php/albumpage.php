@@ -9,21 +9,24 @@ function test_input($data) {
     return $data;
 }
 $_GET['id_album'] = test_input($_GET['id_album']);
-$result = $db->getResult("SELECT * FROM album JOIN canzoni ON canzoni.fk_album = album.id_album AND id_album = '{$_GET['id_album']}' ");
 
+$result = $db->getResult("SELECT * FROM album WHERE id_album = '{$_GET['id_album']}' ");
 $smarty->assign("album", $result[0]);
+
+$result = $db->getResult("SELECT canzoni.descrizione, id_canzone, nome_canzone, canzoni.pubblicazione, durata, song_path, genere FROM album JOIN canzoni ON canzoni.fk_album = album.id_album JOIN genere on genere.id_genere = canzoni.fk_genere WHERE id_album = '{$_GET['id_album']}' ");
 $smarty->assign("songs", $result);
 
 
- $head = "../templates/albumpage_head.html";
- $content = "../templates/albumpage_content.html";
+$head = "../templates/albumpage_head.html";
+$content = "../templates/albumpage_content.html";
  
- $smarty->assign("head", $head);
- $smarty->assign("content", $content);
+$smarty->assign("head", $head);
+$smarty->assign("content", $content);
  
- require "include/set_logged_header.inc.php";
- require "include/set_cart_header.inc.php";
+require "include/set_logged_header.inc.php";
+require "include/set_cart_header.inc.php";
  
- $smarty->display("../templates/frame_public.html");
- ?>
+$smarty->display("../templates/frame_public.html");
+
+?>
  

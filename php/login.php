@@ -19,10 +19,7 @@
 		
 		require "include/auth.inc.php";
 		//Se arrivo fin qui vuol dire che il login ha avuto successo
-		//Devo tornare alla home stavolta con l'utente loggato
-		//Quindi l'index diventa anche lui un .php che si occupa, ad esempio,
-		//di iniettare "log in" o meno a seconda che $_SESSION['auth'] contenga qualcosa
-		//o no.
+		
 		
 		Header('Location: index.php');
 		exit();

@@ -8,7 +8,7 @@
 	$content = "../templates/special_offers_content.html";
 	
 	//Recuperiamo le offerte speciali
-	$result = $db->query("select * from offerte_speciali");
+	$result = $db->query("select * from offerte_speciali inner join album on album.id_album = offerte_speciali.album");
 	if($result){
 		$smarty->assign("special_offers", $result);
 	}
