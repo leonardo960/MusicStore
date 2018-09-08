@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Struttura della tabella `album`
 --
-
+use music_store;
 DROP TABLE IF EXISTS `album`;
 CREATE TABLE IF NOT EXISTS `album` (
   `nome_album` varchar(30) NOT NULL,
