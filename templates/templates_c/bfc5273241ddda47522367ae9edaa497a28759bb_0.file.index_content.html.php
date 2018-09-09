@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 08:07:12
+/* Smarty version 3.1.32, created on 2018-09-08 13:51:24
   from 'C:\wamp64\www\MusicStore\templates\index_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b938330d56890_17845161',
+  'unifunc' => 'content_5b93d3dc63ff49_70937348',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfc5273241ddda47522367ae9edaa497a28759bb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\index_content.html',
-      1 => 1536394030,
+      1 => 1536414510,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b938330d56890_17845161 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b93d3dc63ff49_70937348 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--start-image-slider---->
 					<div class="image-slider">
 						<!-- Slideshow 1 -->
@@ -42,7 +42,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 ?>
-							<div class="grid_1_of_5 images_1_of_5">
+							<div class="grid_1_of_5 images_1_of_5 displayed-item">
 								<img src="<?php echo $_smarty_tpl->tpl_vars['album']->value['img_path'];?>
 ">
 								<h3><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
@@ -59,17 +59,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</div>
-						<a class="button1" href="#">View all</a>
+						<div class="viewall-button-container">
+							<ul>
+								<li><a class="button1" href="#">View all</a></li>
+							</ul>
+						</div>
+						
 						<div class="clear"> </div>
 					</div>
 					<div class="products products-secondbox">
 						<h5><span>Big</span> Deals</h5>
+						<div class="section group">
 						<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['special_offers']->value, 'album');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 ?>
-							<div class="grid_1_of_5 images_1_of_5">
+							<div class="grid_1_of_5 images_1_of_5 displayed-item">
 								 <img src="<?php echo $_smarty_tpl->tpl_vars['album']->value['img_path'];?>
 ">
 								 <h3><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
@@ -86,7 +92,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-							<a class="button1" href="#">View all</a>
+						</div>
+						<div class="viewall-button-container">
+							<ul>
+								<li><a class="button1" href="#">View all</a></li>
+							</ul>
+						</div>
 						<div class="clear"> </div>
 						</div>
 					</div>

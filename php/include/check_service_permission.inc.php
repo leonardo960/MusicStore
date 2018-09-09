@@ -8,8 +8,8 @@
 	unset($_SESSION['requested_service']); //Per non lasciare traccia del trasferimento del dato
 	
 	//Controlliamo se l'utente ha il permesso di accedere al servizio richiesto
-	$result = $db->query("select permessi.servizio from utenti inner join permessi on utenti.gruppo = permessi.gruppo where utenti.username = '{$current_username}' and permessi.servizio = '{$requested_service}'");
-	if(!$result[0]){
+	$result = $db->getResult("select permessi.servizio from utenti inner join permessi on utenti.gruppo = permessi.gruppo where utenti.username = '{$current_username}' and permessi.servizio = '{$requested_service}'");
+	if(!isset($result[0])){
 		header("location: permission_denied.php");
 		exit();
 	}
