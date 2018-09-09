@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Set 06, 2018 alle 08:28
+-- Creato il: Set 09, 2018 alle 09:59
 -- Versione del server: 5.7.19
 -- Versione PHP: 5.6.31
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Struttura della tabella `album`
 --
-use music_store;
+
 DROP TABLE IF EXISTS `album`;
 CREATE TABLE IF NOT EXISTS `album` (
   `nome_album` varchar(30) NOT NULL,
@@ -57,6 +57,27 @@ INSERT INTO `album` (`nome_album`, `fk_genere`, `fk_artista`, `descrizione`, `pr
 -- --------------------------------------------------------
 
 --
+-- Struttura della tabella `album_preferiti`
+--
+
+DROP TABLE IF EXISTS `album_preferiti`;
+CREATE TABLE IF NOT EXISTS `album_preferiti` (
+  `album` int(11) NOT NULL,
+  `utente` varchar(20) NOT NULL,
+  PRIMARY KEY (`album`,`utente`),
+  KEY `fk_utente` (`utente`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `album_preferiti`
+--
+
+INSERT INTO `album_preferiti` (`album`, `utente`) VALUES
+(1, 'leonardo96');
+
+-- --------------------------------------------------------
+
+--
 -- Struttura della tabella `artisti`
 --
 
@@ -80,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `artisti` (
 
 INSERT INTO `artisti` (`nome_artista`, `id_artista`, `biografia`, `genere`, `album_pubblicati`, `inizio_attivita`, `fine_attivita`, `img_path`) VALUES
 ('Dua Lipa', 1, NULL, NULL, NULL, NULL, NULL, NULL),
-('Annalisa', 2, NULL, NULL, NULL, NULL, NULL, NULL),
+('Annalisa', 2, NULL, 2, NULL, NULL, NULL, NULL),
 ('Adriano Celentano', 3, NULL, NULL, NULL, NULL, NULL, NULL),
 ('Black Eyed Peas', 4, NULL, NULL, NULL, NULL, NULL, NULL),
 ('Shakira', 5, NULL, NULL, NULL, NULL, NULL, NULL),
@@ -157,14 +178,15 @@ CREATE TABLE IF NOT EXISTS `genere` (
   `genere` varchar(30) NOT NULL,
   `id_genere` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_genere`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `genere`
 --
 
 INSERT INTO `genere` (`genere`, `id_genere`) VALUES
-('Pop', 1);
+('Pop', 1),
+('Commerciale', 2);
 
 -- --------------------------------------------------------
 
@@ -223,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `moderatori` (
 DROP TABLE IF EXISTS `offerte_speciali`;
 CREATE TABLE IF NOT EXISTS `offerte_speciali` (
   `album` int(11) NOT NULL,
-  `prezzo_offerta` int(11) DEFAULT NULL,
+  `prezzo_offerta` float DEFAULT NULL,
   PRIMARY KEY (`album`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -232,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `offerte_speciali` (
 --
 
 INSERT INTO `offerte_speciali` (`album`, `prezzo_offerta`) VALUES
-(1, 20);
+(1, 14.99);
 
 -- --------------------------------------------------------
 
