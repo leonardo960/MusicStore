@@ -28,7 +28,6 @@
 				<div class="account-button-box" >
 					<ul class="account-button-box-inner" id="edit-button-box">
 						<li id="edit_btn" onclick="edit_click()"><a>Edit</a></li>
-						
 					</ul>
 					<ul class="account-button-box-inner" id="save-button-box">
 						<li id="save_btn" onclick="save_click()" ><a>Save</a></li>
@@ -45,32 +44,45 @@
 					</ul>
 				</div>
 				
+				
+				{if isset($addresses)}
 				<div class="account-static-info">
 				{foreach $addresses as $address}
 					<div class="address-card">
 						<ul>
-							<li><h1>User: </h1><h6>{$address.nome_user} {$address.cognome_user}</h6></li>
-							<li><h1>Locality: </h1><h6>{$address.localita}</h6></li>
-							<li><h1>Postal Code: </h1><h6>{$address.codice_postale}</h6></li>
+							<li><h1>User: </h1><h6>{$address.nome} {$address.cognome}</h6></li>
+							<li><h1>Locality: </h1><h6>{$address.citta}, {$address.provincia}</h6></li>
+							<li><h1>Postal Code: </h1><h6>{$address.cap}</h6></li>
 							<li><h1>Country: </h1><h6>{$address.paese}</h6></li>
 						</ul>
 						<ul>
 							<li><h1>Address: </h1><h6>{$address.indirizzo}</h6></li>
-							<li><h1>Telephone: </h1><h6>{$address.telefono}</h6></li>
-							<li><h1>E-Mail: </h1><h6>{$address.email}</h6></li>
+							<li><h1>Telephone: </h1><h6>{$address.recapito}</h6></li>
+							<li><h1>Payment: </h1><h6>{$address.metodo_pagamento}</h6></li>
+							<li><h1>Delivery: </h1><h6>{$address.tipo_spedizione}</h6></li>
 						</ul>
+						
+						<ul class="address-buttons-container">
+							<li class="address-box-button"><a href="">Edit</a></li>
+							<li class="address-box-button"><a href="">Delete</a></li>
+						</ul>
+						
 					</div>
 				{/foreach}	
 				</div>
+				{else}
+					<div class="no-addresses-card">
+						<h1>No address has been added.</h1>
+					</div>
+				{/if}
 				
 			
-			<form id="logout_form" action="logout.php" method="POST">
-				<div class="account-button-box-1">
-					<ul>
-						<li id="logout_btn"><a>Logout</a></li>
-					</ul>
-				</div>
-			</form>
+			<div class="add-address-box">
+				<ul>
+					<li class="new-address-button"><a href="">New Address</a></li>
+				</ul>
+			</div>
+			
 			
 		</div>
 	</div>

@@ -28,6 +28,55 @@
 								</div>
 								<div class="clear"> </div>
 							</div><br />
+							
+							<div class="cartire-grid">
+								<div class="cartire-grid-img">
+									<img src="{$favorite.img_path}" title="album-image" />
+								</div>
+								<div class="cartire-grid-info">
+									<ul>
+										<li><span>Title: </span>{$favorite.nome_album}</li>
+										{foreach $favorite_artists as $artist}
+											{if $artist.id_artista == $favorite.fk_artista}
+												<li><span>Artist: </span><a href="">{$artist.nome_artista}</a></li>
+											{/if}
+										{/foreach}
+									</ul>
+									<h3>Description</h3>
+									<p>{$favorite.descrizione}</p>
+								</div>
+								<div class="cartire-grid-cartinfo">
+									<h4>Info Page</h4>
+									<a href="">Go to Info</a>
+									<h4><span>Price: </span>{$favorite.prezzo}&euro;</h4>
+									<a href="">Add to Cart</a>
+								</div>
+								<div class="clear"> </div>
+							</div><br />
+							<div class="cartire-grid">
+								<div class="cartire-grid-img">
+									<img src="{$favorite.img_path}" title="album-image" />
+								</div>
+								<div class="cartire-grid-info">
+									<ul>
+										<li><span>Title: </span>{$favorite.nome_album}</li>
+										{foreach $favorite_artists as $artist}
+											{if $artist.id_artista == $favorite.fk_artista}
+												<li><span>Artist: </span><a href="">{$artist.nome_artista}</a></li>
+											{/if}
+										{/foreach}
+									</ul>
+									<h3>Description</h3>
+									<p>{$favorite.descrizione}</p>
+								</div>
+								<div class="cartire-grid-cartinfo">
+									<h4>Info Page</h4>
+									<a href="">Go to Info</a>
+									<h4><span>Price: </span>{$favorite.prezzo}&euro;</h4>
+									<a href="">Add to Cart</a>
+								</div>
+								<div class="clear"> </div>
+							</div><br />
 						{/foreach}
 						</div>
 						<div class="cartire-pagination-box">

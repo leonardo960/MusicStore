@@ -1692,22 +1692,29 @@ body{
 }
 .address-card{
 	display: block;
-	height: 180px;
-	background: #b0b0b0;
+	height: 235px;
+	background: #707070;
 	border-radius: 7px;
+	margin-bottom: 10px !important;
+}
+.address-card:last-child{
+	margin-bottom: 0 !important;
 }
 .address-card ul{
-	width: calc(50% - 20px) !important;
+	width: calc(50% - 20px);
 	padding: 10px;
 }
 .address-card li{
 	display: block;
 	width: 100%;
 	height: 36px;
-	background: #e0e0e0;
+	background: #909090;
 	font-size: 14px !important;
 	margin: 0 !important;
 	margin-bottom: 5px !important;
+}
+.address-card li:last-child{
+	margin-bottom: 0 !important;
 }
 .address-card li h1, .address-card li h6{
 	display: inline-block;
@@ -1716,7 +1723,7 @@ body{
 }
 .address-card li h1{
 	width: calc(40% - 20px);
-	color: #ff3311;
+	color: #ffffff;
 	text-transform: uppercase;
 	text-align:left;	
 }
@@ -1724,6 +1731,71 @@ body{
 	width: calc(60% - 20px);
 	text-transform: initial;
 	text-align:left;	
+}
+.address-buttons-container{
+	width: calc(100% - 20px) !important;
+}
+.address-buttons-container li{
+	display: inline-block;
+	margin: auto !important;
+	background: url(../images/head1.jpg)repeat-x;
+	padding: 10px;
+	height: auto !important;
+	width: 100px;
+	-moz-transition:background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+.address-buttons-container li:hover{
+	background: url(../images/head1h.jpg)repeat-x;
+	-moz-transition:background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+.address-buttons-container li a{
+	text-transform: uppercase;
+	color: #fafafa;
+}
+.add-address-box{
+	padding: 10px;
+	width: calc(100% - 70px);
+	margin-left: 25px;
+	margin-left: 25px;
+	margin-top: 10px;
+}
+.new-address-button{
+	margin: auto;
+	text-align: center;
+	background: url(../images/head1.jpg)repeat-x;
+	padding: 10px;
+	border-radius: 7px;
+	height: auto !important;
+	width: 150px;
+	-moz-transition:background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+.new-address-button:hover{
+	background: url(../images/head1h.jpg)repeat-x;
+	-moz-transition:background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
+    transition: background 0.5s ease;
+}
+.new-address-button a{
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	color: #fafafa;
+}
+.no-addresses-card{
+	font-family: "Roboto", sans-serif;
+	font-size: 14px;
+	background: #707070;
+	border-radius: 7px;
+	padding: 10px;
+	width: calc(100% - 70px);
+	margin-left: 25px;
+	margin-left: 25px;
 }
 /*----result-page----*/
 

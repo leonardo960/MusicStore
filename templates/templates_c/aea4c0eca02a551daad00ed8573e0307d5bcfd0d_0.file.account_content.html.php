@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 14:27:20
+/* Smarty version 3.1.32, created on 2018-09-09 20:24:09
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b952dc8f2d861_08721954',
+  'unifunc' => 'content_5b95816905de41_42014959',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aea4c0eca02a551daad00ed8573e0307d5bcfd0d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\account_content.html',
-      1 => 1536503239,
+      1 => 1536524638,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b952dc8f2d861_08721954 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b95816905de41_42014959 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="your-account-container">
 		<div class="account-box">
@@ -56,7 +56,6 @@ function content_5b952dc8f2d861_08721954 (Smarty_Internal_Template $_smarty_tpl)
 				<div class="account-button-box" >
 					<ul class="account-button-box-inner" id="edit-button-box">
 						<li id="edit_btn" onclick="edit_click()"><a>Edit</a></li>
-						
 					</ul>
 					<ul class="account-button-box-inner" id="save-button-box">
 						<li id="save_btn" onclick="save_click()" ><a>Save</a></li>
@@ -73,6 +72,8 @@ function content_5b952dc8f2d861_08721954 (Smarty_Internal_Template $_smarty_tpl)
 					</ul>
 				</div>
 				
+				
+				<?php if (isset($_smarty_tpl->tpl_vars['addresses']->value)) {?>
 				<div class="account-static-info">
 				<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['addresses']->value, 'address');
@@ -81,12 +82,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 ?>
 					<div class="address-card">
 						<ul>
-							<li><h1>User: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['nome_user'];?>
- <?php echo $_smarty_tpl->tpl_vars['address']->value['cognome_user'];?>
+							<li><h1>User: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['nome'];?>
+ <?php echo $_smarty_tpl->tpl_vars['address']->value['cognome'];?>
 </h6></li>
-							<li><h1>Locality: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['localita'];?>
+							<li><h1>Locality: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['citta'];?>
+, <?php echo $_smarty_tpl->tpl_vars['address']->value['provincia'];?>
 </h6></li>
-							<li><h1>Postal Code: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['codice_postale'];?>
+							<li><h1>Postal Code: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['cap'];?>
 </h6></li>
 							<li><h1>Country: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['paese'];?>
 </h6></li>
@@ -94,26 +96,38 @@ foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 						<ul>
 							<li><h1>Address: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['indirizzo'];?>
 </h6></li>
-							<li><h1>Telephone: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['telefono'];?>
+							<li><h1>Telephone: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['recapito'];?>
 </h6></li>
-							<li><h1>E-Mail: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['email'];?>
+							<li><h1>Payment: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['metodo_pagamento'];?>
+</h6></li>
+							<li><h1>Delivery: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['tipo_spedizione'];?>
 </h6></li>
 						</ul>
+						
+						<ul class="address-buttons-container">
+							<li class="address-box-button"><a href="">Edit</a></li>
+							<li class="address-box-button"><a href="">Delete</a></li>
+						</ul>
+						
 					</div>
 				<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>	
 				</div>
+				<?php } else { ?>
+					<div class="no-addresses-card">
+						<h1>No address has been added.</h1>
+					</div>
+				<?php }?>
 				
 			
-			<form id="logout_form" action="logout.php" method="POST">
-				<div class="account-button-box-1">
-					<ul>
-						<li id="logout_btn"><a>Logout</a></li>
-					</ul>
-				</div>
-			</form>
+			<div class="add-address-box">
+				<ul>
+					<li class="new-address-button"><a href="">New Address</a></li>
+				</ul>
+			</div>
+			
 			
 		</div>
 	</div>
