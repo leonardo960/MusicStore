@@ -14,6 +14,12 @@
 		$smarty->assign("recent_albums", $result);
 	}
 	
+	$result = $db->query("select * from artisti");
+	
+	if($result){
+		$smarty->assign("recent_albums_artists", $result);
+	}
+	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 

@@ -650,11 +650,15 @@ body{
 	line-height: 1.6em;
 	font-family: verdana, arial, helvetica, helve, sans-serif;
 	width: 91%;
-	height: 100px;
+	height: 60px;
+	overflow: hidden;
 }
 .cartire-grid-info ul li span{
 	color:#000;
 	padding-right:10px;
+}
+.cartire-grid-info ul li a, .cartire-grid-info ul li a:visited{
+	color:#FC3019;
 }
 .cartire-grid-cartinfo{
 	width:18%;
