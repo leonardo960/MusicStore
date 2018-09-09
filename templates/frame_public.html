@@ -29,7 +29,7 @@
 			<!--start-sub-header-->
 			<div class="sub-header">
 				<div class="logo">
-					<a href="index.php"><img src="../images/logo2.png" title="logo" /></a>
+					<a href="index.php"><img src="../images/logo2.png" title="Music Store" /></a>
 				</div>
 				<div class="sub-header-center">
 					<form class="search" action="search.php" type="GET">
@@ -45,11 +45,11 @@
 			<!--start-top-nav-->
 			<div class="top-nav">
 				<ul>
-					<li class="active1"><a href="index.php">Home</a></li>
-					<li><a href="favorites.php">Favorites</a></li>
-					<li><a href="recent_albums.php">Recent albums</a></li>
-					<li><a href="special_offers.php">Specials</a></li>
-					<li><a href="contacts.php">Contact us</a></li>
+					<li {if $active_logo == 'Home'}class="active1"{/if} ><a href="index.php">Home</a></li>
+					<li {if $active_logo == 'Favorites'}class="active1"{/if}><a href="favorites.php">Favorites</a></li>
+					<li {if $active_logo == 'Recent Albums'}class="active1"{/if}><a href="recent_albums.php">Recent albums</a></li>
+					<li {if $active_logo == 'Specials'}class="active1"{/if}><a href="special_offers.php">Specials</a></li>
+					<li {if $active_logo == 'Contact Us'}class="active1"{/if}><a href="contacts.php">Contact us</a></li>
 				</ul>
 				<div class="clear"> </div>
 			</div>
