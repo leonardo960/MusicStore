@@ -8,16 +8,16 @@
 	$content = "../templates/recent_albums_content.html";
 	
 	//Recuperiamo le ultime uscite
-	$result = $db->query("select * from album order by data_inserimento limit 20");
-
-	if($result){
-		$smarty->assign("recent_albums", $result);
+	$result = $db->getResult("select album.img_path, nome_album, nome_artista, descrizione, id_album, id_artista, prezzo, prezzo_offerta from album left join offerte_speciali on album.id_album = offerte_speciali.album join artisti on artisti.id_artista = album.fk_artista order by data_inserimento limit 20");
+	
+	for($i = 0; $i < count($result); $i++){
+		if(!($result[$i]['prezzo_offerta'] === NULL)){
+			$result[$i]['prezzo'] = $result[$i]['prezzo_offerta'];
+		}
 	}
 	
-	$result = $db->query("select * from artisti");
-	
 	if($result){
-		$smarty->assign("recent_albums_artists", $result);
+		$smarty->assign("recent_albums", $result);
 	}
 	
 	$smarty->assign("head", $head);

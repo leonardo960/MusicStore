@@ -9,14 +9,12 @@
 	
 	//Recuperiamo gli album preferiti dell'utente
 	$result = $db->query("select * from album_preferiti join album on album_preferiti.album = album.id_album join genere on genere.id_genere = album.fk_genere where utente = '{$_SESSION['auth']['username']}'");
-
 	if($result){
 		$smarty->assign("album", $result);
 	}
 	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
-
 	
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";

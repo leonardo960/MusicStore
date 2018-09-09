@@ -6,25 +6,21 @@
 						{foreach $recent_albums as $album}
 							<div class="cartire-grid">
 								<div class="cartire-grid-img">
-									<img src="{$album.img_path}" title="artist-image" />
+									<img src="{$album.img_path}" title="{$album.nome_album}" />
 								</div>
 								<div class="cartire-grid-info">
 									<ul>
 										<li><span>Title: </span>{$album.nome_album}</li>
-										{foreach $recent_albums_artists as $artist}
-											{if $artist.id_artista == $album.fk_artista}
-												<li><span>Artist: </span><a href="">{$artist.nome_artista}</a></li>
-											{/if}
-										{/foreach}
+										<li><span>Artist: </span><a href="artistpage.php?id_artista={$album.id_artista}">{$album.nome_artista}</a></li>
 									</ul>
 									<h3>Description</h3>
 									<p>{$album.descrizione}</p>
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
-									<a href="">Go to Info</a>
-									<h4><span>Price: </span>{$album.prezzo}&euro;</h4>
-									<a href="">Add to Cart</a>
+									<a href="albumpage.php?id_album={$album.id_album}">Go to Info</a>
+									<h4><span>Price Right Now: </span>{$album.prezzo}&euro;</h4>
+									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -32,8 +28,7 @@
 						</div>
 						<div class="cartire-pagination-box">
 						
-							<ul>
-							le info per la paginazione vanno qui
+							<ul> <!-- sarebbe per la paginazione -->
 								<li><a></a></li>
 							</ul>
 							
@@ -41,3 +36,4 @@
 					</div>
 	<!--End-cartires-page---->
 </div>
+<script src="../js/add_to_cart.js"></script>

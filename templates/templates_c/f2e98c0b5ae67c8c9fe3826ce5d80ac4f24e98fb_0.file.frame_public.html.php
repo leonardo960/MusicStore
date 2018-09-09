@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 14:39:33
+/* Smarty version 3.1.32, created on 2018-09-09 10:02:08
   from 'C:\wamp64\www\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b93df25321f04_72420309',
+  'unifunc' => 'content_5b94efa000cb88_41565389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2e98c0b5ae67c8c9fe3826ce5d80ac4f24e98fb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\frame_public.html',
-      1 => 1536417571,
+      1 => 1536487259,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b93df25321f04_72420309 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b94efa000cb88_41565389 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -72,7 +72,7 @@ function content_5b93df25321f04_72420309 (Smarty_Internal_Template $_smarty_tpl)
 			<div class="top-nav">
 				<ul>
 					<li class="active1"><a href="index.php">Home</a></li>
-					<li><a href="artists.php">Artists</a></li>
+					<li><a href="favorites.php">Favorites</a></li>
 					<li><a href="recent_albums.php">Recent albums</a></li>
 					<li><a href="special_offers.php">Specials</a></li>
 					<li><a href="contacts.php">Contact us</a></li>
