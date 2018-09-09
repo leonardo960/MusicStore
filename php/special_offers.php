@@ -13,6 +13,11 @@
 		$smarty->assign("special_offers", $result);
 	}
 	
+	$result = $db->query("select * from artisti");
+	if($result){
+		$smarty->assign("special_offers_artists", $result);
+	}
+	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 

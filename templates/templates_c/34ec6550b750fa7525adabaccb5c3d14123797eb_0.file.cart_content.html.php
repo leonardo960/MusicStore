@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 15:27:44
+/* Smarty version 3.1.32, created on 2018-09-09 09:48:26
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9298f06c6ca1_51704634',
+  'unifunc' => 'content_5b94ec6adcff03_29641885',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34ec6550b750fa7525adabaccb5c3d14123797eb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\cart_content.html',
-      1 => 1536308525,
+      1 => 1536415348,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9298f06c6ca1_51704634 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b94ec6adcff03_29641885 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
 	<div class="cart-page-container">
-		<form id="cart_form" action="process_order.php" method="POST">
+		<form id="cart_form" action="cart_cashout.php" method="POST">
 			<div class="cart-page-title-box">
 				<a class="cartpage-title">Your Cart :</a>
 			</div>

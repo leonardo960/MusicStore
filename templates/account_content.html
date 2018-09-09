@@ -1,39 +1,69 @@
 <body>
 	<div class="your-account-container">
 		<div class="account-box">
-			<ul>
+			
 				<div class="account-title-box">
-					<li>Your Account</li>
+				<ul>
+					<li>Profile Info</li>
+				</ul>
 				</div>
-			</ul>
+			
 			{if isset($change_confirm)}
 			{include file="$change_confirm"}
 			{/if}
 			
 			<form id="change_info_form" action="change_info.php" method="POST">
 			
-				<div class="account-static-info">
+				<div class="account-static-info account-info-profile">
 					<ul>
 						<li id="username_li"><input id="username_input" name="username_input" type="text"  value="{$username}" pattern="[A-Za-z0-9]{ldelim}4,20{rdelim}" title="The username must contain only letters or digits with a minimum of 4 and maximum 20." disabled><label for="username_input">Username</label></input></li>
+						<li id="email_li"><input id="email_input" name="email_input" type="email"  value="{$email}" disabled><label for="email_input">E-mail</label></input></li>
+						</ul>
+					<ul>
 						<li id="name_li"><input id="name_input" name="name_input" type="text"  value="{$name}" pattern="[A-Za-z]{ldelim}1,20{rdelim}" title="The name field must contain only letters up to 20." disabled><label for="name_input">Name</label></input></li>
 						<li id="surname_li"><input id="surname_input" name="surname_input" type="text"  value="{$surname}" pattern="[A-Za-z]{ldelim}1,20{rdelim}" title="The surname field must contain only letters up to 20." disabled><label for="surname_input">Surname</label></input></li>
-						<li id="email_li"><input id="email_input" name="email_input" type="email"  value="{$email}" disabled><label for="email_input">E-mail</label></input></li>
 					</ul>
 				</div>
 				
-				<div class="account-button-box-1">
-					<ul>
+				<div class="account-button-box" >
+					<ul class="account-button-box-inner" id="edit-button-box">
 						<li id="edit_btn" onclick="edit_click()"><a>Edit</a></li>
+						
 					</ul>
-				</div>
-				<div class="account-button-box-2" hidden>
-					<ul>
-						<li id="save_btn" onclick="save_click()" style="visibility:hidden"><a>Save</a></li>
-						<li id="cancel_btn" onclick="cancel_click()"style="visibility:hidden"><a>Cancel</a></li>
-					</ul>	
+					<ul class="account-button-box-inner" id="save-button-box">
+						<li id="save_btn" onclick="save_click()" ><a>Save</a></li>
+						<li id="cancel_btn" onclick="cancel_click()"><a>Cancel</a></li>
+					</ul>
 				</div>
 				
 			</form>
+			
+			
+				<div class="account-title-box">
+					<ul>
+						<li>Your Addresses</li>
+					</ul>
+				</div>
+				
+				<div class="account-static-info">
+				{foreach $addresses as $address}
+					<div class="address-card">
+						<ul>
+							<li><h1>User: </h1><h6>{$address.nome_user} {$address.cognome_user}</h6></li>
+							<li><h1>Locality: </h1><h6>{$address.localita}</h6></li>
+							<li><h1>Postal Code: </h1><h6>{$address.codice_postale}</h6></li>
+							<li><h1>Country: </h1><h6>{$address.paese}</h6></li>
+						</ul>
+						<ul>
+							<li><h1>Address: </h1><h6>{$address.indirizzo}</h6></li>
+							<li><h1>Telephone: </h1><h6>{$address.telefono}</h6></li>
+							<li><h1>E-Mail: </h1><h6>{$address.email}</h6></li>
+						</ul>
+					</div>
+				{/foreach}	
+				</div>
+				
+			
 			<form id="logout_form" action="logout.php" method="POST">
 				<div class="account-button-box-1">
 					<ul>

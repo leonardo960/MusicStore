@@ -14,6 +14,12 @@
 		$smarty->assign("album", $result);
 	}
 	
+	$result = $db->query("select * from artisti");
+
+	if($result){
+		$smarty->assign("favorite_artists", $result);
+	}
+	
 	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 

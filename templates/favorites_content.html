@@ -1,25 +1,30 @@
 <div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
-						<h5><span>Our</span> Artists</h5>
+						<h5><span>Your</span> Favorites</h5>
 						<div class="cartires-grids">
-						{foreach $artists as $artist}
+						{foreach $album as $favorite}
 							<div class="cartire-grid">
 								<div class="cartire-grid-img">
-									<img src="{$artist.img_path}" title="artist-image" />
+									<img src="{$favorite.img_path}" title="album-image" />
 								</div>
 								<div class="cartire-grid-info">
 									<ul>
-										<li>{$artist.nome_artista}</li>
+										<li><span>Title: </span>{$favorite.nome_album}</li>
+										{foreach $favorite_artists as $artist}
+											{if $artist.id_artista == $favorite.fk_artista}
+												<li><span>Artist: </span><a href="">{$artist.nome_artista}</a></li>
+											{/if}
+										{/foreach}
 									</ul>
-									<h3>Bio:</h3>
-									<p>{$artist.biografia}</p>
+									<h3>Description</h3>
+									<p>{$favorite.descrizione}</p>
 								</div>
 								<div class="cartire-grid-cartinfo">
-									<h4>General Info</h4>
+									<h4>Info Page</h4>
 									<a href="">Go to Info</a>
-									<h4>Related Albums</h4>
-									<a href="">View All</a>
+									<h4><span>Price: </span>{$favorite.prezzo}&euro;</h4>
+									<a href="">Add to Cart</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />

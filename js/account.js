@@ -4,16 +4,12 @@ var surname = document.getElementById("surname_input").value;
 var email = document.getElementById("email_input").value;
 
 function edit_click() {
-    document.getElementById("save_btn").style.visibility = "visible";
-	document.getElementById("cancel_btn").style.visibility = "visible";
 	document.getElementById('username_input').removeAttribute('disabled');
 	document.getElementById('name_input').removeAttribute('disabled');
 	document.getElementById('surname_input').removeAttribute('disabled');
 	document.getElementById('email_input').removeAttribute('disabled');
-	document.getElementById('edit_btn').style.visibility = "hidden";
-	
-	$('.account-button-box-1').fadeOut("slow");
-	$('.account-button-box-2').fadeIn("slow");
+	document.getElementById('edit-button-box').style.visibility = "hidden";
+	document.getElementById('save-button-box').style.visibility = "visible";
 	
 	document.getElementById('username_li').style.background = "#fafafa";
 	document.getElementById('name_li').style.background = "#fafafa";
@@ -32,12 +28,9 @@ function cancel_click() {
 	document.getElementById('surname_input').setAttribute('disabled','disabled');
 	document.getElementById('email_input').setAttribute('disabled','disabled');
 	
-	document.getElementById("save_btn").style.visibility = "hidden";
-	document.getElementById('edit_btn').style.visibility = "visible";
-	document.getElementById("cancel_btn").style.visibility = "hidden";
+	document.getElementById('edit-button-box').style.visibility = "visible";
+	document.getElementById('save-button-box').style.visibility = "hidden";
 	
-	$('.account-button-box-1').fadeIn("slow");
-	$('.account-button-box-2').fadeOut("slow");
 	
 	document.getElementById('username_li').style.background = "#a5a5a5";
 	document.getElementById('name_li').style.background = "#a5a5a5";
