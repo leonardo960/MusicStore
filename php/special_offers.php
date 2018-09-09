@@ -19,6 +19,8 @@
 	
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";
+	require "include/set_active_logo.inc.php";
+
 	
 	
 	$smarty->display("frame_public.html");
