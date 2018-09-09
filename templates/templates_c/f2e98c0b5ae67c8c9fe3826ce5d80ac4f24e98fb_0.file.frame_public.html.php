@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 11:16:54
+/* Smarty version 3.1.32, created on 2018-09-09 14:09:33
   from 'C:\wamp64\www\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9501260eac94_18108941',
+  'unifunc' => 'content_5b95299de14df4_76512116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f2e98c0b5ae67c8c9fe3826ce5d80ac4f24e98fb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\frame_public.html',
-      1 => 1536491543,
+      1 => 1536502171,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9501260eac94_18108941 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b95299de14df4_76512116 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -55,7 +55,7 @@ function content_5b9501260eac94_18108941 (Smarty_Internal_Template $_smarty_tpl)
 			<!--start-sub-header-->
 			<div class="sub-header">
 				<div class="logo">
-					<a href="index.php"><img src="../images/logo2.png" title="logo" /></a>
+					<a href="index.php"><img src="../images/logo2.png" title="Music Store" /></a>
 				</div>
 				<div class="sub-header-center">
 					<form class="search" action="search.php" type="GET">

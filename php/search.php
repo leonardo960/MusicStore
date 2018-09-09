@@ -37,7 +37,22 @@
 	
 	//Genero i numeretti corrispondenti alle pagine dei risultati
 	//Calcolo le pagine necessarie a mostrare i risultati
-	$pagesNeeded = ceil($totalItems / 10);
+	if (isset($_SESSION['search'][1])) {
+		$pagesNeededArtists = ceil(count($_SESSION['search'][1]) / 10);
+	} else {
+		$pagesNeededArtists = 0;
+	}
+	if (isset($_SESSION['search'][0])) {
+	$pagesNeededAlbum = ceil(count($_SESSION['search'][0]) / 10);
+	} else {
+		$pagesNeededAlbum = 0;
+	}
+	if (isset($_SESSION['search'][2])) {
+	$pagesNeededSongs = ceil(count($_SESSION['search'][2]) / 10);
+	} else {
+		$pagesNeededSongs = 0;
+	}
+	$pagesNeeded = max($pagesNeededArtists, $pagesNeededAlbum, $pagesNeededSongs);
 	
 	$smarty->assign("query", $_GET['query']);
 	
@@ -60,6 +75,8 @@
 	}
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";
+	require "include/set_active_logo.inc.php";
+
 
 	//Impostiamo i valori di default per i campi della pagina che generiamo e rispediamo a ricerca fatta
 	if(isset($_GET['MIN'])){

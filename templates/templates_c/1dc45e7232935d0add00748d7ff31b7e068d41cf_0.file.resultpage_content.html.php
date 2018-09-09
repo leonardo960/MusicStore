@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-05 13:48:12
+/* Smarty version 3.1.32, created on 2018-09-09 13:23:30
   from 'C:\wamp64\www\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b8fde9c6fbbf9_60977001',
+  'unifunc' => 'content_5b951ed2433867_32091501',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1dc45e7232935d0add00748d7ff31b7e068d41cf' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1536155259,
+      1 => 1536499406,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b8fde9c6fbbf9_60977001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b951ed2433867_32091501 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="resultpage-box">
 		<ul>	
@@ -136,8 +136,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 </li>
 							<li class="album-price-result">EUR: <?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
 </li>
-							<a class="result-album-detail-button" href="#"><li>See Details</li></a>
-							<a href="#" onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+							<a class="result-album-detail-button" href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+"><li>See Details</li></a>
+							<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 ')" class="result-album-addcart-button"><li>Add to Cart</li></a>
 						</div>
 					</div>

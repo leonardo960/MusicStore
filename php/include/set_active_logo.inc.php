@@ -17,5 +17,8 @@
 		case 'contacts':
 			$smarty->assign('active_logo', 'Contact Us');
 			break;
+		default:
+			$smarty->assign('active_logo', '');
+			break;
 	}
 ?>
