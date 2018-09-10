@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Set 10, 2018 alle 13:36
+-- Creato il: Set 10, 2018 alle 17:50
 -- Versione del server: 5.7.19
 -- Versione PHP: 5.6.31
 
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `album` (
 --
 
 INSERT INTO `album` (`nome_album`, `fk_genere`, `fk_artista`, `descrizione`, `prezzo`, `id_album`, `pubblicazione`, `dischi`, `tracce`, `etichetta`, `stock`, `img_path`, `data_inserimento`) VALUES
-('Bye Bye', 1, 2, 'Sesto album in studio della cantante Annalisa pubblicato il 16 Febbraio 2018 dalla Warner Music Company', 20, 1, NULL, NULL, NULL, NULL, 5, '../images/bye_bye_album_cover.jpg', NULL);
+('Bye Bye', 1, 2, 'Sixth studio album from singer Annalisa. The publishing was anticipated by the release of two singles: \"Direzione La Vita\", which made up for an all-women music video, and \"Il Mondo Prima di Te\", which placed third in Italian national singing competition Sanremo.', 20, 1, '2018-02-16', 1, 13, 'Warner Music Italy', 5, '../images/bye_bye_album_cover.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -126,28 +126,20 @@ CREATE TABLE IF NOT EXISTS `artisti` (
   `biografia` varchar(1000) DEFAULT NULL,
   `genere` int(11) DEFAULT NULL,
   `album_pubblicati` int(11) DEFAULT NULL,
-  `inizio_attivita` date DEFAULT NULL,
-  `fine_attivita` date DEFAULT NULL,
+  `inizio_attivita` year(4) DEFAULT NULL,
+  `fine_attivita` year(4) DEFAULT NULL,
   `img_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_artista`),
   KEY `fk_genere` (`genere`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `artisti`
 --
 
 INSERT INTO `artisti` (`nome_artista`, `id_artista`, `biografia`, `genere`, `album_pubblicati`, `inizio_attivita`, `fine_attivita`, `img_path`) VALUES
-('Dua Lipa', 1, NULL, NULL, NULL, NULL, NULL, NULL),
-('Annalisa', 2, NULL, 2, NULL, NULL, NULL, NULL),
-('Adriano Celentano', 3, NULL, NULL, NULL, NULL, NULL, NULL),
-('Black Eyed Peas', 4, NULL, NULL, NULL, NULL, NULL, NULL),
-('Shakira', 5, NULL, NULL, NULL, NULL, NULL, NULL),
-('Mika', 6, NULL, NULL, NULL, NULL, NULL, NULL),
-('Lorenzo Baglioni', 7, NULL, NULL, NULL, NULL, NULL, NULL),
-('Lo Stato Sociale', 8, NULL, NULL, NULL, NULL, NULL, NULL),
-('Ed Sheeran', 9, NULL, NULL, NULL, NULL, NULL, NULL),
-('Francesca Michielin', 10, NULL, NULL, NULL, NULL, NULL, NULL);
+('Annalisa', 2, 'I consider my phisics degree a reason to be proud of myself.', 2, 6, 2004, NULL, '../images/2.jpg'),
+('Francesco Gabbani', 6, 'Two times winner of the national italian singing contest Sanremo.', 1, 4, 2000, NULL, '../images/6.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,26 +149,22 @@ INSERT INTO `artisti` (`nome_artista`, `id_artista`, `biografia`, `genere`, `alb
 
 DROP TABLE IF EXISTS `canzoni`;
 CREATE TABLE IF NOT EXISTS `canzoni` (
-  `fk_genere` int(11) NOT NULL,
   `fk_album` int(11) NOT NULL,
   `fk_artista` int(11) NOT NULL,
-  `descrizione` varchar(200) NOT NULL,
   `id_canzone` int(11) NOT NULL AUTO_INCREMENT,
   `nome_canzone` varchar(30) NOT NULL,
-  `pubblicazione` date DEFAULT NULL,
-  `durata` int(11) DEFAULT NULL,
   `song_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_canzone`),
   KEY `fk_album` (`fk_album`),
   KEY `fk_artista` (`fk_artista`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `canzoni`
 --
 
-INSERT INTO `canzoni` (`fk_genere`, `fk_album`, `fk_artista`, `descrizione`, `id_canzone`, `nome_canzone`, `pubblicazione`, `durata`, `song_path`) VALUES
-(1, 1, 1, 'Brano della cantante italiana Annalisa, secondo estratto dal sesto album Bye Bye e pubblicato il 6 Febbraio 2018.', 1, 'Il Mondo Prima di Te', NULL, NULL, NULL);
+INSERT INTO `canzoni` (`fk_album`, `fk_artista`, `id_canzone`, `nome_canzone`, `song_path`) VALUES
+(1, 2, 2, 'Il Mondo Prima Di Te', 'http://localhost:8080/MusicStore/songs/Annalisa-Il-Mondo-Prima-Di-Te.mp3');
 
 -- --------------------------------------------------------
 
