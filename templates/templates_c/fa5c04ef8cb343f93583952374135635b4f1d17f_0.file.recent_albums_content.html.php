@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 15:13:18
+/* Smarty version 3.1.32, created on 2018-09-10 14:12:15
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\recent_albums_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b95388e35c9f8_73053910',
+  'unifunc' => 'content_5b967bbfc3ff78_56210053',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa5c04ef8cb343f93583952374135635b4f1d17f' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\recent_albums_content.html',
-      1 => 1536503831,
+      1 => 1536588710,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b95388e35c9f8_73053910 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b967bbfc3ff78_56210053 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -65,13 +65,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</div>
-						<div class="cartire-pagination-box">
 						
-							<ul> <!-- sarebbe per la paginazione -->
-								<li><a></a></li>
-							</ul>
-							
-						</div>
 					</div>
 	<!--End-cartires-page---->
 </div>

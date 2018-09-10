@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 09:02:30
+/* Smarty version 3.1.32, created on 2018-09-10 14:09:31
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\favorites_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b963326b520b5_63321597',
+  'unifunc' => 'content_5b967b1b220795_63853466',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '104afc6fdea1aeb1b6f4ee686e3f7cf2fe62aad5' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\favorites_content.html',
-      1 => 1536570125,
+      1 => 1536588569,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b963326b520b5_63321597 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b967b1b220795_63853466 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
 						<h5><span>Your</span> Favorites</h5>
 						<div class="cartires-grids">
+						<?php if (isset($_smarty_tpl->tpl_vars['album']->value)) {?>
 						<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'favorite');
 if ($_from !== null) {
@@ -62,14 +63,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['favorite']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+						<?php } else { ?>
+							<div class="cartire-grid">
+								<h4>Your don't have any favorite album yet. Add some!</h4>
+							</div>
+						<?php }?>
 						</div>
-						<div class="cartire-pagination-box">
 						
-							<ul> <!-- sarebbe per la paginazione -->
-								<li><a></a></li>
-							</ul>
-							
-						</div>
 					</div>
 	<!--End-cartires-page---->
 </div><?php }
