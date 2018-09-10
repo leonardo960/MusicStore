@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 14:37:54
+/* Smarty version 3.1.32, created on 2018-09-10 16:43:53
   from 'C:\wamp64\www\MusicStore\templates\special_offers_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9681c22aae66_82010644',
+  'unifunc' => 'content_5b969f4948d192_72318062',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2bc69631ea432dbc378dc6c13f9fbadf3f9ddcc1' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\special_offers_content.html',
-      1 => 1536590252,
+      1 => 1536597831,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9681c22aae66_82010644 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b969f4948d192_72318062 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -46,7 +46,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['artist']->value) {
 ?>
 											<?php if ($_smarty_tpl->tpl_vars['artist']->value['id_artista'] == $_smarty_tpl->tpl_vars['album']->value['fk_artista']) {?>
-												<li><span>Artist: </span><a href=""><?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
+												<li><span>Artist: </span><a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
 </a></li>
 											<?php }?>
 										<?php
@@ -60,10 +61,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
-									<a href="">Go to Info</a>
+									<a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+">Go to Info</a>
 									<h4><span>Special Price: </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
 &euro;</h4>
-									<a href="">Add to Cart</a>
+									<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+')">Add to Cart</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -75,5 +78,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						
 					</div>
 	<!--End-cartires-page---->
-</div><?php }
+</div>
+<?php echo '<script'; ?>
+ src="../js/add_to_cart.js"><?php echo '</script'; ?>
+><?php }
 }

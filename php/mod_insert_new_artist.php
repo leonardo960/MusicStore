@@ -1,13 +1,11 @@
 <?php
-	require 'include/check_service_permission.inc.php';
+	require 'include/mod.check_service_permission.inc.php';
 	//Init view
 	require "init_smarty.php";
 	
-	$head = "../templates/mod_insert_new_artist_head.html";
 	$content = "../templates/mod_insert_new_artist_content.html";
 	
 	if (isset($_POST['nome_artista']) && isset($_POST['biografia']) && isset($_POST['inizio_attivita']) && isset($_POST['fine_attivita']) && isset($_POST['genere'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ARTISTA
-		require "include/dbms.inc.php";
 		
 		function test_input($data) {
 		$data = trim($data);
@@ -21,7 +19,7 @@
 		$_POST['fine_attivita'] = test_input($_POST['fine_attivita']);
 		$_POST['genere'] = test_input($_POST['genere']);
 		
-		$target_dir = "../images/artists";
+		$target_dir = "../images/";
 		require "include/mod.insert_new_artist.inc.php";
 		
 		Header("Location: mod_content_management.php?message=artist_inserted");
@@ -41,11 +39,11 @@
 		$smarty->assign("fine_attivita", $_SESSION['new_artist_data']['fine_attivita']);
 		$smarty->assign("genere", $_SESSION['new_artist_data']['genere']);
 	}
-} 
-	
+
+	$result = $db->query("select * from genere");
+	$smarty->assign("generi", $result);
 	require "include/mod.set_logged_header.inc.php";
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/mod_frame_public.html");
