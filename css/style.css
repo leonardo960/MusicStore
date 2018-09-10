@@ -968,6 +968,17 @@ body{
 	position:relative;
 	float:left;
 }
+.album-song-card{
+	padding: 10px;
+	background: #f3f3f3;
+	margin-bottom: 5px;
+	border-radius: 7px;
+}
+.album-song-card li{
+	display: block;
+	float: left;
+	padding: 0 10px;
+}
 /*----zoomer----*/
 .clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden;}
 		.clearfix{display:block;zoom:1}
@@ -1054,6 +1065,9 @@ body{
 .product-price-info{
 	float:right;
 	width: 73%;
+}
+.product-price-info label{
+	color: #ff3300;
 }
 .product-shipping{
 	width: 45%;

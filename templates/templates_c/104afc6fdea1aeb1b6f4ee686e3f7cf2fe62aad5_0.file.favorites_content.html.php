@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 08:34:28
+/* Smarty version 3.1.32, created on 2018-09-10 09:02:30
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\favorites_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b962c94bdbb23_68633279',
+  'unifunc' => 'content_5b963326b520b5_63321597',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '104afc6fdea1aeb1b6f4ee686e3f7cf2fe62aad5' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\favorites_content.html',
-      1 => 1536568466,
+      1 => 1536570125,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b962c94bdbb23_68633279 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b963326b520b5_63321597 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -49,7 +49,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['favorite']->value) {
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
-									<a href="">Go to Info</a>
+									<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
+">Go to Info</a>
 										<h4><span>Price Right Now: </span><?php echo $_smarty_tpl->tpl_vars['favorite']->value['prezzo_offerta'];?>
 &euro;</h4>
 									<a href="">Add to Cart</a>

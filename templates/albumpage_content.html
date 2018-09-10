@@ -4,50 +4,51 @@
 						<div class="product-info">
 						
 							<div class="product-image">
-								<div id="container">
-							<div class="flexslider">
-									<div class="clearfix"></div>
-								<div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1200%; transition-duration: 0.6s; transform: translate3d(-313px, 0px, 0px);"><li data-thumb="../images/triumph_big1.jpg" class="clone" aria-hidden="true" style="width: 313px; float: left; display: block;">
-								   <div class="thumb-image"> <img src="../images/triumph_small1.jpg" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
-								</li>
-								<li data-thumb="../images/triumph_big1.jpg" class="flex-active-slide" style="width: 313px; float: left; display: block;">
-									<div class="thumb-image"> <img src="../images/triumph_small1.jpg" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
-								</li>
-								<li data-thumb="../images/triumph_big1.jpg" class="" style="width: 313px; float: left; display: block;">
-									 <div class="thumb-image"> <img src="../images/triumph_small1.jpg" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
-								</li>
-								<li data-thumb="../images/triumph_big1.jpg" class="" style="width: 313px; float: left; display: block;">
-									 <div class="thumb-image"> <img src="../images/triumph_small1.jpg" data-imagezoom="true" class="img-responsive" draggable="false"> </div>
-								</li>
-								
-							  </ul></div><ul class="flex-direction-nav"><li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li><li class="flex-nav-next"><a class="flex-next" href="#">Next</a></li></ul>
-							</div>	
-						</div>
+								<img src="{$album.img_path}">
 							</div>
 							<div class="product-price-info">
 									<div class="product-value">
-									<h4>Product-Complete Details With Value</h4>
+									<h4><label>Title : </label>{$album.nome_album}</h4>
 									<ul>
-										<li>{$album.nome_album}</li>
+										
+										<li><h2>Artist : {$album.nome_artista}</h2></li>
 										<br>
-										{foreach $songs as $song}
+										<li><h2>Genre : {$album.genere}</h2></li>
 										<br>
-										<li>{$song.nome_canzone}</li>
-										<audio controls controlsList="nodownload">
-											<source src="{$song.song_path}" type="audio/mpeg">
-											Your browser does not support the audio element.
-										</audio>
-										{/foreach}
+										<li><h2>Label : {$album.etichetta}</h2></li>
+										<br>
+										<li><h2>Disks : {$album.dischi}</h2></li>
+										<br>
+										<li><h2>Tracks : {$album.tracce}</h2></li>
+										<br>
+										<li><h2>Description : </h2><h5>{$album.descrizione}<h5></li>
+										<br>
+										<li><h2>Published on : {$album.pubblicazione}</h2></li>
+										<br>
 										<li><h2>Price :</h2></li>
-										<li><span>{$album.prezzo}</span></li>
-										<li><h5>{$album.prezzo}</h5></li>
-										<li><a href="#">{$album.stock}</a></li>
+										<li><span>{$album.prezzo}&euro;</span></li>
+										<li><a>{$album.prezzo_offerta}&euro;</a></li>
+										<br>
+										<li><a href="#">In stock : {$album.stock}</a></li>
+										
+										<br>
+										<br>
+										<h4><label>Songs: </label></h4>
+										{foreach $songs as $song}
+											<div class="album-song-card">
+												<li><h3>Title : <a>{$song.nome_canzone}</a></h3></li>
+												
+												<audio controls controlsList="nodownload">
+													<source src="{$song.song_path}" type="audio/mpeg">
+													Your browser does not support the audio element.
+												</audio>
+											</div>
+										{/foreach}
+										
 									</ul>
 								</div>
 								<div class="product-description">
-									<h3>Description :</h3>
-									<p>{$album.descrizione}</p>
-									<a href="#">Adcart</a>
+									<a href="#">Add to Cart</a>
 								</div>
 							</div>
 							<div class="clear"> </div>
