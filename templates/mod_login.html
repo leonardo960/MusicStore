@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+div {
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -100px;
+}
+.header {
+	position: absolute;
+	top: 25%;
+	left: 35%;
+	margin-top: -100px;
+	margin-left: -100px;
+}
+
+.login_button {
+	position: absolute;
+	top: 115%;
+	left: 70%;
+	margin-top: -100px;
+	margin-left: -100px;
+}
+</style>
+	<body>
+	<b class="header"><h1>Pagina di Login per i Moderatori di Music Store</h1></b>
+	{if isset($message)}{include file="$message"}{/if}
+	<div>
+	<br>
+	<br>
+	<form action="mod_login.php" method=POST>
+	<label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Inserisci lo username" name="username" required>
+	<br>
+    <br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Inserisci la password" name="password" required>
+	<br>
+    <br>
+    <button class="login_button" type="submit">Login</button>
+	</form>
+	</div>
+	</body>
+</html>

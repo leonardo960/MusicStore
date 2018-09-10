@@ -1,11 +1,11 @@
 <?php
-	require 'include/check_service_permission.inc.php';
+	require 'include/mod.check_service_permission.inc.php';	
 	
 	require "init_smarty.php";
 	
-	$head = "../templates/mod_content_management_head.html";
 	$content = "../templates/mod_content_management_content.html";
 	
+	if(isset($_GET['message'])){
 	switch($_GET['message']){ //Settato dalle varie pagine di manipolazione dei dati
 		case "artist_inserted":
 			$smarty->assign("message", "L'artista è stato inserito con successo nel sistema.");
@@ -72,10 +72,10 @@
 			break;
 		
 	}
+	}
 	
-	require "include/set_logged_header.inc.php";
+	require "include/mod.set_logged_header.inc.php";
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/mod_frame_public.html");

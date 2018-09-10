@@ -1,29 +1,24 @@
-var username = document.getElementById("username_input").value;
 var name = document.getElementById("name_input").value;
 var surname = document.getElementById("surname_input").value;
 var email = document.getElementById("email_input").value;
 
 function edit_click() {
-	document.getElementById('username_input').removeAttribute('disabled');
 	document.getElementById('name_input').removeAttribute('disabled');
 	document.getElementById('surname_input').removeAttribute('disabled');
 	document.getElementById('email_input').removeAttribute('disabled');
 	document.getElementById('edit-button-box').style.visibility = "hidden";
 	document.getElementById('save-button-box').style.visibility = "visible";
 	
-	document.getElementById('username_li').style.background = "#fafafa";
 	document.getElementById('name_li').style.background = "#fafafa";
 	document.getElementById('surname_li').style.background = "#fafafa";
 	document.getElementById('email_li').style.background = "#fafafa";
 
 }
 function cancel_click() {
-	document.getElementById('username_input').value = username;
 	document.getElementById('name_input').value = name;
 	document.getElementById('surname_input').value = surname;
 	document.getElementById('email_input').value = email;
 	
-	document.getElementById('username_input').setAttribute('disabled','disabled');
 	document.getElementById('name_input').setAttribute('disabled','disabled');
 	document.getElementById('surname_input').setAttribute('disabled','disabled');
 	document.getElementById('email_input').setAttribute('disabled','disabled');
@@ -32,7 +27,6 @@ function cancel_click() {
 	document.getElementById('save-button-box').style.visibility = "hidden";
 	
 	
-	document.getElementById('username_li').style.background = "#a5a5a5";
 	document.getElementById('name_li').style.background = "#a5a5a5";
 	document.getElementById('surname_li').style.background = "#a5a5a5";
 	document.getElementById('email_li').style.background = "#a5a5a5";

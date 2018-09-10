@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 13:51:24
+/* Smarty version 3.1.32, created on 2018-09-10 07:50:25
   from 'C:\wamp64\www\MusicStore\templates\index_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b93d3dc63ff49_70937348',
+  'unifunc' => 'content_5b962241e53688_16599979',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfc5273241ddda47522367ae9edaa497a28759bb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\index_content.html',
-      1 => 1536414510,
+      1 => 1536565824,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b93d3dc63ff49_70937348 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b962241e53688_16599979 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--start-image-slider---->
 					<div class="image-slider">
 						<!-- Slideshow 1 -->
@@ -61,7 +61,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</div>
 						<div class="viewall-button-container">
 							<ul>
-								<li><a class="button1" href="#">View all</a></li>
+								<li><a class="button1" href="recent_albums.php">View all</a></li>
 							</ul>
 						</div>
 						

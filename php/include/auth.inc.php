@@ -7,11 +7,11 @@
   
 
 		$md5d = MD5('{$_POST["password"]}');
-        $result = $db->getResult("SELECT username, password, email, nome, cognome FROM utenti
-                                   WHERE username = '{$_POST['username']}'
+        $result = $db->getResult("SELECT account.username, password, email, nome, cognome FROM account join anagrafica_clienti on account.username = anagrafica_clienti.username
+                                   WHERE account.username = '{$_POST['username']}'
                                      AND password = '{$md5d}'");
 									 
-        if (!$result) {
+        if (count($result[0]) == 0) {
             /* utente o password errate */
             Header("Location: login.php?error=dataincorrect");
 			exit();

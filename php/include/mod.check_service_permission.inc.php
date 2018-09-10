@@ -3,8 +3,8 @@
 	if (session_status() == PHP_SESSION_NONE) {
 		session_start();
 	}
-	if(isset($_SESSION['auth'])){
-		$current_username = $_SESSION['auth']['username'];
+	if(isset($_SESSION['mod'])){
+		$current_username = $_SESSION['mod']['username'];
 	} else {
 		header("location: permission_denied.php");
 		exit();

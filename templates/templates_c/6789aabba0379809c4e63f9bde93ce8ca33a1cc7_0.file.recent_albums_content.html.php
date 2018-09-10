@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 10:59:41
+/* Smarty version 3.1.32, created on 2018-09-10 07:50:27
   from 'C:\wamp64\www\MusicStore\templates\recent_albums_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b94fd1d2a6225_50716504',
+  'unifunc' => 'content_5b962243822288_72311102',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6789aabba0379809c4e63f9bde93ce8ca33a1cc7' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\recent_albums_content.html',
-      1 => 1536490779,
+      1 => 1536565778,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b94fd1d2a6225_50716504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b962243822288_72311102 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -77,6 +77,5 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php echo '<script'; ?>
  src="../js/add_to_cart.js"><?php echo '</script'; ?>
->
-<?php }
+><?php }
 }
