@@ -4,6 +4,9 @@
  
 	$head = "../templates/cart_cashout_head.html";
 	$content = "../templates/cart_cashout_content.html";
+	
+	session_start();
+	
 	if(isset($_SESSION['auth'])){
 		if(isset($_SESSION['cart'][0])){
 			$smarty->assign("head", $head);

@@ -1,6 +1,4 @@
 <?php
-	//TODO:
-	//Prima devo verificare che i dati inseriti siano conformi a dei pattern adeguati (SQL-injection)
 	require "include/dbms.inc.php";
 	require "init_smarty.php";
 	
@@ -18,7 +16,7 @@
 	//E' andato tutto bene, mostro un messaggio di registrazione avvenuta con successo
 
 	$head = "../templates/index_head.html";
-	$content = "../templates/registration_successful.html";
+	$content = "../templates/messages/registration_successful.html";
 	
 	$smarty->assign("newuser", $_SESSION['auth']['nome']);
 	$smarty->assign("head", $head);
@@ -27,6 +25,7 @@
 	
 	require "include/set_logged_header.inc.php";
 	require "include/set_cart_header.inc.php";
+	require "include/set_active_logo.inc.php";
 	
 	$smarty->display("../templates/frame_public.html");
 

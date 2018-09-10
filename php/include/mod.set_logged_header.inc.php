@@ -2,11 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if ( isset($_SESSION['auth']) ) {
-		$logged_in_header = $smarty->fetch("../templates/mod_logged_in_header.html");
-		$smarty->assign("logged", "Logged Moderator: " . $_SESSION['auth']['username']);
-	} else {
-		$not_logged_in_header = $smarty->fetch("../templates/mod_not_logged_in_header.html");
-		$smarty->assign("logged", $not_logged_in_header);
-	}
+if ( isset($_SESSION['mod']) ) {
+		$smarty->assign("logged_moderator", $_SESSION['mod']['username']);
+}
 ?>

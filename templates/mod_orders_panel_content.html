@@ -1,0 +1,55 @@
+<style>
+	.page-numbers {
+		position: absolute;
+		left: 40%;
+	}
+	.title {
+		position: absolute;
+		top: 15%;
+		right: 42%;
+	}
+	.orders-tab {
+		position: absolute;
+		top: 30%;
+		right: 37%;
+		font-size: 17px;
+	}
+	
+	.back-button {
+		position: absolute;
+		top: 18%;
+		left: 5%;
+	}
+</style>
+<h2 class="title">Pannello Gestione Ordini<h2>
+<form class="back-button" action="mod_panel.php">
+    <input type="submit" value="Torna al Pannello Moderatore" />
+</form>
+<div class="orders-tab">
+	{if isset($orders)}
+		{foreach $orders as $order}
+			<h5 style="margin: 0;">Id Ordine: {$order.id_ordine} Cliente: {$order.cliente} Id Album: {$order.album} Data Ordine: {$order.data}</h5>
+			<label>Stato Ordine: </label>
+			<select onchange="changeStatus({$order.id_ordine}, this.value);">
+				<option value="Inserito" {if $order.status === 'Inserito'}selected{/if}>Inserito</option>
+				<option value="Spedito"  {if $order.status === 'Spedito'}selected{/if}>Spedito</option>
+				<option value="Consegnato" {if $order.status === 'Consegnato'}selected{/if}>Consegnato</option>
+			</select> 
+	
+	
+		<br>
+		<br>
+		{/foreach}
+		<div class="page-numbers">
+		{for $counter=1 to $pages_needed}
+			<a style="text-decoration:none" href="mod_orders_panel.php?page={$counter}">{$counter} </a>
+		{/for}
+		</div>
+	{/if}
+</div>
+<script src="../js/jquery-1.6.js"></script>
+<script>
+function changeStatus(ordine, status) {
+   $.post( "mod_orders_panel.php", { id_ordine: ordine, new_status: status });
+}
+</script>

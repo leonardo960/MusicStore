@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Set 09, 2018 alle 14:29
+-- Creato il: Set 10, 2018 alle 13:36
 -- Versione del server: 5.7.19
 -- Versione PHP: 5.6.31
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `music_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `account`
+--
+
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE IF NOT EXISTS `account` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `gruppo` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `account`
+--
+
+INSERT INTO `account` (`username`, `password`, `gruppo`) VALUES
+('admin', 'admin', 'Admin'),
+('leonardo96', '7150404d07e506d07bf13d1aade209bf', 'Clienti'),
+('mod', 'mod', 'Moderatori_Base');
 
 -- --------------------------------------------------------
 
@@ -68,12 +91,27 @@ CREATE TABLE IF NOT EXISTS `album_preferiti` (
   KEY `fk_utente` (`utente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dump dei dati per la tabella `album_preferiti`
+-- Struttura della tabella `anagrafica_clienti`
 --
 
-INSERT INTO `album_preferiti` (`album`, `utente`) VALUES
-(1, 'leonardo96');
+DROP TABLE IF EXISTS `anagrafica_clienti`;
+CREATE TABLE IF NOT EXISTS `anagrafica_clienti` (
+  `username` varchar(20) NOT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `cognome` varchar(50) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `anagrafica_clienti`
+--
+
+INSERT INTO `anagrafica_clienti` (`username`, `nome`, `cognome`, `email`) VALUES
+('leonardo96', 'Leonardo', 'Formichetti', 'rosso_x96@hotmail.it');
 
 -- --------------------------------------------------------
 
@@ -92,7 +130,7 @@ CREATE TABLE IF NOT EXISTS `artisti` (
   `fine_attivita` date DEFAULT NULL,
   `img_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_artista`),
-  KEY `genere` (`genere`)
+  KEY `fk_genere` (`genere`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
@@ -129,7 +167,8 @@ CREATE TABLE IF NOT EXISTS `canzoni` (
   `durata` int(11) DEFAULT NULL,
   `song_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_canzone`),
-  KEY `fk_album` (`fk_album`)
+  KEY `fk_album` (`fk_album`),
+  KEY `fk_artista` (`fk_artista`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
@@ -138,18 +177,6 @@ CREATE TABLE IF NOT EXISTS `canzoni` (
 
 INSERT INTO `canzoni` (`fk_genere`, `fk_album`, `fk_artista`, `descrizione`, `id_canzone`, `nome_canzone`, `pubblicazione`, `durata`, `song_path`) VALUES
 (1, 1, 1, 'Brano della cantante italiana Annalisa, secondo estratto dal sesto album Bye Bye e pubblicato il 6 Febbraio 2018.', 1, 'Il Mondo Prima di Te', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `carrello`
---
-
-DROP TABLE IF EXISTS `carrello`;
-CREATE TABLE IF NOT EXISTS `carrello` (
-  `id_carrello` int(11) NOT NULL,
-  PRIMARY KEY (`id_carrello`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -228,21 +255,8 @@ CREATE TABLE IF NOT EXISTS `indirizzi_utenti` (
   `cap` varchar(10) DEFAULT NULL,
   `recapito` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`id_indirizzo`,`utente`),
-  KEY `fk_utente` (`utente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `moderatori`
---
-
-DROP TABLE IF EXISTS `moderatori`;
-CREATE TABLE IF NOT EXISTS `moderatori` (
-  `username` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `utente` (`utente`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -277,8 +291,9 @@ CREATE TABLE IF NOT EXISTS `ordini` (
   `album` int(11) DEFAULT NULL,
   `status` varchar(50) DEFAULT NULL,
   `data` date DEFAULT NULL,
-  `indirizzo_ordine` int(11) NOT NULL,
+  `indirizzo_ordine` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_ordine`),
+  KEY `fk_cliente` (`cliente`),
   KEY `fk_indirizzo_ordine` (`indirizzo_ordine`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -305,15 +320,17 @@ INSERT INTO `permessi` (`servizio`, `gruppo`) VALUES
 ('mod_insert_new_album.php', 'Admin'),
 ('mod_insert_new_artist.php', 'Admin'),
 ('mod_insert_new_song.php', 'Admin'),
+('mod_logout.php', 'Admin'),
+('mod_orders_panel.php', 'Admin'),
 ('mod_panel.php', 'Admin'),
-('orders_panel.php', 'Admin'),
-('update_order_status.php', 'Admin'),
+('mod_update_order_status.php', 'Admin'),
 ('change_info.php', 'Clienti'),
 ('logout.php', 'Clienti'),
 ('mod_content_management.php', 'Moderatori_Base'),
 ('mod_insert_new_album.php', 'Moderatori_Base'),
 ('mod_insert_new_artist.php', 'Moderatori_Base'),
 ('mod_insert_new_song.php', 'Moderatori_Base'),
+('mod_logout.php', 'Moderatori_Base'),
 ('mod_panel.php', 'Moderatori_Base');
 
 -- --------------------------------------------------------
@@ -347,36 +364,15 @@ INSERT INTO `servizi` (`nome_servizio`) VALUES
 ('mod_insert_new_artist.php'),
 ('mod_insert_new_song.php'),
 ('mod_login.php'),
+('mod_logout.php'),
+('mod_orders_panel.php'),
 ('mod_panel.php'),
 ('mod_signup.php'),
+('mod_update_order_status.php'),
 ('recent_albums.php'),
 ('search.php'),
 ('signup.php'),
 ('special_offers.php');
-
--- --------------------------------------------------------
-
---
--- Struttura della tabella `utenti`
---
-
-DROP TABLE IF EXISTS `utenti`;
-CREATE TABLE IF NOT EXISTS `utenti` (
-  `username` varchar(20) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `nome` varchar(20) NOT NULL,
-  `cognome` varchar(20) NOT NULL,
-  `gruppo` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dump dei dati per la tabella `utenti`
---
-
-INSERT INTO `utenti` (`username`, `password`, `email`, `nome`, `cognome`, `gruppo`) VALUES
-('leonardo96', '7150404d07e506d07bf13d1aade209bf', 'rosso_x96@hotmail.it', 'Leonardo', 'Formichetti', 'Clienti');
 
 --
 -- Limiti per le tabelle scaricate
@@ -389,22 +385,53 @@ ALTER TABLE `album`
   ADD CONSTRAINT `fk_artista` FOREIGN KEY (`fk_artista`) REFERENCES `artisti` (`id_artista`) ON DELETE CASCADE;
 
 --
+-- Limiti per la tabella `anagrafica_clienti`
+--
+ALTER TABLE `anagrafica_clienti`
+  ADD CONSTRAINT `fk_utente` FOREIGN KEY (`username`) REFERENCES `account` (`username`) ON DELETE CASCADE;
+
+--
 -- Limiti per la tabella `artisti`
 --
 ALTER TABLE `artisti`
-  ADD CONSTRAINT `artisti_ibfk_1` FOREIGN KEY (`genere`) REFERENCES `genere` (`id_genere`);
+  ADD CONSTRAINT `fk_genere` FOREIGN KEY (`genere`) REFERENCES `genere` (`id_genere`) ON DELETE SET NULL;
 
 --
 -- Limiti per la tabella `canzoni`
 --
 ALTER TABLE `canzoni`
+  ADD CONSTRAINT `canzoni_ibfk_1` FOREIGN KEY (`fk_artista`) REFERENCES `artisti` (`id_artista`) ON DELETE CASCADE,
   ADD CONSTRAINT `fk_album` FOREIGN KEY (`fk_album`) REFERENCES `album` (`id_album`) ON DELETE CASCADE;
+
+--
+-- Limiti per la tabella `carte_ordini`
+--
+ALTER TABLE `carte_ordini`
+  ADD CONSTRAINT `carte_ordini_ibfk_1` FOREIGN KEY (`ordine`) REFERENCES `ordini` (`id_ordine`) ON DELETE CASCADE;
+
+--
+-- Limiti per la tabella `indirizzi_utenti`
+--
+ALTER TABLE `indirizzi_utenti`
+  ADD CONSTRAINT `indirizzi_utenti_ibfk_1` FOREIGN KEY (`utente`) REFERENCES `anagrafica_clienti` (`username`) ON DELETE CASCADE;
+
+--
+-- Limiti per la tabella `offerte_speciali`
+--
+ALTER TABLE `offerte_speciali`
+  ADD CONSTRAINT `offerte_speciali_ibfk_1` FOREIGN KEY (`album`) REFERENCES `album` (`id_album`) ON DELETE CASCADE;
 
 --
 -- Limiti per la tabella `ordini`
 --
 ALTER TABLE `ordini`
-  ADD CONSTRAINT `fk_indirizzo_ordine` FOREIGN KEY (`indirizzo_ordine`) REFERENCES `indirizzi_utenti` (`id_indirizzo`);
+  ADD CONSTRAINT `fk_indirizzo_ordine` FOREIGN KEY (`indirizzo_ordine`) REFERENCES `indirizzi_utenti` (`id_indirizzo`) ON DELETE SET NULL;
+
+--
+-- Limiti per la tabella `permessi`
+--
+ALTER TABLE `permessi`
+  ADD CONSTRAINT `permessi_ibfk_1` FOREIGN KEY (`servizio`) REFERENCES `servizi` (`nome_servizio`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,6 +3,7 @@
 					<div class="Cartires">
 						<h5><span>Your</span> Favorites</h5>
 						<div class="cartires-grids">
+						{if isset($album)}
 						{foreach $album as $favorite}
 							<div class="cartire-grid">
 								<div class="cartire-grid-img">
@@ -26,6 +27,9 @@
 							</div><br />
 							
 						{/foreach}
+						{else}
+						<h4>Your don't have any favorite album yet. Add some!</h4>
+						{/if}
 						</div>
 						<div class="cartire-pagination-box">
 						

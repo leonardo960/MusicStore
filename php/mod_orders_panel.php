@@ -1,15 +1,16 @@
 <?php	
-	require "init_smarty.php";	
-	require "include/dbms.inc.php";
+	require "init_smarty.php";		
+	require 'include/mod.check_service_permission.inc.php';
 	
-	require 'include/check_service_permission.inc.php';
-	
-	$head = "../templates/mod_orders_panel_head.html";
 	$content = "../templates/mod_orders_panel_content.html";
 	
-	
+	if(isset($_POST['new_status']) && isset($_POST['id_ordine'])){
+		$db->query("update ordini set status = '{$_POST['new_status']}' where id_ordine = '{$_POST['id_ordine']}'");
+		echo " Stato dell'ordine cambiato. ";
+		exit();
+	}
 	//Vediamo quanti ordini ci sono e generiamo i numeretti per le pagine
-	$result = $db->query("select count(*) from ordini");
+	$result = $db->getResult("select count(*) from ordini");
 	$totalItems = 0;
 	if($result){
 		$totalItems = $result[0]["count(*)"]; //Da controllare se funziona così
@@ -17,24 +18,33 @@
 	
 	//Popoliamo la lista degli ordini
 	if($_GET['page'] && $_GET['page'] > 0){
-		$base = $_GET['page']*10 - 11; //e.g page=2 2*10=20-11=9 quindi comincia dal record 10
-		$offset = $base + 10; //dall'esempio qui sopra, $offset = 10 + 10 = 20; quindi fino al record 20
-		$result = $db->query("select * from ordini order by data limit {$base},{$offset}");
-		if($result){
-			$smarty->assign("orders", $result);
+		if($_GET['page'] == 1){
+			$base = 0; //comincia dal record 1 (mysql lo incrementa di 1)
+			$offset = $base + 5; //ritorna 10 record
+			$result = $db->getResult("select * from ordini order by data limit {$base},{$offset}");
+			if(!count($result[0]) == 0){
+				$smarty->assign("orders", $result);
+			}
+		} else {
+			$base = $_GET['page']*5 - 5; //e.g page=2 2*5=10-5=5 quindi comincia dal record 6
+			$offset = $base + 5; //dall'esempio qui sopra, $offset = 5 + 5 = 10; quindi fino al record 10
+			$result = $db->getResult("select * from ordini order by data limit {$base},{$offset}");
+			if(!count($result[0]) == 0){
+				$smarty->assign("orders", $result);
+			}
 		}
+		
 	} else {
-		header("location: orders_panel.php?page=1");
+		header("location: mod_orders_panel.php?page=1");
 		exit();
 	}
 	
-	$pagesNeeded = ceil($totalItems / 10);
+	$pagesNeeded = ceil($totalItems / 5);
 	
 	$smarty->assign("pages_needed", $pagesNeeded);
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 
-	if($_GET['message']){
+	if(isset($_GET['message'])){
 		switch($_GET['message']){
 			case "status_updated":
 				$smarty->assign("message", "Lo stato dell'ordine è stato aggiornato con successo.");
@@ -43,10 +53,9 @@
 	}
 	
 	
-	require "include/set_logged_header.inc.php";
-	require "include/set_cart_header.inc.php";
+	require "include/mod.set_logged_header.inc.php";
 	
 	
-	$smarty->display("frame_public.html");
+	$smarty->display("mod_frame_public.html");
 	
 ?>
