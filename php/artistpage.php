@@ -17,7 +17,7 @@
 }
  $_GET['id_artista'] = test_input($_GET['id_artista']);
 
- $result = $db->getResult("SELECT * FROM artisti WHERE id_artista = '{$_GET['id_artista']}' ");
+ $result = $db->getResult("SELECT * FROM artisti join genere on artisti.genere = genere.id_genere WHERE id_artista = '{$_GET['id_artista']}' ");
  $smarty->assign("artista", $result[0]);
  
  $result = $db->getResult("SELECT nome_album, genere.genere, album.descrizione, prezzo, id_album, pubblicazione, dischi, tracce, etichetta, album.img_path, data_inserimento FROM artisti JOIN album ON artisti.id_artista = album.fk_artista JOIN genere ON genere.id_genere = album.fk_genere WHERE id_artista = '{$_GET['id_artista']}' ");
