@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 14:00:57
+/* Smarty version 3.1.32, created on 2018-09-10 15:05:51
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b967919554687_73795775',
+  'unifunc' => 'content_5b96884fa1d173_30124039',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536588055,
+      1 => 1536591947,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b967919554687_73795775 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b96884fa1d173_30124039 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<div class="single-page"><br />
 						<div class="clear"> </div>
@@ -36,8 +36,9 @@ function content_5b967919554687_73795775 (Smarty_Internal_Template $_smarty_tpl)
 </h4>
 									<ul>
 										
-										<li><h2>Artist : <?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
-</h2></li>
+										<li><h2>Artist : <a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
+</a></h2></li>
 										<br>
 										<li><h2>Genre : <?php echo $_smarty_tpl->tpl_vars['album']->value['genere'];?>
 </h2></li>

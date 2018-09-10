@@ -10,7 +10,7 @@ function test_input($data) {
 }
 $_GET['id_album'] = test_input($_GET['id_album']);
 
-$result = $db->getResult("SELECT album.img_path, album.nome_album, artisti.nome_artista, genere.genere, album.etichetta, album.dischi, album.tracce, album.descrizione, album.pubblicazione, album.prezzo, offerte_speciali.prezzo_offerta, album.stock FROM album JOIN artisti on album.fk_artista = artisti.id_artista JOIN offerte_speciali on album.id_album = offerte_speciali.album JOIN genere on album.fk_genere = genere.id_genere WHERE id_album = '{$_GET['id_album']}' ");
+$result = $db->getResult("SELECT album.img_path, album.nome_album, artisti.nome_artista, artisti.id_artista, genere.genere, album.etichetta, album.dischi, album.tracce, album.descrizione, album.pubblicazione, album.prezzo, offerte_speciali.prezzo_offerta, album.stock FROM album JOIN artisti on album.fk_artista = artisti.id_artista JOIN offerte_speciali on album.id_album = offerte_speciali.album JOIN genere on album.fk_genere = genere.id_genere WHERE id_album = '{$_GET['id_album']}' ");
 $smarty->assign("album", $result[0]);
 
 $result = $db->getResult("SELECT canzoni.descrizione, id_canzone, nome_canzone, canzoni.pubblicazione, durata, song_path, genere FROM album JOIN canzoni ON canzoni.fk_album = album.id_album JOIN genere on genere.id_genere = canzoni.fk_genere WHERE id_album = '{$_GET['id_album']}' ");
