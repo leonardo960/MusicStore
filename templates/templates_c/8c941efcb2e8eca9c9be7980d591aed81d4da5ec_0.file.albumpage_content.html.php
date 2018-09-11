@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 15:05:51
+/* Smarty version 3.1.32, created on 2018-09-10 15:50:05
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b96884fa1d173_30124039',
+  'unifunc' => 'content_5b9692ad2f6381_48614273',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536591947,
+      1 => 1536594574,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b96884fa1d173_30124039 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9692ad2f6381_48614273 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<div class="single-page"><br />
 						<div class="clear"> </div>
@@ -81,7 +81,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 												
 												<audio controls controlsList="nodownload">
 													<source src="<?php echo $_smarty_tpl->tpl_vars['song']->value['song_path'];?>
-" type="audio/mpeg">
+" type="audio/mp3">
 													Your browser does not support the audio element.
 												</audio>
 											</div>
