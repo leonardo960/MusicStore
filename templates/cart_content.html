@@ -42,9 +42,9 @@
 							
 							 <!-- Il messaggio da visualizzare quando eccedi la quantità disponibile è dentro setCustomValidity -->
 							 
-							<input class="cart-item-amount" id="cart-item-amount" name="{$item.item_name}" type="number" oninvalid="setCustomValidity('Available ' + this.max)" max="{$item.in_stock}" min="1" value="1" onchange="quantity_change(this.name, this.value, this.max)"></input>
+							<input class="cart-item-amount" id="cart-item-amount" name="{$item.item_name}" type="number" oninvalid="setCustomValidity('Available ' + this.max)" onkeypress="return event.keyCode != 13;" max="{$item.in_stock}" min="1" value="1"></input>
 							<a href="albumpage.php?id_album={$item.item_id}" class="cart-remove-button">Details</a>
-							<a href="" class="cart-remove-button" type="button" name="{$item.item_name}" onclick="remove_item(this.name)">Remove</a>
+							<a href="" class="cart-remove-button" onclick="remove_item('{$item.item_name}')">Remove</a>
 						
 						</div>
 					</ul>
