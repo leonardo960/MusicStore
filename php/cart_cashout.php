@@ -14,6 +14,8 @@
 			$smarty->assign("content", $content);
  
 			require "include/set_logged_header.inc.php";
+			require "include/set_logged_header.inc.php";
+			require "include/set_active_logo.inc.php";
  
 			$smarty->display("../templates/frame_public.html");
 		} else {
@@ -44,6 +46,8 @@
 		$_POST['recapito'] = test_input($_POST['recapito']);
 		
 		require 'include/cart_cashout.inc.php';
+		require "include/set_logged_header.inc.php";
+		require "include/set_active_logo.inc.php";
 		
 		$head = "../templates/order_confirm_head.html";
 		$content = "../templates/order_confirm_content.html";
@@ -80,6 +84,7 @@
 		
 		require "include/set_cart_header.inc.php";
 		require "include/set_logged_header.inc.php";
+		require "include/set_active_logo.inc.php";
 	
 		$smarty->assign("head", $head);
 		$smarty->assign("content", $content);

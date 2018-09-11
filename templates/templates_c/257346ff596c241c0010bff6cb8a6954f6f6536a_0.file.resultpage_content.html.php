@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 08:44:58
+/* Smarty version 3.1.32, created on 2018-09-11 09:33:38
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b962f0a096056_27097923',
+  'unifunc' => 'content_5b978bf2ec6be3_71354755',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '257346ff596c241c0010bff6cb8a6954f6f6536a' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1536503450,
+      1 => 1536658417,
       2 => 'file',
     ),
   ),
@@ -20,41 +20,33 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b962f0a096056_27097923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b978bf2ec6be3_71354755 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="resultpage-box">
 		<ul>	
 						<div class="resultpage-filter-box">
 				<form class="advanced-search-form" action="search.php" method=GET>
 					<ul>
-						<label id="first-resultpage-label" for="resultpage-filters">Advanced Search:</label>
+						<li><label id="first-resultpage-label" for="resultpage-filters">Advanced Search:</label></li>
+						<li><input type="search" name="query" <?php if (isset($_smarty_tpl->tpl_vars['query']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['query']->value;?>
+"<?php }?> placeholder="Search..."/></li>
 					</ul>
 					<ul>
-						<div id="resultpage-searchbar" class="resultpage-searchbar">
-							<input type="search" name="query" <?php if (isset($_smarty_tpl->tpl_vars['query']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['query']->value;?>
-"<?php }?> placeholder="Search..."/>
-						</div>
-					</ul>
-					<ul>
-						<label for="resultpage-filters">Show only:</label>
-					</ul>
-					<ul>
-						<div id="resultpage-filters" class="resultpage-filters">
+						<li><label for="resultpage-filters">Show only:</label></li>
+						<li><div id="resultpage-filters" class="resultpage-filters">
 							<input type="radio" name="filter" value="artists" <?php if (isset($_smarty_tpl->tpl_vars['filter']->value) && $_smarty_tpl->tpl_vars['filter']->value == "artists") {?> checked <?php }?>>artists
 							<input type="radio" name="filter" value="songs" <?php if (isset($_smarty_tpl->tpl_vars['filter']->value) && $_smarty_tpl->tpl_vars['filter']->value == "songs") {?> checked <?php }?>>songs
 							<input type="radio" name="filter" value="albums" <?php if (isset($_smarty_tpl->tpl_vars['filter']->value) && $_smarty_tpl->tpl_vars['filter']->value == "albums") {?> checked <?php }?>>albums
-						</div>
+						</div></li>
 					</ul>
 					<ul>
-						<label for="resultpage-price-filter">Price:</label>
-					</ul>
-					<ul>
-						<div id="resultpage-price-filter" class="resultpage-price-filter">
+						<li><label for="resultpage-price-filter">Price:</label></li>
+						<li><div id="resultpage-price-filter" class="resultpage-price-filter">
 							<input type="number" name="MIN" min="0" max="1000" pattern="[0-9]+" title="Please use only digits." <?php if (isset($_smarty_tpl->tpl_vars['min']->value)) {?>value=<?php echo $_smarty_tpl->tpl_vars['min']->value;
 }?> placeholder=<?php if (!isset($_smarty_tpl->tpl_vars['min']->value)) {?>"Min"<?php }?>>
 							<input type="number" name="MAX" min="0" max="1000" pattern="[0-9]+" title="Please use only digits." <?php if (isset($_smarty_tpl->tpl_vars['max']->value)) {?>value=<?php echo $_smarty_tpl->tpl_vars['max']->value;
 }?> placeholder=<?php if (!isset($_smarty_tpl->tpl_vars['max']->value)) {?>"Max"<?php }?>>
-						</div>
+						</div></li>
 					</ul>
 					
 					<div class="resultpage-search-button">
@@ -88,7 +80,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['artist']->value) {
 						<div class="single-artist-result-info">
 							<li class="artist-name-result"><?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
 </li>
-							<a class="result-artist-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-artist-detail-button" href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+"><li>See Details</li></a>
 						</div>
 					</div>
 				<?php
@@ -106,12 +99,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 ?>
 					<div class="single-song-result">
 						<div class="single-song-result-image">
+						
 							<img src="../images/result_song_icon.png" title="result-song-image"/>
 						</div>
 						<div class="single-song-result-info">
 							<li class="song-name-result"><?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
 </li>
-							<a class="result-song-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-song-detail-button" href="albumpage?id_album=<?php echo $_smarty_tpl->tpl_vars['song']->value['fk_album'];?>
+"><li>Go to Album</li></a>
 						</div>
 					</div>
 				<?php

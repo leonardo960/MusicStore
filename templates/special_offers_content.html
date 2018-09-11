@@ -25,6 +25,7 @@
 									<a href="artistpage.php?id_artista={$artist.id_artista}">Go to Info</a>
 									<h4><span>Special Price: </span>{$album.prezzo_offerta}&euro;</h4>
 									<a onclick="add_to_cart('{$album.id_album}')">Add to Cart</a>
+									<a onclick="add_to_favorites('{$album.id_album}')">Add to Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -35,3 +36,4 @@
 	<!--End-cartires-page---->
 </div>
 <script src="../js/add_to_cart.js"></script>
+<script src="../js/add_remove_favorite.js"></script>

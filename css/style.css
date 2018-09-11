@@ -1332,7 +1332,7 @@ body{
 /*----cart-page----*/
 .cart-page-container{
 	position:static;
-	background: none;
+	background: #fafafa !important;
 	width: 100%;
 	display: block;
 }
@@ -1360,9 +1360,8 @@ body{
 }
 .single-cart-item{
 	position:static;
-	background: #0a0a0a;
+	background: #e3e3e3;
 	border-radius: 10px;
-	box-shadow: 2px 2px 15px black;
 	height: 200px;
 	width: 800px;
 	margin-bottom:15px;
@@ -1407,7 +1406,7 @@ body{
 	float:right;		
 }
 .cart-item-name{
-	color: #fafafa;
+	color: #000000;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -1419,7 +1418,7 @@ body{
 	border: 0;
 	width: 100%;
 	height: 80px;
-	color: #fafafa;
+	color: #000000;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
 	font-size: 12px;
@@ -1432,15 +1431,17 @@ body{
 	margin: 25px;
 	margin-right:0;	
 }
-.cart-item-price{
-	color: #fafafa;
+#cart-item-price{
+	display: none !important;
+}
+.cart-item-price-box label{
+	width: 100% !important;
+}
+.cart-item-price-box h3{
+	display: inline-block;
+	float: left;
+	width: auto;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
-	text-transform: uppercase;
-	font-size: 16px;
-	width: 125px;
-	border: 0;
-	background: none;
 }
 .cart-item-input-box{
 	position:relative;
@@ -1504,7 +1505,7 @@ body{
     transition: background 0.2s ease;
 }
 .cart-item-amount{
-	color: #fafafa;
+	color: #000000;
 	border: solid;
 	border-color: #050505;
 	border-radius: 5px;
@@ -1546,7 +1547,7 @@ body{
     transition: background 0.2s ease;
 }
 .cart-page-divider-1{
-	background: url(../images/divider1_2_760px_width.png)repeat-y;
+	background: linear-gradient(to right, #fafafa, red, #fafafa);
 	width: 760px;
 	height: 1px;
 	float:center;
@@ -1849,46 +1850,26 @@ body{
 .resultpage-box ul{
 	display: block;
 }
+.advanced-search-form{
+	padding: 15px;
+}
 .resultpage-filter-box{
 	position: relative;
 	width: 100%;
-	height: 75px;
-
 }
 .resultpage-filter-box ul{
-	display:inline-block;
-}
-#first-resultpage-label{
-	margin-left: 25px;
-}
-.resultpage-filter-box label{
-	position:relative;
+	display: inline-block;
+	position: relative;
+	width: calc(33% - 10px);
+	margin: 5px !important;
+	text-align: center;
 	font-family: "Roboto", sans-serif;
-	font-size: 18px;
-	top: 25px;
-	margin-left: 75px;
+	font-size: 15px;
+	background: #e3e3e3;
+	border-radius: 7px;
 }
-.resultpage-searchbar{
-	position:relative;
-	top:25px;
-	border-style: solid;
-	border-width: 2px;
-	border-radius: 4px;
-	border-color: #ff3311;
-}
-.resultpage-filters{
-	position:relative;
-	top:25px;
-	font-family: "Roboto", sans-serif;
-	font-size: 18px;
-}
-.resultpage-price-filter{
-	position:relative;
-	top:25px;
-	margin-left: 10px;
-}
-.resultpage-price-filter input{
-	margin-left: 5px;
+.resultpage-filter-box ul li{
+	padding: 5px;
 }
 .resultpage-search-button{
 	position:relative;
@@ -1896,7 +1877,7 @@ body{
 	height: 40px;
 	margin:auto;
 	text-align: center;
-	top: 50px;
+	margin-top: 25px;
 }
 .resultpage-search-button button{
 	background: url(../images/head1.jpg)repeat-x;
@@ -1931,7 +1912,6 @@ body{
 	position:relative;
 	width: 100%;
 	height: 50px;
-	margin-top: 50px;
 	text-align:center;
 	padding-top:15px;
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 15:46:09
+/* Smarty version 3.1.32, created on 2018-09-11 07:40:10
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\artistpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9691c17e6769_76828714',
+  'unifunc' => 'content_5b97715a16fe75_20888885',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51c0bbfa658a0256f95afa2d2e8f717c2b4e4247' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\artistpage_content.html',
-      1 => 1536594367,
+      1 => 1536651148,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9691c17e6769_76828714 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97715a16fe75_20888885 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 	<!-- TODO completare -->
 					<div class="single-page"><br />
@@ -40,14 +40,16 @@ function content_5b9691c17e6769_76828714 (Smarty_Internal_Template $_smarty_tpl)
 </h2></li>
 										<br>
 										<li><h2>Years active : <?php echo $_smarty_tpl->tpl_vars['artista']->value['inizio_attivita'];?>
- - <?php echo $_smarty_tpl->tpl_vars['artista']->value['fine_attivita'];?>
-</h2></li>
+ - <?php if (strlen($_smarty_tpl->tpl_vars['artista']->value['fine_attivita']) > 0) {
+echo $_smarty_tpl->tpl_vars['artista']->value['fine_attivita'];
+} else { ?>Active<?php }?></h2></li>
 										<br>
 										<li><h2>Bio : </h2><h5><?php echo $_smarty_tpl->tpl_vars['artista']->value['biografia'];?>
 <h5></li>
 										
 										<br>
-										<h4><label>Albums Published: </label></h4>
+										<h4><label>Albums We Have: </label></h4>
+										<?php if (count($_smarty_tpl->tpl_vars['album']->value[0]) > 0) {?>
 										<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'published');
 if ($_from !== null) {
@@ -64,7 +66,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['published']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-										
+										<?php } else { ?>
+										<h5>We have no albums in store from this artist yet. Check back in the near future!</h5>
+										<?php }?>
 									</ul>
 								</div>
 								

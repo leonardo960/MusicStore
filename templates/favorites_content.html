@@ -21,7 +21,8 @@
 									<h4>Info Page</h4>
 									<a href="albumpage.php?id_album={$favorite.id_album}">Go to Info</a>
 										<h4><span>Price Right Now: </span>{$favorite.prezzo_offerta}&euro;</h4>
-									<a href="">Add to Cart</a>
+									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
+									<a onclick="remove_from_favorites('{$album.id_album}')">Remove from Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -37,3 +38,5 @@
 					</div>
 	<!--End-cartires-page---->
 </div>
+<script src="../js/add_to_cart.js"></script>
+<script src="../js/add_remove_favorite.js"></script>
