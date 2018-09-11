@@ -19,7 +19,7 @@
 		$_POST['fine_attivita'] = test_input($_POST['fine_attivita']);
 		$_POST['genere'] = test_input($_POST['genere']);
 		
-		$target_dir = "../images/";
+		$target_dir = "../images/artists/";
 		require "include/mod.insert_new_artist.inc.php";
 		
 		Header("Location: mod_content_management.php?message=artist_inserted");

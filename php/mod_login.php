@@ -2,7 +2,11 @@
 	//Init view
 	require "init_smarty.php";
 	
-	
+	session_start();
+	if(isset($_SESSION['mod'])){
+		header("location: mod_panel.php");
+		exit();
+	}
 	if (isset($_POST['username']) && isset($_POST['password'])) {
 		require "include/dbms.inc.php";
 		
