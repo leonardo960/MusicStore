@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 15:50:05
+/* Smarty version 3.1.32, created on 2018-09-11 12:04:27
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9692ad2f6381_48614273',
+  'unifunc' => 'content_5b97af4b2af0a1_63458323',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536594574,
+      1 => 1536665182,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9692ad2f6381_48614273 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97af4b2af0a1_63458323 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<div class="single-page"><br />
 						<div class="clear"> </div>
@@ -58,18 +58,25 @@ function content_5b9692ad2f6381_48614273 (Smarty_Internal_Template $_smarty_tpl)
 										<li><h2>Published on : <?php echo $_smarty_tpl->tpl_vars['album']->value['pubblicazione'];?>
 </h2></li>
 										<br>
+										<?php if (isset($_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'])) {?>
 										<li><h2>Price :</h2></li>
 										<li><span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
 &euro;</span></li>
 										<li><a><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
 &euro;</a></li>
+										<?php } else { ?>
+										<li><h2>Price :</h2></li>
+										<li><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+&euro;</li>
+										<?php }?>
 										<br>
-										<li><a href="#">In stock : <?php echo $_smarty_tpl->tpl_vars['album']->value['stock'];?>
+										<li><a>In stock : <?php echo $_smarty_tpl->tpl_vars['album']->value['stock'];?>
 </a></li>
 										
 										<br>
 										<br>
 										<h4><label>Songs: </label></h4>
+										<?php if (count($_smarty_tpl->tpl_vars['songs']->value[0]) > 0) {?>
 										<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['songs']->value, 'song');
 if ($_from !== null) {
@@ -89,11 +96,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+										<?php } else { ?>
+										<h3>We have no previews for this album yet. Check back in the future!</h3>
+										<?php }?>
 										
 									</ul>
 								</div>
 								<div class="product-description">
-									<a href="#">Add to Cart</a>
+									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+)">Add to Cart</a>
 								</div>
 							</div>
 							<div class="clear"> </div>
@@ -101,5 +112,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					</div>
 			</div>
 			<div class="clear"> </div>
-</div><?php }
+</div>
+<?php echo '<script'; ?>
+ src="../js/add_to_cart.js"><?php echo '</script'; ?>
+><?php }
 }

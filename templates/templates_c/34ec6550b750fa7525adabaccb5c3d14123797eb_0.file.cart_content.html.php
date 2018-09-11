@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 10:37:08
+/* Smarty version 3.1.32, created on 2018-09-11 12:08:22
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b979ad486b1a4_88805453',
+  'unifunc' => 'content_5b97b03673c279_51690546',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34ec6550b750fa7525adabaccb5c3d14123797eb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\cart_content.html',
-      1 => 1536662226,
+      1 => 1536667700,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b979ad486b1a4_88805453 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97b03673c279_51690546 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
@@ -78,9 +78,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 " type="number" oninvalid="setCustomValidity('Available ' + this.max)" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
 " min="1" value="1" onchange="quantity_change(this.name, this.value, this.max)"></input>
 							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
-">Details</a>
-							<input class="cart-remove-button" type="button" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
-" value="Remove" onclick="remove_item(this.name)"></input> <!-- da modificare -->
+" class="cart-remove-button">Details</a>
+							<a href="" class="cart-remove-button" type="button" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
+" onclick="remove_item(this.name)">Remove</a> <!-- da modificare -->
 						</div>
 						
 						</div>
