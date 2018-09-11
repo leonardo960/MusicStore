@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 13:23:30
+/* Smarty version 3.1.32, created on 2018-09-10 17:46:25
   from 'C:\wamp64\www\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b951ed2433867_32091501',
+  'unifunc' => 'content_5b96adf1a610d1_51765374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1dc45e7232935d0add00748d7ff31b7e068d41cf' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1536499406,
+      1 => 1536601579,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b951ed2433867_32091501 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b96adf1a610d1_51765374 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="resultpage-box">
 		<ul>	
@@ -88,7 +88,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['artist']->value) {
 						<div class="single-artist-result-info">
 							<li class="artist-name-result"><?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
 </li>
-							<a class="result-artist-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-artist-detail-button" href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+"><li>See Details</li></a>
 						</div>
 					</div>
 				<?php
@@ -111,7 +112,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 						<div class="single-song-result-info">
 							<li class="song-name-result"><?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
 </li>
-							<a class="result-song-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-song-detail-button" href="albumpage?id_album=<?php echo $_smarty_tpl->tpl_vars['song']->value['fk_album'];?>
+"><li>See Details</li></a>
 						</div>
 					</div>
 				<?php

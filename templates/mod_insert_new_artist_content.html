@@ -1,0 +1,51 @@
+<style>
+.menu {
+	position: absolute;
+	top: 35%;
+	right: 35%;
+}
+
+</style>
+<div class="menu">
+	<form id="artist-form" action="mod_insert_new_artist.php" method="POST" enctype="multipart/form-data">
+		Nome e Cognome Artista:<input type="text" name="nome_artista" maxlength="30" required />
+		<br>
+		Genere:
+		{foreach $generi as $genere}
+		<input type="radio" name="genere" value="{$genere.id_genere}" required /> {$genere.genere}
+		{/foreach}
+		<br>
+		Album Pubblicati:<input type="number" name="album_pubblicati" required />
+		<br>
+		Anno Inizio Attivit&agrave;:
+		<input type="number" name="inizio_attivita" min="1900" max="2018" value="2018" required />
+		<br>
+		Fine Attivit&agrave;:
+		<input id="fine-attivita-year" type="number" name="fine_attivita" min="1900" max="2018" value="2018" required />
+		In Attivit&agrave;
+		<input id="checkbox-in-attivita" type="checkbox" name="fine_attivita" value="" onclick="checkbox_func()" />
+		<br>
+		Immagine Artista:
+		<input type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
+		<br>
+	</form>
+	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" required></textarea>
+	<br>
+	<br>
+	<input type="submit" value="Conferma" form="artist-form" />
+</div>
+<form  action="mod_content_management.php">
+    <input type="submit" value="Torna alla Gestione Contenuti" />
+</form>
+<script>
+	function checkbox_func(){
+		var checkBox = document.getElementById("checkbox-in-attivita");
+		var yearInput = document.getElementById("fine-attivita-year");
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = true;
+		} else {
+			yearInput.disabled = false;
+		}
+	}
+</script>

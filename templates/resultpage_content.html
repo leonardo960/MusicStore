@@ -57,7 +57,7 @@
 						</div>
 						<div class="single-artist-result-info">
 							<li class="artist-name-result">{$artist.nome_artista}</li>
-							<a class="result-artist-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-artist-detail-button" href="artistpage.php?id_artista={$artist.id_artista}"><li>See Details</li></a>
 						</div>
 					</div>
 				{/foreach}
@@ -72,7 +72,7 @@
 						</div>
 						<div class="single-song-result-info">
 							<li class="song-name-result">{$song.nome_canzone}</li>
-							<a class="result-song-detail-button" href="#"><li>See Details</li></a>
+							<a class="result-song-detail-button" href="albumpage?id_album={$song.fk_album}"><li>See Details</li></a>
 						</div>
 					</div>
 				{/foreach}

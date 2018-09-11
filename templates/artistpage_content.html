@@ -13,12 +13,13 @@
 									<ul>
 										<li><h2>Genre : {$artista.genere}</h2></li>
 										<br>
-										<li><h2>Years active : {$artista.inizio_attivita} - {$artista.fine_attivita}</h2></li>
+										<li><h2>Years active : {$artista.inizio_attivita} - {if strlen($artista.fine_attivita) > 0}{$artista.fine_attivita}{else}Active{/if}</h2></li>
 										<br>
 										<li><h2>Bio : </h2><h5>{$artista.biografia}<h5></li>
 										
 										<br>
-										<h4><label>Albums Published: </label></h4>
+										<h4><label>Albums We Have: </label></h4>
+										{if count($album[0]) > 0}
 										{foreach $album as $published}
 											<div class="album-card">
 											<ul>
@@ -26,7 +27,9 @@
 											</ul>
 											</div>
 										{/foreach}
-										
+										{else}
+										<h5>We have no albums in store from this artist yet. Check back in the near future!</h5>
+										{/if}
 									</ul>
 								</div>
 								
