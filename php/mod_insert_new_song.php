@@ -1,13 +1,11 @@
 <?php
-	require 'include/check_service_permission.inc.php';
+	require 'include/mod.check_service_permission.inc.php';
 	//Init view
 	require "init_smarty.php";
 	
-	$head = "../templates/mod_insert_new_song_head.html";
 	$content = "../templates/mod_insert_new_song_content.html";
 	
-	if (isset($_POST['fk_genere']) && isset($_POST['fk_album']) && isset($_POST['fk_artista']) && isset($_POST['descrizione']) && isset($_POST['nome_canzone']) && isset($_POST['pubblicazione']) && isset($_POST['durata'])) { //I DATI DERIVATI DALL'INSERIMENTO DELLA CANZONE
-		require "include/dbms.inc.php";
+	if (isset($_POST['album-info']) && isset($_POST['nome_canzone']) ) { //I DATI DERIVATI DALL'INSERIMENTO DELLA CANZONE
 		
 		function test_input($data) {
 		$data = trim($data);
@@ -15,15 +13,11 @@
 		$data = htmlspecialchars($data);
 		return $data;
 		}		
-		$_POST['fk_genere'] = test_input($_POST['fk_genere']); //test_input SU TUTTI I DATI DELLA CANZONE
-		$_POST['fk_album'] = test_input($_POST['fk_album']);
-		$_POST['fk_artista'] = test_input($_POST['fk_artista']);
-		$_POST['descrizione'] = test_input($_POST['descrizione']);
 		$_POST['nome_canzone'] = test_input($_POST['nome_canzone']);
-		$_POST['pubblicazione'] = test_input($_POST['pubblicazione']);
-		$_POST['durata'] = test_input($_POST['durata']);
-		
-		$target_dir = "../songs";
+		$_POST['album-info'] = json_decode($_POST['album-info'], true);
+		$_POST['fk_album'] = $_POST['album-info']['id_album'];
+		$_POST['fk_artista'] = $_POST['album-info']['id_artista'];
+		$target_dir = "../songs/";
 		require "include/mod.insert_new_song.inc.php";
 		
 		
@@ -37,7 +31,6 @@
 				$smarty->assign("error", $error);
 				break;
 		}
-		$smarty->assign("fk_genere", $_SESSION['new_song_data']['fk_genere']);
 		$smarty->assign("fk_album", $_SESSION['new_song_data']['fk_album']);
 		$smarty->assign("fk_artista", $_SESSION['new_song_data']['fk_artista']);
 		$smarty->assign("descrizione", $_SESSION['new_song_data']['descrizione']);
@@ -47,8 +40,10 @@
 } 
 	
 	require "include/mod.set_logged_header.inc.php";
-	
-	$smarty->assign("head", $head);
+	$result = $db->query("select * from genere");
+	$smarty->assign("generi", $result);
+	$result = $db->query("select id_album, nome_album, id_artista from album join artisti where album.fk_artista = artisti.id_artista");
+	$smarty->assign("album", $result);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/mod_frame_public.html");

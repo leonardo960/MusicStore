@@ -25,15 +25,21 @@
 										<br>
 										<li><h2>Published on : {$album.pubblicazione}</h2></li>
 										<br>
+										{if isset($album.prezzo_offerta) }
 										<li><h2>Price :</h2></li>
 										<li><span>{$album.prezzo}&euro;</span></li>
 										<li><a>{$album.prezzo_offerta}&euro;</a></li>
+										{else}
+										<li><h2>Price :</h2></li>
+										<li>{$album.prezzo}&euro;</li>
+										{/if}
 										<br>
-										<li><a href="#">In stock : {$album.stock}</a></li>
+										<li><a>In stock : {$album.stock}</a></li>
 										
 										<br>
 										<br>
 										<h4><label>Songs: </label></h4>
+										{if count($songs[0]) > 0}
 										{foreach $songs as $song}
 											<div class="album-song-card">
 												<li><h3>Title : <a>{$song.nome_canzone}</a></h3></li>
@@ -44,11 +50,14 @@
 												</audio>
 											</div>
 										{/foreach}
+										{else}
+										<h3>We have no previews for this album yet. Check back in the future!</h3>
+										{/if}
 										
 									</ul>
 								</div>
 								<div class="product-description">
-									<a href="#">Add to Cart</a>
+									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
 								</div>
 							</div>
 							<div class="clear"> </div>
@@ -57,3 +66,4 @@
 			</div>
 			<div class="clear"> </div>
 </div>
+<script src="../js/add_to_cart.js"></script>

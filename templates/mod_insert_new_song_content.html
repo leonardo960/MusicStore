@@ -1,0 +1,35 @@
+<style>
+.menu {
+	position: absolute;
+	top: 35%;
+	right: 35%;
+}
+.back-button {
+	position: absolute;
+	top: 18%;
+	left: 5%;
+}
+
+</style>
+<div class="menu">
+	<form id="song-form" action="mod_insert_new_song.php" method="POST" enctype="multipart/form-data">
+		Nome Canzone:<input type="text" name="nome_canzone" maxlength="30" required />
+		<br>
+		Album:<select id="album-fk" name="album-info">
+					{foreach $album as $item}
+					{literal}<option id="album-fk-option" value='{"id_album": {/literal}"{$item.id_album}"{literal},"id_artista": {/literal}"{$item.id_artista}"{literal}}' >{/literal}{$item.nome_album}</option>
+					{/foreach}
+				</select>
+		<br>
+		<input type="number" hidden />
+		Preview Canzone:
+		<input type="file" name="song-file" required />
+		<br>
+	</form>
+	<br>
+	<br>
+	<input type="submit" value="Conferma" form="song-form" />
+</div>
+<form class="back-button"  action="mod_content_management.php">
+    <input type="submit" value="Torna alla Gestione Contenuti" />
+</form>

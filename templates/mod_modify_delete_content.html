@@ -1,0 +1,70 @@
+<style>
+.search-bar {
+	position: absolute;
+	top: 35%;
+	right: 35%;
+}
+.back-button {
+		position: absolute;
+		top: 18%;
+		left: 5%;
+	}
+.results {
+		position: absolute;
+		top: 40%;
+		left: 25%;
+}
+.page-numbers{
+		position: absolute;
+		bottom: 15%;
+		left: 50%;
+}
+
+</style>
+<form class="back-button" action="mod_content_management.php">
+    <input type="submit" value="Torna alla Gestione Contenuti" />
+</form>
+
+<form class="search-bar" action="mod_modify_delete.php" method="GET">
+	Cerca Album, Artisti o Canzoni da modificare: <input type="text" name="query" />
+	<input type="submit" value="Cerca" />
+</form>
+
+<div class="results">
+	{if isset($artists) && count($artists) > 0}
+	Artisti Trovati:
+	<br>
+	{foreach $artists as $artist}
+	{$artist.nome_artista} <form style="display: inline-block;" action="mod_modify_artist.php?artist_id={$artist.id_artista}" method="GET"><input type="submit" value="Modifica questo Artista" /></form>
+	<br>
+	{/foreach}
+	{/if}
+	<br>
+	<br>
+	{if isset($albums) && count($albums) > 0}
+	Album Trovati:
+	<br>
+	{foreach $albums as $album}
+	{$album.nome_album} <form style="display: inline-block;" action="mod_modify_album.php?album_id={$album.id_album}" method="GET"><input type="submit" value="Modifica questo Album" /></form>
+	<br>
+	{/foreach}
+	{/if}
+	<br>
+	<br>
+	{if isset($songs) && count($songs) > 0}
+	Canzoni Trovate:
+	<br>
+	{foreach $songs as $song}
+	{$song.nome_canzone} <form style="display: inline-block;" action="mod_modify_song.php?song_id={$song.id_canzone}" method="GET"><input type="submit" value="Modifica questa Canzone" /></form>
+	<br>
+	{/foreach}
+	{/if}
+</div>
+<div class="page-numbers">
+	{for $counter=1 to $page_counter}
+		<a href="mod_modify_delete.php?page_id={$counter}">{$counter}</a>
+	{/for}
+</div>
+
+
+

@@ -1,0 +1,69 @@
+<style>
+.menu {
+	position: absolute;
+	top: 25%;
+	left: 28%;
+}
+.back-button {
+	position: absolute;
+	top: 18%;
+	left: 5%;
+}
+
+</style>
+<div class="menu">
+	<form id="artist-form" action="mod_modify_artist.php" method="POST" enctype="multipart/form-data">
+		<input type="number" name="id_artista" value="{$artista.id_artista}" hidden />
+		Nome e Cognome Artista:<input type="text" name="nome_artista" value="{$artista.nome_artista}" maxlength="30" required />
+		<br>
+		Genere:
+		{foreach $generi as $genere}
+		<input type="radio" name="genere" value="{$genere.id_genere}" {if $artista.genere = $genere.id_genere}checked{/if} required /> {$genere.genere}
+		{/foreach}
+		<br>
+		Album Pubblicati:<input type="number" name="album_pubblicati"  value="{$artista.album_pubblicati}" required />
+		<br>
+		Anno Inizio Attivit&agrave;:
+		<input type="number" name="inizio_attivita" min="1900" max="2018"  value="{$artista.inizio_attivita}" required />
+		<br>
+		Fine Attivit&agrave;:
+		<input id="fine-attivita-year" type="number" name="fine_attivita" min="1900" max="2018"  {if isset($artista.fine_attivita)} value="{$artista.fine_attivita}" {else} disabled {/if} required />
+		In Attivit&agrave;
+		<input id="checkbox-in-attivita" type="checkbox" name="fine_attivita" value="" {if !isset($artista.fine_attivita)}checked{/if}  onclick="checkbox_func_1()" />
+		<br>
+		Immagine Artista:
+		<img src="{$artista.img_path}">
+		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" />
+		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
+		<br>
+	</form>
+	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" maxlength="1000" required>{$artista.biografia}</textarea>
+	<br>
+	<br>
+	<input type="submit" value="Conferma Modifiche" form="artist-form" />
+</div>
+<form class="back-button"  action="mod_modify_delete.php">
+    <input type="submit" value="Torna alla pagina di ricerca" />
+</form>
+<script>
+	function checkbox_func_1(){
+		var checkBox = document.getElementById("checkbox-in-attivita");
+		var yearInput = document.getElementById("fine-attivita-year");
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = true;
+		} else {
+			yearInput.disabled = false;
+		}
+	}
+	function checkbox_func_2(){
+		var checkBox = document.getElementById("checkbox-immagine");
+		var fileInput = document.getElementById("image-input");
+	
+		if (checkBox.checked == true){
+			fileInput.disabled = true;
+		} else {
+			fileInput.disabled = false;
+		}
+	}
+</script>

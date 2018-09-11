@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 17:35:43
+/* Smarty version 3.1.32, created on 2018-09-11 10:13:43
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b96ab6f537d86_97825768',
+  'unifunc' => 'content_5b97955769a616_75565005',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '72d776c7ad38803846385b3066c497b52358874b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_artist_content.html',
-      1 => 1536600940,
+      1 => 1536660808,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,17 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b96ab6f537d86_97825768 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97955769a616_75565005 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
 	top: 35%;
 	right: 35%;
+}
+.back-button {
+	position: absolute;
+	top: 18%;
+	left: 5%;
 }
 
 </style>
@@ -61,12 +66,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<input type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
 		<br>
 	</form>
-	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" required></textarea>
+	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" maxlength="1000" required></textarea>
 	<br>
 	<br>
 	<input type="submit" value="Conferma" form="artist-form" />
 </div>
-<form  action="mod_content_management.php">
+<form class="back-button"  action="mod_content_management.php">
     <input type="submit" value="Torna alla Gestione Contenuti" />
 </form>
 <?php echo '<script'; ?>
