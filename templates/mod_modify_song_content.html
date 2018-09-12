@@ -1,0 +1,48 @@
+<style>
+.menu {
+	position: absolute;
+	top: 17%;
+	left: 28%;
+}
+.back-button {
+	position: absolute;
+	top: 18%;
+	left: 5%;
+}
+
+
+</style>
+<div class="menu">
+	<form id="song-form" action="mod_modify_song.php" method="POST" enctype="multipart/form-data">
+		<input type="number" name="id_canzone" value="{$canzone.id_canzone}" hidden />
+		Nome Canzone:<input type="text" name="nome_canzone" maxlength="30" value="{$canzone.nome_canzone}" required />
+		<br>
+		<input type="number" hidden />
+		Preview Canzone:
+		<audio controls controlsList="nodownload">
+			<source src="{$canzone.song_path}" type="audio/mp3">
+			Your browser does not support the audio element.
+		</audio>
+		Lascia Preview Precedente: <input id="checkbox-canzone" type="checkbox" name="canzone" value="default" onclick="checkbox_func_2()" />
+		<input id="song-input" type="file" name="song-preview" required />
+		<br>
+	</form>
+	<br>
+	<br>
+	<input type="submit" value="Conferma Modifiche" form="song-form" />
+</div>
+<form class="back-button"  action="mod_modify_delete.php">
+    <input type="submit" value="Torna alla pagina di ricerca" />
+</form>
+<script>
+function checkbox_func_2(){
+		var checkBox = document.getElementById("checkbox-canzone");
+		var fileInput = document.getElementById("song-input");
+	
+		if (checkBox.checked == true){
+			fileInput.disabled = true;
+		} else {
+			fileInput.disabled = false;
+		}
+	}
+</script>

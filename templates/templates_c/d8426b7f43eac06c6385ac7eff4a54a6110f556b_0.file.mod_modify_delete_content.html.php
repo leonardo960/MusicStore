@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 11:15:19
+/* Smarty version 3.1.32, created on 2018-09-11 15:48:16
   from 'C:\wamp64\www\MusicStore\templates\mod_modify_delete_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97a3c79f3784_83443461',
+  'unifunc' => 'content_5b97e3c0379081_53310988',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd8426b7f43eac06c6385ac7eff4a54a6110f556b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_modify_delete_content.html',
-      1 => 1536664517,
+      1 => 1536680848,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97a3c79f3784_83443461 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97e3c0379081_53310988 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .search-bar {
 	position: absolute;
@@ -63,8 +63,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['artist']->value) {
 ?>
 	<?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
- <form style="display: inline-block;" action="mod_modify_artist.php?artist_id=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
-" method="GET"><input type="submit" value="Modifica questo Artista" /></form>
+ <form style="display: inline-block;" action="mod_modify_artist.php" method="GET"><input type="hidden" name="artist_id" value="<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+" /><input type="submit" value="Modifica questo Artista" /></form>
 	<br>
 	<?php
 }
@@ -82,8 +82,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 ?>
 	<?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
- <form style="display: inline-block;" action="mod_modify_album.php?album_id=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" method="GET"><input type="submit" value="Modifica questo Album" /></form>
+ <form style="display: inline-block;" action="mod_modify_album.php" method="GET"><input type="hidden" name="album_id" value="<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+" /><input type="submit" value="Modifica questo Album" /></form>
 	<br>
 	<?php
 }
@@ -101,8 +101,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 ?>
 	<?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
- <form style="display: inline-block;" action="mod_modify_song.php?song_id=<?php echo $_smarty_tpl->tpl_vars['song']->value['id_canzone'];?>
-" method="GET"><input type="submit" value="Modifica questa Canzone" /></form>
+ <form style="display: inline-block;" action="mod_modify_song.php" method="GET"><input type="hidden" name="song_id" value="<?php echo $_smarty_tpl->tpl_vars['song']->value['id_canzone'];?>
+" /><input type="submit" value="Modifica questa Canzone" /></form>
 	<br>
 	<?php
 }

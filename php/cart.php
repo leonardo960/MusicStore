@@ -34,10 +34,14 @@ if(!isset($_SESSION['cart'])){
 $cart = $_SESSION['cart'];
 $cart_content = array();
 foreach ($cart as $value) {
-	$cartsql = "SELECT * FROM album WHERE id_album like '{$value['item_id']}'";
+	$cartsql = "SELECT * FROM album left join offerte_speciali on album.id_album = offerte_speciali.album WHERE id_album like '{$value['item_id']}'";
 	$result = $db->getResult($cartsql)[0];
 	$total += ($result['prezzo']*$value['item_quantity']);
-	$cart_content[] = array("item_id" => $result['id_album'], "item_name" => $result['nome_album'], "item_price" => $result['prezzo'], "item_image_path" => $result['img_path'], "item_description" => "\"" . substr($result['descrizione'], 0, 100) . "...\"", "in_stock" => $result['stock']); 
+	if(isset($result['prezzo_offerta'])){
+		$cart_content[] = array("item_id" => $result['id_album'], "item_name" => $result['nome_album'], "item_price" => $result['prezzo_offerta'], "item_image_path" => $result['img_path'], "item_description" => "\"" . substr($result['descrizione'], 0, 100) . "...\"", "in_stock" => $result['stock']); 
+	} else {
+		$cart_content[] = array("item_id" => $result['id_album'], "item_name" => $result['nome_album'], "item_price" => $result['prezzo'], "item_image_path" => $result['img_path'], "item_description" => "\"" . substr($result['descrizione'], 0, 100) . "...\"", "in_stock" => $result['stock']); 
+	}
 	//echo '<pre>'; print_r($cart_content); echo '</pre>';
 }
 $smarty->assign("total-item-price", $total);

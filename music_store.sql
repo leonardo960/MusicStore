@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Set 11, 2018 alle 11:26
+-- Creato il: Set 12, 2018 alle 18:00
 -- Versione del server: 5.7.19
 -- Versione PHP: 5.6.31
 
@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS `account` (
   `username` varchar(20) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
   `gruppo` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`username`)
+  PRIMARY KEY (`username`),
+  KEY `gruppo` (`gruppo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -67,8 +68,9 @@ CREATE TABLE IF NOT EXISTS `album` (
   `img_path` varchar(100) DEFAULT NULL,
   `data_inserimento` date DEFAULT NULL,
   PRIMARY KEY (`id_album`),
-  KEY `fk_artista` (`fk_artista`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  KEY `fk_artista` (`fk_artista`),
+  KEY `fk_genere` (`fk_genere`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `album`
@@ -76,7 +78,10 @@ CREATE TABLE IF NOT EXISTS `album` (
 
 INSERT INTO `album` (`nome_album`, `fk_genere`, `fk_artista`, `descrizione`, `prezzo`, `id_album`, `pubblicazione`, `dischi`, `tracce`, `etichetta`, `stock`, `img_path`, `data_inserimento`) VALUES
 ('Bye Bye', 1, 2, 'Sixth studio album from singer Annalisa. The publishing was anticipated by the release of two singles: \"Direzione La Vita\", which made up for an all-women music video, and \"Il Mondo Prima di Te\", which placed third in Italian national singing competition Sanremo.', 20, 1, '2018-02-16', 1, 13, 'Warner Music Italy', 5, '../images/album/1.jpg', NULL),
-('Magellano', 1, 6, 'Third studio album by italian singer Francesco Gabbani.', 12, 2, '2017-04-28', 1, 9, 'BMG Rights Management', 3, '../images/album/2.jpg', '2018-09-11');
+('Magellano', 1, 6, 'Third studio album by italian singer Francesco Gabbani.', 12, 2, '2017-04-28', 1, 9, 'BMG Rights Management', 3, '../images/album/2.jpg', '2018-09-11'),
+('Crazy Love', 3, 7, 'Crazy Love is the sixth studio album (and fourth major label studio album) by Canadian vocalist Michael BublÃ©. It was released by 143 Records and Reprise Records on October 9, 2009', 20, 3, '2009-10-16', 1, 12, 'Reprise Records (Warner Music)', 1, '../images/album/3.jpg', '2018-09-11'),
+('Evolve', 6, 9, 'Evolve (stylized as ÆŽVOLVE) is the third studio album by American rock band Imagine Dragons, released on June 23, 2017 through Kidinakorner and Interscope Records. The album is the band new material follow-up to their second studio album, Smoke + Mirrors.', 25, 4, '2017-06-23', 1, 11, 'Interscope Records', 6, '../images/album/4.jpg', '2018-09-11'),
+('Blood Stained Love Story', 7, 10, 'Blood Stained Love Story is the fifth studio album by American rock band Saliva which was released on January 23, 2007. This is their first album with guitarist Jonathan Montoya after the departure of Chris Dâ€™Abaldo.', 22, 5, '2007-01-23', 1, 10, 'Island Records', 2, '../images/album/5.jpg', '2018-09-11');
 
 -- --------------------------------------------------------
 
@@ -89,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `album_preferiti` (
   `album` int(11) NOT NULL,
   `utente` varchar(20) NOT NULL,
   PRIMARY KEY (`album`,`utente`),
-  KEY `fk_utente` (`utente`)
+  KEY `utente` (`utente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -132,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `artisti` (
   `img_path` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_artista`),
   KEY `fk_genere` (`genere`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `artisti`
@@ -140,7 +145,11 @@ CREATE TABLE IF NOT EXISTS `artisti` (
 
 INSERT INTO `artisti` (`nome_artista`, `id_artista`, `biografia`, `genere`, `album_pubblicati`, `inizio_attivita`, `fine_attivita`, `img_path`) VALUES
 ('Annalisa', 2, 'I consider my phisics degree a reason to be proud of myself.', 2, 6, 2004, NULL, '../images/artists/2.jpg'),
-('Francesco Gabbani', 6, 'Two times winner of the national italian singing contest Sanremo.', 1, 4, 2000, NULL, '../images/artists/6.jpg');
+('Francesco Gabbani', 6, 'Two times winner of the national italian singing contest Sanremo.', 1, 4, 2000, NULL, '../images/artists/6.jpg'),
+('Micheal BublÃ©', 7, 'Michael Steven BublÃ© (born 9 September 1975) is a Canadian-Italian singer, songwriter, actor and record producer. He has won several awards, including four Grammy Awards and multiple Juno Awards.', 3, 16, 1996, NULL, '../images/artists/7.jpg'),
+('Madonna', 8, 'Madonna Louise Ciccone (born August 16, 1958) is an American singer, songwriter, actress, and businesswoman. Referred to as the &quot;Queen of Pop&quot; since the 1980s, Madonna is known for pushing the boundaries of songwriting in mainstream popular music, as well as imagery in music videos and on stage. She has also frequently reinvented both her music and image while maintaining autonomy within the recording industry. Besides sparking controversy, her works have been praised by music critics. Madonna is often cited as an influence by other artists.', 1, 29, 1979, NULL, '../images/artists/8.jpg'),
+('Imagine Dragons', 9, 'Imagine Dragons is an American pop rock band from Las Vegas, Nevada, consisting of lead vocalist Dan Reynolds, lead guitarist Wayne Sermon, bassist Ben McKee, and drummer Daniel Platzman.', 1, 5, 2008, NULL, '../images/artists/9.jpg'),
+('Saliva', 10, 'Saliva is an American rock band formed in Memphis, Tennessee in 1996. Saliva released their self-titled debut album on August 26, 1997, through Rockingchair Records, a record label owned and operated by Mark Yoshida, who recorded and produced the release at his studio, Rockingchair Studios.', 7, 11, 1996, NULL, '../images/artists/10.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `canzoni` (
   PRIMARY KEY (`id_canzone`),
   KEY `fk_album` (`fk_album`),
   KEY `fk_artista` (`fk_artista`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `canzoni`
@@ -166,7 +175,10 @@ CREATE TABLE IF NOT EXISTS `canzoni` (
 
 INSERT INTO `canzoni` (`fk_album`, `fk_artista`, `id_canzone`, `nome_canzone`, `song_path`) VALUES
 (1, 2, 2, 'Il Mondo Prima Di Te', '../songs/2.mp3'),
-(2, 6, 4, 'Pachidermi e Pappagalli', '../songs/4.mp3');
+(2, 6, 4, 'Pachidermi e Pappagalli', '../songs/4.mp3'),
+(4, 9, 5, 'Next To Me', '../songs/5.mp3'),
+(5, 10, 6, 'Ladies And Gentlemen', '../songs/6.mp3'),
+(3, 7, 7, 'Havent Met You Yet', '../songs/7.mp3');
 
 -- --------------------------------------------------------
 
@@ -195,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `genere` (
   `genere` varchar(30) NOT NULL,
   `id_genere` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_genere`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dump dei dati per la tabella `genere`
@@ -203,7 +215,12 @@ CREATE TABLE IF NOT EXISTS `genere` (
 
 INSERT INTO `genere` (`genere`, `id_genere`) VALUES
 ('Pop', 1),
-('Commerciale', 2);
+('Commerciale', 2),
+('Swing', 3),
+('Jazz', 4),
+('Soul', 5),
+('Indie', 6),
+('Rock', 7);
 
 -- --------------------------------------------------------
 
@@ -266,7 +283,9 @@ CREATE TABLE IF NOT EXISTS `offerte_speciali` (
 --
 
 INSERT INTO `offerte_speciali` (`album`, `prezzo_offerta`) VALUES
-(1, 14.99);
+(1, 14.5),
+(2, 11.99),
+(4, 19.99);
 
 -- --------------------------------------------------------
 
@@ -307,26 +326,38 @@ CREATE TABLE IF NOT EXISTS `permessi` (
 
 INSERT INTO `permessi` (`servizio`, `gruppo`) VALUES
 ('mod_content_management.php', 'Admin'),
+('mod_delete_album.php', 'Admin'),
+('mod_delete_artist.php', 'Admin'),
+('mod_delete_song.php', 'Admin'),
 ('mod_insert_new_album.php', 'Admin'),
 ('mod_insert_new_artist.php', 'Admin'),
 ('mod_insert_new_song.php', 'Admin'),
 ('mod_logout.php', 'Admin'),
+('mod_modify_album.php', 'Admin'),
 ('mod_modify_artist.php', 'Admin'),
 ('mod_modify_delete.php', 'Admin'),
+('mod_modify_song.php', 'Admin'),
 ('mod_orders_panel.php', 'Admin'),
 ('mod_panel.php', 'Admin'),
+('mod_special_offers_panel.php', 'Admin'),
 ('mod_update_order_status.php', 'Admin'),
 ('cart_cashout.php', 'Clienti'),
 ('change_info.php', 'Clienti'),
 ('logout.php', 'Clienti'),
 ('mod_content_management.php', 'Moderatori_Base'),
+('mod_delete_album.php', 'Moderatori_Base'),
+('mod_delete_artist.php', 'Moderatori_Base'),
+('mod_delete_song.php', 'Moderatori_Base'),
 ('mod_insert_new_album.php', 'Moderatori_Base'),
 ('mod_insert_new_artist.php', 'Moderatori_Base'),
 ('mod_insert_new_song.php', 'Moderatori_Base'),
 ('mod_logout.php', 'Moderatori_Base'),
+('mod_modify_album.php', 'Moderatori_Base'),
 ('mod_modify_artist.php', 'Moderatori_Base'),
 ('mod_modify_delete.php', 'Moderatori_Base'),
-('mod_panel.php', 'Moderatori_Base');
+('mod_modify_song.php', 'Moderatori_Base'),
+('mod_panel.php', 'Moderatori_Base'),
+('mod_special_offers_panel.php', 'Moderatori_Base');
 
 -- --------------------------------------------------------
 
@@ -356,16 +387,22 @@ INSERT INTO `servizi` (`nome_servizio`) VALUES
 ('login.php'),
 ('logout.php'),
 ('mod_content_management.php'),
+('mod_delete_album.php'),
+('mod_delete_artist.php'),
+('mod_delete_song.php'),
 ('mod_insert_new_album.php'),
 ('mod_insert_new_artist.php'),
 ('mod_insert_new_song.php'),
 ('mod_login.php'),
 ('mod_logout.php'),
+('mod_modify_album.php'),
 ('mod_modify_artist.php'),
 ('mod_modify_delete.php'),
+('mod_modify_song.php'),
 ('mod_orders_panel.php'),
 ('mod_panel.php'),
 ('mod_signup.php'),
+('mod_special_offers_panel.php'),
 ('mod_update_order_status.php'),
 ('recent_albums.php'),
 ('search.php'),
@@ -377,10 +414,24 @@ INSERT INTO `servizi` (`nome_servizio`) VALUES
 --
 
 --
+-- Limiti per la tabella `account`
+--
+ALTER TABLE `account`
+  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`gruppo`) REFERENCES `gruppi` (`nome_gruppo`);
+
+--
 -- Limiti per la tabella `album`
 --
 ALTER TABLE `album`
+  ADD CONSTRAINT `album_ibfk_1` FOREIGN KEY (`fk_genere`) REFERENCES `genere` (`id_genere`),
   ADD CONSTRAINT `fk_artista` FOREIGN KEY (`fk_artista`) REFERENCES `artisti` (`id_artista`) ON DELETE CASCADE;
+
+--
+-- Limiti per la tabella `album_preferiti`
+--
+ALTER TABLE `album_preferiti`
+  ADD CONSTRAINT `album_preferiti_ibfk_1` FOREIGN KEY (`album`) REFERENCES `album` (`id_album`) ON DELETE CASCADE,
+  ADD CONSTRAINT `album_preferiti_ibfk_2` FOREIGN KEY (`utente`) REFERENCES `account` (`username`) ON DELETE CASCADE;
 
 --
 -- Limiti per la tabella `anagrafica_clienti`
@@ -429,7 +480,8 @@ ALTER TABLE `ordini`
 -- Limiti per la tabella `permessi`
 --
 ALTER TABLE `permessi`
-  ADD CONSTRAINT `permessi_ibfk_1` FOREIGN KEY (`servizio`) REFERENCES `servizi` (`nome_servizio`) ON DELETE CASCADE;
+  ADD CONSTRAINT `permessi_ibfk_1` FOREIGN KEY (`servizio`) REFERENCES `servizi` (`nome_servizio`) ON DELETE CASCADE,
+  ADD CONSTRAINT `permessi_ibfk_2` FOREIGN KEY (`gruppo`) REFERENCES `gruppi` (`nome_gruppo`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

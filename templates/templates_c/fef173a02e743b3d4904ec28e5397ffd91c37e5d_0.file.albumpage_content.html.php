@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 10:11:29
+/* Smarty version 3.1.32, created on 2018-09-11 15:54:18
   from 'C:\wamp64\www\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9794d11e1f08_49481664',
+  'unifunc' => 'content_5b97e52a862138_29650854',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fef173a02e743b3d4904ec28e5397ffd91c37e5d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536660684,
+      1 => 1536681036,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9794d11e1f08_49481664 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97e52a862138_29650854 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<div class="single-page"><br />
 						<div class="clear"> </div>
@@ -66,8 +66,8 @@ function content_5b9794d11e1f08_49481664 (Smarty_Internal_Template $_smarty_tpl)
 &euro;</a></li>
 										<?php } else { ?>
 										<li><h2>Price :</h2></li>
-										<li><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
-&euro;</li>
+										<li><a><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+&euro;</a></li>
 										<?php }?>
 										<br>
 										<li><a>In stock : <?php echo $_smarty_tpl->tpl_vars['album']->value['stock'];?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-08 08:13:42
+/* Smarty version 3.1.32, created on 2018-09-11 15:54:53
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9384b607b156_05987752',
+  'unifunc' => 'content_5b97e54d261976_30068300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1536394419,
+      1 => 1536681290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9384b607b156_05987752 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97e54d261976_30068300 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
@@ -59,20 +59,28 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 						</div> 
 								
 						<div class="cart-item-price-box">
-							<label for="cart-item-price">Price : EUR</label>
-							<input class="cart-item-price" id="cart_item_price" type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
-" disabled></input> <!-- i numeri decimali devono essere inseriti in $item.item_price con il punto e non la virgola  -->
+							<label>Price :</label>
+							<br>
+							<h3><?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+ &euro;</h3>
+							
+							<!-- L'input con il prezzo non viene visualizzato (display: none) ma viene usato solo per la post del form -->
+							<input id="cart-item-price" type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+" disabled></input><h3></h3> <!-- i numeri decimali devono essere inseriti in $item.item_price con il punto e non la virgola  -->
 						</div>
 								
 						<div class="cart-item-input-box">
 							<label for="cart-item-amount">Quantity</label>
+							
+							 <!-- Il messaggio da visualizzare quando eccedi la quantità disponibile è dentro setCustomValidity -->
+							 
 							<input class="cart-item-amount" id="cart-item-amount" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
-" type="number" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
-" min="1" value="1" onchange="quantity_change(this.name, this.value, this.max)"></input>
-							<a href="#">Details</a>
-							<input class="cart-remove-button" type="button" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
-" value="Remove" onclick="remove_item(this.name)"></input> <!-- da modificare -->
-						</div>
+" type="number" oninvalid="setCustomValidity('Available ' + this.max)" onkeypress="return event.keyCode != 13;" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
+" min="1" value="1"></input>
+							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+" class="cart-remove-button">Details</a>
+							<a href="" class="cart-remove-button" onclick="remove_item('<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
+')">Remove</a>
 						
 						</div>
 					</ul>
@@ -81,7 +89,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php if (count($_smarty_tpl->tpl_vars['cart_content']->value) == 0) {?>
-				<h1 style="text-align: center; color: white">No items here!</h1>
+				<h1 style="text-align: center; color: black">No items here!</h1>
 				<?php }?>
 			</div>
 			<div class="cart-page-divider-1">

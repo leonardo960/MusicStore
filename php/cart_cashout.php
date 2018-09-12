@@ -1,33 +1,13 @@
  <?php
-	require "include/check_service_permission.inc.php";
 	require "init_smarty.php";
- 
+	require "include/dbms.inc.php";
 	$head = "../templates/cart_cashout_head.html";
 	$content = "../templates/cart_cashout_content.html";
 	
 	session_start();
 	
 	if(isset($_SESSION['auth'])){
-		if(isset($_SESSION['cart'][0])){
-			$smarty->assign("head", $head);
-			$cart_content = array();
-			for($i = 0; $i < count($_SESSION['cart']); $i++){
-				$result = $db->getResult("select * from album where id_album = '{$_SESSION['cart'][$i]['item_id']}'");
-				array_push($cart_content, $result);
-			}
-			$smarty->assign("cart_content", $cart_content);
-			$smarty->assign("content", $content);
- 
-			require "include/set_logged_header.inc.php";
-			require "include/set_logged_header.inc.php";
-			require "include/set_active_logo.inc.php";
- 
-			$smarty->display("../templates/frame_public.html");
-		} else {
-			Header("Location: cart.php");
-			exit();
-		}
-	if(isset($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['paese']) && isset($_POST['indirizzo']) && isset($_POST['citta']) && isset($_POST['provincia']) && isset($_POST['cap']) && isset($_POST['recapito'])) { //I campi dell'ordine
+		if(isset($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['paese']) && isset($_POST['indirizzo']) && isset($_POST['citta']) && isset($_POST['provincia']) && isset($_POST['cap']) && isset($_POST['recapito'])) { //I campi dell'ordine
 		//Prevenzione dall'SQL injection sui dati specificati dal cliente per l'ordine
 		function test_input($data) {
 		$data = trim($data);
@@ -95,10 +75,29 @@
 		$smarty->assign("content", $content);
 		unset($_SESSION['cart']);
 		$smarty->display("../templates/frame_public.html");
-	} else {
-		Header("Location: cart.php");
 		exit();
-	}
+	} 
+	
+	if(isset($_SESSION['cart'][0])){
+			$cart_content = array();
+			for($i = 0; $i < count($_SESSION['cart']); $i++){
+				$result = $db->getResult("select * from album where id_album = '{$_SESSION['cart'][$i]['item_id']}'");
+				array_push($cart_content, $result);
+			}
+			$smarty->assign("cart_content", $cart_content);
+			$smarty->assign("content", $content);
+			$smarty->assign("head", $head);
+			
+			require "include/set_logged_header.inc.php";
+			require "include/set_cart_header.inc.php";
+			require "include/set_active_logo.inc.php";
+ 
+			$smarty->display("../templates/frame_public.html");
+		} else {
+			Header("Location: cart.php");
+			exit();
+		}
+	
 	} else {
 		//Per comprare bisogna essere registrati
 		header("location: login.php");

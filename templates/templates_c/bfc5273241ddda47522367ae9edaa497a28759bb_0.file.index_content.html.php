@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 07:50:25
+/* Smarty version 3.1.32, created on 2018-09-12 08:10:09
   from 'C:\wamp64\www\MusicStore\templates\index_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b962241e53688_16599979',
+  'unifunc' => 'content_5b98c9e17a00a7_54676531',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfc5273241ddda47522367ae9edaa497a28759bb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\index_content.html',
-      1 => 1536565824,
+      1 => 1536739803,
       2 => 'file',
     ),
   ),
@@ -20,14 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b962241e53688_16599979 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b98c9e17a00a7_54676531 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--start-image-slider---->
 					<div class="image-slider">
 						<!-- Slideshow 1 -->
 					    <ul class="rslides" id="slider1">
 					      <li><img src="../images/slider1.jpg" alt=""></li>
+					      <li><img src="../images/slider2.jpg" alt=""></li>
 					      <li><img src="../images/slider3.jpg" alt=""></li>
-					      <li><img src="../images/slider1.jpg" alt=""></li>
 					    </ul>
 						 <!-- Slideshow 2 -->
 					</div>
@@ -95,7 +95,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</div>
 						<div class="viewall-button-container">
 							<ul>
-								<li><a class="button1" href="#">View all</a></li>
+								<li><a class="button1" href="special_offers.php">View all</a></li>
 							</ul>
 						</div>
 						<div class="clear"> </div>

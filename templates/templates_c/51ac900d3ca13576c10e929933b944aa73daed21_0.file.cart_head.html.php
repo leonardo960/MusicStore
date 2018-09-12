@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-08-08 14:01:44
+/* Smarty version 3.1.32, created on 2018-09-11 15:54:31
   from 'C:\wamp64\www\MusicStore\templates\cart_head.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b6af7c8221889_82215798',
+  'unifunc' => 'content_5b97e5376c2746_46312457',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51ac900d3ca13576c10e929933b944aa73daed21' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_head.html',
-      1 => 1520188602,
+      1 => 1536681036,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b6af7c8221889_82215798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97e5376c2746_46312457 (Smarty_Internal_Template $_smarty_tpl) {
 ?><head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Musicstore a Entertainment Category Flat Responsive web template | singlepage :: W3layouts</title>
@@ -30,9 +30,7 @@ function content_5b6af7c8221889_82215798 (Smarty_Internal_Template $_smarty_tpl)
  src="../js/jquery-1.6.js" type="text/javascript"><?php echo '</script'; ?>
 >
 		<!-- FlexSlider -->
-	<?php echo '<script'; ?>
- src="../js/imagezoom.js"><?php echo '</script'; ?>
->
+	
 		<?php echo '<script'; ?>
  defer src="../js/jquery.flexslider.js"><?php echo '</script'; ?>
 >
