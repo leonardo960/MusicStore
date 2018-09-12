@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 16:43:53
+/* Smarty version 3.1.32, created on 2018-09-11 20:58:59
   from 'C:\wamp64\www\MusicStore\templates\special_offers_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b969f4948d192_72318062',
+  'unifunc' => 'content_5b982c933eefd6_88235716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2bc69631ea432dbc378dc6c13f9fbadf3f9ddcc1' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\special_offers_content.html',
-      1 => 1536597831,
+      1 => 1536668808,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b969f4948d192_72318062 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b982c933eefd6_88235716 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -67,6 +67,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 &euro;</h4>
 									<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 ')">Add to Cart</a>
+									<a onclick="add_to_favorites('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+')">Add to Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -81,5 +83,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 </div>
 <?php echo '<script'; ?>
  src="../js/add_to_cart.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="../js/add_remove_favorite.js"><?php echo '</script'; ?>
 ><?php }
 }

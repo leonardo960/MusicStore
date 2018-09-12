@@ -35,7 +35,7 @@
 	Artisti Trovati:
 	<br>
 	{foreach $artists as $artist}
-	{$artist.nome_artista} <form style="display: inline-block;" action="mod_modify_artist.php?artist_id={$artist.id_artista}" method="GET"><input type="submit" value="Modifica questo Artista" /></form>
+	{$artist.nome_artista} <form style="display: inline-block;" action="mod_modify_artist.php" method="GET"><input type="hidden" name="artist_id" value="{$artist.id_artista}" /><input type="submit" value="Modifica questo Artista" /></form>
 	<br>
 	{/foreach}
 	{/if}
@@ -45,7 +45,7 @@
 	Album Trovati:
 	<br>
 	{foreach $albums as $album}
-	{$album.nome_album} <form style="display: inline-block;" action="mod_modify_album.php?album_id={$album.id_album}" method="GET"><input type="submit" value="Modifica questo Album" /></form>
+	{$album.nome_album} <form style="display: inline-block;" action="mod_modify_album.php" method="GET"><input type="hidden" name="album_id" value="{$album.id_album}" /><input type="submit" value="Modifica questo Album" /></form>
 	<br>
 	{/foreach}
 	{/if}
@@ -55,7 +55,7 @@
 	Canzoni Trovate:
 	<br>
 	{foreach $songs as $song}
-	{$song.nome_canzone} <form style="display: inline-block;" action="mod_modify_song.php?song_id={$song.id_canzone}" method="GET"><input type="submit" value="Modifica questa Canzone" /></form>
+	{$song.nome_canzone} <form style="display: inline-block;" action="mod_modify_song.php" method="GET"><input type="hidden" name="song_id" value="{$song.id_canzone}" /><input type="submit" value="Modifica questa Canzone" /></form>
 	<br>
 	{/foreach}
 	{/if}

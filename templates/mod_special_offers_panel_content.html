@@ -1,0 +1,105 @@
+<style>
+.search-bar {
+	position: absolute;
+	top: 35%;
+	right: 35%;
+}
+.back-button {
+		position: absolute;
+		top: 18%;
+		left: 5%;
+	}
+.results {
+		position: absolute;
+		top: 40%;
+		left: 25%;
+}
+.page-numbers{
+		position: absolute;
+		bottom: 15%;
+		left: 50%;
+}
+
+</style>
+<form class="back-button" action="mod_panel.php">
+    <input type="submit" value="Torna al Pannello Moderatore" />
+</form>
+
+<form class="search-bar" action="mod_special_offers_panel.php" method="GET">
+	Cerca Album da aggiungere/rimuovere alle offerte: <input type="text" name="query" />
+	<input type="submit" value="Cerca" />
+</form>
+
+<div class="results">
+	{if isset($albums) && count($albums) > 0}
+	Album Trovati:
+	<br>
+	<br>
+	{foreach $albums as $album}
+	{$album.nome_album} 
+	<br>
+	Prezzo di Listino: {$album.prezzo}&euro;
+	{if isset($album.prezzo_offerta)}
+	<div>
+		Prezzo Offerta: {$album.prezzo_offerta}&euro;
+		<button id="show-offer-change-button-{$album.id_album}" type="button" onclick="show_offer_change({$album.id_album})" style="display: block;">Modifica</button>
+		<form action="mod_special_offers_panel.php" method="POST">
+			<input type="submit" value="Rimuovi Offerta" />
+			<input type="hidden" name="mode" value="delete" />
+			<input type="hidden" name="id_album" value="{$album.id_album}" />
+		</form>
+		<form id="offer-change-form-{$album.id_album}" style="display: none;" action="mod_special_offers_panel.php" method="POST">
+			<input  type="number" step="0.01" value="{$album.prezzo_offerta}" name="prezzo_offerta" /> 
+			<input type="hidden" value="{$album.id_album}" name="id_album" />
+			<input type="hidden" name="mode" value="change" />
+			<input type="submit" value="Conferma Modifica" />
+			<button type="button" onclick="cancel_offer_change({$album.id_album})" >Cancella</button>
+		</form>
+	</div>
+	{/if}
+	{if !isset($album.prezzo_offerta)}
+	<div id="offerta-assente-{$album.id_album}">
+		Nessun prezzo offerta impostato al momento.
+		<button id="insert-offer-button-{$album.id_album}" type="button" onclick="show_offer_input({$album.id_album})" style="display: block;">Imposta</button>
+		<form id="offer-insert-form-{$album.id_album}" style="display: none;" action="mod_special_offers_panel.php" method="POST">
+			Prezzo Offerta da impostare: <input  type="number" step="0.01" value="0" name="prezzo_offerta" /> 
+			<input type="hidden" value="{$album.id_album}" name="id_album" />
+			<input type="submit" value="Conferma" />
+			<input type="hidden" name="mode" value="insert" />
+			<button type="button" onclick="cancel_offer_input({$album.id_album})" >Cancella</button>
+		</form>
+	</div>
+	{/if}
+	<br>
+	{/foreach}
+	{/if}
+	<br>
+</div>
+<div class="page-numbers">
+	{for $counter=1 to $page_counter}
+		<a href="mod_special_offers_panel.php?page_id={$counter}">{$counter}</a>
+	{/for}
+</div>
+<script>
+	function show_offer_change(album_id){
+		document.getElementById("show-offer-change-button-"+album_id).style.display = "none";
+		document.getElementById("offer-change-form-"+album_id).style.display = "block";
+	}
+	
+	function cancel_offer_change(album_id){
+		document.getElementById("show-offer-change-button-"+album_id).style.display = "block";
+		document.getElementById("offer-change-form-"+album_id).style.display = "none";
+	}
+	
+	function show_offer_input(album_id){
+		document.getElementById("insert-offer-button-"+album_id).style.display = "none";
+		document.getElementById("offer-insert-form-"+album_id).style.display = "block";
+	}
+	
+	function cancel_offer_input(album_id){
+		document.getElementById("insert-offer-button-"+album_id).style.display = "block";
+		document.getElementById("offer-insert-form-"+album_id).style.display = "none";
+	}
+	
+	
+</script>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 11:07:24
+/* Smarty version 3.1.32, created on 2018-09-11 12:58:45
   from 'C:\wamp64\www\MusicStore\templates\mod_modify_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97a1ec061c37_72510131',
+  'unifunc' => 'content_5b97bc0571e2d0_15847609',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3b15cf1a83fc23221de7e43f89e5f604730bede' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_modify_artist_content.html',
-      1 => 1536664041,
+      1 => 1536670723,
       2 => 'file',
     ),
   ),
@@ -20,17 +20,23 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97a1ec061c37_72510131 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97bc0571e2d0_15847609 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
-	top: 25%;
+	top: 17%;
 	left: 28%;
 }
 .back-button {
 	position: absolute;
 	top: 18%;
 	left: 5%;
+}
+.artist-img {
+    width:100%;
+	height:100%;
+    max-width:200px;
+	max-height:200px;
 }
 
 </style>
@@ -48,14 +54,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
 ?>
 		<input type="radio" name="genere" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
-" <?php $_prefixVariable1 = $_smarty_tpl->tpl_vars['genere']->value['id_genere'];
-$_tmp_array = isset($_smarty_tpl->tpl_vars['artista']) ? $_smarty_tpl->tpl_vars['artista']->value : array();
-if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
-settype($_tmp_array, 'array');
-}
-$_tmp_array['genere'] = $_prefixVariable1;
-$_smarty_tpl->_assignInScope('artista', $_tmp_array);
-if ($_prefixVariable1) {?>checked<?php }?> required /> <?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+" <?php if ($_smarty_tpl->tpl_vars['artista']->value['genere'] == $_smarty_tpl->tpl_vars['genere']->value['id_genere']) {?>checked<?php }?> required /> <?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
 
 		<?php
 }
@@ -76,7 +75,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		<input id="checkbox-in-attivita" type="checkbox" name="fine_attivita" value="" <?php if (!isset($_smarty_tpl->tpl_vars['artista']->value['fine_attivita'])) {?>checked<?php }?>  onclick="checkbox_func_1()" />
 		<br>
 		Immagine Artista:
-		<img src="<?php echo $_smarty_tpl->tpl_vars['artista']->value['img_path'];?>
+		<img class="artist-img" src="<?php echo $_smarty_tpl->tpl_vars['artista']->value['img_path'];?>
 ">
 		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" />
 		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
@@ -87,6 +86,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<br>
 	<br>
 	<input type="submit" value="Conferma Modifiche" form="artist-form" />
+	<br>
+	<br>
+	<form action="mod_delete_artist.php" method="GET">
+	<input type="hidden" name="delete" value="<?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
+" />
+	<input type="submit" value="Cancella Artista" />
+	</form>
 </div>
 <form class="back-button"  action="mod_modify_delete.php">
     <input type="submit" value="Torna alla pagina di ricerca" />

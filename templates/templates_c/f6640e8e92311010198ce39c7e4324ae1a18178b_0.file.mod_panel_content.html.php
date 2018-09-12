@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 13:35:45
+/* Smarty version 3.1.32, created on 2018-09-11 14:03:28
   from 'C:\wamp64\www\MusicStore\templates\mod_panel_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b967331acfcd5_27272891',
+  'unifunc' => 'content_5b97cb30c671f0_13562032',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6640e8e92311010198ce39c7e4324ae1a18178b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_panel_content.html',
-      1 => 1536586544,
+      1 => 1536674601,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b967331acfcd5_27272891 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b97cb30c671f0_13562032 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
@@ -34,6 +34,9 @@ function content_5b967331acfcd5_27272891 (Smarty_Internal_Template $_smarty_tpl)
 <br>
 <br>
 <a href="mod_orders_panel.php">Gestione Ordini</a>
+<br>
+<br>
+<a href="mod_special_offers_panel.php">Gestione Offerte Speciali</a>
 <br>
 <br>
 <a href="mod_logout.php">Logout</a>
