@@ -4,10 +4,8 @@
 	
 	session_start();
 	
-	$head = "../templates/contacts_head.html";
 	$content = "../templates/contacts_content.html";
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 
 	

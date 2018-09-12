@@ -15,11 +15,9 @@
 	require "include/signup.inc.php";
 	//E' andato tutto bene, mostro un messaggio di registrazione avvenuta con successo
 
-	$head = "../templates/index_head.html";
 	$content = "../templates/messages/registration_successful.html";
 	
 	$smarty->assign("newuser", $_SESSION['auth']['nome']);
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	
 	

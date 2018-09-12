@@ -5,10 +5,8 @@
 	session_start();
 	if ( isset($_SESSION['auth']) ) {
 	
-	$head = "../templates/account_head.html";
 	$content = "../templates/account_content.html";
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	
 

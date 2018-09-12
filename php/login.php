@@ -2,7 +2,6 @@
 	//Init view
 	require "init_smarty.php";
 	
-	$head = "../templates/login_head.html";
 	$content = "../templates/login_content.html";
 		
 	if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -43,7 +42,6 @@
 	require "include/set_cart_header.inc.php";
 	require "include/set_active_logo.inc.php";
 
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/frame_public.html");

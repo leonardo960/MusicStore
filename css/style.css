@@ -674,7 +674,7 @@ body{
 	font-weight:normal;
 }
 .cartire-grid {
-	border: 1px solid #EEE;
+	background: #070d0a;
 	padding: 15px;
 	box-shadow: 0px 0px 0px rgba(238, 238, 238, 0.08);
 	margin-top: 21px;
@@ -689,17 +689,20 @@ body{
 .Cartires h5{
 	display: block;
 	padding: 23px;
-	font: bold 18px/16px 'Quicksand';
-	color: #FFF;
+	font: bold 40px/30px 'Quicksand';
+	color: #070d0a;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
+	text-align: center;
 	text-transform: uppercase;
-	background: url(../images/head1.png) repeat-x;
-	background: url(../images/top-nav.png) repeat-x;
-	border-bottom: 2px solid #FC3019;
 }
 .Cartires h5 span{
-	color: #FC3019;
+	color: #070d0a;
+}
+.cartires-grids{
+	background: #2b5849;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .cartire-grid-img{
 	float:left;
@@ -710,23 +713,21 @@ body{
 .cartire-grid-info{
 	float:left;
 	width:59%;
-	border-right: 1px solid rgba(202, 202, 202, 0.29);
 }
 .cartire-grid-info ul li,.cartire-grid-info h3{
 	display: block;
 	padding: 3px 0px;
 	font: bold 12px/30px 'Quicksand', Helvetica, sans-serif;
-	color:#FC3019;
-	border-right: 1px solid rgba(151, 151, 151, 0.11);
+	color:#48C9A9;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 .cartire-grid-info h3{
-	color:#000;
+	color:#b8ffed;
 }
 .cartire-grid-info p{
 	font-size: 0.8125em;
-	color: #989898;
+	color: #1EA180;
 	line-height: 1.6em;
 	font-family: 'Quicksand', sans-serif;
 	width: 91%;
@@ -734,11 +735,14 @@ body{
 	overflow: hidden;
 }
 .cartire-grid-info ul li span{
-	color:#000;
+	color:#b8ffed;
 	padding-right:10px;
 }
 .cartire-grid-info ul li a, .cartire-grid-info ul li a:visited{
-	color:#FC3019;
+	color:#48C9A9;
+}
+.cartire-grid-info ul li a:hover{
+	text-shadow: 0 0 5px #48C9A9;
 }
 .cartire-grid-cartinfo{
 	width:18%;
@@ -749,14 +753,13 @@ body{
 	display: block;
 	padding: 3px 0px;
 	font: bold 12px/30px 'Quicksand', Helvetica, sans-serif;
-	color: #000;
-	border-right: 1px solid rgba(151, 151, 151, 0.11);
+	color: #b8ffed;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 .cartire-grid-cartinfo span{
 	font-size: 0.8125em;
-	color: #000;
+	color: #b8ffed;
 	line-height: 1.6em;
 	font-family: 'Quicksand', sans-serif;
 	padding: 7px 0px;
@@ -765,25 +768,27 @@ body{
 	display:inline-block;
 }
 .cartire-grid-cartinfo a{
+	width: 90%;
 	padding: 8px 10px;
 	display: inline-block;
-	background: url(../images/head1.png)repeat-x;
-	border: none;
+	border: 2px solid #8EF2D9;
+	background: transparent;
 	font: bold 12px 'Quicksand'!important;
-	color: #FFF;
+	color: #8EF2D9;
 	text-align: center;
 	cursor: pointer;
-	-moz-transition: background 0.5s ease;
-	-o-transition: background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.2s ease, border 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease;
 	margin-bottom: 10px;
 }
 .cartire-grid-cartinfo a:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: #2b5849;
+	border: 2px solid #2b5849;
 	text-decoration: none !important;
-	-moz-transition: background 0.2s ease;
-	-o-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, border 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease;
 }
 .cartire-grid-cartinfo ul{
 	margin:7px 0px;
@@ -808,7 +813,6 @@ body{
 }
 /*----contact-----*/
 .contact{
-	background:#FFF;
 	padding:0px 20px;
 }
 /*  Contact Form  ============================================================================= */
@@ -861,6 +865,9 @@ body{
 .contact-form div{
 	padding:5px 0;
 }
+.contact-form label{
+	color: #8EF2D9;
+}
 .contact-form span{
 	display:block;
 	font-size:0.8125em;
@@ -889,29 +896,29 @@ body{
 		height:120px;		
 }
 .contact-form input[type="submit"]{
-	padding: 10px 20px;
+	padding: 10px 60px;
 	display: block;
-	background: url(../images/head1.png)repeat-x;
-	border: none;
+	border: 2px solid #8EF2D9;
+	background: transparent;
 	font: bold 12px 'Quicksand'!important;
-	color: #FFF;
+	color: #8EF2D9;
+	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
-	-moz-transition: background 0.5s ease;
-	-o-transition: background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.2s ease, border 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease;
 	margin-bottom: 1em;
 	margin-right: 3px;
-	border-radius: 3em;ckground 0.5s ease;
 	cursor:pointer;
-	border:none;
 }
 .contact-form input[type="submit"]:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: #070d0a;
+	border: 2px solid #070d0a;
 	text-decoration: none !important;
-	-moz-transition: background 0.2s ease;
-	-o-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, border 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease;
 }
 .contact-form input[type="submit"]:active{
 	background-position: left bottom;
@@ -925,14 +932,17 @@ body{
 }
 .company_address p{
 	font-size: 0.8125em;
-	color: #989898;
+	color: #8EF2D9;
 	line-height: 1.6em;
 	font-family: 'Quicksand', sans-serif;
 }
 .company_address p a{
 	text-decoration:underline;
-	color:#FC3019;
+	color:#b8ffed;
 	cursor:pointer;
+}
+.company_address p a:hover{
+	text-shadow: 0 0 5px #b8ffed;
 }
 .map{
 	border:1px solid #C7C7C7;

@@ -3,10 +3,8 @@
  require "include/dbms.inc.php";
  
  //TODO completare
- $head = "../templates/artistpage_head.html";
  $content = "../templates/artistpage_content.html";
  
- $smarty->assign("head", $head);
  $smarty->assign("content", $content);
  
  function test_input($data) {

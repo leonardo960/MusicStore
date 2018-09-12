@@ -1,7 +1,6 @@
  <?php
 	require "init_smarty.php";
 	require "include/dbms.inc.php";
-	$head = "../templates/cart_cashout_head.html";
 	$content = "../templates/cart_cashout_content.html";
 	
 	session_start();
@@ -34,7 +33,6 @@
 		require "include/set_logged_header.inc.php";
 		require "include/set_active_logo.inc.php";
 		
-		$head = "../templates/order_confirm_head.html";
 		$content = "../templates/order_confirm_content.html";
 		
 		$smarty->assign("metodo_pagamento", $_POST['metodo_pagamento']);
@@ -71,7 +69,6 @@
 		require "include/set_logged_header.inc.php";
 		require "include/set_active_logo.inc.php";
 	
-		$smarty->assign("head", $head);
 		$smarty->assign("content", $content);
 		unset($_SESSION['cart']);
 		$smarty->display("../templates/frame_public.html");
@@ -86,7 +83,6 @@
 			}
 			$smarty->assign("cart_content", $cart_content);
 			$smarty->assign("content", $content);
-			$smarty->assign("head", $head);
 			
 			require "include/set_logged_header.inc.php";
 			require "include/set_cart_header.inc.php";

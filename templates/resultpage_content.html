@@ -4,11 +4,11 @@
 						<div class="resultpage-filter-box">
 				<form class="advanced-search-form" action="search.php" method=GET>
 					<ul>
-						<li><label id="first-resultpage-label" for="resultpage-filters">Advanced Search:</label></li>
+						<li><label id="first-resultpage-label" for="resultpage-filters">Advanced Search : </label></li>
 						<li><input type="search" name="query" {if isset($query)}value="{$query}"{/if} placeholder="Search..."/></li>
 					</ul>
 					<ul>
-						<li><label for="resultpage-filters">Show only:</label></li>
+						<li><label for="resultpage-filters">Show only : </label></li>
 						<li><div id="resultpage-filters" class="resultpage-filters">
 							<input type="radio" name="filter" value="artists" {if isset($filter) and $filter eq "artists"} checked {/if}>artists
 							<input type="radio" name="filter" value="songs" {if isset($filter) and $filter eq "songs"} checked {/if}>songs
@@ -16,7 +16,7 @@
 						</div></li>
 					</ul>
 					<ul>
-						<li><label for="resultpage-price-filter">Price:</label></li>
+						<li><label for="resultpage-price-filter">Price : </label></li>
 						<li><div id="resultpage-price-filter" class="resultpage-price-filter">
 							<input type="number" name="MIN" min="0" max="1000" pattern="[0-9]+" title="Please use only digits." {if isset($min)}value={$min}{/if} placeholder={if !isset($min)}"Min"{/if}>
 							<input type="number" name="MAX" min="0" max="1000" pattern="[0-9]+" title="Please use only digits." {if isset($max)}value={$max}{/if} placeholder={if !isset($max)}"Max"{/if}>

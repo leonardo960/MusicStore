@@ -17,10 +17,8 @@ $result = $db->getResult("SELECT id_canzone, nome_canzone, song_path FROM album 
 $smarty->assign("songs", $result);
 
 
-$head = "../templates/albumpage_head.html";
 $content = "../templates/albumpage_content.html";
- 
-$smarty->assign("head", $head);
+
 $smarty->assign("content", $content);
  
 require "include/set_logged_header.inc.php";

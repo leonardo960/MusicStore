@@ -4,7 +4,6 @@
 	
 	session_start();
 	
-	$head = "../templates/index_head.html";
 	$content = "../templates/index_content.html";
 	
 	//Recuperiamo le ultime uscite e gli album in offerta
@@ -21,8 +20,7 @@
 	if($result){
 		$smarty->assign("special_offers", $result);
 	}
-	
-	$smarty->assign("head", $head);
+
 	$smarty->assign("content", $content);
 
 	

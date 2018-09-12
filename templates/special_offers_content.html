@@ -10,20 +10,20 @@
 								</div>
 								<div class="cartire-grid-info">
 									<ul>
-										<li><span>Title: </span>{$album.nome_album}</li>
+										<li><span>Title : </span>{$album.nome_album}</li>
 										{foreach $special_offers_artists as $artist}
 											{if $artist.id_artista == $album.fk_artista}
-												<li><span>Artist: </span><a href="artistpage.php?id_artista={$artist.id_artista}">{$artist.nome_artista}</a></li>
+												<li><span>Artist : </span><a href="artistpage.php?id_artista={$artist.id_artista}">{$artist.nome_artista}</a></li>
 											{/if}
 										{/foreach}
 									</ul>
-									<h3>Description</h3>
+									<h3>Description : </h3>
 									<p>{$album.descrizione}</p>
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
 									<a href="artistpage.php?id_artista={$artist.id_artista}">Go to Info</a>
-									<h4><span>Special Price: </span>{$album.prezzo_offerta}&euro;</h4>
+									<h4><span>Special Price : </span>{$album.prezzo_offerta}&euro;</h4>
 									<a onclick="add_to_cart('{$album.id_album}')">Add to Cart</a>
 									<a onclick="add_to_favorites('{$album.id_album}')">Add to Favorites</a>
 								</div>

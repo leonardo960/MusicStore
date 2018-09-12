@@ -4,7 +4,6 @@
 	
 	session_start();
 	
-	$head = "../templates/recent_albums_head.html";
 	$content = "../templates/recent_albums_content.html";
 	
 	//Recuperiamo le ultime uscite
@@ -20,7 +19,6 @@
 		$smarty->assign("recent_albums", $result);
 	}
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 
 	

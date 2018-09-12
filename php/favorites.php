@@ -4,7 +4,6 @@
 	
 	session_start();
 	
-	$head = "../templates/favorites_head.html";
 	$content = "../templates/favorites_content.html";
 	
 	if(isset($_SESSION['auth'])){
@@ -21,7 +20,6 @@
 			$smarty->assign("album", $result);
 		}
 	
-		$smarty->assign("head", $head);
 		$smarty->assign("content", $content);
 	
 		require "include/set_logged_header.inc.php";
@@ -31,7 +29,6 @@
 	
 		$smarty->display("frame_public.html");
 	} else {
-		$smarty->assign("head", $head);
 		$smarty->assign("content", $content);
 	
 		require "include/set_logged_header.inc.php";

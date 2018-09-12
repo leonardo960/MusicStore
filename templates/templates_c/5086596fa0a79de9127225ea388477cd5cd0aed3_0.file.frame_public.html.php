@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 17:57:43
+/* Smarty version 3.1.32, created on 2018-09-12 19:27:13
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b995397967104_14499492',
+  'unifunc' => 'content_5b996891d53952_63500435',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5086596fa0a79de9127225ea388477cd5cd0aed3' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\frame_public.html',
-      1 => 1536775061,
+      1 => 1536780432,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,38 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b995397967104_14499492 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b996891d53952_63500435 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
-<?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
-?>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Music Store</title>
+		<link href="../css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/responsiveslides.css">
+		<?php echo '<script'; ?>
+ src="../js/jquery.min.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ src="../js/responsiveslides.min.js"><?php echo '</script'; ?>
+>
+		
+		  <?php echo '<script'; ?>
+>
+		    // You can also use "$(window).load(function() {"
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  <?php echo '</script'; ?>
+>
+		  
+</head>
 	<body>
 		<!---start-wrap--->
 		<div class="wrap">

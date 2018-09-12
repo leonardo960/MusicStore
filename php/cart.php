@@ -23,7 +23,6 @@ require "include/dbms.inc.php";
 require "init_smarty.php";
 
 
-$head = "../templates/cart_head.html";
 $content = "../templates/cart_content.html";
 
 
@@ -50,7 +49,6 @@ $smarty->assign("cart_content", $cart_content);
 require "include/set_logged_header.inc.php";
 require "include/set_cart_header.inc.php";
 require "include/set_active_logo.inc.php";
-$smarty->assign("head", $head);
 $smarty->assign("content", $content);
 if(isset($_GET['error'])){
 	switch($_GET['error']){

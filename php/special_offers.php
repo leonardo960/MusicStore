@@ -4,7 +4,6 @@
 	
 	session_start();
 	
-	$head = "../templates/special_offers_head.html";
 	$content = "../templates/special_offers_content.html";
 	
 	//Recuperiamo le offerte speciali
@@ -18,7 +17,6 @@
 		$smarty->assign("special_offers_artists", $result);
 	}
 	
-	$smarty->assign("head", $head);
 	$smarty->assign("content", $content);
 
 	

@@ -11,16 +11,16 @@
 								</div>
 								<div class="cartire-grid-info">
 									<ul>
-										<li><span>Title: </span>{$favorite.nome_album}</li>
-										<li><span>Artist: </span><a href="">{$favorite.nome_artista}</a></li>
+										<li><span>Title : </span>{$favorite.nome_album}</li>
+										<li><span>Artist : </span><a href="">{$favorite.nome_artista}</a></li>
 									</ul>
-									<h3>Description</h3>
+									<h3>Description :</h3>
 									<p>{$favorite.descrizione}</p>
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
 									<a href="albumpage.php?id_album={$favorite.id_album}">Go to Info</a>
-										<h4><span>Price Right Now: </span>{$favorite.prezzo_offerta}&euro;</h4>
+										<h4><span>Price Right Now : </span>{$favorite.prezzo_offerta}&euro;</h4>
 									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
 									<a onclick="remove_from_favorites('{$album.id_album}')">Remove from Favorites</a>
 								</div>
@@ -30,7 +30,7 @@
 						{/foreach}
 						{else}
 							<div class="cartire-grid">
-								<h4>Your don't have any favorite album yet. Add some!</h4>
+								<h4 id="no-fav-message">Your don't have any favorite album yet. Add some!</h4>
 							</div>
 						{/if}
 						</div>

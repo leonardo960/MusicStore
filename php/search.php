@@ -14,7 +14,6 @@
 	require "include/search.inc.php";
 
 	
-	$head = "../templates/resultpage_head.html";
 	$content = "../templates/resultpage_content.html";
 	
 	if (isset($_SESSION['search'][1])) {
@@ -92,8 +91,7 @@
 		$smarty->assign("query", $_GET['query']);
 	}
 	
-	
-	$smarty->assign("head", $head);
+
 	$smarty->assign("content", $content);
 	$smarty->display("../templates/frame_public.html");
 	} else {
