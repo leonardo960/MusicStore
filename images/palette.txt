@@ -1,0 +1,17 @@
+darkest = 02241B
+dark = 0C6F56 15816e
+normal = 1EA180 
+light = 48C9A9
+lightest = 8EF2D9
+lightestest = b8ffed
+
+darkest = 371603
+dark = AA4B12
+normal = F7792F
+light = FF985B
+lightest = FFBC95
+
+black = 070d0a
+black lighter = 162b22
+black lightest = 2b5849
+accent = 4e9a60

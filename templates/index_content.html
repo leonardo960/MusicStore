@@ -2,9 +2,10 @@
 					<div class="image-slider">
 						<!-- Slideshow 1 -->
 					    <ul class="rslides" id="slider1">
-					      <li><img src="../images/slider1.jpg" alt=""></li>
-					      <li><img src="../images/slider3.jpg" alt=""></li>
-					      <li><img src="../images/slider1.jpg" alt=""></li>
+					      <li><img src="../images/slider5.png" alt=""></li>
+					      <li><img src="../images/slider6.png" alt=""></li>
+					      <li><img src="../images/slider7.png" alt=""></li>
+						  <li><img src="../images/slider4.png" alt=""></li>
 					    </ul>
 						 <!-- Slideshow 2 -->
 					</div>
@@ -16,9 +17,8 @@
 						<div class="section group">
 							{foreach $recent_albums as $album}
 							<div class="grid_1_of_5 images_1_of_5 displayed-item">
+								<h3>"{$album.nome_album}"</h3>
 								<img src="{$album.img_path}">
-								<h3>{$album.nome_album}</h3>
-								<p>{$album.descrizione}</p>
 								<h4><span></span>{$album.prezzo}&euro;</h4>
 								<div class="button"><span><a href="albumpage.php?id_album={$album.id_album}">Read More</a></span></div>
 							</div>
@@ -37,9 +37,8 @@
 						<div class="section group">
 						{foreach $special_offers as $album}
 							<div class="grid_1_of_5 images_1_of_5 displayed-item">
+								 <h3>"{$album.nome_album}"</h3>
 								 <img src="{$album.img_path}">
-								 <h3>{$album.nome_album}</h3>
-								 <p>{$album.descrizione}</p>
 								 <h4><span>{$album.prezzo}&euro;</span>{$album.prezzo_offerta}&euro;</h4>
 							     <div class="button"><span><a href="albumpage.php?id_album={$album.id_album}">Read More</a></span></div>
 							</div>

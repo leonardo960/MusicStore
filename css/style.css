@@ -23,10 +23,10 @@ img{max-width:100%;}
 /*end reset*/
 /*---start-wrap----*/
 body{
-	background: url(../images/body-bg.png) repeat-x, url(../images/bg.png) #F8F8F8;
+	background: url(../images/body-bg-new.png) repeat-x, #15816e;
 }
 #permission-denied-container{
-	background: #ffffff !important;
+	background: #FFF !important;
 	width: 100% !important;
 	height: 657px !important;
 }
@@ -40,7 +40,7 @@ body{
 	float: left;
 }
 #permission-denied-inner h1, #permission-denied-inner p{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding: 10px 20px;
 }
 #permission-denied-inner h1{
@@ -51,7 +51,7 @@ body{
 	height: 150px;
 }
 .wrap{
-	width:80%;
+	width:100% !important;
 	margin:0 auto;
 }
 .loginform{
@@ -60,25 +60,52 @@ body{
 }
 .top-header-left{
 	float:left;
-	margin-top: 15px;
+	margin: 15px;
 }
 .top-header-left ul li{
 	display:inline-block;
 }
 .top-header-right{
 	float:right;
-	margin-top: 5px;
+	margin: 15px;
+}
+
+.top-header-right input[type="text"]{
+	border: 3px solid #ffffff;
+	border-radius: 20px 0 0 20px;
+	float:left;
+	width: 400px;
+	padding:7px;
+}
+.top-header-right input[type="text"]:focus{
+	outline: none;
+	border: 3px solid #8EF2D9;
+}
+.top-header-right button[type="submit"]{
+	border: none !important;
+	background: #ffffff !important;
+	border: 3px solid #ffffff;
+	border-radius: 0 20px 20px 0;
+	width: 32px;
+	padding: 0 !important;
+}
+.top-header-right button[type="submit"]:focus{
+	outline:none;
+}
+.top-header-right button[type="submit"] img{
+	padding: 4px 4px 4px 0;
 }
 .top-header-right ul li{
 	display:inline-block;
-	padding: 10px;
-	font-family: 'Open Sans', sans-serif;
+	padding: 20px;
+	font-family: 'Quicksand', sans-serif;
 	font-size:0.75em;
-	color:#fff;
+	color:#FFF;
 	text-transform: uppercase;
 }
 .top-header-left ul li a,.top-header-right ul li a{
-	color:#fff;
+	color:#FFF;
+	font-size: 12px;
 }
 .top-header-right #header-auth-info{
 	color: #000000;
@@ -95,36 +122,29 @@ body{
 }
 /*----sub-header-----*/
 .sub-header {
-	margin: 40px 0 25px 0;
+	margin: 40px 0 50px 0;
 }
 .logo{
 	float:left;
-	margin-top: 18px;
 }
 .sub-header-center{
-	float: left;
+	float: center;
 	width: 56%;
 	text-align: center;
+	margin: auto !important;
 	margin-top: 1.5em;
+	
 }
 .sub-header-center input[type="text"]{
-	border-left: 1px solid red;
-	border-top: 1px solid red;
-	border-bottom: 1px solid red;
-	border-right: 0 !important;
 	width: 50%;
 	padding: 10px;
 }
 .sub-header-center input[type="submit"]{
 	background: url(../images/top-nav.png) repeat-x;
-	border-right: 1px solid red;
-	border-top: 1px solid red;
-	border-bottom: 1px solid red;
-	border-left: 0 !important;
-	color: #fff;
+	color: #FFF;
 	padding: 8px;
 	padding-bottom: 9px !important;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	transition: 0.5s ease;
@@ -152,9 +172,9 @@ body{
 	display:inline-block;
 }
 .sub-header-right ul li a{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size:0.75em;
-	color:#fff;
+	color:#FFF;
 	text-transform: uppercase;
 	padding:0px 10px;
 }
@@ -169,7 +189,7 @@ body{
 	cursor:pointer;
 	outline:none;
 	padding:5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	background:#292828;
 	color:#FFF;
 }
@@ -189,7 +209,7 @@ body{
 	display: block;
 	float: left;
 	background: url(../images/button.gif) left top repeat-x;
-	color: #fff;
+	color: #FFF;
 	text-decoration: none;
 	text-align: center;
 	font: bold 12px/30px Arial, Helvetica, sans-serif;
@@ -206,23 +226,21 @@ body{
 }
 /*----top-nav----*/
 .top-nav ul li{
-	width: calc(20% - 1px) !important;
+	width: 20% !important;
 	display:inline-block;
 	float:left;
-	border-right: 1px solid rgba(9, 8, 8, 1);
 }
 .top-nav{
-	background: url(../images/top-nav.png) repeat-x;
-	border-bottom: 2px solid #FC3019;
+	background: url(../images/top-nav-new.png) repeat-x;
 }
 .top-nav ul li a{
 	display: block;
 	padding: 22.6px;
-	background: url(../images/top-nav.png) repeat-x;
-	font: bold 14px/16px "Arial";
+	background: url(../images/top-nav-new.png) repeat-x;
+	font: bold 14px/16px 'Quicksand';
 	text-align: center;
-	color: #fff;
-	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	-moz-transition: background 0.2s ease;
@@ -234,39 +252,49 @@ body{
 	border-right: 0 !important;
 }
 .top-nav li.active1> a, .top-nav li> a:hover {
-	background:url(../images/top-nav1.png);
-	-moz-transition: background 0.2s ease;
-	-o-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
+	background:#48C9A9;
+	color: #070d0a;
+	font-weight: bold;
+	font-size: 18px;
+	-moz-transition: background 0.2s ease, font-size 0.2s ease;
+	-o-transition: background 0.2s ease, font-size 0.2s ease;
+	-webkit-transition: background 0.2s ease, font-size 0.2s ease;
 }
 /*-----.image-slider----*/
 .image-slider {
-	box-shadow: 0 10px 10px -10px #555;
+
 }
 .button1{
 	float:right;
-	padding: 10px 20px;
+	padding: 10px 60px;
 	display: block;
-	background: url(../images/head1.png)repeat-x;
-	border: none;
-	font: bold 12px "Arial"!important;
-	color: #fff;
+	background: transparent;
+	border: 2px solid #070d0a;
+	font: normal 18px 'Quicksand'!important;
+	color: #070d0a;
 	text-align: center;
 	cursor: pointer;
-	-moz-transition: background 0.5s ease;
-	-o-transition: background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
+	text-transform: uppercase;
+	-moz-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
 	margin-bottom:1em;
 	margin-right:3px;
-	border-radius:3em;
 }
 .button1:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: #b8ffed;
+	border: 2px solid #b8ffed;
+	font: bold 18px 'Quicksand'!important;
+	-moz-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease, font 0.2s ease;
 }
 /*---products----*/
 .products-box {
-	background: #101010;
 	padding: 0 !important;
+}
+.products{
+	margin-top: 50px;
 }
 .products .section{
 	
@@ -274,18 +302,15 @@ body{
 	margin: auto;
 }
 .products .displayed-item{
-	width: calc(20% - 32px) !important;
-	padding: 15px;
-	margin: 0 !important;
 }
 .displayed-item h4{
-	color: #FFFFFF !important;
+	color: #F7792F !important;
 }
 .displayed-item h3{
 	height: 55px !important;
 	border: 0 !important;
 	font-size: 16px !important;
-	color:#FC3019 !important; 
+	color:#8EF2D9 !important; 
 }
 .displayed-item p{
 	height: 140px !important;
@@ -293,24 +318,25 @@ body{
 }
 .products h5{
 	display: block;
-	padding: 23px;
-	font: bold 18px/16px "Arial";
-	color: #FFF;
-	font-family: 'Open Sans', sans-serif;
+	padding-top: 60px;
+	padding-bottom: 20px;
+	font: 40px/30px 'Quicksand';
+	color: #070d0a;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
-	background: url(../images/head1.png) repeat-x;
-	background: url(../images/top-nav.png) repeat-x;
-	border-bottom: 2px solid #FC3019;
+	text-align: center;
 }
 .content{
-	background:#FFF;
+	margin-top: 50px !important;
+	margin-bottom: 50px !important;
+
 }
 .products h5 span{
-	color:#FC3019;
+	color:#070d0a;
 }
 .products-secondbox h4 span{
-	color:#FC3019;
+	color:#AA4B12;
 	text-decoration:line-through;
 	padding-right:5px;
 }
@@ -320,6 +346,7 @@ body{
 	width: 100% !important;
 	height: 50px !important;
 	text-align: center;
+	margin-top: 20px;
 }
 .viewall-button-container ul{
 	width: fit-content !important;
@@ -333,9 +360,8 @@ body{
 
 /*  GRID OF Five   ============================================================================= */
 .section {
+	background: #2b5849; 
 	clear: both;
-	padding: 0px;
-	margin: 0px;
 }
 .group:before,
 .group:after {
@@ -351,20 +377,26 @@ body{
 .grid_1_of_5{
 	display: block;
 	float:left;
-	margin: 1% 0 1% 1.6%;
 }
-.grid_1_of_5:first-child {
-	 margin-left: 0;
-} 
+.images_1_of_5:first-child{
+	width: calc(20% - 15px) !important;
+	margin-left: 10px !important;
+}
+.images_1_of_5:last-child{
+	width: calc(20% - 15px) !important;
+	margin-right: 10px !important;
+}
 .images_1_of_5 {
-	width: 18.5%;
-	padding: 0.8em 0 0% 0;
-	background: #161616;
+	width: calc(20% - 10px) !important;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left: 5px !important;
+	margin-right: 5px !important;
+	background: #070d0a;
 	text-align: center;
-	border: 1px solid rgba(238, 238, 238, 0.13);
-	-moz-transition: background 0.5s ease, border 0.3s ease;
-	-o-transition: background 0.5s ease, border 0.3s ease;
-	-webkit-transition: background 0.5s ease, border 0.3s ease;
+	-moz-transition: background 0.5s ease;
+	-o-transition: background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
 }
 .images_1_of_5 label{
 	color:#FC3019;
@@ -376,9 +408,9 @@ body{
 	margin: 0 auto;
 }
 .images_1_of_5  h3{
+	margin-top: 10px;
 	display: block;
-	padding: 0.5em 0 0.2em 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size:0.875em;
 	color: #FFF;
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
@@ -388,21 +420,22 @@ body{
 	font-size:0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family : verdana, arial, helvetica, helve, sans-serif; 	
+	font-family: 'Quicksand', sans-serif; 	
 }
 .images_1_of_5 h4{
-	font-size: 0.8125em;
+	font-size: 16px;
 	color: #555;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding: 7px 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 .images_1_of_5:hover{
-	border: 1px solid #FC3019;
-	background: #262626;
-	-moz-transition: background 0.5s ease, border 0.3s ease;
-	-o-transition: background 0.5s ease, border 0.3s ease;
-	-webkit-transition: background 0.5s ease, border 0.3s ease;
+	background: #2b5849;
+	-moz-transition: background 0.5s ease;
+	-o-transition: background 0.5s ease;
+	-webkit-transition: background 0.5s ease;
 }
 .images_1_of_5 .button{
 	margin-top:.3em;
@@ -410,23 +443,25 @@ body{
 }
 .images_1_of_5 .button a{
 		padding: 8px 10px;
+		margin: 5px;
 		display: block;
-		background: url(../images/head1.png) repeat-x;
-		border: none;
-		font: bold 12px "Arial"!important;
-		color: #fff;
+		background: transparent;
+		border: 2px solid #070d0a;
+		font: bold 16px 'Quicksand'!important;
+		color: #070d0a;
 		text-align: center;
 		cursor: pointer;
-		-moz-transition: background 0.5s ease;
-		-o-transition: background 0.5s ease;
-		-webkit-transition: background 0.5s ease;
+		-moz-transition: background 0.2s ease, border 0.2s ease;
+		-o-transition: background 0.2s ease, border 0.2s ease;
+		-webkit-transition: background 0.2s ease, border 0.2s ease;
 }
 .images_1_of_5 .button a:hover{
-	background: url(../images/head1h.png)repeat-x;
+	background: #b8ffed;
+	border: 2px solid #b8ffed;
 	text-decoration: none !important;
-	-moz-transition: background 0.2s ease;
-	-o-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, border 0.2s ease;
+	-o-transition: background 0.2s ease, border 0.2s ease;
+	-webkit-transition: background 0.2s ease, border 0.2s ease;
 }
 
 /***** Media Quries *****/
@@ -468,8 +503,7 @@ body{
 }
 /*---footer----*/
 .footer {
-	background: #292828;
-	border-top:2px solid #FC3019;
+	margin-top: 50px;
 }
 .footer-lastgrid ul li{
 	display:inline-block;
@@ -481,14 +515,16 @@ body{
 	padding:0 5px;
 }
 .span_1_of_4 ul li a{
-	color: #63615f;
-	font: 12px/27px Arial, Helvetica, sans-serif;
+	color: #8EF2D9;
+	text-shadow: 0 0 0 0;
+	font: 12px/27px 'Quicksand', Helvetica, sans-serif;
 	-moz-transition: background 0.5s ease;
 	-o-transition: background 0.5s ease;
 	-webkit-transition: background 0.5s ease;
 }
 .span_1_of_4 ul li a:hover{
-	color:#FC3019;
+	color:#b8ffed;
+	text-shadow: 0 0 5px #b8ffed;
 }
 /*  GRID OF FOUR   ============================================================================= */
 .section {
@@ -515,15 +551,15 @@ body{
 	margin: 0;
 }
 .span_1_of_4 {
-	padding: 25px;
-	padding-top: 45px;
+	width: calc(25% - 100px) !important;
+	padding: 20px 50px;
 }
 .span_1_of_4  h3{
 	display: block;
 	padding:10px 0px 12px 0px;
-	font: bold 18px/16px "Arial";
-	color: #000;
-	font-family: 'Open Sans', sans-serif;
+	font: bold 24px/16px 'Quicksand';
+	color: #070d0a;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 }
@@ -532,12 +568,9 @@ body{
 	padding:0.5em 0;
 	color: #333;
 	line-height: 1.5em;
-	font-family :verdana, arial, helvetica, helve, sans-serif; 	 
+	font-family: 'Quicksand', sans-serif; 	 
 }
-.footer-firstgrid{
-	width: calc(50% - 51px) !important;
-	text-align:right;
-}
+
 .footer-divider{
 	display:block;
 	height: 270px !important;
@@ -584,12 +617,12 @@ body{
 }
 .footer-lastgrid p{
 	color: #63615f;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size:0.75em;
 	padding-top: 25px;
 }
 .footer-lastgrid p a{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding-left:3px;
 	color:#FC3019;
 	-moz-transition: background 0.5s ease;
@@ -600,8 +633,20 @@ body{
 	color:#000;
 }
 .footer-lastgrid li a img{
-	background:#fff;
+	border-radius: 100%;
+	background:#070d0a;
 	padding:10px;
+	-moz-transition: background 0.2s ease, padding 0.2s ease;
+	-o-transition: background 0.2s ease, padding 0.2s ease;
+	-webkit-transition: background 0.2s ease, padding 0.2s ease;
+}
+.footer-lastgrid li a img:hover{
+	border-radius: 100%;
+	background:#162b22;
+	padding:12px;
+	-moz-transition: background 0.2s ease, padding 0.2s ease;
+	-o-transition: background 0.2s ease, padding 0.2s ease;
+	-webkit-transition: background 0.2s ease, padding 0.2s ease;
 }
 #methods-payment-img{
 	width: 150px !important;
@@ -618,7 +663,7 @@ body{
 .car-tires-top-pagnation ul li a,.car-tires-top-pagnation ul li span{
 	display: block;
 	padding: 3px 0px;
-	font: bold 12px/0px Arial, Helvetica, sans-serif;
+	font: bold 12px/0px Quicksand, Helvetica, sans-serif;
 	color: #000;
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
 	text-transform: uppercase;
@@ -635,7 +680,7 @@ body{
 	margin-top: 21px;
 }
 .cartire-grid h4{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding: 25px;
 	text-align: center;
 }
@@ -644,9 +689,9 @@ body{
 .Cartires h5{
 	display: block;
 	padding: 23px;
-	font: bold 18px/16px "Arial";
+	font: bold 18px/16px 'Quicksand';
 	color: #FFF;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	background: url(../images/head1.png) repeat-x;
@@ -670,7 +715,7 @@ body{
 .cartire-grid-info ul li,.cartire-grid-info h3{
 	display: block;
 	padding: 3px 0px;
-	font: bold 12px/30px Arial, Helvetica, sans-serif;
+	font: bold 12px/30px 'Quicksand', Helvetica, sans-serif;
 	color:#FC3019;
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
 	text-transform: uppercase;
@@ -683,7 +728,7 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	width: 91%;
 	height: 60px;
 	overflow: hidden;
@@ -703,7 +748,7 @@ body{
 .cartire-grid-cartinfo h4{
 	display: block;
 	padding: 3px 0px;
-	font: bold 12px/30px Arial, Helvetica, sans-serif;
+	font: bold 12px/30px 'Quicksand', Helvetica, sans-serif;
 	color: #000;
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
 	text-transform: uppercase;
@@ -713,7 +758,7 @@ body{
 	font-size: 0.8125em;
 	color: #000;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	padding: 7px 0px;
 }
 .cartire-grid-cartinfo  ul li{
@@ -724,8 +769,8 @@ body{
 	display: inline-block;
 	background: url(../images/head1.png)repeat-x;
 	border: none;
-	font: bold 12px "Arial"!important;
-	color: #fff;
+	font: bold 12px 'Quicksand'!important;
+	color: #FFF;
 	text-align: center;
 	cursor: pointer;
 	-moz-transition: background 0.5s ease;
@@ -747,7 +792,7 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .cartire-pagination-box{
 	margin-top: 25px; 
@@ -763,7 +808,7 @@ body{
 }
 /*----contact-----*/
 .contact{
-	background:#fff;
+	background:#FFF;
 	padding:0px 20px;
 }
 /*  Contact Form  ============================================================================= */
@@ -803,9 +848,9 @@ body{
 .span_1_of_3  h3 {
 	display: block;
 	padding: 30px 0px 12px 0px;
-	font: bold 18px/16px "Arial";
+	font: bold 18px/16px 'Quicksand';
 	color: #000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 }
@@ -821,7 +866,7 @@ body{
 	font-size:0.8125em;
 	color: #333;
 	padding-bottom:5px;
-	font-family :verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .contact-form input[type="text"],.contact-form textarea{
 		    padding:8px;
@@ -832,7 +877,7 @@ body{
 			outline:none;
 			color:#989898;
 			font-size:0.9em;
-			font-family:Arial, Helvetica, sans-serif;
+			font-family: 'Quicksand', sans-serif;
 			box-shadow: inset 0px 0px 3px #999;
 			-webkit-box-shadow: inset 0px 0px 3px #999;
 			-moz-box-shadow: inset 0px 0px 3px #999;
@@ -848,8 +893,8 @@ body{
 	display: block;
 	background: url(../images/head1.png)repeat-x;
 	border: none;
-	font: bold 12px "Arial"!important;
-	color: #fff;
+	font: bold 12px 'Quicksand'!important;
+	color: #FFF;
 	text-align: center;
 	cursor: pointer;
 	-moz-transition: background 0.5s ease;
@@ -882,7 +927,7 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .company_address p a{
 	text-decoration:underline;
@@ -1060,35 +1105,35 @@ body{
 .product-catrgory-pagenation ul li h3{
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px "Arial";
+	font: bold 16px/16px 'Quicksand';
 	color:#292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	padding: 0px 0px 10px 0px;
 }
 .product-catrgory-pagenation ul li.active3> a{
 	display: block;
 	padding: 4px 0px;
-	font: bold 12px/16px "Arial";
+	font: bold 12px/16px 'Quicksand';
 	color: #292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-decoration:underline;
 }
 .product-catrgory-pagenation ul li a{
 	display: block;
 	padding: 4px 0px;
-	font: bold 12px/16px "Arial";
+	font: bold 12px/16px 'Quicksand';
 	color: #292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 }
 .product-value h4{
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px "Arial";
+	font: bold 16px/16px 'Quicksand';
 	color: #292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	border-bottom: 1px solid rgba(192, 192, 192, 0.3);
 	padding: 0px 0px 10px 0px;
@@ -1103,9 +1148,9 @@ body{
 .product-value h2,.product-value span,.product-value h5,.product-value li a,.product-value h3{
 	display: block;
 	padding: 4px 0px;
-	font: bold 12px/16px "Arial";
+	font: bold 12px/16px 'Quicksand';
 	color:#292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 }
 .product-value li a{
@@ -1134,9 +1179,9 @@ body{
 	float:left;
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px "Arial";
+	font: bold 16px/16px 'Quicksand';
 	color:#292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	padding: 0px 0px 10px 0px;
 	margin-bottom: 10px;
@@ -1146,7 +1191,7 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .product-payments{
 	width: 68%;
@@ -1155,9 +1200,9 @@ body{
 	float:left;
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px "Arial";
+	font: bold 16px/16px 'Quicksand';
 	color:#292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	padding: 0px 0px 10px 0px;
 	margin-bottom: 10px;
@@ -1167,14 +1212,14 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .product-description h3{
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px "Arial";
+	font: bold 16px/16px 'Quicksand';
 	color:#292828;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	padding: 0px 0px 5px 0px;
 }
@@ -1182,7 +1227,7 @@ body{
 	font-size: 0.8125em;
 	color: #989898;
 	line-height: 1.6em;
-	font-family: verdana, arial, helvetica, helve, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	margin-bottom: 10px;
 }
 .product-description a{
@@ -1191,8 +1236,8 @@ body{
 	background: url(../images/head1.png) repeat-x;
 	border: none;
 	border-radius: 7px;
-	font: bold 12px "Arial"!important;
-	color: #fff;
+	font: bold 12px 'Quicksand'!important;
+	color: #FFF;
 	text-align: center;
 	cursor: pointer;
 	-moz-transition: background 0.5s ease;
@@ -1227,7 +1272,7 @@ body{
 }
 .form input {
   border-radius: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   outline: 0;
   background: #f2f2f2;
   text-align: center;
@@ -1240,14 +1285,14 @@ body{
 }
 .form button {
   border-radius: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   outline: 0;
   background: url(../images/head1.png) repeat-x;
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
@@ -1257,16 +1302,16 @@ body{
   background: #ff1100;
 }
 .form .message {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   margin: 15px 0 0;
-  color: #ffffff;
+  color: #FFF;
   font-size: 12px;
 }
 .form .message a:hover{
   color: #ff1100;
 }
 .form .message a {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #aa8888;
   padding-left: 5px;
   text-decoration: none;
@@ -1338,23 +1383,23 @@ body{
 .info-container li{
 	padding: 8px;
 	display:block;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 }
 .artist-name{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size:36px;
 	color: #ff1111;
 }
 .artist-description{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	font-size: 14px;
 }
 .artist-link{
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 }
@@ -1362,7 +1407,7 @@ body{
 /*----cart-page----*/
 .cart-page-container{
 	position:static;
-	background: #fafafa !important;
+	background: #FFF !important;
 	width: 100%;
 	display: block;
 }
@@ -1378,7 +1423,7 @@ body{
 	position:relative;
 	top: 25px;
 	color: red;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 32px;
 }
@@ -1399,7 +1444,7 @@ body{
 }
 .single-cart-item label{
 	color: #ff1100;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 16px;
 }
@@ -1437,7 +1482,7 @@ body{
 }
 .cart-item-name{
 	color: #000000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -1449,7 +1494,7 @@ body{
 	width: 100%;
 	height: 80px;
 	color: #000000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	font-size: 12px;
 }
@@ -1471,7 +1516,7 @@ body{
 	display: inline-block;
 	float: left;
 	width: auto;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 .cart-item-input-box{
 	position:relative;
@@ -1492,8 +1537,8 @@ body{
 	padding-right: 15px;
 	border-radius: 5px;
 	background: url(../images/head1.png)repeat-x;
-	color: #fafafa;
-	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1513,8 +1558,8 @@ body{
 	padding-right: 15px;
 	border-radius: 5px;
 	background: url(../images/head1.png)repeat-x;
-	color: #fafafa;
-	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1539,7 +1584,7 @@ body{
 	border: 1px solid;
 	border-color: #050505;
 	border-radius: 5px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 	font-size: 16px;
@@ -1561,8 +1606,8 @@ body{
 	border: 0;
 	border-radius: 7px;
 	padding: 10px;
-	color: #fafafa;
-	font-family: 'Open Sans', sans-serif;
+	color: #FFF;
+	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -1577,7 +1622,7 @@ body{
     transition: background 0.2s ease;
 }
 .cart-page-divider-1{
-	background: linear-gradient(to right, #fafafa, red, #fafafa);
+	background: linear-gradient(to right, #FFF, red, #FFF);
 	width: 760px;
 	height: 1px;
 	float:center;
@@ -1615,7 +1660,7 @@ body{
 	width: 100%;
 	padding-top: 10px;
 	color: #ff3311;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 26px;
 	text-align:left;
 }
@@ -1643,7 +1688,7 @@ body{
 	float:left;
 	top: 2.5px;
 	color: #ff3311;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
 }
@@ -1672,7 +1717,7 @@ body{
 	padding: 10px 20px;
 	background: url(../images/head1.jpg)repeat-x; 
 	border-radius: 7px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	text-transform: uppercase;
 	-moz-transition: background 0.2s ease;
 	-webkit-transition: background 0.2s ease;
@@ -1680,9 +1725,9 @@ body{
 }
 .account-button-box-inner a{
 	position:relative;
-	color: #fafafa;
+	color: #FFF;
 	width: 300px !important;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	text-transform: uppercase;
 	font-size: 14px;
 }
@@ -1695,8 +1740,8 @@ body{
 	height: 40px;
 	background: url(../images/head1.jpg)repeat-x; 
 	border-radius: 7px;
-	font-family: "Roboto", sans-serif;
-	color: #fafafa;
+	font-family: 'Quicksand', sans-serif;
+	color: #FFF;
 	font-size: 14px;
 	text-transform: uppercase;
 	-moz-transition: background 0.2s ease;
@@ -1751,12 +1796,12 @@ body{
     transition: background 0.5s ease;
 }
 .account-static-info li:not(:last-child){
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 16px;
 	text-transform: uppercase;
 }
 .account-static-info li:last-child{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 }
 .account-static-info li:not(:first-child){
@@ -1795,7 +1840,7 @@ body{
 }
 .address-card li h1{
 	width: calc(40% - 20px);
-	color: #ffffff;
+	color: #FFF;
 	text-transform: uppercase;
 	text-align:left;	
 }
@@ -1826,7 +1871,7 @@ body{
 }
 .address-buttons-container li a{
 	text-transform: uppercase;
-	color: #fafafa;
+	color: #FFF;
 }
 .add-address-box{
 	padding: 10px;
@@ -1854,13 +1899,13 @@ body{
     transition: background 0.5s ease;
 }
 .new-address-button a{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #fafafa;
+	color: #FFF;
 }
 .no-addresses-card{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
 	background: #707070;
 	border-radius: 7px;
@@ -1873,7 +1918,7 @@ body{
 
 .resultpage-box{
 	position: static;
-	background: #fafafa;
+	background: #FFF;
 	width: 100%;
 	min-height:320px;
 }
@@ -1893,7 +1938,7 @@ body{
 	width: calc(33% - 10px);
 	margin: 5px !important;
 	text-align: center;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 15px;
 	background: #e3e3e3;
 	border-radius: 7px;
@@ -1911,11 +1956,11 @@ body{
 }
 .resultpage-search-button button{
 	background: url(../images/head1.jpg)repeat-x;
-	color: #fafafa;
+	color: #FFF;
 	border-radius:4px;
 	border-style: solid;
 	padding:5px;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 15px;
 	text-transform: uppercase;
 	text-align:center;
@@ -1929,7 +1974,7 @@ body{
     transition: background 0.2s ease;
 }
 .resultpage-search-button button:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -1946,7 +1991,7 @@ body{
 	padding-top:15px;
 }
 .resultpage-title li{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 30px;
 }
 .resultpage-divider{
@@ -2003,15 +2048,15 @@ body{
 	padding: 12px;
 }
 .artist-name-result{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
 }
 .result-artist-detail-button li{
 	width: 80px;
 	margin:auto;
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1.jpg)repeat-x;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 	border-radius:10px;
 	-moz-transition: color 0.3s ease;
@@ -2022,7 +2067,7 @@ body{
     transition: background 0.2s ease;
 }
 .result-artist-detail-button li:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -2084,11 +2129,11 @@ body{
 	padding: 7px;
 }
 .song-name-result{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
 }
 .song-price-result{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 }
 .result-song-detail-button li{
@@ -2096,9 +2141,9 @@ body{
 	top: 5px;
 	width: 80px;
 	margin:auto;
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1.jpg)repeat-x;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 10px;
 	border-radius:7px;
 	-moz-transition: color 0.3s ease;
@@ -2109,7 +2154,7 @@ body{
     transition: background 0.2s ease;
 }
 .result-song-detail-button li:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -2121,9 +2166,9 @@ body{
 .result-song-addcart-button li{
 	width: 80px;
 	margin:auto;
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1.jpg)repeat-x;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 10px;
 	border-radius:7px;
 	-moz-transition: color 0.3s ease;
@@ -2134,7 +2179,7 @@ body{
     transition: background 0.2s ease;
 }
 .result-song-addcart-button li:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -2196,11 +2241,11 @@ body{
 	padding: 7px;
 }
 .album-name-result{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
 }
 .album-price-result{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 }
 .result-album-detail-button li{
@@ -2208,9 +2253,9 @@ body{
 	top: 5px;
 	width: 80px;
 	margin:auto;
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1.jpg)repeat-x;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 10px;
 	border-radius:7px;
 	-moz-transition: color 0.3s ease;
@@ -2221,7 +2266,7 @@ body{
     transition: background 0.2s ease;
 }
 .result-album-detail-button li:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -2233,9 +2278,9 @@ body{
 .result-album-addcart-button li{
 	width: 80px;
 	margin:auto;
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1.jpg)repeat-x;
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 10px;
 	border-radius:7px;
 	-moz-transition: color 0.3s ease;
@@ -2246,7 +2291,7 @@ body{
     transition: background 0.2s ease;
 }
 .result-album-addcart-button li:hover{
-	color: #fafafa;
+	color: #FFF;
 	background: url(../images/head1h.jpg)repeat-x;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
@@ -2261,7 +2306,7 @@ body{
 	margin: 25px;
 }
 .result-endpage-box{
-	font-family: "Roboto", sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
 	position:relative;
 	height: 100%;
@@ -2418,7 +2463,7 @@ body{
 		margin-right: 2%;
 	}
 	.top-nav ul li a{
-		font: bold 12px/16px "Arial";
+		font: bold 12px/16px 'Quicksand';
 	}
 	.cartire-grid-info{
 		width: 56%;

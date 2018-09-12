@@ -9,9 +9,18 @@
 			<!---start-top-header--->
 			<div class="top-header">
 				<div class="top-header-left">
+				<div class="logo">
+					<a href="index.php"><img src="../images/logo3.png" title="Music Store" /></a>
+				</div>
 				</div>
 				<div class="top-header-right">
 					<ul>
+						<li>
+							<form class="search" action="search.php" type="GET">
+								<input type="text" name="query" pattern="[A-Za-z0-9\s]+" title="Please use only upper-case/lower-case letters, digits and blank spaces. Thank you."/>
+								<button type="submit"  value=""><img src="../images/search_icon_small.png"></button>	
+							</form>
+						</li>
 						{if isset($logged_username)}
 						<li>Logged in as: <a id="header-auth-info">{$logged_username}</a></li>
 						<li><a href="account.php">Your account</a></li>
@@ -26,21 +35,7 @@
 			</div>
 			<!--end-top-header-->
 			<div class="clear"> </div>
-			<!--start-sub-header-->
-			<div class="sub-header">
-				<div class="logo">
-					<a href="index.php"><img src="../images/logo2.png" title="Music Store" /></a>
-				</div>
-				<div class="sub-header-center">
-					<form class="search" action="search.php" type="GET">
-						<input type="text" name="query" pattern="[A-Za-z0-9\s]+" title="Please use only upper-case/lower-case letters, digits and blank spaces. Thank you.""><input type="submit"  value="search" />
-					</form>
-				</div>
-				<div class="sub-header-right">
-				</div>
-				<div class="clear"> </div>
-			</div>
-			<!--end-sub-header-->
+			
 			<div class="clear"> </div>
 			<!--start-top-nav-->
 			<div class="top-nav">
@@ -71,7 +66,10 @@
 						<li><a href="#">Legal Notice</a></li>
 					</ul>
 				</div>
-				<div class="footer-divider"></div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>Payment</h3>
+					<a href=""><img id="methods-payment-img" src="../images/methods_payment_icons.png"></a>
+				</div>
 				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
 					<h3>Get in touch</h3>
 					<ul>
@@ -80,8 +78,6 @@
 						<li><a href="#"><img src="../images/rss.png" title="Rss" /></a></li>
 						<li><a href="#"><img src="../images/gpluse.png" title="Google+" /></a></li>
 					</ul>
-					<h3>Methods of Payment</h3>
-					<a href=""><img id="methods-payment-img" src="../images/methods_payment_icons.png"></a>
 				</div>
 			</div>
 			</div>
