@@ -4,14 +4,14 @@
 	<div class="cart-page-container">
 		<form id="cart_form" action="cart_cashout.php" method="POST">
 			<div class="cart-page-title-box">
-				<a class="cartpage-title">Your Cart :</a>
-			</div>
-			<div class="cart-page-divider-1">
+				<a class="cartpage-title">Your Cart</a>
 			</div>
 			<div class="cart-page-list-box">
+			<ul>
 				{foreach $cart_content as $item}
-					<ul>
-						<div class="single-cart-item">
+					
+					<div class="single-cart-item-container">
+					<div class="single-cart-item">
 							
 						<div class="cart-item-image-box">
 							<img src="{$item.item_image_path}" title="cart-item-image"/>
@@ -38,7 +38,7 @@
 						</div>
 								
 						<div class="cart-item-input-box">
-							<label for="cart-item-amount">Quantity</label>
+							<label for="cart-item-amount">Quantity : </label>
 							
 							 <!-- Il messaggio da visualizzare quando eccedi la quantità disponibile è dentro setCustomValidity -->
 							 
@@ -47,19 +47,21 @@
 							<a href="" class="cart-remove-button" onclick="remove_item('{$item.item_name}')">Remove</a>
 						
 						</div>
-					</ul>
+					</div>
+					</div>
+					
 				{/foreach}
 				{if count($cart_content) == 0}
 				<h1 style="text-align: center; color: black">No items here!</h1>
 				{/if}
+				</ul>
 			</div>
-			<div class="cart-page-divider-1">
-			</div>
+			
 			<div class="cart-page-end">
 				<button onclick="checkout()">Proceed to Checkout</button>
 			</div>
 		</form>
 	</div>
-	<script src="../js/cart.js"></script>				
+<script src="../js/cart.js"></script>				
 	
 	

@@ -44,8 +44,7 @@
 							</form>
 						</li>
 						{if isset($logged_username)}
-						<li>Logged in as: <a id="header-auth-info">{$logged_username}</a></li>
-						<li><a href="account.php">Your account</a></li>
+						<li id="logged-info">Profile : <a id="header-auth-info" href="account.php">{$logged_username}</a></li>
 						<li><a href="logout.php">Log Out</a></li>
 						{else}
 						<li><a href="login.php">Log In</a></li>

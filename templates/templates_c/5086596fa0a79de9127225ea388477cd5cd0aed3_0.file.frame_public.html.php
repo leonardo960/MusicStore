@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 19:27:13
+/* Smarty version 3.1.32, created on 2018-09-13 16:34:11
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b996891d53952_63500435',
+  'unifunc' => 'content_5b9a9183085ba6_38535593',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5086596fa0a79de9127225ea388477cd5cd0aed3' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\frame_public.html',
-      1 => 1536780432,
+      1 => 1536856442,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b996891d53952_63500435 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a9183085ba6_38535593 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <head>
@@ -73,9 +73,8 @@ function content_5b996891d53952_63500435 (Smarty_Internal_Template $_smarty_tpl)
 							</form>
 						</li>
 						<?php if (isset($_smarty_tpl->tpl_vars['logged_username']->value)) {?>
-						<li>Logged in as: <a id="header-auth-info"><?php echo $_smarty_tpl->tpl_vars['logged_username']->value;?>
+						<li id="logged-info">Profile : <a id="header-auth-info" href="account.php"><?php echo $_smarty_tpl->tpl_vars['logged_username']->value;?>
 </a></li>
-						<li><a href="account.php">Your account</a></li>
 						<li><a href="logout.php">Log Out</a></li>
 						<?php } else { ?>
 						<li><a href="login.php">Log In</a></li>

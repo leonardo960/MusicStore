@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 20:24:09
+/* Smarty version 3.1.32, created on 2018-09-13 16:27:41
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b95816905de41_42014959',
+  'unifunc' => 'content_5b9a8ffdc824e2_71002002',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aea4c0eca02a551daad00ed8573e0307d5bcfd0d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\account_content.html',
-      1 => 1536524638,
+      1 => 1536856059,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b95816905de41_42014959 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a8ffdc824e2_71002002 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="your-account-container">
 		<div class="account-box">

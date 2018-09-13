@@ -69,6 +69,11 @@ body{
 	float:right;
 	margin: 15px;
 }
+#logged-info{
+	position: absolute;
+	margin-top: -10px;
+	padding-bottom: 0 !imoortant;
+}
 
 .top-header-right input[type="text"]{
 	border: 3px solid #ffffff;
@@ -108,7 +113,11 @@ body{
 	font-size: 12px;
 }
 .top-header-right #header-auth-info{
-	color: #000000;
+	color: #8EF2D9;
+}
+.top-header-right #header-auth-info:hover{
+	color: #b8ffed;
+	text-shadow: 0 0 5px #b8ffed;
 }
 .top-header-left ul li a{
 	padding: 8px 12px;
@@ -684,6 +693,9 @@ body{
 	padding: 25px;
 	text-align: center;
 }
+#no-fav-message{
+	color: #b8ffed;
+}
 .Cartires{
 }
 .Cartires h5{
@@ -1019,8 +1031,9 @@ body{
 }
 /*----single-page-----*/
 .single-page{
-	padding: 0px 20px;
-	padding-bottom: 3em;
+	background: #2b5849;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 .single-top-pagination{
 	background: #F8F8F8;
@@ -1048,21 +1061,36 @@ body{
 	border-right: 1px solid rgba(151, 151, 151, 0.11);
 	text-transform: uppercase;
 }
+.product-info{
+	background: #070d0a;
+}
 .product-image{
+	display: block;
 	position:static;
-	width: 250px;
-	height: 250px;
+	width: 300px;
+	height: 300px;
 	float:left;
+	margin-bottom: 100px;
 }
 .product-image img{
 	position:relative;
+	width: 100%;
 	float:left;
 }
 .album-song-card{
 	padding: 10px;
-	background: #f3f3f3;
+	background: #162b22;
 	margin-bottom: 5px;
 	border-radius: 7px;
+	-moz-transition: background 0.2s ease;
+	-o-transition: background 0.2s ease;
+	-webkit-transition: background 0.2s ease;
+}
+.album-song-card:hover{
+	background: #2b5849;
+	-moz-transition: background 0.2s ease;
+	-o-transition: background 0.2s ease;
+	-webkit-transition: background 0.2s ease;
 }
 .album-song-card li{
 	display: block;
@@ -1072,9 +1100,18 @@ body{
 .album-card{
 	padding: 10px;
 	height: 15px !important;
-	background: #f3f3f3;
+	background: #162b22;
 	margin-bottom: 5px;
 	border-radius: 7px;
+	-moz-transition: background 0.2s ease;
+	-o-transition: background 0.2s ease;
+	-webkit-transition: background 0.2s ease;
+}
+.album-card:hover{
+	background: #2b5849;
+	-moz-transition: background 0.2s ease;
+	-o-transition: background 0.2s ease;
+	-webkit-transition: background 0.2s ease;
 }
 .album-card ul{
 	height: auto !important;
@@ -1138,14 +1175,13 @@ body{
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 }
-.product-value h4{
+.product-value h4, .product-end-list h4{
 	display: block;
 	padding: 4px 0px;
-	font: bold 16px/16px 'Quicksand';
-	color: #292828;
+	font: bold 18px/16px 'Quicksand';
+	color: #1EA180;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
-	border-bottom: 1px solid rgba(192, 192, 192, 0.3);
 	padding: 0px 0px 10px 0px;
 	margin-bottom: 10px;
 }
@@ -1155,31 +1191,50 @@ body{
 .product-value ul li span{
 	text-decoration:line-through;
 }
-.product-value h2,.product-value span,.product-value h5,.product-value li a,.product-value h3{
+.product-value h2,.product-value span,.product-value h5,.product-value li a,.product-value h3,.product-end-list h3,.product-end-list li a{
 	display: block;
 	padding: 4px 0px;
 	font: bold 12px/16px 'Quicksand';
-	color:#292828;
+	color:#8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 }
 .product-value li a{
-	color:#FC3019;
+	color:#48C9A9;
 }
-.product-value ul li:last-child{
-	float:right;
+.product-value li a:hover{
+	color: #b8ffed;
+	text-shadow: 0 0 5px #b8ffed;
+}
+.product-end-list li a:hover{
+	color: #b8ffed;
+	text-shadow: 0 0 5px #b8ffed;
 }
 .product-value {
-	width: 69%;
-	border-bottom: 1px solid rgba(192, 192, 192, 0.3);
-	padding: 10px 0px;
+	width: 45% !important;
+	float:left;
+	padding-right: 10px;
+	margin-right: 10px;
+}
+.product-end-list{
+	width: calc(55% - 20px) !important;
+	float:left;
+}
+.product-description{
+	position: absolute;
+	margin-top: 325px;
+	width: 300px;
+	float:left;
+	text-align:center;
 }
 .product-price-info{
+	display:block;
+	width: calc(100% - 350px) !important;
+	padding: 25px;
 	float:right;
-	width: 73%;
 }
 .product-price-info label{
-	color: #ff3300;
+	color: #8EF2D9;
 }
 .product-shipping{
 	width: 45%;
@@ -1241,25 +1296,25 @@ body{
 	margin-bottom: 10px;
 }
 .product-description a{
-	padding: 8px 10px;
+	padding: 10px 60px;
 	display: inline-block;
-	background: url(../images/head1.png) repeat-x;
-	border: none;
-	border-radius: 7px;
-	font: bold 12px 'Quicksand'!important;
-	color: #FFF;
+	border: 2px solid #8EF2D9;
+	background: transparent;
+	font: bold 14px 'Quicksand'!important;
+	color: #8EF2D9;
 	text-align: center;
 	cursor: pointer;
-	-moz-transition: background 0.5s ease;
-	-o-transition: background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-o-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
 }
 .product-description a:hover{
-	background: url(../images/head1h.png) repeat-x;
+	background: #8EF2D9;
+	color: #070d0a;
 	text-decoration: none !important;
-	-moz-transition: background 0.2s ease;
-	-o-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-o-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
@@ -1270,59 +1325,58 @@ body{
   margin: auto;
 }
 .form {
-  border-radius: 10px;
   position: relative;
   z-index: 1;
-  background: #050505; 
+  background: #070d0a; 
   max-width: 400;  
   margin:0 auto 100px;
   padding: 40px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 .form input {
-  border-radius: 10px;
+	border: 2px solid #48C9A9;
   font-family: 'Quicksand', sans-serif;
   outline: 0;
   background: #f2f2f2;
   text-align: center;
   width: 100%;
-  border: 0;
   margin: 0 0 15px;
   padding: 15px;
   box-sizing: border-box;
   font-size: 14px;
 }
 .form button {
-  border-radius: 10px;
+	border: 2px solid #48C9A9;
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: url(../images/head1.png) repeat-x;
+  background: transparent;
   width: 100%;
-  border: 0;
   padding: 15px;
-  color: #FFF;
-  font-size: 14px;
+  color: #48C9A9;
+  font-size: 16px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #ff1100;
+  background: #48C9A9;
+  color: #070d0a;
+  font-weight: bold;
 }
 .form .message {
   font-family: 'Quicksand', sans-serif;
   margin: 15px 0 0;
-  color: #FFF;
-  font-size: 12px;
+  color: #b8ffed;
+  font-size: 14px;
 }
 .form .message a:hover{
-  color: #ff1100;
+  color: #1EA180;
+  text-shadow: 0 0 5px #b8ffed;
 }
 .form .message a {
   font-family: 'Quicksand', sans-serif;
-  color: #aa8888;
+  color: #2b5849;
   padding-left: 5px;
   text-decoration: none;
 }
@@ -1416,8 +1470,9 @@ body{
 
 /*----cart-page----*/
 .cart-page-container{
+	margin-top: 50px;
 	position:static;
-	background: #FFF !important;
+	background: #162b22 !important;
 	width: 100%;
 	display: block;
 }
@@ -1432,20 +1487,32 @@ body{
 .cartpage-title{
 	position:relative;
 	top: 25px;
-	color: red;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
-	font-weight: bold;
+	font-weight: normal;
 	font-size: 32px;
 }
 .cart-page-list-box{
 	position: static;
 	float:center;
 	margin:auto;
-	width: 800px;
+	width: 100%;
+}
+.cart-page-list-box h1{
+	color: #8EF2D9 !important;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: normal;
+	font-size: 18px;
+}
+.single-cart-item-container{
+	margin-top: 25px;
+	margin-bottom: 25px;
+	background: #070d0a;
+	width: 100%;
 }
 .single-cart-item{
 	position:static;
-	background: #e3e3e3;
+	margin: auto;
 	border-radius: 10px;
 	height: 200px;
 	width: 800px;
@@ -1453,21 +1520,18 @@ body{
 	margin-top:15px;
 }
 .single-cart-item label{
-	color: #ff1100;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 16px;
 }
 .cart-item-image-box{
 	position: relative;
-	height: 150px;
-	width: 150px;
+	height: 200px;
+	width: 200px;
 	float:left;
-	margin: 25px;
-	margin-right:0;
 }
 .cart-item-image-box img{
-	border-radius: 10px;
 	width:100%;
 }
 .cart-item-description-box{
@@ -1491,7 +1555,7 @@ body{
 	float:right;		
 }
 .cart-item-name{
-	color: #000000;
+	color: #48C9A9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
@@ -1503,7 +1567,7 @@ body{
 	border: 0;
 	width: 100%;
 	height: 80px;
-	color: #000000;
+	color: #48C9A9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
 	font-size: 12px;
@@ -1524,6 +1588,7 @@ body{
 }
 .cart-item-price-box h3{
 	display: inline-block;
+	color: #48C9A9;
 	float: left;
 	width: auto;
 	font-family: 'Quicksand', sans-serif;
@@ -1534,6 +1599,7 @@ body{
 	width: 125px;
 	float:left;
 	margin: 25px;
+	margin-left:10px;
 	margin-right:0;	
 }
 .cart-item-input-box a{
@@ -1545,9 +1611,7 @@ body{
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
-	border-radius: 5px;
-	background: url(../images/head1.png)repeat-x;
-	color: #FFF;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
@@ -1560,28 +1624,28 @@ body{
 	text-align:center;
 	position:relative;
 	float:left;
-	border: 0;
+	border: 2px solid #8EF2D9;
 	width: 130px;
 	margin-top: 20px;
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
-	border-radius: 5px;
-	background: url(../images/head1.png)repeat-x;
-	color: #FFF;
+	background: transparent;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	font-size: 12px;
 	text-transform: uppercase;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 .cart-remove-button:hover{
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	background: #8EF2D9;
+	color: #070d0a;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 .cart-item-input-box button:hover{
 	background: url(../images/head1h.jpg)repeat-x;
@@ -1590,9 +1654,11 @@ body{
     transition: background 0.2s ease;
 }
 .cart-item-amount{
-	color: #000000;
-	border: 1px solid;
-	border-color: #050505;
+	color: #48C9A9;
+	padding: 2.5px;
+	padding-left: 5px;
+	margin-top: 5px;
+	border: 1px solid #162b22;
 	border-radius: 5px;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: normal;
@@ -1600,6 +1666,10 @@ body{
 	font-size: 16px;
 	width: 125px;
 	background: none;
+}
+.cart-item-amount:focus{
+	outline:none;
+	border: 1px solid #b8ffed;
 }
 .cart-page-end{
 	position:static;
@@ -1612,32 +1682,26 @@ body{
 .cart-page-end button{
 	position: relative;
 	margin-top:25px;
-	background: url(../images/head1.png)repeat-x;
-	border: 0;
-	border-radius: 7px;
-	padding: 10px;
-	color: #FFF;
+	background: transparent;
+	border: 2px solid #8EF2D9;
+	padding: 12.5px 60px;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
-	font-size: 14px;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	font-size: 16px;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 .cart-page-end button:hover{
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	background: #8EF2D9;
+	color: #070d0a;
+	-moz-transition: background 0.2s ease, color 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
-.cart-page-divider-1{
-	background: linear-gradient(to right, #FFF, red, #FFF);
-	width: 760px;
-	height: 1px;
-	float:center;
-	margin:auto;
-}
+
 /*----account-page----*/
 .your-account-container{
 	position: relative;
@@ -1645,14 +1709,12 @@ body{
 }
 .account-box{
 	position:relative;
-	background: #050505;
+	background: #070d0a;
 	min-height: 400px;
 	width:90%;
-	margin-top:25px !important;
-	margin-bottom:25px !important;
+	margin-top:50px !important;
+	margin-bottom:50px !important;
 	margin:auto;
-	border-radius: 7px;
-	box-shadow:0px 0px 20px;
 }
 .account-box ul{
 	display:block;
@@ -1669,7 +1731,7 @@ body{
 	float: left;
 	width: 100%;
 	padding-top: 10px;
-	color: #ff3311;
+	color: #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 26px;
 	text-align:left;
@@ -1697,7 +1759,7 @@ body{
 	position:relative;
 	float:left;
 	top: 2.5px;
-	color: #ff3311;
+	color: #48C9A9;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 12px;
 	text-transform: uppercase;
@@ -1725,8 +1787,8 @@ body{
 	display: inline-block;
 	width: 100px;
 	padding: 10px 20px;
-	background: url(../images/head1.jpg)repeat-x; 
-	border-radius: 7px;
+	background: transparent;
+	border: 2px solid #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	text-transform: uppercase;
 	-moz-transition: background 0.2s ease;
@@ -1735,55 +1797,34 @@ body{
 }
 .account-button-box-inner a{
 	position:relative;
-	color: #FFF;
+	color: #8EF2D9;
 	width: 300px !important;
 	font-family: 'Quicksand', sans-serif;
 	text-transform: uppercase;
 	font-size: 14px;
 }
-.account-button-box-inner input{
-	position:relative;
-	border: 0;
-	margin: auto;
-	display: block;
-	width: 300px;
-	height: 40px;
-	background: url(../images/head1.jpg)repeat-x; 
-	border-radius: 7px;
-	font-family: 'Quicksand', sans-serif;
-	color: #FFF;
-	font-size: 14px;
-	text-transform: uppercase;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
 .account-button-box-inner li:hover{
-	background: url(../images/head1h.jpg)repeat-x; 
+	background: #2b5849;
+	border: 2px solid #2b5849;
 	-moz-transition: background 0.2s ease;
 	-webkit-transition: background 0.2s ease;
     transition: background 0.2s ease;
 }
-.account-button-box-inner input:hover{
-	background: url(../images/head1h.jpg)repeat-x; 
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
+
 .account-static-info li{
 	display: block;
 	text-align: center;
 	background: #a5a5a5;
 	height: 40px;
-	border-radius: 7px;
+	border: 2px solid #8EF2D9;
 }
 .account-static-info input{
 	text-align: center;
 	background: none;
 	border: 0;
+	color: #070d0a;
 	height: 38px;
 	width: 100%;
-	border-radius: 7px;
 	-moz-transition: box-shadow 0.2s ease;
 	-webkit-transition: box-shadow 0.2s ease;
     transition: box-shadow 0.2s ease;
@@ -1796,8 +1837,9 @@ body{
 	background: light-grey;
 }
 .account-static-info input:focus{
-	background: #80F49F;
-	box-shadow: 0px 0px 15px #39E439;
+	outline: none;
+	background: #b8ffed !important;
+	box-shadow: 0px 0px 15px #b8ffed;
 	-moz-transition: box-shadow 0.2s ease;
 	-webkit-transition: box-shadow 0.2s ease;
     transition: box-shadow 0.2s ease;
@@ -1819,8 +1861,8 @@ body{
 }
 .address-card{
 	display: block;
-	height: 235px;
-	background: #707070;
+	height: 255px;
+	background: #1EA180;
 	border-radius: 7px;
 	margin-bottom: 10px !important;
 }
@@ -1835,7 +1877,7 @@ body{
 	display: block;
 	width: 100%;
 	height: 36px;
-	background: #909090;
+	background: #ffffff;
 	font-size: 14px !important;
 	margin: 0 !important;
 	margin-bottom: 5px !important;
@@ -1850,7 +1892,7 @@ body{
 }
 .address-card li h1{
 	width: calc(40% - 20px);
-	color: #FFF;
+	color: #070d0a;
 	text-transform: uppercase;
 	text-align:left;	
 }
@@ -1865,23 +1907,25 @@ body{
 .address-buttons-container li{
 	display: inline-block;
 	margin: auto !important;
-	background: url(../images/head1.jpg)repeat-x;
+	background: transparent;
 	padding: 10px;
 	height: auto !important;
 	width: 100px;
-	-moz-transition:background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
-    transition: background 0.5s ease;
+	-moz-transition:all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .address-buttons-container li:hover{
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition:background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
-    transition: background 0.5s ease;
+	background: #162b22;
+	border: 2px solid #162b22;
+	-moz-transition:all 0.2s ease;
+	-webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 .address-buttons-container li a{
 	text-transform: uppercase;
-	color: #FFF;
+	color: #b8ffed;
+	font-size: 14px;
 }
 .add-address-box{
 	padding: 10px;
@@ -1893,31 +1937,33 @@ body{
 .new-address-button{
 	margin: auto;
 	text-align: center;
-	background: url(../images/head1.jpg)repeat-x;
+	background: transparent;
+	border: 2px solid #b8ffed;
 	padding: 10px;
-	border-radius: 7px;
 	height: auto !important;
 	width: 150px;
-	-moz-transition:background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
-    transition: background 0.5s ease;
+	-moz-transition:all 0.2s ease;
+	-webkit-transition:all 0.2s ease;
+    transition:all 0.2s ease;
 }
 .new-address-button:hover{
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition:background 0.5s ease;
-	-webkit-transition: background 0.5s ease;
-    transition: background 0.5s ease;
+	background: #2b5849;
+	border: 2px solid #2b5849;
+	-moz-transition:all 0.2s ease;
+	-webkit-transition:all 0.2s ease;
+    transition:all 0.2s ease;
 }
 .new-address-button a{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
 	text-transform: uppercase;
-	color: #FFF;
+	color: #b8ffed;
 }
 .no-addresses-card{
 	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
-	background: #707070;
+	color: #b8ffed;
+	background: #2b5849;
 	border-radius: 7px;
 	padding: 10px;
 	width: calc(100% - 70px);
@@ -1927,8 +1973,9 @@ body{
 /*----result-page----*/
 
 .resultpage-box{
+	margin-bottom:50px;
 	position: static;
-	background: #FFF;
+	background: #162b22;
 	width: 100%;
 	min-height:320px;
 }
@@ -1950,48 +1997,52 @@ body{
 	text-align: center;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 15px;
-	background: #e3e3e3;
-	border-radius: 7px;
+	background: #2b5849;
+	color: #8EF2D9;
+	border-radius: 30px;
 }
 .resultpage-filter-box ul li{
 	padding: 5px;
 }
+.resultpage-filter-box input{
+	font: bold 14px/12px 'Quicksand', sans-serif;
+	color: #070d0a;
+	padding: 5px;
+	margin-bottom: 5px;
+	border: 2px solid #ffffff;
+	border-radius: 20px;
+}
+.resultpage-filter-box input:focus{
+	outline: none;
+	border: 2px solid #8EF2D9;
+}
 .resultpage-search-button{
 	position:relative;
-	width: 100px;
-	height: 40px;
 	margin:auto;
 	text-align: center;
 	margin-top: 25px;
 }
 .resultpage-search-button button{
-	background: url(../images/head1.jpg)repeat-x;
-	color: #FFF;
-	border-radius:4px;
-	border-style: solid;
-	padding:5px;
+	background: transparent;
+	color: #8EF2D9;
+	border: 2px solid #8EF2D9;
+	padding: 10px 60px;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 15px;
+	font-weight: normal;
 	text-transform: uppercase;
 	text-align:center;
-	width: 80px;
-	height: 36px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	-moz-transition: background 0.2s ease, color 0.3s ease;
+	-webkit-transition: background 0.2s ease, color 0.3s ease;
+    transition: background 0.2s ease, color 0.3s ease;
 }
 .resultpage-search-button button:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
+	color: #070d0a;
+	background: #8EF2D9;
+	font-weight: bold;
+	-moz-transition: background 0.2s ease, color 0.3s ease;
+	-webkit-transition: background 0.2s ease, color 0.3s ease;
+    transition: background 0.2s ease, color 0.3s ease;
 }
 .resultpage-title{
 	position:relative;
@@ -2002,7 +2053,8 @@ body{
 }
 .resultpage-title li{
 	font-family: 'Quicksand', sans-serif;
-	font-size: 30px;
+	color: #8EF2D9;
+	font-size: 40px;
 }
 .resultpage-divider{
 	position: relative;
@@ -2011,305 +2063,103 @@ body{
 	width:80%;
 	margin: auto;
 }
-.results-artists-box{
+.results-artists-box, .results-songs-box, .results-albums-box{
+	background: #070d0a;
 	position:static;
-	margin: 25px;
+	padding: 25px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 }
-.single-artist-result{
-	background: #f4f4f4;
-	border-style: groove;
-	border-width: 2px;
-	border-color: #f4f4f4;
-	border-radius: 4px;
+.single-artist-result, .single-song-result, .single-album-result{
+	background: #2b5849;
 	display: inline-block;
 	position:relative;
-	margin: 4px;
+	margin: 5px;
+	margin-bottom: 10px;
 	padding: 25px;
-	height: 250px;
-	width: 171px;
+	height: 280px;
+	width: calc(20% - 64px);
 	-moz-transition: border-color 0.5s ease;
 	-webkit-transition: border-color 0.5s ease;
     transition: border-color 0.5s ease;
-}
-.single-artist-result:hover{
-	border-color: #ff5555;
-	background: #f4dddd;
-	-moz-transition: border-color 0.5s ease;
-	-webkit-transition: border-color 0.5s ease;
-    transition: border-color 0.5s ease;
-}
-.single-artist-result-image{
-	position:relative;
-	width: 150px;
-	height: 150px;
-	margin:auto;
-}
-.single-artist-result-info{
-	text-align: center;
-	position:relative;
-	float:left;
-	width: 170px;
-	height: 100px;
-	margin:auto;
-}
-.single-artist-result-info li{
-	position:relative;
-	top: 2px;
-	padding: 12px;
-}
-.artist-name-result{
-	font-family: 'Quicksand', sans-serif;
-	font-size: 18px;
-}
-.result-artist-detail-button li{
-	width: 80px;
-	margin:auto;
-	color: #FFF;
-	background: url(../images/head1.jpg)repeat-x;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 12px;
-	border-radius:10px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-artist-detail-button li:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-
-.results-songs-box{
-	position:static;
-	margin: 25px;
-}
-.single-song-result{
-	background: #f4f4f4;
-	border-style: groove;
-	border-width: 2px;
-	border-color: #f4f4f4;
-	border-radius: 4px;
-	display: inline-block;
-	position:relative;
-	margin: 4px;
-	padding: 25px;
-	height: 250px;
-	width: 171px;
-	-moz-transition: border-color 0.5s ease;
-	-webkit-transition: border-color 0.5s ease;
-    transition: border-color 0.5s ease;
-}
-.single-song-result:hover{
-	border-color: #ff5555;
-	background: #f4dddd;
-	-moz-transition: border-color 0.5s ease;
-	-webkit-transition: border-color 0.5s ease;
-    transition: border-color 0.5s ease;
-}
-.single-song-result-image{
-	position:relative;
-	width: 150px;
-	height: 150px;
-	margin:auto;
-}
-.single-song-result-info{
-	text-align: center;
-	position:relative;
-	float:left;
-	width: 170px;
-	height: 100px;
-	margin:auto;
-}
-.single-song-result-info li:first-child{
-	position:relative;
-	top: 5px;
-	padding: 6px;
-}
-.single-song-result-info li:not(:first-child){
-	position:relative;
-	top: 5px;
-	padding: 7px;
-}
-.song-name-result{
-	font-family: 'Quicksand', sans-serif;
-	font-size: 14px;
-}
-.song-price-result{
-	font-family: 'Quicksand', sans-serif;
-	font-size: 12px;
-}
-.result-song-detail-button li{
-	position:relative;
-	top: 5px;
-	width: 80px;
-	margin:auto;
-	color: #FFF;
-	background: url(../images/head1.jpg)repeat-x;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 10px;
-	border-radius:7px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-song-detail-button li:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-song-addcart-button li{
-	width: 80px;
-	margin:auto;
-	color: #FFF;
-	background: url(../images/head1.jpg)repeat-x;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 10px;
-	border-radius:7px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-song-addcart-button li:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-
-.results-albums-box{
-	position:static;
-	margin: 25px;
 }
 .single-album-result{
-	background: #f4f4f4;
-	border-style: groove;
-	border-width: 2px;
-	border-color: #f4f4f4;
-	border-radius: 4px;
-	display: inline-block;
-	position:relative;
-	margin: 4px;
-	padding: 25px;
-	height: 250px;
-	width: 171px;
+	height: 330px;
+}
+.single-artist-result:hover, .single-song-result:hover, .single-album-result:hover{
+	background: #15816e;
 	-moz-transition: border-color 0.5s ease;
 	-webkit-transition: border-color 0.5s ease;
     transition: border-color 0.5s ease;
 }
-.single-album-result:hover{
-	border-color: #ff5555;
-	background: #f4dddd;
-	-moz-transition: border-color 0.5s ease;
-	-webkit-transition: border-color 0.5s ease;
-    transition: border-color 0.5s ease;
-}
-.single-album-result-image{
+.single-artist-result-image, .single-song-result-image, .single-album-result-image{
 	position:relative;
 	width: 150px;
 	height: 150px;
 	margin:auto;
 }
-.single-album-result-info{
+.single-artist-result-info, .single-song-result-info, .single-album-result-info{
 	text-align: center;
 	position:relative;
 	float:left;
-	width: 170px;
-	height: 100px;
+	width: 100%;
+	height: calc(100% - 125px) !important;
 	margin:auto;
 }
-.single-album-result-info li:first-child{
+.single-artist-result-info li, .single-song-result-info li, .single-album-result-info li{
 	position:relative;
-	top: 5px;
-	padding: 6px;
+	padding: 12px;
 }
-.single-album-result-info li:not(:first-child){
-	position:relative;
-	top: 5px;
-	padding: 7px;
+.artist-name-result, .song-name-result{
+	font-family: 'Quicksand', sans-serif;
+	color: #8EF2D9;
+	font-size: 18px;
+	height: 86px;
 }
-.album-name-result{
+.result-artist-detail-button, .result-song-detail-button, .result-album-detail-button, .result-album-addcart-button{
+	position:absolute;
+	width: calc(100% + 50px);
+	float: center;
+	margin-left: calc(-50% - 25px);
+}
+.result-album-addcart-button{
+	margin-top: 44px;
+}
+.result-artist-detail-button li, .result-song-detail-button li, .result-album-detail-button li, .result-album-addcart-button li{
+	color: #8EF2D9;
+	background: transparent;
+	border: 2px solid #8EF2D9;
 	font-family: 'Quicksand', sans-serif;
 	font-size: 14px;
+	font-weight: normal;
+	-moz-transition: color 0.3s ease;
+	-webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+	-moz-transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+.result-artist-detail-button li:hover, .result-song-detail-button li:hover, .result-album-detail-button li:hover, .result-album-addcart-button li:hover{
+	color: #070d0a;
+	font-weight: bold;
+	background: #8EF2D9;
+	-moz-transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+	-webkit-transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+.album-name-result{
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+	height: 50px;
+	color: #8EF2D9;
 }
 .album-price-result{
 	font-family: 'Quicksand', sans-serif;
-	font-size: 12px;
+	font-size: 14px;
+	color: #8EF2D9;
 }
-.result-album-detail-button li{
-	position:relative;
-	top: 5px;
-	width: 80px;
-	margin:auto;
-	color: #FFF;
-	background: url(../images/head1.jpg)repeat-x;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 10px;
-	border-radius:7px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-album-detail-button li:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-album-addcart-button li{
-	width: 80px;
-	margin:auto;
-	color: #FFF;
-	background: url(../images/head1.jpg)repeat-x;
-	font-family: 'Quicksand', sans-serif;
-	font-size: 10px;
-	border-radius:7px;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
-.result-album-addcart-button li:hover{
-	color: #FFF;
-	background: url(../images/head1h.jpg)repeat-x;
-	-moz-transition: color 0.3s ease;
-	-webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-	-moz-transition: background 0.2s ease;
-	-webkit-transition: background 0.2s ease;
-    transition: background 0.2s ease;
-}
+
 .resultpage-endpage{
 	position:relative;
 	height: 100px;
@@ -2334,17 +2184,17 @@ body{
 	display:none;
 }
 .result-endpage-separator{
-	color: #bbbbbb;
+	color: #162b22;
 }
 .result-endpage-link{
-	color: black;
+	color: #8EF2D9;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 .result-endpage-link:hover{
-	color: red;
-	text-shadow: orange 1px 1px 10px;
+	color: #b8ffed;
+	text-shadow: #b8ffed 0 0 10px;
 	-moz-transition: color 0.3s ease;
 	-webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;

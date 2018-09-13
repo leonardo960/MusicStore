@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 20:07:08
+/* Smarty version 3.1.32, created on 2018-09-13 15:29:55
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9971ec02a9b0_51219640',
+  'unifunc' => 'content_5b9a8273c6da23_97222504',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '257346ff596c241c0010bff6cb8a6954f6f6536a' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1536782826,
+      1 => 1536852593,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9971ec02a9b0_51219640 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a8273c6da23_97222504 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="resultpage-box">
 		<ul>	
@@ -61,11 +61,7 @@ function content_5b9971ec02a9b0_51219640 (Smarty_Internal_Template $_smarty_tpl)
 				<li>Results</li>
 			</div>
 		</ul>
-		<ul>	
-			<div class="resultpage-divider">
-						<!-- this is a divider -->
-			</div>
-		</ul>	
+			
 		<ul>	
 			<div class="results-artists-box">
 				<?php
@@ -129,8 +125,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 						<div class="single-album-result-info">
 							<li class="album-name-result"><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
 </li>
-							<li class="album-price-result">EUR: <?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
-</li>
+							<li class="album-price-result"><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+&euro;</li>
 							<a class="result-album-detail-button" href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 "><li>See Details</li></a>
 							<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>

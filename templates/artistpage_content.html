@@ -1,6 +1,6 @@
 <div class="content">
 	<!-- TODO completare -->
-					<div class="single-page"><br />
+					<div class="single-page">
 						<div class="clear"> </div>
 						<div class="product-info">
 						
@@ -17,22 +17,22 @@
 										<br>
 										<li><h2>Bio : </h2><h5>{$artista.biografia}<h5></li>
 										
-										<br>
-										<h4><label>Albums We Have: </label></h4>
-										{if count($album[0]) > 0}
-										{foreach $album as $published}
-											<div class="album-card">
+									</ul>
+								</div>
+								<div class="product-end-list">
+									<h4><label>Albums We Have: </label></h4>
+									{if count($album[0]) > 0}
+									{foreach $album as $published}
+										<div class="album-card">
 											<ul>
 												<li><h3>Title : </h3><a href="albumpage.php?id_album={$published.id_album}">{$published.nome_album}</a></li>
 											</ul>
-											</div>
-										{/foreach}
-										{else}
-										<h5>We have no albums in store from this artist yet. Check back in the near future!</h5>
-										{/if}
-									</ul>
+										</div>
+									{/foreach}
+									{else}
+									<h5>We have no albums in store from this artist yet. Check back in the near future!</h5>
+									{/if}
 								</div>
-								
 							</div>
 							<div class="clear"> </div>
 						</div>

@@ -1,10 +1,13 @@
 <div class="content">
-					<div class="single-page"><br />
+					<div class="single-page">
 						<div class="clear"> </div>
 						<div class="product-info">
 						
 							<div class="product-image">
 								<img src="{$album.img_path}">
+							</div>
+							<div class="product-description">
+								<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
 							</div>
 							<div class="product-price-info">
 									<div class="product-value">
@@ -35,30 +38,26 @@
 										{/if}
 										<br>
 										<li><a>In stock : {$album.stock}</a></li>
-										
-										<br>
-										<br>
-										<h4><label>Songs: </label></h4>
-										{if count($songs[0]) > 0}
-										{foreach $songs as $song}
-											<div class="album-song-card">
-												<li><h3>Title : <a>{$song.nome_canzone}</a></h3></li>
-												
-												<audio controls controlsList="nodownload">
-													<source src="{$song.song_path}" type="audio/mp3">
-													Your browser does not support the audio element.
-												</audio>
-											</div>
-										{/foreach}
-										{else}
-										<h3>We have no previews for this album yet. Check back in the future!</h3>
-										{/if}
-										
 									</ul>
 								</div>
-								<div class="product-description">
-									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
+								<div class="product-end-list">
+								<h4><label>Songs: </label></h4>
+									{if count($songs[0]) > 0}
+									{foreach $songs as $song}
+										<div class="album-song-card">
+											<li><h3>Title : <a>{$song.nome_canzone}</a></h3></li>
+												
+											<audio controls controlsList="nodownload">
+												<source src="{$song.song_path}" type="audio/mp3">
+												Your browser does not support the audio element.
+											</audio>
+										</div>
+									{/foreach}
+									{else}
+									<h3>We have no previews for this album yet. Check back in the future!</h3>
+									{/if}
 								</div>
+								
 							</div>
 							<div class="clear"> </div>
 						</div>

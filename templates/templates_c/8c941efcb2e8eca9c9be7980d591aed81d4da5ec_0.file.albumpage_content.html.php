@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 14:48:29
+/* Smarty version 3.1.32, created on 2018-09-13 08:33:59
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97d5bdf03a94_26797933',
+  'unifunc' => 'content_5b9a20f7309944_24281185',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536677307,
+      1 => 1536827637,
       2 => 'file',
     ),
   ),
@@ -20,15 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97d5bdf03a94_26797933 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a20f7309944_24281185 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
-					<div class="single-page"><br />
+					<div class="single-page">
 						<div class="clear"> </div>
 						<div class="product-info">
 						
 							<div class="product-image">
 								<img src="<?php echo $_smarty_tpl->tpl_vars['album']->value['img_path'];?>
 ">
+							</div>
+							<div class="product-description">
+								<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+)">Add to Cart</a>
 							</div>
 							<div class="product-price-info">
 									<div class="product-value">
@@ -72,40 +76,35 @@ function content_5b97d5bdf03a94_26797933 (Smarty_Internal_Template $_smarty_tpl)
 										<br>
 										<li><a>In stock : <?php echo $_smarty_tpl->tpl_vars['album']->value['stock'];?>
 </a></li>
-										
-										<br>
-										<br>
-										<h4><label>Songs: </label></h4>
-										<?php if (count($_smarty_tpl->tpl_vars['songs']->value[0]) > 0) {?>
-										<?php
+									</ul>
+								</div>
+								<div class="product-end-list">
+								<h4><label>Songs: </label></h4>
+									<?php if (count($_smarty_tpl->tpl_vars['songs']->value[0]) > 0) {?>
+									<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['songs']->value, 'song');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['song']->value) {
 ?>
-											<div class="album-song-card">
-												<li><h3>Title : <a><?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
+										<div class="album-song-card">
+											<li><h3>Title : <a><?php echo $_smarty_tpl->tpl_vars['song']->value['nome_canzone'];?>
 </a></h3></li>
 												
-												<audio controls controlsList="nodownload">
-													<source src="<?php echo $_smarty_tpl->tpl_vars['song']->value['song_path'];?>
+											<audio controls controlsList="nodownload">
+												<source src="<?php echo $_smarty_tpl->tpl_vars['song']->value['song_path'];?>
 " type="audio/mp3">
-													Your browser does not support the audio element.
-												</audio>
-											</div>
-										<?php
+												Your browser does not support the audio element.
+											</audio>
+										</div>
+									<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-										<?php } else { ?>
-										<h3>We have no previews for this album yet. Check back in the future!</h3>
-										<?php }?>
-										
-									</ul>
+									<?php } else { ?>
+									<h3>We have no previews for this album yet. Check back in the future!</h3>
+									<?php }?>
 								</div>
-								<div class="product-description">
-									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-)">Add to Cart</a>
-								</div>
+								
 							</div>
 							<div class="clear"> </div>
 						</div>
