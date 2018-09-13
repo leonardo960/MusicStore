@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 12:58:45
+/* Smarty version 3.1.32, created on 2018-09-13 10:31:33
   from 'C:\wamp64\www\MusicStore\templates\mod_modify_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97bc0571e2d0_15847609',
+  'unifunc' => 'content_5b9a3c85a69010_72160005',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3b15cf1a83fc23221de7e43f89e5f604730bede' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_modify_artist_content.html',
-      1 => 1536670723,
+      1 => 1536834691,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97bc0571e2d0_15847609 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9a3c85a69010_72160005 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
@@ -77,15 +77,16 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		Immagine Artista:
 		<img class="artist-img" src="<?php echo $_smarty_tpl->tpl_vars['artista']->value['img_path'];?>
 ">
-		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" />
-		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
+		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" checked />
+		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required disabled />
+		<input id="biografia-input" type="hidden" name="biografia" />
 		<br>
 	</form>
-	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" maxlength="1000" required><?php echo $_smarty_tpl->tpl_vars['artista']->value['biografia'];?>
+	Biografia:<textarea style="resize: none;" rows="4" cols="50" id="biografia-edit" maxlength="1000" ><?php echo $_smarty_tpl->tpl_vars['artista']->value['biografia'];?>
 </textarea>
 	<br>
 	<br>
-	<input type="submit" value="Conferma Modifiche" form="artist-form" />
+	<button type="button" onclick="submit_artist_info()">Conferma Modifiche</button>
 	<br>
 	<br>
 	<form action="mod_delete_artist.php" method="GET">
@@ -119,6 +120,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			fileInput.disabled = false;
 		}
 	}
+	function submit_artist_info(){
+		var nicE = new nicEditors.findEditor('biografia-edit');
+		biografia = nicE.getContent();
+		document.getElementById('biografia-input').value = biografia;
+		document.getElementById('artist-form').submit();
+	}
 <?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);<?php echo '</script'; ?>
 ><?php }
 }

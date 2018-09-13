@@ -21,7 +21,11 @@
             $con = $this->connection;
             return $con->query($query);
         }
-        
+		
+		function get_connection(){
+			return $this->connection;
+		}
+		
         function getResult($query, $mode = ASSOC) {
             
             $queryResult = $this->query($query);

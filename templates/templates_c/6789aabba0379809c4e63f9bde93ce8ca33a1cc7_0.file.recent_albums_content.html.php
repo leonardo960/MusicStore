@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 20:36:41
+/* Smarty version 3.1.32, created on 2018-09-12 20:15:56
   from 'C:\wamp64\www\MusicStore\templates\recent_albums_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9827594f91d4_38295988',
+  'unifunc' => 'content_5b9973fc3453a3_80174463',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6789aabba0379809c4e63f9bde93ce8ca33a1cc7' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\recent_albums_content.html',
-      1 => 1536668808,
+      1 => 1536783219,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9827594f91d4_38295988 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9973fc3453a3_80174463 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -39,13 +39,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 								</div>
 								<div class="cartire-grid-info">
 									<ul>
-										<li><span>Title: </span><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
+										<li><span>Title : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
 </li>
-										<li><span>Artist: </span><a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
+										<li><span>Artist : </span><a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
 "><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
 </a></li>
 									</ul>
-									<h3>Description</h3>
+									<h3>Description : </h3>
 									<p><?php echo $_smarty_tpl->tpl_vars['album']->value['descrizione'];?>
 </p>
 								</div>
@@ -53,7 +53,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 									<h4>Info Page</h4>
 									<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 ">Go to Info</a>
-									<h4><span>Price Right Now: </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
+									<h4><span>Price Right Now : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
 &euro;</h4>
 									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )">Add to Cart</a>
