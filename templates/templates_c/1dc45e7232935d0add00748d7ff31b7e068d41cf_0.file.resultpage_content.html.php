@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 16:10:50
+/* Smarty version 3.1.32, created on 2018-09-12 20:14:45
   from 'C:\wamp64\www\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97e90a20c6e1_03451097',
+  'unifunc' => 'content_5b9973b5595aa0_15013329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1dc45e7232935d0add00748d7ff31b7e068d41cf' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1536668808,
+      1 => 1536783219,
       2 => 'file',
     ),
   ),
@@ -20,19 +20,19 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97e90a20c6e1_03451097 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9973b5595aa0_15013329 (Smarty_Internal_Template $_smarty_tpl) {
 ?><body>
 	<div class="resultpage-box">
 		<ul>	
 						<div class="resultpage-filter-box">
 				<form class="advanced-search-form" action="search.php" method=GET>
 					<ul>
-						<li><label id="first-resultpage-label" for="resultpage-filters">Advanced Search:</label></li>
+						<li><label id="first-resultpage-label" for="resultpage-filters">Advanced Search : </label></li>
 						<li><input type="search" name="query" <?php if (isset($_smarty_tpl->tpl_vars['query']->value)) {?>value="<?php echo $_smarty_tpl->tpl_vars['query']->value;?>
 "<?php }?> placeholder="Search..."/></li>
 					</ul>
 					<ul>
-						<li><label for="resultpage-filters">Show only:</label></li>
+						<li><label for="resultpage-filters">Show only : </label></li>
 						<li><div id="resultpage-filters" class="resultpage-filters">
 							<input type="radio" name="filter" value="artists" <?php if (isset($_smarty_tpl->tpl_vars['filter']->value) && $_smarty_tpl->tpl_vars['filter']->value == "artists") {?> checked <?php }?>>artists
 							<input type="radio" name="filter" value="songs" <?php if (isset($_smarty_tpl->tpl_vars['filter']->value) && $_smarty_tpl->tpl_vars['filter']->value == "songs") {?> checked <?php }?>>songs
@@ -40,7 +40,7 @@ function content_5b97e90a20c6e1_03451097 (Smarty_Internal_Template $_smarty_tpl)
 						</div></li>
 					</ul>
 					<ul>
-						<li><label for="resultpage-price-filter">Price:</label></li>
+						<li><label for="resultpage-price-filter">Price : </label></li>
 						<li><div id="resultpage-price-filter" class="resultpage-price-filter">
 							<input type="number" name="MIN" min="0" max="1000" pattern="[0-9]+" title="Please use only digits." <?php if (isset($_smarty_tpl->tpl_vars['min']->value)) {?>value=<?php echo $_smarty_tpl->tpl_vars['min']->value;
 }?> placeholder=<?php if (!isset($_smarty_tpl->tpl_vars['min']->value)) {?>"Min"<?php }?>>

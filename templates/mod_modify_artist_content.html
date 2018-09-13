@@ -39,14 +39,15 @@
 		<br>
 		Immagine Artista:
 		<img class="artist-img" src="{$artista.img_path}">
-		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" />
-		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required />
+		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" checked />
+		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required disabled />
+		<input id="biografia-input" type="hidden" name="biografia" />
 		<br>
 	</form>
-	Biografia<textarea style="resize: none;" rows="4" cols="50" name="biografia" form="artist-form" maxlength="1000" required>{$artista.biografia}</textarea>
+	Biografia:<textarea style="resize: none;" rows="4" cols="50" id="biografia-edit" maxlength="1000" >{$artista.biografia}</textarea>
 	<br>
 	<br>
-	<input type="submit" value="Conferma Modifiche" form="artist-form" />
+	<button type="button" onclick="submit_artist_info()">Conferma Modifiche</button>
 	<br>
 	<br>
 	<form action="mod_delete_artist.php" method="GET">
@@ -78,4 +79,12 @@
 			fileInput.disabled = false;
 		}
 	}
+	function submit_artist_info(){
+		var nicE = new nicEditors.findEditor('biografia-edit');
+		biografia = nicE.getContent();
+		document.getElementById('biografia-input').value = biografia;
+		document.getElementById('artist-form').submit();
+	}
 </script>
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>

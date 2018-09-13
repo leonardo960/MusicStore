@@ -6,9 +6,31 @@
 	
 	$content = "../templates/favorites_content.html";
 	
+	if(isset($_POST['add_favorite'])){
+		if(isset($_SESSION['auth'])){
+			$db->query("insert into album_preferiti values ('{$_POST['add_favorite']}', '{$_SESSION['auth']['username']}')");
+			echo 'added';
+			exit(); 
+		} else {
+			echo 'Login required to perform this operation.';
+			exit();
+		}
+	}
+	
+	if(isset($_POST['delete_favorite'])){
+		if(isset($_SESSION['auth'])){
+			$db->query("delete from album_preferiti where album = '{$_POST['add_favorite']}' and utente = '{$_SESSION['auth']['username']}' ");
+			echo 'deleted';
+			exit(); 
+		} else {
+			echo 'Login required to perform this operation.';
+			exit();
+		}
+	}
+	
 	if(isset($_SESSION['auth'])){
 		//Recuperiamo gli album preferiti dell'utente
-		$result = $db->getResult("select album.id_album, album.img_path, album.nome_album, artisti.nome_artista, album.prezzo, album.descrizione, prezzo_offerta from album_preferiti join album on album_preferiti.album = album.id_album join genere on genere.id_genere = album.fk_genere join artisti on artisti.id_artista = album.fk_artista join offerte_speciali on album_preferiti.album = offerte_speciali.album where utente = '{$_SESSION['auth']['username']}'");
+		$result = $db->getResult("select album.id_album, album.img_path, album.nome_album, artisti.nome_artista, album.prezzo, album.descrizione, prezzo_offerta from album_preferiti join album on album_preferiti.album = album.id_album join genere on genere.id_genere = album.fk_genere join artisti on artisti.id_artista = album.fk_artista left join offerte_speciali on album_preferiti.album = offerte_speciali.album where utente = '{$_SESSION['auth']['username']}'");
 		
 		for($i = 0; $i < count($result); $i++){
 		if(!($result[$i]['prezzo_offerta'] === NULL)){
@@ -25,18 +47,12 @@
 		require "include/set_logged_header.inc.php";
 		require "include/set_cart_header.inc.php";
 		require "include/set_active_logo.inc.php";
-	
+		require "include/populate_favorites.inc.php";
 	
 		$smarty->display("frame_public.html");
 	} else {
-		$smarty->assign("content", $content);
-	
-		require "include/set_logged_header.inc.php";
-		require "include/set_cart_header.inc.php";
-		require "include/set_active_logo.inc.php";
-	
-	
-		$smarty->display("frame_public.html");
+		header("location: login.php");
+		exit();
 	}
 	
 	

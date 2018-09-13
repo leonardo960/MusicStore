@@ -6,22 +6,36 @@
 	
 	if(isset($_FILES["artist-img"])){
 		if($_POST['fine_attivita'] === ''){
-			$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
+			/*$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
 												inizio_attivita = '{$_POST["inizio_attivita"]}', fine_attivita = null,
-												genere = '{$_POST["genere"]}', img_path = '{$target_file}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");
+												genere = '{$_POST["genere"]}', img_path = '{$target_file}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");*/
+			$ps = $db->get_connection()->prepare('update artisti set nome_artista = ?, biografia = ?,
+												inizio_attivita = ?, fine_attivita = null,
+												genere = ?, img_path = ?, album_pubblicati = ? where id_artista = ?');			
+			$ps->bind_param('ssiisii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST["genere"], $target_file, $_POST['album_pubblicati'], $_POST["id_artista"]);
+			$ps->execute();
 		} else {
-			$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
+			/*$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
 												inizio_attivita = '{$_POST["inizio_attivita"]}', fine_attivita = '{$_POST["fine_attivita"]}',
-												genere = '{$_POST["genere"]}', img_path = '{$target_file}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");
+												genere = '{$_POST["genere"]}', img_path = '{$target_file}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");*/
+			$ps = $db->get_connection()->prepare('update artisti set nome_artista = ?, biografia = ?, inizio_attivita = ?, fine_attivita = ?, genere = ?, img_path = ?, album_pubblicati = ? where id_artista = ?');
+			$ps->bind_param('ssiiisii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST['fine_attivita'], $_POST["genere"], $target_file, $_POST['album_pubblicati'], $_POST["id_artista"]);
+			$ps->execute();
 		}
 	} else if($_POST['fine_attivita'] === ''){ 
-		$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
+		/*$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
 												inizio_attivita = '{$_POST["inizio_attivita"]}', fine_attivita = null,
-												genere = '{$_POST["genere"]}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");
+												genere = '{$_POST["genere"]}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");*/
+		$ps = $db->get_connection()->prepare('update artisti set nome_artista = ?, biografia = ?, inizio_attivita = ?, fine_attivita = null, genere = ?, album_pubblicati = ? where id_artista = ?');
+		$ps->bind_param('ssiiii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST["genere"], $_POST['album_pubblicati'], $_POST["id_artista"]);
+		$ps->execute();
 	} else {
-		$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
+		/*$result = $db->query("update artisti set nome_artista = '{$_POST["nome_artista"]}', biografia = '{$_POST["biografia"]}',
 												inizio_attivita = '{$_POST["inizio_attivita"]}', fine_attivita = '{$_POST["fine_attivita"]}',
-												genere = '{$_POST["genere"]}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");
+												genere = '{$_POST["genere"]}', album_pubblicati = '{$_POST['album_pubblicati']}' where id_artista = '{$_POST["id_artista"]}'");*/
+		$ps = $db->get_connection()->prepare('update artisti set nome_artista = ?, biografia = ?, inizio_attivita = ?, fine_attivita = ?, genere = ?, album_pubblicati = ? where id_artista = ?');
+		$ps->bind_param('ssiiiii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST['fine_attivita'], $_POST["genere"], $_POST['album_pubblicati'], $_POST["id_artista"]);
+		$ps->execute();
 	}
 	
 																											 
