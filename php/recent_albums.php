@@ -36,7 +36,7 @@
 	
 		$smarty->display("frame_public.html");
 	} else {
-		$result = $db->getResult("select album.img_path, nome_album, nome_artista, descrizione, id_album, id_artista, prezzo, prezzo_offerta, album_preferiti.utente as preferito from album left join offerte_speciali on album.id_album = offerte_speciali.album join artisti on artisti.id_artista = album.fk_artista order by data_inserimento limit 20");
+		$result = $db->getResult("select album.img_path, nome_album, nome_artista, descrizione, id_album, id_artista, prezzo, prezzo_offerta from album left join offerte_speciali on album.id_album = offerte_speciali.album join artisti on artisti.id_artista = album.fk_artista order by data_inserimento limit 20");
 	
 		for($i = 0; $i < count($result); $i++){
 			if(!($result[$i]['prezzo_offerta'] === NULL)){

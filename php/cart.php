@@ -6,19 +6,37 @@ if(isset($_POST['quantity_change'])){
 	foreach($_SESSION['cart'] as $value){
 		if($value['item_name'] === $_POST['quantity_change']['item_name']){
 			$value['item_quantity'] = $_POST['quantity_change']['amount'];
+			echo 'changed';
 			exit();
 		}
 	}
 } elseif (isset($_POST['remove_item'])) {
-	foreach($_SESSION['cart'] as $key => $value){
-		if($value['item_name'] === $_POST['remove_item']){
-			print_r($_SESSION['cart'][$key]);
-			unset($_SESSION['cart'][$key]);
-			print_r($_SESSION['cart'][$key]);
+	for($i = 0; $i < count($_SESSION['cart']); $i++){
+		if($_SESSION['cart'][$i]['item_id'] === $_POST['remove_item']){
+			array_splice($_SESSION['cart'], $i, 1);
+			echo 'deleted';
 			exit();
 		}
 	}
+} elseif(isset($_POST["add_item"])){
+	$item_id = $_POST["add_item"];
+	
+	if(!is_array($_SESSION['cart'])){
+		$_SESSION['cart'] = array();
+	}
+	
+	for($i = 0; $i < count($_SESSION['cart']); $i++){
+		if($_SESSION['cart'][$i]['item_id'] == $item_id){
+			echo 'already_added';
+			exit();
+		}
+	}
+	
+	array_push($_SESSION['cart'], array("item_id"=>$item_id, "item_quantity"=>1));
+	echo 'success';
+	exit();
 }
+
 require "include/dbms.inc.php";
 require "init_smarty.php";
 

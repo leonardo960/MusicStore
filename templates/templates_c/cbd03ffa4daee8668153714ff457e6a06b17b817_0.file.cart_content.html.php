@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 17:10:22
+/* Smarty version 3.1.32, created on 2018-09-14 17:20:56
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9a99fea2d1c2_77711392',
+  'unifunc' => 'content_5b9bedf8279278_67281319',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1536858572,
+      1 => 1536945653,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,52 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9a99fea2d1c2_77711392 (Smarty_Internal_Template $_smarty_tpl) {
-if (isset($_smarty_tpl->tpl_vars['error']->value)) {
+function content_5b9bedf8279278_67281319 (Smarty_Internal_Template $_smarty_tpl) {
+?><style>
+.delete-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.delete-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.delete-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.delete-cart-close-button:hover {
+    background-color: darkgray;
+}
+.delete-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
+<?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>
 	<div class="cart-page-container">
@@ -79,8 +123,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 " min="1" value="1"></input>
 							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 " class="cart-remove-button">Details</a>
-							<a href="" class="cart-remove-button" onclick="remove_item('<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
-')">Remove</a>
+							<a style="cursor: pointer;" class="cart-remove-button" onclick="remove_item(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+)">Remove</a>
 						
 						</div>
 					</div>
@@ -100,6 +144,13 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<button onclick="checkout()">Proceed to Checkout</button>
 			</div>
 		</form>
+		
+	</div>
+	<div class="delete-cart-modal">
+		<div class="delete-cart-modal-content">
+			<button onclick="location.reload(true)" class="delete-cart-close-button">×</button>
+			<h1>Album deleted from cart!</h1>
+		</div>
 	</div>
 <?php echo '<script'; ?>
  src="../js/cart.js"><?php echo '</script'; ?>

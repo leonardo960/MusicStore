@@ -1188,9 +1188,7 @@ body{
 .product-value ul li{
 	display:inline-block;
 }
-.product-value ul li span{
-	text-decoration:line-through;
-}
+
 .product-value h2,.product-value span,.product-value h5,.product-value li a,.product-value h3,.product-end-list h3,.product-end-list li a{
 	display: block;
 	padding: 4px 0px;
