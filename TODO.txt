@@ -1,7 +1,5 @@
-//TODO MATTEO Home deve avere lista di Offerte e album Recenti
 //TODO Pagina dei contatti con google maps incluso
 //TODO MATTEO Spezzare singlepage.php in artist.php e album.php
 //TODO LEONARDO Finire mod_modify_delete.php
 //TODO LEONARDO Scrivere mod_modify_artist,album e song
-//TODO MATTEO Gestire mp3 canzone
 //TODO Acquisto da parte dell'utente

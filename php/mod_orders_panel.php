@@ -1,7 +1,7 @@
 <?php	
 	require "init_smarty.php";		
 	require 'include/mod.check_service_permission.inc.php';
-	
+
 	$content = "../templates/mod_orders_panel_content.html";
 	
 	if(isset($_POST['new_status']) && isset($_POST['id_ordine'])){
