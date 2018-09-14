@@ -8,6 +8,11 @@
 	
 	if(isset($_POST['add_favorite'])){
 		if(isset($_SESSION['auth'])){
+			$result = $db->getResult("select * from album_preferiti where utente = '{$_SESSION['auth']['username']}' and album = '{$_POST['add_favorite']}'");
+			if( isset($result[0]['album']) ){
+				echo 'already_added';
+				exit();
+			}
 			$db->query("insert into album_preferiti values ('{$_POST['add_favorite']}', '{$_SESSION['auth']['username']}')");
 			echo 'added';
 			exit(); 
@@ -19,7 +24,12 @@
 	
 	if(isset($_POST['delete_favorite'])){
 		if(isset($_SESSION['auth'])){
-			$db->query("delete from album_preferiti where album = '{$_POST['add_favorite']}' and utente = '{$_SESSION['auth']['username']}' ");
+			$result = $db->getResult("select * from album_preferiti where utente = '{$_SESSION['auth']['username']}' and album = '{$_POST['delete_favorite']}'");
+			if( !(isset($result[0]['album'])) ){
+				echo 'already_removed';
+				exit();
+			}
+			$db->query("delete from album_preferiti where album = '{$_POST['delete_favorite']}' and utente = '{$_SESSION['auth']['username']}' ");
 			echo 'deleted';
 			exit(); 
 		} else {

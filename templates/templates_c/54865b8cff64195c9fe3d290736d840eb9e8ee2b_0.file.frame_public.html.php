@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-06 08:11:31
+/* Smarty version 3.1.32, created on 2018-09-09 14:58:32
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b90e1333adaf5_68738918',
+  'unifunc' => 'content_5b95351877cc49_52746851',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54865b8cff64195c9fe3d290736d840eb9e8ee2b' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\frame_public.html',
-      1 => 1536220150,
+      1 => 1536504482,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
@@ -33,31 +33,29 @@ function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl)
 			<!---start-top-header--->
 			<div class="top-header">
 				<div class="top-header-left">
-					<ul>
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">Specials</a></li>
-						<li><a href="#">Delivery</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
 				</div>
 				<div class="top-header-right">
 					<ul>
-						<li><a href="#">CURRENCY:</a></li>
-						<li>
-							<select>
-								<option>Dollar</option>
-								<option>Euro</option>
-								<option>Pound</option>
-							</select>
-						</li>
+						<?php if (isset($_smarty_tpl->tpl_vars['logged_username']->value)) {?>
+						<li>Logged in as: <a id="header-auth-info"><?php echo $_smarty_tpl->tpl_vars['logged_username']->value;?>
+</a></li>
+						<li><a href="account.php">Your account</a></li>
+						<li><a href="logout.php">Log Out</a></li>
+						<?php } else { ?>
+						<li><a href="login.php">Log In</a></li>
+						<?php }?>
+						<li><a id="cart-text" href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
+<img src="../images/cart.png" title="cart" /></a></li>
 					</ul>
 				</div>
 				<div class="clear"> </div>
 			</div>
+			<!--end-top-header-->
 			<div class="clear"> </div>
+			<!--start-sub-header-->
 			<div class="sub-header">
 				<div class="logo">
-					<a href="index.html"><img src="../images/logo.png" title="logo" /></a>
+					<a href="index.php"><img src="../images/logo2.png" title="Music Store" /></a>
 				</div>
 				<div class="sub-header-center">
 					<form class="search" action="search.php" type="GET">
@@ -65,37 +63,32 @@ function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl)
 					</form>
 				</div>
 				<div class="sub-header-right">
-					<ul>
-						<?php echo $_smarty_tpl->tpl_vars['logged']->value;?>
-
-						<li><a href="account.php">Your account</a></li>
-						<li><a id="cart-text" href="cart.php"><?php echo $_smarty_tpl->tpl_vars['cart']->value;?>
-<img src="../images/cart.png" title="cart" /></a></li>
-					</ul>
 				</div>
 				<div class="clear"> </div>
 			</div>
+			<!--end-sub-header-->
 			<div class="clear"> </div>
+			<!--start-top-nav-->
 			<div class="top-nav">
 				<ul>
-					<li class="active1"><a href="index.php">Home</a></li>
-					<li><a href="../favorites.html">Favourites</a></li>
-					<li><a href="../artists.">Artists</a></li>
-					<li><a href="../specials.html">Specials</a></li>
-					<li><a href="../specials.html">Recent-albums</a></li>
-					<li><a href="../contact.html">Feedback</a></li>
-					<div class="clear"> </div>
+					<li <?php if ($_smarty_tpl->tpl_vars['active_logo']->value == 'Home') {?>class="active1"<?php }?> ><a href="index.php">Home</a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['active_logo']->value == 'Favorites') {?>class="active1"<?php }?>><a href="favorites.php">Favorites</a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['active_logo']->value == 'Recent Albums') {?>class="active1"<?php }?>><a href="recent_albums.php">Recent albums</a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['active_logo']->value == 'Specials') {?>class="active1"<?php }?>><a href="special_offers.php">Specials</a></li>
+					<li <?php if ($_smarty_tpl->tpl_vars['active_logo']->value == 'Contact Us') {?>class="active1"<?php }?>><a href="contacts.php">Contact us</a></li>
 				</ul>
+				<div class="clear"> </div>
 			</div>
-			<!---end-top-header--->
+			<!--end-top-nav-->
 			<!---End-header--->
 			</div>
 <?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['content']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
+	<!--start-footer-->
 	<div class="footer">
 				<div class="wrap">
 				<div class="section group">
-				<div class="col_1_of_4 span_1_of_4">
+				<div class="col_1_of_4 span_1_of_4 footer-firstgrid">
 					<h3>INFORMATION</h3>
 					<ul>
 						<li><a href="#">About us</a></li>
@@ -105,26 +98,7 @@ function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl)
 						<li><a href="#">Legal Notice</a></li>
 					</ul>
 				</div>
-				<div class="col_1_of_4 span_1_of_4">
-					<h3>OUR OFFERS</h3>
-					<ul>
-						<li><a href="#">New products</a></li>
-						<li><a href="#">top sellers</a></li>
-						<li><a href="#">Specials</a></li>
-						<li><a href="#">Products</a></li>
-						<li><a href="#">Comments</a></li>
-					</ul>
-				</div>
-				<div class="col_1_of_4 span_1_of_4">
-					<h3>YOUR ACCOUNT</h3>
-					<ul>
-						<li><a href="#">Your Account</a></li>
-						<li><a href="#">Personal info</a></li>
-						<li><a href="#">Prices</a></li>
-						<li><a href="#">Address</a></li>
-						<li><a href="#">Locations</a></li>
-					</ul>
-				</div>
+				<div class="footer-divider"></div>
 				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
 					<h3>Get in touch</h3>
 					<ul>
@@ -133,11 +107,13 @@ function content_5b90e1333adaf5_68738918 (Smarty_Internal_Template $_smarty_tpl)
 						<li><a href="#"><img src="../images/rss.png" title="Rss" /></a></li>
 						<li><a href="#"><img src="../images/gpluse.png" title="Google+" /></a></li>
 					</ul>
-					<p>&copy; 2013 Musicstore. All Rights Reserved | Design by <a href="#">W3layouts</a></p>
+					<h3>Methods of Payment</h3>
+					<a href=""><img id="methods-payment-img" src="../images/methods_payment_icons.png"></a>
 				</div>
 			</div>
 			</div>
-		</div>
+	</div>
+		<!--end-footer-->
 		<!---End-wrap--->
 	</body>
 </html><?php }

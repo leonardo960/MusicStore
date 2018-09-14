@@ -85,6 +85,13 @@
 		document.getElementById('biografia-input').value = biografia;
 		document.getElementById('artist-form').submit();
 	}
+	
+	
 </script>
-<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+<script src="../js/nicEdit/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(function() {
+        {literal}new nicEditor({iconsPath: '../js/nicEdit/nicEditorIcons.gif', buttonList: ['bold', 'italic', 'link', 'unlink']}).panelInstance('biografia-edit');{/literal}
+  });
+</script>
+
+

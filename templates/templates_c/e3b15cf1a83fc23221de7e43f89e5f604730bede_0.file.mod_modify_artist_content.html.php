@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 10:31:33
+/* Smarty version 3.1.32, created on 2018-09-14 12:44:16
   from 'C:\wamp64\www\MusicStore\templates\mod_modify_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9a3c85a69010_72160005',
+  'unifunc' => 'content_5b9bad20c02cb5_16561668',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3b15cf1a83fc23221de7e43f89e5f604730bede' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_modify_artist_content.html',
-      1 => 1536834691,
+      1 => 1536929054,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9a3c85a69010_72160005 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9bad20c02cb5_16561668 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
@@ -126,12 +126,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		document.getElementById('biografia-input').value = biografia;
 		document.getElementById('artist-form').submit();
 	}
+	
+	
 <?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"><?php echo '</script'; ?>
+ src="../js/nicEdit/nicEdit.js" type="text/javascript"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);<?php echo '</script'; ?>
-><?php }
+ type="text/javascript">bkLib.onDomLoaded(function() {
+        new nicEditor({iconsPath: '../js/nicEdit/nicEditorIcons.gif', buttonList: ['bold', 'italic', 'link', 'unlink']}).panelInstance('biografia-edit');
+  });
+<?php echo '</script'; ?>
+>
+
+
+<?php }
 }
