@@ -21,7 +21,15 @@
 									<a href="albumpage.php?id_album={$album.id_album}">Go to Info</a>
 									<h4><span>Price Right Now : </span>{$album.prezzo}&euro;</h4>
 									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
-									<a onclick="add_to_favorites('{$album.id_album}')">Add to Favorites</a>
+									{if $user_logged == true }
+										{if $album.preferito == true }
+											<a onclick="remove_from_favorites({$album.id_album}, true)">Remove from Favorites</a>
+										{else}
+											<a onclick="add_to_favorites({$album.id_album})">Add to Favorites</a>
+										{/if}
+									{else}
+										<a href="login.php">Add to Favorites</a>
+									{/if}
 								</div>
 								<div class="clear"> </div>
 							</div><br />

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 08:48:38
+/* Smarty version 3.1.32, created on 2018-09-14 10:03:25
   from 'C:\wamp64\www\MusicStore\templates\favorites_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9a246677bb27_68341430',
+  'unifunc' => 'content_5b9b876d0174e7_33193309',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '12856313cb783176280ff923743ee03e6c438f49' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\favorites_content.html',
-      1 => 1536828511,
+      1 => 1536919387,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9a246677bb27_68341430 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9b876d0174e7_33193309 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -56,8 +56,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['favorite']->value) {
 &euro;</h4>
 									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
 )">Add to Cart</a>
-									<a onclick="remove_from_favorites('<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
-')">Remove from Favorites</a>
+									<a onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
+, true)">Remove from Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
