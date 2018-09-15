@@ -1,105 +1,150 @@
-<style>
-.search-bar {
-	position: absolute;
-	top: 35%;
-	right: 35%;
-}
-.back-button {
-		position: absolute;
-		top: 18%;
-		left: 5%;
-	}
-.results {
-		position: absolute;
-		top: 40%;
-		left: 25%;
-}
-.page-numbers{
-		position: absolute;
-		bottom: 15%;
-		left: 50%;
-}
+		<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Gestisci Offerte</h1>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+		
+		<div class="content mt-3">
+			<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="animated fadeIn">
+                <div class="row">
 
-</style>
-<form class="back-button" action="mod_panel.php">
-    <input type="submit" value="Torna al Pannello Moderatore" />
-</form>
+				
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Aggiungi alle Offerte</strong>
+                        </div>
+                        <div class="card-body">
+                  <table class="table table-striped table-bordered bootstrap-data-table">
+                    <thead>
+                      <tr>
+						<th>Seleziona</th>
+                        <th>Prezzo Offerta</th>
+                        <th>Prezzo</th>
+                        <th>Album</th>
+                        <th>Artista</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					{foreach $album as $item}
+                      <tr>
+						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func1({$item.id_album})"/></td>
+						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="" disabled="true"/></td>
+						<td>{$item.prezzo}</td>
+                        <td>{$item.nome_album}</td>
+                        <td>{$item.nome_artista}</td>
+                      </tr>
+					{/foreach}  
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				
 
-<form class="search-bar" action="mod_special_offers_panel.php" method="GET">
-	Cerca Album da aggiungere/rimuovere alle offerte: <input type="text" name="query" />
-	<input type="submit" value="Cerca" />
-</form>
 
-<div class="results">
-	{if isset($albums) && count($albums) > 0}
-	Album Trovati:
-	<br>
-	<br>
-	{foreach $albums as $album}
-	{$album.nome_album} 
-	<br>
-	Prezzo di Listino: {$album.prezzo}&euro;
-	{if isset($album.prezzo_offerta)}
-	<div>
-		Prezzo Offerta: {$album.prezzo_offerta}&euro;
-		<button id="show-offer-change-button-{$album.id_album}" type="button" onclick="show_offer_change({$album.id_album})" style="display: block;">Modifica</button>
-		<form action="mod_special_offers_panel.php" method="POST">
-			<input type="submit" value="Rimuovi Offerta" />
-			<input type="hidden" name="mode" value="delete" />
-			<input type="hidden" name="id_album" value="{$album.id_album}" />
-		</form>
-		<form id="offer-change-form-{$album.id_album}" style="display: none;" action="mod_special_offers_panel.php" method="POST">
-			<input  type="number" step="0.01" value="{$album.prezzo_offerta}" name="prezzo_offerta" /> 
-			<input type="hidden" value="{$album.id_album}" name="id_album" />
-			<input type="hidden" name="mode" value="change" />
-			<input type="submit" value="Conferma Modifica" />
-			<button type="button" onclick="cancel_offer_change({$album.id_album})" >Cancella</button>
-		</form>
-	</div>
-	{/if}
-	{if !isset($album.prezzo_offerta)}
-	<div id="offerta-assente-{$album.id_album}">
-		Nessun prezzo offerta impostato al momento.
-		<button id="insert-offer-button-{$album.id_album}" type="button" onclick="show_offer_input({$album.id_album})" style="display: block;">Imposta</button>
-		<form id="offer-insert-form-{$album.id_album}" style="display: none;" action="mod_special_offers_panel.php" method="POST">
-			Prezzo Offerta da impostare: <input  type="number" step="0.01" value="0" name="prezzo_offerta" /> 
-			<input type="hidden" value="{$album.id_album}" name="id_album" />
-			<input type="submit" value="Conferma" />
-			<input type="hidden" name="mode" value="insert" />
-			<button type="button" onclick="cancel_offer_input({$album.id_album})" >Cancella</button>
-		</form>
-	</div>
-	{/if}
-	<br>
-	{/foreach}
-	{/if}
-	<br>
-</div>
-<div class="page-numbers">
-	{for $counter=1 to $page_counter}
-		<a href="mod_special_offers_panel.php?page_id={$counter}">{$counter}</a>
-	{/for}
-</div>
+                </div>
+            </div><!-- .animated -->
+			</form>
+			
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Aggiungi
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            
+        </div><!-- .content -->
+		
+		<div class="content mt-3">
+			<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="animated fadeIn">
+                <div class="row">
+
+				
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Offerte Esistenti : </strong> Seleziona per Modificare o Rimuovere
+                        </div>
+                        <div class="card-body">
+                  <table class="table table-striped table-bordered bootstrap-data-table">
+                    <thead>
+                      <tr>
+						<th>Seleziona</th>
+                        <th>Prezzo Offerta</th>
+                        <th>Prezzo</th>
+                        <th>Album</th>
+                        <th>Artista</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					{foreach $album as $item}
+                      <tr>
+						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func2({$item.id_album})"/></td>
+						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="" disabled="true"/></td>
+						<td>{$item.prezzo}</td>
+                        <td>{$item.nome_album}</td>
+                        <td>{$item.nome_artista}</td>
+                      </tr>
+					{/foreach}  
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				
+
+
+                </div>
+            </div><!-- .animated -->
+			</form>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fa fa-dot-circle-o"></i> Modifica
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+					<button class="btn btn-danger btn-sm">
+                        <i class="fa fa-times-circle"></i> Rimuovi
+                    </button>
+                </div>
+            
+        </div><!-- .content -->
+
 <script>
-	function show_offer_change(album_id){
-		document.getElementById("show-offer-change-button-"+album_id).style.display = "none";
-		document.getElementById("offer-change-form-"+album_id).style.display = "block";
+	function checkbox_func1(id){
+	
+		var checkBox = document.getElementById("checkbox-" + id);
+		var yearInput = document.getElementById("offerta-" + id);
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = false;
+		} else {
+			yearInput.disabled = true;
+		}
 	}
+</script>
+
+<script>
+	function checkbox_func2(id){
 	
-	function cancel_offer_change(album_id){
-		document.getElementById("show-offer-change-button-"+album_id).style.display = "block";
-		document.getElementById("offer-change-form-"+album_id).style.display = "none";
+		var checkBox = document.getElementById("checkbox-" + id);
+		var yearInput = document.getElementById("offerta-" + id);
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = false;
+		} else {
+			yearInput.disabled = true;
+		}
 	}
-	
-	function show_offer_input(album_id){
-		document.getElementById("insert-offer-button-"+album_id).style.display = "none";
-		document.getElementById("offer-insert-form-"+album_id).style.display = "block";
-	}
-	
-	function cancel_offer_input(album_id){
-		document.getElementById("insert-offer-button-"+album_id).style.display = "block";
-		document.getElementById("offer-insert-form-"+album_id).style.display = "none";
-	}
-	
-	
 </script>

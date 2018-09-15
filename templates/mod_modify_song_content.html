@@ -1,48 +1,69 @@
-<style>
-.menu {
-	position: absolute;
-	top: 17%;
-	left: 28%;
-}
-.back-button {
-	position: absolute;
-	top: 18%;
-	left: 5%;
-}
+<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Modifica Canzoni</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="content mt-3">
+		
+			<div class="card">
+                      <div class="card-header">
+                        <strong>Modifica : </strong> Canzone
+                      </div>
+                      <div class="card-body card-block">
+                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Titolo : </label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_canzone" class="form-control" value="{$nome_canzone}" autocomplete="none" required></div>
+                          </div>
+                          
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="album-info" id="select" class="form-control" required>
+                                <option value="{$id_album}">{$nome_album}</option>
+                                {foreach $album as $item}
+								{literal}<option id="album-fk-option" value='{"id_album": {/literal}"{$item.id_album}"{literal},"id_artista": {/literal}"{$item.id_artista}"{literal}}' >{/literal}{$item.nome_album}</option>
+								{/foreach}
+                              </select>
+                            </div>
+                          </div>
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Anteprima Canzone : </label></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="song-file" value="{$preview}" class="form-control-file" required></div>
+                          </div>
+                          
+						  <input id="hidden-date" type="date" name="data_inserimento" hidden />
+						  
+                        </form>
+                      </div>
+					  
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-dot-circle-o"></i> Procedi
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                          <i class="fa fa-ban"></i> Reset
+                        </button>
+						<button class="btn btn-danger btn-sm">
+                          <i class="fa fa-times-circle"></i> Cancella
+                        </button>
+                      </div>
+                    </div>
 
-</style>
-<div class="menu">
-	<form id="song-form" action="mod_modify_song.php" method="POST" enctype="multipart/form-data">
-		<input type="number" name="id_canzone" value="{$canzone.id_canzone}" hidden />
-		Nome Canzone:<input type="text" name="nome_canzone" maxlength="30" value="{$canzone.nome_canzone}" required />
-		<br>
-		<input type="number" hidden />
-		Preview Canzone:
-		<audio controls controlsList="nodownload">
-			<source src="{$canzone.song_path}" type="audio/mp3">
-			Your browser does not support the audio element.
-		</audio>
-		Lascia Preview Precedente: <input id="checkbox-canzone" type="checkbox" name="canzone" value="default" onclick="checkbox_func_2()" />
-		<input id="song-input" type="file" name="song-preview" required />
-		<br>
-	</form>
-	<br>
-	<br>
-	<input type="submit" value="Conferma Modifiche" form="song-form" />
-</div>
-<form class="back-button"  action="mod_modify_delete.php">
-    <input type="submit" value="Torna alla pagina di ricerca" />
-</form>
-<script>
-function checkbox_func_2(){
-		var checkBox = document.getElementById("checkbox-canzone");
-		var fileInput = document.getElementById("song-input");
-	
-		if (checkBox.checked == true){
-			fileInput.disabled = true;
-		} else {
-			fileInput.disabled = false;
-		}
-	}
-</script>
+		</div>
