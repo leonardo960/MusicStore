@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-14 10:03:25
+/* Smarty version 3.1.32, created on 2018-09-15 15:25:42
   from 'C:\wamp64\www\MusicStore\templates\favorites_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9b876d0174e7_33193309',
+  'unifunc' => 'content_5b9d2476c34156_83838643',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '12856313cb783176280ff923743ee03e6c438f49' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\favorites_content.html',
-      1 => 1536919387,
+      1 => 1537025122,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,136 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9b876d0174e7_33193309 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="content">
+function content_5b9d2476c34156_83838643 (Smarty_Internal_Template $_smarty_tpl) {
+?><style>
+.add-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-cart-close-button:hover {
+    background-color: darkgray;
+}
+.add-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.already-added-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.already-added-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.already-added-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.already-added-cart-close-button:hover {
+    background-color: darkgray;
+}
+.already-added-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.remove-favorite-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.remove-favorite-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.remove-favorite-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.remove-favorite-close-button:hover {
+    background-color: darkgray;
+}
+.remove-favorite-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
+<div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
 						<h5><span>Your</span> Favorites</h5>
@@ -57,7 +185,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['favorite']->value) {
 									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
 )">Add to Cart</a>
 									<a onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['favorite']->value['id_album'];?>
-, true)">Remove from Favorites</a>
+)">Remove from Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -75,9 +203,27 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						
 					</div>
 	<!--End-cartires-page---->
+	<div class="add-cart-modal">
+		<div class="add-cart-modal-content">
+			<span class="add-cart-close-button">×</span>
+			<h1>Album added to cart!</h1>
+		</div>
+	</div>
+	<div class="already-added-cart-modal">
+		<div class="already-added-cart-modal-content">
+			<span class="already-added-cart-close-button">×</span>
+			<h1>Album already added to cart!</h1>
+		</div>
+	</div>
+	<div class="remove-favorite-modal">
+		<div class="remove-favorite-modal-content">
+			<span class="remove-favorite-close-button">×</span>
+			<h1>Album removed from favorites!</h1>
+		</div>
+	</div>
 </div>
 <?php echo '<script'; ?>
- src="../js/add_to_cart.js"><?php echo '</script'; ?>
+ src="../js/cart.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="../js/add_remove_favorite.js"><?php echo '</script'; ?>

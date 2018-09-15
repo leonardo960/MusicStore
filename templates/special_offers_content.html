@@ -1,3 +1,173 @@
+<style>
+.add-favorite-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-favorite-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-favorite-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-favorite-close-button:hover {
+    background-color: darkgray;
+}
+.add-favorite-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.remove-favorite-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.remove-favorite-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.remove-favorite-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.remove-favorite-close-button:hover {
+    background-color: darkgray;
+}
+.remove-favorite-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.add-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-cart-close-button:hover {
+    background-color: darkgray;
+}
+.add-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.already-added-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.already-added-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.already-added-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.already-added-cart-close-button:hover {
+    background-color: darkgray;
+}
+.already-added-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
 <div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -20,10 +190,10 @@
 									<h4>Info Page</h4>
 									<a href="artistpage.php?id_artista={$album.id_artista}">Go to Info</a>
 									<h4><span>Special Price : </span>{$album.prezzo_offerta}&euro;</h4>
-									<a onclick="add_to_cart('{$album.id_album}')">Add to Cart</a>
+									<a onclick="add_to_cart({$album.id_album})">Add to Cart</a>
 									{if $user_logged == true }
 										{if $album.preferito == true }
-											<a onclick="remove_from_favorites({$album.id_album}, true)">Remove from Favorites</a>
+											<a onclick="remove_from_favorites({$album.id_album})">Remove from Favorites</a>
 										{else}
 											<a onclick="add_to_favorites({$album.id_album})">Add to Favorites</a>
 										{/if}
@@ -37,6 +207,30 @@
 						</div>
 						
 					</div>
+		<div class="add-favorite-modal">
+			<div class="add-favorite-modal-content">
+				<span class="add-favorite-close-button">×</span>
+				<h1>Album added to favorites!</h1>
+			</div>
+		</div>
+	<div class="remove-favorite-modal">
+		<div class="remove-favorite-modal-content">
+			<span class="remove-favorite-close-button">×</span>
+			<h1>Album removed from favorites!</h1>
+		</div>
+	</div>
+	<div class="add-cart-modal">
+		<div class="add-cart-modal-content">
+			<span class="add-cart-close-button">×</span>
+			<h1>Album added to cart!</h1>
+		</div>
+	</div>
+	<div class="already-added-cart-modal">
+		<div class="already-added-cart-modal-content">
+			<span class="already-added-cart-close-button">×</span>
+			<h1>Album already added to cart!</h1>
+		</div>
+	</div>
 	<!--End-cartires-page---->
 </div>
 <script src="../js/cart.js"></script>
