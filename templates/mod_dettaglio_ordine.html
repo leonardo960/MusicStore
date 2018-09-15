@@ -1,0 +1,125 @@
+	<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Tabella Ordine</h1>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+		
+		<div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+		
+				<div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Informazioni</strong>
+                        </div>
+                        <div class="card-body">
+                          <table class="table">
+                          <tbody>
+                          <tr>
+                              <td scope="row">ID : </td>
+                              <td>{$id_album}</td>
+                          </tr>
+                          <tr>
+                              <td scope="row">Utente : </td>
+                              <td>{$utente}</td>
+                          </tr>
+                          <tr>
+                              <td scope="row">Album : </td>
+                              <td>{$nome_album}</td>
+                          </tr>
+						  <tr>
+                              <td scope="row">Data : </td>
+                              <td>{$data_ordine}</td>
+                          </tr>
+						  <tr>
+                              <td scope="row">Spedizione : </td>
+                              <td>{$tipo_spedizione}</td>
+                          </tr>
+						  
+						</tbody>
+						<tbody>
+							<tr>
+                              <th scope="column">Indirizzo</th>
+							</tr>
+							
+							<tr>
+                              <td scope="row">Paese : </td>
+                              <td>{$paese}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Indirizzo : </td>
+                              <td>{$indirizzo}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Città : </td>
+                              <td>{$citta}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Provincia : </td>
+                              <td>{$provincia}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Cap : </td>
+                              <td>{$cap}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Recapito : </td>
+                              <td>{$telefono}</td>
+							</tr>
+						</tbody>
+						<tbody>
+							<tr>
+                              <th scope="column">Metodo di Pagamento</th>
+							</tr>
+							
+							<tr>
+                              <td scope="row">Numero Carta : </td>
+                              <td>{$numero_carta}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Data di Scadenza : </td>
+                              <td>{$scadenza_carta}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Proprietario : </td>
+                              <td>{$cognome_proprietario} {$nome_proprietario}</td>
+							</tr>
+							
+						</tbody>
+						
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-md-4">
+                        <div class="card border border-secondary">
+                            <div class="card-header">
+                                <strong class="card-title">Status Ordine</strong>
+                            </div>
+                            <div class="card-body">
+								<div class="row form-group">
+									<div class="col col-md-3"><label for="select" class=" form-control-label">Stato : </label></div>
+									<div class="col-12 col-md-9">
+									  <select name="select" id="select" class="form-control">
+									  
+										<option value="Inserito" {if $status === 'Inserito'}selected{/if}>Inserito</option>
+										<option value="Spedito" {if $status === 'Spedito'}selected{/if}>Spedito</option>
+										<option value="Consegnato" {if $status === 'Consegnato'}selected{/if}>Consegnato</option>
+										
+									  </select>
+									</div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+					
+			</div>
+		</div>
+	</div>

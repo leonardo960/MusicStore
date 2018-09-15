@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-09 14:58:32
+/* Smarty version 3.1.32, created on 2018-09-15 08:27:40
   from 'C:\Users\Matteo\PhpstormProjects\MusicStore\templates\frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b95351877cc49_52746851',
+  'unifunc' => 'content_5b9cc27ca66536_94760672',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '54865b8cff64195c9fe3d290736d840eb9e8ee2b' => 
     array (
       0 => 'C:\\Users\\Matteo\\PhpstormProjects\\MusicStore\\templates\\frame_public.html',
-      1 => 1536504482,
+      1 => 1536917480,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,38 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9cc27ca66536_94760672 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE HTML>
 <html>
-<?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['head']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
-?>
+<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Music Store</title>
+		<link href="../css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+		<link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/responsiveslides.css">
+		<?php echo '<script'; ?>
+ src="../js/jquery.min.js"><?php echo '</script'; ?>
+>
+		<?php echo '<script'; ?>
+ src="../js/responsiveslides.min.js"><?php echo '</script'; ?>
+>
+		
+		  <?php echo '<script'; ?>
+>
+		    // You can also use "$(window).load(function() {"
+			    $(function () {
+			
+			      // Slideshow 1
+			      $("#slider1").responsiveSlides({
+			        maxwidth: 1600,
+			        speed: 600
+			      });
+			});
+		  <?php echo '</script'; ?>
+>
+		  
+</head>
 	<body>
 		<!---start-wrap--->
 		<div class="wrap">
@@ -33,13 +60,21 @@ function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl)
 			<!---start-top-header--->
 			<div class="top-header">
 				<div class="top-header-left">
+				<div class="logo">
+					<a href="index.php"><img src="../images/logo3.png" title="Music Store" /></a>
+				</div>
 				</div>
 				<div class="top-header-right">
 					<ul>
+						<li>
+							<form class="search" action="search.php" type="GET">
+								<input type="text" name="query" pattern="[A-Za-z0-9\s]+" title="Please use only upper-case/lower-case letters, digits and blank spaces. Thank you."/>
+								<button type="submit"  value=""><img src="../images/search_icon_small.png"></button>	
+							</form>
+						</li>
 						<?php if (isset($_smarty_tpl->tpl_vars['logged_username']->value)) {?>
-						<li>Logged in as: <a id="header-auth-info"><?php echo $_smarty_tpl->tpl_vars['logged_username']->value;?>
+						<li id="logged-info">Profile : <a id="header-auth-info" href="account.php"><?php echo $_smarty_tpl->tpl_vars['logged_username']->value;?>
 </a></li>
-						<li><a href="account.php">Your account</a></li>
 						<li><a href="logout.php">Log Out</a></li>
 						<?php } else { ?>
 						<li><a href="login.php">Log In</a></li>
@@ -52,21 +87,7 @@ function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl)
 			</div>
 			<!--end-top-header-->
 			<div class="clear"> </div>
-			<!--start-sub-header-->
-			<div class="sub-header">
-				<div class="logo">
-					<a href="index.php"><img src="../images/logo2.png" title="Music Store" /></a>
-				</div>
-				<div class="sub-header-center">
-					<form class="search" action="search.php" type="GET">
-						<input type="text" name="query" pattern="[A-Za-z0-9\s]+" title="Please use only upper-case/lower-case letters, digits and blank spaces. Thank you.""><input type="submit"  value="search" />
-					</form>
-				</div>
-				<div class="sub-header-right">
-				</div>
-				<div class="clear"> </div>
-			</div>
-			<!--end-sub-header-->
+			
 			<div class="clear"> </div>
 			<!--start-top-nav-->
 			<div class="top-nav">
@@ -98,7 +119,10 @@ function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl)
 						<li><a href="#">Legal Notice</a></li>
 					</ul>
 				</div>
-				<div class="footer-divider"></div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>Payment</h3>
+					<a href=""><img id="methods-payment-img" src="../images/methods_payment_icons.png"></a>
+				</div>
 				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
 					<h3>Get in touch</h3>
 					<ul>
@@ -107,8 +131,6 @@ function content_5b95351877cc49_52746851 (Smarty_Internal_Template $_smarty_tpl)
 						<li><a href="#"><img src="../images/rss.png" title="Rss" /></a></li>
 						<li><a href="#"><img src="../images/gpluse.png" title="Google+" /></a></li>
 					</ul>
-					<h3>Methods of Payment</h3>
-					<a href=""><img id="methods-payment-img" src="../images/methods_payment_icons.png"></a>
 				</div>
 			</div>
 			</div>

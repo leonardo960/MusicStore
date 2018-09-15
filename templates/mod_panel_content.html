@@ -1,20 +1,197 @@
-<style>
-.menu {
-	position: absolute;
-	top: 35%;
-	right: 45%;
-}
 
-</style>
-<div class="menu">
-<a href="mod_content_management.php">Gestione Contenuti</a>
-<br>
-<br>
-<a href="mod_orders_panel.php">Gestione Ordini</a>
-<br>
-<br>
-<a href="mod_special_offers_panel.php">Gestione Offerte Speciali</a>
-<br>
-<br>
-<a href="mod_logout.php">Logout</a>
-</div>
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Statistiche</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+		
+            <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Utenti Registrati</div>
+                                <div class="stat-digit">{$numero_utenti}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-image text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Album Inseriti</div>
+                                <div class="stat-digit">{$numero_album}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-microphone-alt text-warning border-warning"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Artisti Inseriti</div>
+                                <div class="stat-digit">{$numero_artisti}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-music-alt text-danger border-danger"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Canzoni Inserite</div>
+                                <div class="stat-digit">{$numero_canzoni}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="alert  alert-success alert-dismissible fade show" role="alert">
+                  <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+			
+		</div>
+           
+            <!--/.col-->
+			
+			
+		<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Pannello Ordini</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<br><br>
+		
+            <div class="col-xl-3 col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Profitto (Ultimi 30 Giorni)</div>
+                                <div class="stat-digit">{$profitto}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		
+		<div class="col-xl-3 col-lg-6">
+			<a href=""><div class="card text-white">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-truck text-warning border-warning"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Ordini in Consegna</div>
+                                <div class="stat-digit">{$in_consegna}</div>
+                            </div>
+                        </div>
+                    </div>
+            </a></div>
+        </div>
+		
+		<div class="col-xl-3 col-lg-6">
+            <a href=""><div class="card">
+                    <div class="card-body">
+                        <div class="stat-widget-one">
+                            <div class="stat-icon dib"><i class="ti-package text-danger border-danger"></i></div>
+                            <div class="stat-content dib">
+                                <div class="stat-text">Ordini da Spedire</div>
+                                <div class="stat-digit">{$da_spedire}</div>
+                            </div>
+                        </div>
+                    </div>
+            </a></div>
+        </div>
+		
+		
+		<div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Ordini</strong>
+                        </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Utente</th>
+                        <th>Album</th>
+                        <th>Status</th>
+						<th>Data</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					
+						{foreach $ordini as $ordine}
+						  <tr>
+							<td><a href="">{$ordine.id_ordine}</a></td>
+							<td>{$ordine.utente}</td>
+							<td><a href="">{$ordine.album}</a></td>
+							<td>{$ordine.status}</td>
+							<td>{$ordine.data}</td>
+						  </tr>
+						 {/foreach}
+                      
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				</div>
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->

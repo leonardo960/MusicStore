@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 20:04:41
+/* Smarty version 3.1.32, created on 2018-09-15 08:34:52
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\special_offers_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b997159d86034_88516000',
+  'unifunc' => 'content_5b9cc42cc3e647_49123931',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1584665e88009f807241c77f7d33ae3cfcbdc490' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\special_offers_content.html',
-      1 => 1536782677,
+      1 => 1537000406,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b997159d86034_88516000 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9cc42cc3e647_49123931 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
@@ -40,20 +40,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 									<ul>
 										<li><span>Title : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
 </li>
-										<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['special_offers_artists']->value, 'artist');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['artist']->value) {
-?>
-											<?php if ($_smarty_tpl->tpl_vars['artist']->value['id_artista'] == $_smarty_tpl->tpl_vars['album']->value['fk_artista']) {?>
-												<li><span>Artist : </span><a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
-"><?php echo $_smarty_tpl->tpl_vars['artist']->value['nome_artista'];?>
+										<li><span>Artist : </span><a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
 </a></li>
-											<?php }?>
-										<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 									</ul>
 									<h3>Description : </h3>
 									<p><?php echo $_smarty_tpl->tpl_vars['album']->value['descrizione'];?>
@@ -61,14 +50,23 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
-									<a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['artist']->value['id_artista'];?>
+									<a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
 ">Go to Info</a>
 									<h4><span>Special Price : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
 &euro;</h4>
 									<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 ')">Add to Cart</a>
-									<a onclick="add_to_favorites('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-')">Add to Favorites</a>
+									<?php if ($_smarty_tpl->tpl_vars['user_logged']->value == true) {?>
+										<?php if ($_smarty_tpl->tpl_vars['album']->value['preferito'] == true) {?>
+											<a onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+, true)">Remove from Favorites</a>
+										<?php } else { ?>
+											<a onclick="add_to_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+)">Add to Favorites</a>
+										<?php }?>
+									<?php } else { ?>
+										<a href="login.php">Add to Favorites</a>
+									<?php }?>
 								</div>
 								<div class="clear"> </div>
 							</div><br />
@@ -82,7 +80,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	<!--End-cartires-page---->
 </div>
 <?php echo '<script'; ?>
- src="../js/add_to_cart.js"><?php echo '</script'; ?>
+ src="../js/cart.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="../js/add_remove_favorite.js"><?php echo '</script'; ?>

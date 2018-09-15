@@ -1,100 +1,107 @@
-<style>
-.menu {
-	position: absolute;
-	top: 17%;
-	left: 28%;
-}
-.back-button {
-	position: absolute;
-	top: 18%;
-	left: 5%;
-}
-.artist-img {
-    width:100%;
-	height:100%;
-    max-width:200px;
-	max-height:200px;
-}
-.nicEdit-main{
-     background-color: transparent;
-}
+<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Modifica Artista</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</style>
-<div class="menu">
-	<form id="artist-form" action="mod_modify_artist.php" method="POST" enctype="multipart/form-data">
-		<input type="number" name="id_artista" value="{$artista.id_artista}" hidden />
-		Nome e Cognome Artista:<input type="text" name="nome_artista" value="{$artista.nome_artista}" maxlength="30" required />
-		<br>
-		Genere:
-		{foreach $generi as $genere}
-		<input type="radio" name="genere" value="{$genere.id_genere}" {if $artista.genere == $genere.id_genere}checked{/if} required /> {$genere.genere}
-		{/foreach}
-		<br>
-		Album Pubblicati:<input type="number" name="album_pubblicati"  value="{$artista.album_pubblicati}" required />
-		<br>
-		Anno Inizio Attivit&agrave;:
-		<input type="number" name="inizio_attivita" min="1900" max="2018"  value="{$artista.inizio_attivita}" required />
-		<br>
-		Fine Attivit&agrave;:
-		<input id="fine-attivita-year" type="number" name="fine_attivita" min="1900" max="2018"  {if isset($artista.fine_attivita)} value="{$artista.fine_attivita}" {else} disabled {/if} required />
-		In Attivit&agrave;
-		<input id="checkbox-in-attivita" type="checkbox" name="fine_attivita" value="" {if !isset($artista.fine_attivita)}checked{/if}  onclick="checkbox_func_1()" />
-		<br>
-		Immagine Artista:
-		<img class="artist-img" src="{$artista.img_path}">
-		Lascia Immagine Precedente: <input id="checkbox-immagine" type="checkbox" name="immagine" value="default" onclick="checkbox_func_2()" checked />
-		<input id="image-input" type="file" name="artist-img" accept="image/x-png,image/gif,image/jpeg" required disabled />
-		<input id="biografia-input" type="hidden" name="biografia" />
-		<br>
-	</form>
-	Biografia:<textarea style="resize: none;" rows="4" cols="50" id="biografia-edit" maxlength="1000" >{$artista.biografia}</textarea>
-	<br>
-	<br>
-	<button type="button" onclick="submit_artist_info()">Conferma Modifiche</button>
-	<br>
-	<br>
-	<form action="mod_delete_artist.php" method="GET">
-	<input type="hidden" name="delete" value="{$artista.id_artista}" />
-	<input type="submit" value="Cancella Artista" />
-	</form>
-</div>
-<form class="back-button"  action="mod_modify_delete.php">
-    <input type="submit" value="Torna alla pagina di ricerca" />
-</form>
-<script>
-	function checkbox_func_1(){
-		var checkBox = document.getElementById("checkbox-in-attivita");
-		var yearInput = document.getElementById("fine-attivita-year");
-	
-		if (checkBox.checked == true){
-			yearInput.disabled = true;
-		} else {
-			yearInput.disabled = false;
-		}
-	}
-	function checkbox_func_2(){
-		var checkBox = document.getElementById("checkbox-immagine");
-		var fileInput = document.getElementById("image-input");
-	
-		if (checkBox.checked == true){
-			fileInput.disabled = true;
-		} else {
-			fileInput.disabled = false;
-		}
-	}
-	function submit_artist_info(){
-		var nicE = new nicEditors.findEditor('biografia-edit');
-		biografia = nicE.getContent();
-		document.getElementById('biografia-input').value = biografia;
-		document.getElementById('artist-form').submit();
-	}
-	
-	
-</script>
-<script src="../js/nicEdit/nicEdit.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(function() {
-        {literal}new nicEditor({iconsPath: '../js/nicEdit/nicEditorIcons.gif', buttonList: ['bold', 'italic', 'link', 'unlink']}).panelInstance('biografia-edit');{/literal}
-  });
-</script>
+        <div class="content mt-3">
+		
+			<div class="card">
+                      <div class="card-header">
+                        <strong>Modifica : </strong> Artista
+                      </div>
+                      <div class="card-body card-block">
+                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista" class="form-control" value="{$nome_artista}" autocomplete="none"></div>
+                          </div>
+                          
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Album Pubblicati : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="album_pubblicati" value="{$numero_album}" class="form-control"></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Inizio Attività : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="inizio_attivita" value="{$inizio_attivita}" class="form-control" min="1900" max="2018"></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fine Attività : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="fine-attivita-year" name="fine_attivita" value="{$fine_attivita}" class="form-control" min="1900" max="2018"></div>
+							<div class="col col-md-3"></div>
+                            <div class="col col-md-9">
+							<div class="form-check">
+                                <div class="radio">
+                                  <label for="radio1" class="form-check-label ">
+                                    <input type="checkbox" id="checkbox-in-attivita" name="fine_attivita" value="" class="form-check-input" onclick="checkbox_func()">In Attività
+                                  </label>
+                                </div
+								</div>
+								</div>
+                            </div>
+						  </div>
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Biografia : </label></div>
+                            <div class="col-12 col-md-9"><textarea name="biografia" id="textarea-input" rows="4" value="{$biografia}" class="form-control"></textarea></div>
+                          </div>
+                          
+                          
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label class=" form-control-label">Genere : </label></div>
+                            <div class="col col-md-9">
+                              <div class="form-check">
+                                
+								{foreach $generi as $genere}
+                                <label for="checkbox" class="form-check-label">
+									{if ($genere.id_genere == fk_genere)}
+									<input type="checkbox" id="checkbox" name="genere" value="{$genere.id_genere}" class="form-check-input" required checked>{$genere.genere}
+									{else}
+									<input type="checkbox" id="checkbox" name="genere" value="{$genere.id_genere}" class="form-check-input" required>{$genere.genere}
+									{/if}
+                                </label>
+								{/foreach}
+								
+                              </div>
+                            </div>
+                          </div>
+                          
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Immagine Artista : </label></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="artist-img" value="{$artista_img_path}" class="form-control-file"></div>
+                          </div>
+                          
+                        </form>
+                      </div>
+					  
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-dot-circle-o"></i> Procedi
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                          <i class="fa fa-ban"></i> Reset
+                        </button>
+						<button class="btn btn-danger btn-sm">
+                          <i class="fa fa-times-circle"></i> Cancella
+                        </button>
+                      </div>
+                    </div>
 
-
+		</div>
