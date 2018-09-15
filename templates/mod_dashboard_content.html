@@ -27,7 +27,7 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Utenti Registrati</div>
-                                <div class="stat-digit">{$numero_utenti}</div>
+                                <div class="stat-digit">{$numero_utenti.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                             <div class="stat-icon dib"><i class="ti-image text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Album Inseriti</div>
-                                <div class="stat-digit">{$numero_album}</div>
+                                <div class="stat-digit">{$numero_album.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                             <div class="stat-icon dib"><i class="ti-microphone-alt text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Artisti Inseriti</div>
-                                <div class="stat-digit">{$numero_artisti}</div>
+                                <div class="stat-digit">{$numero_artisti.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +69,7 @@
                             <div class="stat-icon dib"><i class="ti-music-alt text-danger border-danger"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Canzoni Inserite</div>
-                                <div class="stat-digit">{$numero_canzoni}</div>
+                                <div class="stat-digit">{$numero_canzoni.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Profitto (Ultimi 30 Giorni)</div>
-                                <div class="stat-digit">{$profitto}</div>
+                                <div class="stat-digit">{$profitto.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <div class="stat-icon dib"><i class="ti-truck text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Ordini in Consegna</div>
-                                <div class="stat-digit">{$in_consegna}</div>
+                                <div class="stat-digit">{$in_consegna.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
                             <div class="stat-icon dib"><i class="ti-package text-danger border-danger"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Ordini da Spedire</div>
-                                <div class="stat-digit">{$da_spedire}</div>
+                                <div class="stat-digit">{$da_spedire.numero}</div>
                             </div>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
 						{foreach $ordini as $ordine}
 						  <tr>
 							<td><a href="">{$ordine.id_ordine}</a></td>
-							<td>{$ordine.utente}</td>
+							<td>{$ordine.cliente}</td>
 							<td><a href="">{$ordine.album}</a></td>
 							<td>{$ordine.status}</td>
 							<td>{$ordine.data}</td>

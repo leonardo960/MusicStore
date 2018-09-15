@@ -1,6 +1,6 @@
 <?php
 /* Smarty version 3.1.32, created on 2018-09-11 14:03:28
-  from 'C:\wamp64\www\MusicStore\templates\mod_panel_content.html' */
+  from 'C:\wamp64\www\MusicStore\templates\mod_dashboard_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
@@ -11,7 +11,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'f6640e8e92311010198ce39c7e4324ae1a18178b' => 
     array (
-      0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_panel_content.html',
+      0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_dashboard_content.html',
       1 => 1536674601,
       2 => 'file',
     ),

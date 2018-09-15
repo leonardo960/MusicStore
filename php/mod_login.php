@@ -4,7 +4,7 @@
 	
 	session_start();
 	if(isset($_SESSION['mod'])){
-		header("location: mod_panel.php");
+		header("location: mod_dashboard.php");
 		exit();
 	}
 	if (isset($_POST['username']) && isset($_POST['password'])) {
@@ -23,7 +23,7 @@
 		//Se arrivo fin qui vuol dire che il login ha avuto successo
 		
 		
-		Header('Location: mod_panel.php');
+		Header('Location: mod_dashboard.php');
 		exit();
 	} elseif (isset($_GET['message'])) {
 		switch($_GET['message']){
