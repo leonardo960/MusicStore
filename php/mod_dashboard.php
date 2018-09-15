@@ -62,6 +62,5 @@ $smarty->assign("soldi", $soldi);
 
 $smarty->display("mod_frame_public.html");
 
-
 ?>
 

@@ -12,7 +12,7 @@
 
 </style>
 <div class="menu">
-	<form id="song-form" action="mod_insert_new_song.php" method="POST" enctype="multipart/form-data">
+	<form id="song-form" class="dropzone" action="mod_insert_new_song.php" method="POST" enctype="multipart/form-data">
 		Nome Canzone:<input type="text" name="nome_canzone" maxlength="30" required />
 		<br>
 		Album:<select id="album-fk" name="album-info">
@@ -23,13 +23,35 @@
 		<br>
 		<input type="number" hidden />
 		Preview Canzone:
-		<input type="file" name="song-file" required />
+		<div class="dropzone-previews"></div>
 		<br>
+		<input id="song-submit" type="submit" value="Conferma"/>
 	</form>
 	<br>
 	<br>
-	<input type="submit" value="Conferma" form="song-form" />
+
 </div>
 <form class="back-button"  action="mod_content_management.php">
     <input type="submit" value="Torna alla Gestione Contenuti" />
 </form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../js/dropzone.js"></script>
+<script type="text/javascript">
+    Dropzone.options.songForm = {
+        autoProcessQueue: false,
+        paramName: "song-file",
+        maxFilesize: 10,
+		maxFiles: 1,
+        uploadMultiple: false,
+        accept: function (file, done) {
+            done();
+        }
+    };
+    $("#song-submit").click(function (e) {
+        e.preventDefault();
+        var myDropzone = Dropzone.forElement(".dropzone");
+        myDropzone.processQueue();
+        window.location.href = "mod_content_management.php";
+    });
+</script>
+
