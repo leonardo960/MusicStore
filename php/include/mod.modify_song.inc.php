@@ -5,9 +5,11 @@
 	}
 	
 	if(isset($_FILES["song-preview"])){
-		$result = $db->query("update canzoni set nome_canzone = '{$_POST["nome_canzone"]}', song_path = '{$target_file}' where id_canzone = '{$_POST["id_canzone"]}'");
+		$ps = $db->get_connection()->prepare("update canzoni set nome_canzone = ?, song_path = ? where id_canzone = ?");
+		$ps->bind_param('ssi', $_POST["nome_canzone"], $target_file, $_POST["id_canzone"]);
 	} else {
-		$result = $db->query("update canzoni set nome_canzone = '{$_POST["nome_canzone"]}' where id_canzone = '{$_POST["id_canzone"]}'");
+		$ps = $db->get_connection()->prepare("update canzoni set nome_canzone = ? where id_canzone = ?");
+		$ps->bind_param('si', $_POST["nome_canzone"], $_POST["id_canzone"]);
 	}
 	
 	

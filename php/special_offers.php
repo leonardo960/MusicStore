@@ -15,6 +15,12 @@
 			}
 		}
 		
+		for($i = 0; $i < count($result); $i++){
+			if(strlen($result[$i]['descrizione']) > 338){
+				$result[$i]['descrizione'] = substr($result[$i]['descrizione'], 0, 333) . " . . ."; 
+			}
+		}
+		
 		$smarty->assign("special_offers", $result);
 		$smarty->assign("user_logged", true);
 		$smarty->assign("content", $content);
@@ -28,7 +34,13 @@
 		
 		$smarty->display("frame_public.html");
 	} else {
-		$result = $db->query("select album.img_path, album.nome_album, album.descrizione, album.id_album, artisti.nome_artista, artisti.id_artista, prezzo_offerta from offerte_speciali inner join album on album.id_album = offerte_speciali.album join artisti on artisti.id_artista = album.fk_artista");
+		$result = $db->getResult("select album.img_path, album.nome_album, album.descrizione, album.id_album, artisti.nome_artista, artisti.id_artista, prezzo_offerta from offerte_speciali inner join album on album.id_album = offerte_speciali.album join artisti on artisti.id_artista = album.fk_artista");
+		
+		for($i = 0; $i < count($result); $i++){
+			if(strlen($result[$i]['descrizione']) > 338){
+				$result[$i]['descrizione'] = substr($result[$i]['descrizione'], 0, 333) . " . . ."; 
+			}
+		}
 		
 		$smarty->assign("special_offers", $result);
 		$smarty->assign("content", $content);

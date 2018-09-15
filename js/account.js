@@ -65,3 +65,58 @@ function save_click() {
 	}
 	
 }
+
+function toggleAddressAddedModal() {
+	var modal = document.querySelector(".address-added-modal");
+    modal.classList.toggle("address-added-show-modal");
+}
+
+
+
+var addressAddedCloseButton = document.querySelector(".address-added-close-button");
+addressAddedCloseButton.addEventListener("click", function(){window.location.href = "http://localhost:8080/MusicStore/php/account.php";});
+
+
+
+$(document).ready(function() { 
+            // bind 'myForm' and provide a simple callback function 
+            $('#address-form').ajaxForm(function() { 
+				$("#spinner").css("display", "none");
+                toggleAddressAddedModal();
+            }); 
+ }); 
+		
+function send_address(){
+	//submit form
+	$('#address-form').submit();
+	//close form popup
+	$("#openModal").css("display", "none");
+	//show loading popup
+	$("#spinner").css("display", "inline-block");
+}
+
+function delete_address(id){
+	$.post( "account.php", { "delete_address": id })
+	.done(function( response ){
+		if(response === 'deleted'){
+			window.location.href = "http://localhost:8080/MusicStore/php/account.php";
+		} else {
+			alert("Error deleting address.");
+		}
+	});
+}
+
+function modify_address(){
+	
+}
+
+function populate_address_edit_form(addressId){
+	$('#edit-customer-name').val($('#address-'+addressId+'-name').html());
+	$('#edit-customer-surname').val($('#address-'+addressId+'-surname').html());
+	$('#edit-customer-country').val($('#address-'+addressId+'-country').html());
+	$('#edit-customer-province').val($('#address-'+addressId+'-province').html());
+	$('#edit-customer-city').val($('#address-'+addressId+'-city').html());
+	$('#edit-customer-postal-code').val($('#address-'+addressId+'-postal-code').html());
+	$('#edit-customer-address').val($('#address-'+addressId+'-address').html());
+	$('#edit-customer-telephone').val($('#address-'+addressId+'-telephone').html()); 
+}

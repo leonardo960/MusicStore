@@ -20,6 +20,12 @@
 				$result[$i]['preferito'] = true;
 			}
 		}
+		
+		for($i = 0; $i < count($result); $i++){
+			if(strlen($result[$i]['descrizione']) > 338){
+				$result[$i]['descrizione'] = substr($result[$i]['descrizione'], 0, 333) . " . . ."; 
+			}
+		}
 	
 		
 		$smarty->assign("recent_albums", $result);
@@ -44,6 +50,11 @@
 			}
 		}
 		
+		for($i = 0; $i < count($result); $i++){
+			if(strlen($result[$i]['descrizione']) > 338){
+				$result[$i]['descrizione'] = substr($result[$i]['descrizione'], 0, 333) . " . . ."; 
+			}
+		}
 		
 		$smarty->assign("recent_albums", $result);
 		$smarty->assign("user_logged", false);

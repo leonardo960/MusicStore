@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-10 07:51:13
+/* Smarty version 3.1.32, created on 2018-09-15 14:10:28
   from 'C:\wamp64\www\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b96227172f3e9_86565882',
+  'unifunc' => 'content_5b9d12d453e8d6_21752240',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8eb1bb9dc13d23ebc751518369d362e10e519c67' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\account_content.html',
-      1 => 1536565778,
+      1 => 1537020621,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,190 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b96227172f3e9_86565882 (Smarty_Internal_Template $_smarty_tpl) {
-?><body>
+function content_5b9d12d453e8d6_21752240 (Smarty_Internal_Template $_smarty_tpl) {
+?><style>
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+
+.addressEditModalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+.addressEditModalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.addressEditModalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+.addressEditClose {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.addressEditClose:hover { background: #00d9ff; }
+
+
+.lds-hourglass {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 25%;
+  left: 45%;
+}
+.lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 6px;
+  box-sizing: border-box;
+  border: 26px solid #cef;
+  border-color: #cef transparent #cef transparent;
+  animation: lds-hourglass 1.2s infinite;
+}
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.address-added-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.address-added-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.address-added-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.address-added-close-button:hover {
+    background-color: darkgray;
+}
+.address-added-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
+<body>
 	<div class="your-account-container">
 		<div class="account-box">
 			
@@ -82,31 +264,39 @@ foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 ?>
 					<div class="address-card">
 						<ul>
-							<li><h1>User: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['nome'];?>
- <?php echo $_smarty_tpl->tpl_vars['address']->value['cognome'];?>
+							<li><h1>Customer Name: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-name"><?php echo $_smarty_tpl->tpl_vars['address']->value['nome'];?>
 </h6></li>
-							<li><h1>Locality: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['citta'];?>
-, <?php echo $_smarty_tpl->tpl_vars['address']->value['provincia'];?>
+							<li><h1>Customer Surname: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-surname"><?php echo $_smarty_tpl->tpl_vars['address']->value['cognome'];?>
 </h6></li>
-							<li><h1>Postal Code: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['cap'];?>
+							<li><h1>City: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-city"><?php echo $_smarty_tpl->tpl_vars['address']->value['citta'];?>
 </h6></li>
-							<li><h1>Country: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['paese'];?>
+							<li><h1>Province: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-province"><?php echo $_smarty_tpl->tpl_vars['address']->value['provincia'];?>
+</h6></li>
+							<li><h1>Postal Code: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-postal-code"><?php echo $_smarty_tpl->tpl_vars['address']->value['cap'];?>
+</h6></li>
+							<li><h1>Country: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-country"><?php echo $_smarty_tpl->tpl_vars['address']->value['paese'];?>
 </h6></li>
 						</ul>
 						<ul>
-							<li><h1>Address: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['indirizzo'];?>
+							<li><h1>Address: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-address"><?php echo $_smarty_tpl->tpl_vars['address']->value['indirizzo'];?>
 </h6></li>
-							<li><h1>Telephone: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['recapito'];?>
-</h6></li>
-							<li><h1>Payment: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['metodo_pagamento'];?>
-</h6></li>
-							<li><h1>Delivery: </h1><h6><?php echo $_smarty_tpl->tpl_vars['address']->value['tipo_spedizione'];?>
+							<li><h1>Telephone: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-telephone"><?php echo $_smarty_tpl->tpl_vars['address']->value['recapito'];?>
 </h6></li>
 						</ul>
 						
 						<ul class="address-buttons-container">
-							<li class="address-box-button"><a href="">Edit</a></li>
-							<li class="address-box-button"><a href="">Delete</a></li>
+							<li class="address-box-button"><a style="cursor:pointer;" href="#addressEditOpenModal" onclick="populate_address_edit_form(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+)">Edit</a></li>
+							<li class="address-box-button"><a style="cursor: pointer;" onclick="delete_address(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+)">Delete</a></li>
 						</ul>
 						
 					</div>
@@ -124,17 +314,66 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			
 			<div class="add-address-box">
 				<ul>
-					<li class="new-address-button"><a href="">New Address</a></li>
+					<li class="new-address-button"><a href="#openModal">New Address</a></li>
 				</ul>
 			</div>
-			
-			
+
+			<div id="openModal" class="modalDialog" style="display: inline-block;">
+			<div>
+				<a href="#close" title="Close" class="close">X</a>
+				<form id="address-form" action="account.php" method="POST">
+					Enter new address:
+					<br>
+					<br>
+					Customer Name: <input type="text" name="customer_name" required /><br>
+					Customer Surname: <input type="text" name="customer_surname" required /><br>
+					Country: <input type="text" name="customer_country" required /><br>
+					Province: <input type="text" name="customer_province" required /><br>
+					City: <input type="text" name="customer_city" required /><br>
+					Postal Code: <input type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
+					Address: <input type="text" name="customer_address" required /><br>
+					Telephone: <input type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br>
+					<button type="button" onclick="send_address()" >Confirm</button>
+				</form>
+			</div>
+			</div>
+			<div id="addressEditOpenModal" class="addressEditModalDialog" style="display: inline-block;">
+			<div>
+				<a href="#addressEditClose" title="Close" class="addressEditClose">X</a>
+				<form id="edit-address-form" action="account.php" method="POST">
+					Modify address information:
+					<br>
+					<br>
+					Customer Name: <input id="edit-customer-name" type="text" name="customer_name" required /><br>
+					Customer Surname: <input id="edit-customer-surname" type="text" name="customer_surname" required /><br>
+					Country: <input id="edit-customer-country" type="text" name="customer_country" required /><br>
+					Province: <input id="edit-customer-province" type="text" name="customer_province" required /><br>
+					City: <input id="edit-customer-city" type="text" name="customer_city" required /><br>
+					Postal Code: <input id="edit-customer-postal-code" type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
+					Address: <input id="edit-customer-address" type="text" name="customer_address" required /><br>
+					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br
+					<input type="hidden" id="edit-address-id" name="address_id" value="" />
+					<button type="button" onclick="modify_address()" >Confirm changes</button>
+				</form>
+			</div>
+			</div>
+			<div id="spinner" class="lds-hourglass" style="display: none;"></div>
+			<div class="address-added-modal">
+				<div class="address-added-modal-content">
+					<span class="address-added-close-button">×</span>
+					<h1>Address added to the list.</h1>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>
 <?php echo '<script'; ?>
  src="../js/account.js"><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ src="http://malsup.github.com/jquery.form.js"><?php echo '</script'; ?>
+> 
+
 
 <?php }
 }
