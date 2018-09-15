@@ -109,9 +109,9 @@
 									<div class="col-12 col-md-9">
 									  <select name="select" id="select" class="form-control">
 									  
-										<option value="Inserito" {if $order.status === 'Inserito'}selected{/if}>Inserito</option>
-										<option value="Spedito" {if $order.status === 'Spedito'}selected{/if}>Spedito</option>
-										<option value="Consegnato" {if $order.status === 'Consegnato'}selected{/if}>Consegnato</option>
+										<option value="Inserito" {if $status === 'Inserito'}selected{/if}>Inserito</option>
+										<option value="Spedito" {if $status === 'Spedito'}selected{/if}>Spedito</option>
+										<option value="Consegnato" {if $status === 'Consegnato'}selected{/if}>Consegnato</option>
 										
 									  </select>
 									</div>
