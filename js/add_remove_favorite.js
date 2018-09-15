@@ -2,8 +2,7 @@ function add_to_favorites(album_id){
 	$.post( "favorites.php", { "add_favorite": album_id })
 	.done(function( response ){
 		if(response === 'added'){
-			alert("Album added to your favorites!");
-			location.reload(true);
+			toggleAddFavoriteModal();
 		} else if(response === 'already_added') {
 			alert("Album already in your favorites.");
 		} else {
@@ -12,14 +11,22 @@ function add_to_favorites(album_id){
 	});
 }
 
-function remove_from_favorites(album_id, refresh){
+function toggleAddFavoriteModal() {
+	var modal = document.querySelector(".add-favorite-modal");
+    modal.classList.toggle("add-favorite-show-modal");
+}
+
+function toggleRemoveFavoriteModal() {
+	var modal = document.querySelector(".remove-favorite-modal");
+    modal.classList.toggle("remove-favorite-show-modal");
+}
+
+
+function remove_from_favorites(album_id){
 	$.post( "favorites.php", { "delete_favorite": album_id })
 	.done(function( response ){
 		if(response === 'deleted'){
-			alert("Album removed from your favorites.");
-			if(refresh){
-				location.reload(true);
-			}
+			toggleRemoveFavoriteModal();
 		} else if (response === 'already_deleted') {
 			alert("Album already removed from your favorites.");
 		} else {
@@ -27,3 +34,8 @@ function remove_from_favorites(album_id, refresh){
 		}
 	});
 }
+var addFavoriteCloseButton = document.querySelector(".add-favorite-close-button");
+var removeFavoriteCloseButton = document.querySelector(".remove-favorite-close-button");
+
+addFavoriteCloseButton.addEventListener("click", function(){location.reload(true);});
+removeFavoriteCloseButton.addEventListener("click", function(){location.reload(true);});

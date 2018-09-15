@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 20:36:23
+/* Smarty version 3.1.32, created on 2018-09-14 13:25:16
   from 'C:\wamp64\www\MusicStore\templates\artistpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9aca470112c0_58683040',
+  'unifunc' => 'content_5b9bb6bc39b9d3_82956060',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5191bdf77ed244427db03a8e98c8625dca4c6d8b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\artistpage_content.html',
-      1 => 1536870981,
+      1 => 1536931513,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9aca470112c0_58683040 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9bb6bc39b9d3_82956060 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 	<!-- TODO completare -->
 					<div class="single-page">
@@ -44,8 +44,8 @@ function content_5b9aca470112c0_58683040 (Smarty_Internal_Template $_smarty_tpl)
 echo $_smarty_tpl->tpl_vars['artista']->value['fine_attivita'];
 } else { ?>Active<?php }?></h2></li>
 										<br>
-										<li><h2>Bio : </h2><?php echo $_smarty_tpl->tpl_vars['artista']->value['biografia'];?>
-</li>
+										<li><h2>Bio : </h2><h5><?php echo $_smarty_tpl->tpl_vars['artista']->value['biografia'];?>
+</h5></li>
 										
 									</ul>
 								</div>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-14 12:44:16
+/* Smarty version 3.1.32, created on 2018-09-14 13:29:13
   from 'C:\wamp64\www\MusicStore\templates\mod_modify_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9bad20c02cb5_16561668',
+  'unifunc' => 'content_5b9bb7a93668a0_42580922',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e3b15cf1a83fc23221de7e43f89e5f604730bede' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_modify_artist_content.html',
-      1 => 1536929054,
+      1 => 1536931748,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9bad20c02cb5_16561668 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9bb7a93668a0_42580922 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .menu {
 	position: absolute;
@@ -37,6 +37,9 @@ function content_5b9bad20c02cb5_16561668 (Smarty_Internal_Template $_smarty_tpl)
 	height:100%;
     max-width:200px;
 	max-height:200px;
+}
+.nicEdit-main{
+     background-color: transparent;
 }
 
 </style>
