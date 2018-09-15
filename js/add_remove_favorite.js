@@ -34,8 +34,14 @@ function remove_from_favorites(album_id){
 		}
 	});
 }
-var addFavoriteCloseButton = document.querySelector(".add-favorite-close-button");
-var removeFavoriteCloseButton = document.querySelector(".remove-favorite-close-button");
 
-addFavoriteCloseButton.addEventListener("click", function(){location.reload(true);});
-removeFavoriteCloseButton.addEventListener("click", function(){location.reload(true);});
+$(document).ready(function() { 
+    var addFavoriteCloseButton = document.querySelector(".add-favorite-close-button");
+	var removeFavoriteCloseButton = document.querySelector(".remove-favorite-close-button");
+	if(addFavoriteCloseButton)
+		addFavoriteCloseButton.addEventListener("click", function(){location.reload(true);});
+	if(removeFavoriteCloseButton)
+		removeFavoriteCloseButton.addEventListener("click", function(){location.reload(true);}); 
+ });
+ 
+

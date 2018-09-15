@@ -47,7 +47,11 @@
 			$result[$i]['prezzo'] = $result[$i]['prezzo_offerta'];
 			}
 		}
-		
+		for($i = 0; $i < count($result); $i++){
+			if(strlen($result[$i]['descrizione']) > 338){
+				$result[$i]['descrizione'] = substr($result[$i]['descrizione'], 0, 333) . " . . ."; 
+			}
+		}
 		if($result){
 			$smarty->assign("album", $result);
 		}
