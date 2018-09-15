@@ -13,6 +13,13 @@
 			echo 'deleted';
 			exit();
 		}
+		if( isset($_POST['address_id']) ) {
+			$ps = $db->get_connection()->prepare("update indirizzi_utenti set paese = ?, indirizzo = ?, citta = ?, provincia = ?, cap = ?, recapito = ?, nome = ?, cognome = ? where id_indirizzo = ?");
+			$ps->bind_param('ssssssssi', $_POST['customer_country'], $_POST['customer_address'], $_POST['customer_city'], $_POST['customer_province'], $_POST['customer_postal_code'], $_POST['customer_telephone'], $_POST['customer_name'], $_POST['customer_surname'], $_POST['address_id']);
+			$ps->execute();
+			echo 'modified';
+			exit();
+		}
 		if( isset($_POST['customer_name'])  && isset($_POST['customer_surname']) && isset($_POST['customer_country']) && isset($_POST['customer_province'])
 			&& isset($_POST['customer_city']) && isset($_POST['customer_postal_code']) && isset($_POST['customer_address']) && isset($_POST['customer_telephone'])){
 				$ps = $db->get_connection()->prepare("insert into indirizzi_utenti (utente, paese, indirizzo, citta, provincia, cap, recapito, nome, cognome) values

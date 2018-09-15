@@ -71,11 +71,18 @@ function toggleAddressAddedModal() {
     modal.classList.toggle("address-added-show-modal");
 }
 
+function toggleAddressEditModal() {
+	var modal = document.querySelector(".address-edit-modal");
+    modal.classList.toggle("address-edit-show-modal");
+}
+
 
 
 var addressAddedCloseButton = document.querySelector(".address-added-close-button");
 addressAddedCloseButton.addEventListener("click", function(){window.location.href = "http://localhost:8080/MusicStore/php/account.php";});
 
+var addressAddedCloseButton = document.querySelector(".address-edit-close-button");
+addressAddedCloseButton.addEventListener("click", function(){window.location.href = "http://localhost:8080/MusicStore/php/account.php";});
 
 
 $(document).ready(function() { 
@@ -84,7 +91,11 @@ $(document).ready(function() {
 				$("#spinner").css("display", "none");
                 toggleAddressAddedModal();
             }); 
- }); 
+			$('#edit-address-form').ajaxForm(function() { 
+				$("#spinner").css("display", "none");
+                toggleAddressEditModal();
+            }); 
+ });
 		
 function send_address(){
 	//submit form
@@ -107,7 +118,12 @@ function delete_address(id){
 }
 
 function modify_address(){
-	
+	//submit form
+	$('#edit-address-form').submit();
+	//close form popup
+	$("#addressEditOpenModal").css("display", "none");
+	//show loading popup
+	$("#spinner").css("display", "inline-block");
 }
 
 function populate_address_edit_form(addressId){
@@ -118,5 +134,6 @@ function populate_address_edit_form(addressId){
 	$('#edit-customer-city').val($('#address-'+addressId+'-city').html());
 	$('#edit-customer-postal-code').val($('#address-'+addressId+'-postal-code').html());
 	$('#edit-customer-address').val($('#address-'+addressId+'-address').html());
-	$('#edit-customer-telephone').val($('#address-'+addressId+'-telephone').html()); 
+	$('#edit-customer-telephone').val($('#address-'+addressId+'-telephone').html());
+	$('#edit-address-id').val(addressId);
 }

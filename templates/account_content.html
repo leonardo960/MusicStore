@@ -179,6 +179,48 @@
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 	transition: 0.5s;
 }
+.address-edit-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.address-edit-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.address-edit-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.address-edit-close-button:hover {
+    background-color: darkgray;
+}
+.address-edit-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
 </style>
 <body>
 	<div class="your-account-container">
@@ -298,7 +340,7 @@
 					City: <input id="edit-customer-city" type="text" name="customer_city" required /><br>
 					Postal Code: <input id="edit-customer-postal-code" type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
 					Address: <input id="edit-customer-address" type="text" name="customer_address" required /><br>
-					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br
+					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br>
 					<input type="hidden" id="edit-address-id" name="address_id" value="" />
 					<button type="button" onclick="modify_address()" >Confirm changes</button>
 				</form>
@@ -309,6 +351,12 @@
 				<div class="address-added-modal-content">
 					<span class="address-added-close-button">×</span>
 					<h1>Address added to the list.</h1>
+				</div>
+			</div>
+			<div class="address-edit-modal">
+				<div class="address-edit-modal-content">
+					<span class="address-edit-close-button">×</span>
+					<h1>Address modified.</h1>
 				</div>
 			</div>
 		</div>

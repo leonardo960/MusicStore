@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 14:10:28
+/* Smarty version 3.1.32, created on 2018-09-15 14:45:50
   from 'C:\wamp64\www\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d12d453e8d6_21752240',
+  'unifunc' => 'content_5b9d1b1e39bf69_65916700',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8eb1bb9dc13d23ebc751518369d362e10e519c67' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\account_content.html',
-      1 => 1537020621,
+      1 => 1537022746,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d12d453e8d6_21752240 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9d1b1e39bf69_65916700 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .modalDialog {
 	position: fixed;
@@ -202,6 +202,48 @@ function content_5b9d12d453e8d6_21752240 (Smarty_Internal_Template $_smarty_tpl)
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 	transition: 0.5s;
 }
+.address-edit-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.address-edit-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.address-edit-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.address-edit-close-button:hover {
+    background-color: darkgray;
+}
+.address-edit-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
 </style>
 <body>
 	<div class="your-account-container">
@@ -351,7 +393,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					City: <input id="edit-customer-city" type="text" name="customer_city" required /><br>
 					Postal Code: <input id="edit-customer-postal-code" type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
 					Address: <input id="edit-customer-address" type="text" name="customer_address" required /><br>
-					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br
+					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br>
 					<input type="hidden" id="edit-address-id" name="address_id" value="" />
 					<button type="button" onclick="modify_address()" >Confirm changes</button>
 				</form>
@@ -362,6 +404,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<div class="address-added-modal-content">
 					<span class="address-added-close-button">×</span>
 					<h1>Address added to the list.</h1>
+				</div>
+			</div>
+			<div class="address-edit-modal">
+				<div class="address-edit-modal-content">
+					<span class="address-edit-close-button">×</span>
+					<h1>Address modified.</h1>
 				</div>
 			</div>
 		</div>
