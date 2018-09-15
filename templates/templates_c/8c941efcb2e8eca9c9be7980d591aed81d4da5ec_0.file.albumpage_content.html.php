@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-13 08:33:59
+/* Smarty version 3.1.32, created on 2018-09-15 16:07:10
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9a20f7309944_24281185',
+  'unifunc' => 'content_5b9d2e2e6b7644_39446837',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1536827637,
+      1 => 1537024780,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,94 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9a20f7309944_24281185 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="content">
+function content_5b9d2e2e6b7644_39446837 (Smarty_Internal_Template $_smarty_tpl) {
+?><style>
+.add-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-cart-close-button:hover {
+    background-color: darkgray;
+}
+.add-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.already-added-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.already-added-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.already-added-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.already-added-cart-close-button:hover {
+    background-color: darkgray;
+}
+.already-added-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
+<div class="content">
 					<div class="single-page">
 						<div class="clear"> </div>
 						<div class="product-info">
@@ -111,8 +197,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					</div>
 			</div>
 			<div class="clear"> </div>
+			<div class="add-cart-modal">
+		<div class="add-cart-modal-content">
+			<span class="add-cart-close-button">×</span>
+			<h1>Album added to cart!</h1>
+		</div>
+	</div>
+	<div class="already-added-cart-modal">
+		<div class="already-added-cart-modal-content">
+			<span class="already-added-cart-close-button">×</span>
+			<h1>Album already added to cart!</h1>
+		</div>
+	</div>
 </div>
 <?php echo '<script'; ?>
- src="../js/add_to_cart.js"><?php echo '</script'; ?>
+ src="../js/cart.js"><?php echo '</script'; ?>
 ><?php }
 }
