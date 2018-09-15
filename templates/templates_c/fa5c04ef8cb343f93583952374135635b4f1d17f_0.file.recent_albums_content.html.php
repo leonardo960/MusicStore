@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 08:34:50
+/* Smarty version 3.1.32, created on 2018-09-15 16:06:00
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\recent_albums_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9cc42ad95620_68944344',
+  'unifunc' => 'content_5b9d2de81c64e4_32544370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fa5c04ef8cb343f93583952374135635b4f1d17f' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\recent_albums_content.html',
-      1 => 1537000406,
+      1 => 1537027552,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9cc42ad95620_68944344 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9d2de81c64e4_32544370 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .add-favorite-modal {
     position: fixed;
@@ -277,5 +277,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 <?php echo '<script'; ?>
  src="../js/cart.js"><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ src="../js/add_remove_favorite.js"><?php echo '</script'; ?>
+>
+
 <?php }
 }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 08:34:52
+/* Smarty version 3.1.32, created on 2018-09-15 16:06:29
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\special_offers_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9cc42cc3e647_49123931',
+  'unifunc' => 'content_5b9d2e05e241d4_06292748',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1584665e88009f807241c77f7d33ae3cfcbdc490' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\special_offers_content.html',
-      1 => 1537000406,
+      1 => 1537027552,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,178 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9cc42cc3e647_49123931 (Smarty_Internal_Template $_smarty_tpl) {
-?><div class="content">
+function content_5b9d2e05e241d4_06292748 (Smarty_Internal_Template $_smarty_tpl) {
+?><style>
+.add-favorite-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-favorite-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-favorite-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-favorite-close-button:hover {
+    background-color: darkgray;
+}
+.add-favorite-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.remove-favorite-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.remove-favorite-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.remove-favorite-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.remove-favorite-close-button:hover {
+    background-color: darkgray;
+}
+.remove-favorite-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.add-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.add-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.add-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.add-cart-close-button:hover {
+    background-color: darkgray;
+}
+.add-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+.already-added-cart-modal {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);	
+}
+.already-added-cart-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.already-added-cart-close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.already-added-cart-close-button:hover {
+    background-color: darkgray;
+}
+.already-added-cart-show-modal {
+	position: fixed;
+    left: 0;
+    top: 0px;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+	transition: 0.5s;
+}
+</style>
+<div class="content">
 					<!--start-cartires-page---->
 					<div class="Cartires">
 						<h5><span>Special</span> Offers</h5>
@@ -54,12 +224,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 ">Go to Info</a>
 									<h4><span>Special Price : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
 &euro;</h4>
-									<a onclick="add_to_cart('<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-')">Add to Cart</a>
+									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+)">Add to Cart</a>
 									<?php if ($_smarty_tpl->tpl_vars['user_logged']->value == true) {?>
 										<?php if ($_smarty_tpl->tpl_vars['album']->value['preferito'] == true) {?>
 											<a onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-, true)">Remove from Favorites</a>
+)">Remove from Favorites</a>
 										<?php } else { ?>
 											<a onclick="add_to_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )">Add to Favorites</a>
@@ -77,6 +247,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						</div>
 						
 					</div>
+		<div class="add-favorite-modal">
+			<div class="add-favorite-modal-content">
+				<span class="add-favorite-close-button">×</span>
+				<h1>Album added to favorites!</h1>
+			</div>
+		</div>
+	<div class="remove-favorite-modal">
+		<div class="remove-favorite-modal-content">
+			<span class="remove-favorite-close-button">×</span>
+			<h1>Album removed from favorites!</h1>
+		</div>
+	</div>
+	<div class="add-cart-modal">
+		<div class="add-cart-modal-content">
+			<span class="add-cart-close-button">×</span>
+			<h1>Album added to cart!</h1>
+		</div>
+	</div>
+	<div class="already-added-cart-modal">
+		<div class="already-added-cart-modal-content">
+			<span class="already-added-cart-close-button">×</span>
+			<h1>Album already added to cart!</h1>
+		</div>
+	</div>
 	<!--End-cartires-page---->
 </div>
 <?php echo '<script'; ?>
