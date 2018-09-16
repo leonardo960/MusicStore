@@ -5,7 +5,7 @@
 	
 	$content = "../templates/mod_insert_new_artist_content.html";
 	
-	if (isset($_POST['nome_artista']) && isset($_POST['biografia']) && isset($_POST['inizio_attivita']) && isset($_POST['fine_attivita']) && isset($_POST['genere'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ARTISTA
+	if (isset($_POST['nome_artista']) && isset($_POST['biografia']) && isset($_POST['inizio_attivita']) && isset($_POST['fine_attivita']) && isset($_POST['generi'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ARTISTA
 		
 		$target_dir = "../images/artists/";
 		require "include/mod.insert_new_artist.inc.php";
