@@ -18,6 +18,18 @@ function remove_item(item_id){
 	}
 });*/
 
+function updateQuantity(id){
+	var item_html_id = '#cart-item-amount-' + id;
+	
+	$.post("cart.php",
+    {
+        item_id: $(item_html_id).data('id'),
+        new_quantity: $(item_html_id).attr('value')
+    },
+    function(data, status){
+        console.log("Data: " + data + "\nStatus: " + status);
+    });
+}
 
 function checkout(){
 	document.getElementById("cart_form").submit();
