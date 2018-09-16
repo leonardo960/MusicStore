@@ -45,32 +45,32 @@
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Etichetta : </label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="etichetta" class="form-control" value="{$etichetta}" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="etichetta" class="form-control" value="{$album.etichetta}" autocomplete="none" required></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Prezzo : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="prezzo" class="form-control" value="{$prezzo}" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="prezzo" class="form-control" value="{$album.prezzo}" autocomplete="none" required></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Dischi Contenuti : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="dischi" class="form-control" value="{$dischi}" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="dischi" class="form-control" value="{$album.dischi}" autocomplete="none" required></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tracce : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="tracce" class="form-control" value="{$tracce}" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="tracce" class="form-control" value="{$album.tracce}" autocomplete="none" required></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Data di Pubblicazione : </label></div>
-                            <div class="col-12 col-md-9"><input type="date" id="fine-attivita-year" name="pubblicazione" class="form-control" value="{$pubblicazione}" required></div>
+                            <div class="col-12 col-md-9"><input type="date" id="fine-attivita-year" name="pubblicazione" class="form-control" value="{$album.pubblicazione}" required></div>
 						  </div>
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrizione : </label></div>
-                            <div class="col-12 col-md-9"><textarea name="biografia" id="descrizione-edit" rows="4" value="{$descrizione}" class="form-control" required></textarea></div>
+                            <div class="col-12 col-md-9"><textarea name="biografia" id="descrizione-edit" rows="4" value="{$album.descrizione}" class="form-control" required></textarea></div>
                           </div>
                           
                           
@@ -81,10 +81,10 @@
                                 
 								{foreach $generi as $genere}
                                 <label for="checkbox" class="form-check-label">
-									{if ($genere.id_genere == $fk_genere)}
-									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input" checked>{$genere.genere}
+									{if ($genere.genere == $fk_genere)}
+									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.genere}" class="form-check-input" checked>{$genere.genere}
 									{else}
-									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input">{$genere.genere}
+									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.genere}" class="form-check-input">{$genere.genere}
 									{/if}
                                 </label>
 								{/foreach}
@@ -95,7 +95,7 @@
                           
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Stock : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="stock" class="form-control" value="{$stock}" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="stock" class="form-control" value="{$album.stock}" autocomplete="none" required></div>
                           </div>
 						  
                           <div class="row form-group">
@@ -103,7 +103,7 @@
                             <div class="col-12 col-md-9"><input type="file" id="file-input" name="album-img" class="form-control-file" accept="image/x-png,image/gif,image/jpeg" value="{$album_img_path}" required></div>
                           </div>
                           
-						  <input id="hidden-date" type="date" name="data_inserimento" value="{$data_inserimento}" hidden />
+						  <input id="hidden-date" type="date" name="data_inserimento" value="{$album.data_inserimento}" hidden />
 						  
                         </form>
                       </div>

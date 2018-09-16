@@ -28,22 +28,22 @@
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista" class="form-control" value="{$nome_artista}" autocomplete="none"></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista" class="form-control" value="{$artista.nome_artista}" autocomplete="none"></div>
                           </div>
                           
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Album Pubblicati : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="album_pubblicati" value="{$numero_album}" class="form-control"></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="album_pubblicati" value="{$artista.album_pubblicati}" class="form-control"></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Inizio Attività : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="inizio_attivita" value="{$inizio_attivita}" class="form-control" min="1900" max="2018"></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="inizio_attivita" value="{$artista.inizio_attivita}" class="form-control" min="1900" max="2018"></div>
                           </div>
 						  
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fine Attività : </label></div>
-                            <div class="col-12 col-md-9"><input type="number" id="fine-attivita-year" name="fine_attivita" value="{$fine_attivita}" class="form-control" min="1900" max="2018"></div>
+                            <div class="col-12 col-md-9"><input type="number" id="fine-attivita-year" name="fine_attivita" value="{$artista.fine_attivita}" class="form-control" min="1900" max="2018"></div>
 							<div class="col col-md-3"></div>
                             <div class="col col-md-9">
 							<div class="form-check">
@@ -51,7 +51,7 @@
                                   <label for="radio1" class="form-check-label ">
                                     <input type="checkbox" id="checkbox-in-attivita" name="fine_attivita" value="" class="form-check-input" onclick="checkbox_func()">In Attività
                                   </label>
-                                </div
+                                </div>
 								</div>
 								</div>
                             </div>
@@ -59,7 +59,7 @@
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Biografia : </label></div>
-                            <div class="col-12 col-md-9"><textarea name="biografia" id="textarea-input" rows="4" value="{$biografia}" class="form-control"></textarea></div>
+                            <div class="col-12 col-md-9"><textarea name="biografia" id="textarea-input" rows="4" value="{$artista.biografia}" class="form-control"></textarea></div>
                           </div>
                           
                           
@@ -70,10 +70,10 @@
                                 
 								{foreach $generi as $genere}
                                 <label for="checkbox" class="form-check-label">
-									{if ($genere.id_genere == fk_genere)}
-									<input type="checkbox" id="checkbox" name="genere" value="{$genere.id_genere}" class="form-check-input" checked>{$genere.genere}
+									{if ($genere.genere == fk_genere)}
+									<input type="checkbox" id="checkbox" name="genere" value="{$genere.genere}" class="form-check-input" checked>{$genere.genere}
 									{else}
-									<input type="checkbox" id="checkbox" name="genere" value="{$genere.id_genere}" class="form-check-input">{$genere.genere}
+									<input type="checkbox" id="checkbox" name="genere" value="{$genere.genere}" class="form-check-input">{$genere.genere}
 									{/if}
                                 </label>
 								{/foreach}
