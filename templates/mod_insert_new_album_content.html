@@ -93,12 +93,11 @@
                     <div class="col col-md-9">
                         <div class="form-check">
 
-                            {foreach $generi as $genere}
-                            <label for="checkbox" class="form-check-label">
-                                <input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}"
-                                       class="form-check-input">{$genere.genere}
-                            </label>
-                            {/foreach}
+                            <select class="js-example-basic-multiple" name="generi[]" multiple="multiple">
+                                {foreach $generi as $genere}
+                                <option value="{$genere.genere}">{$genere.genere}</option>
+                                {/foreach}
+                            </select>
 
                         </div>
                     </div>
@@ -197,6 +196,7 @@
     (function($) {
         $(document).ready(function () {
             $('.js-example-basic-single').select2();
+            $('.js-example-basic-multiple').select2();
         });
     }(jQuery));
     {/literal}
