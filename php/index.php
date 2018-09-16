@@ -20,7 +20,15 @@
 	if($result){
 		$smarty->assign("special_offers", $result);
 	}
-
+	
+	if(isset($_GET['message'])){
+		switch($_GET['message']){
+			case 'order_placed':
+				$smarty->assign("message", "Your order has been successfully placed! You will receive an email with a data recap. Thank you!");
+				break;
+		}
+	}
+	
 	$smarty->assign("content", $content);
 
 	

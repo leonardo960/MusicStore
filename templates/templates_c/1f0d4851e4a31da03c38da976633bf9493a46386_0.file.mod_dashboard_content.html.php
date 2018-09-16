@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 10:52:27
+/* Smarty version 3.1.32, created on 2018-09-16 21:24:29
   from 'C:\wamp64\www\MusicStore\templates\mod_dashboard_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e35eb06d447_32322778',
+  'unifunc' => 'content_5b9eca0da86b09_71184986',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1f0d4851e4a31da03c38da976633bf9493a46386' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_dashboard_content.html',
-      1 => 1537095144,
+      1 => 1537133066,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e35eb06d447_32322778 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9eca0da86b09_71184986 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -146,7 +146,7 @@ function content_5b9e35eb06d447_32322778 (Smarty_Internal_Template $_smarty_tpl)
                             <div class="stat-content dib">
                                 <div class="stat-text">Profitto (Ultimi 30 Giorni)</div>
                                 <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['profitto']->value['numero'];?>
-</div>
+&euro;</div>
                             </div>
                         </div>
                     </div>

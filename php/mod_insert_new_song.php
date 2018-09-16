@@ -42,9 +42,9 @@
 	require "include/mod.set_logged_header.inc.php";
 	$result = $db->query("select * from genere");
 	$smarty->assign("generi", $result);
-	$result = $db->query("select id_album, nome_album, id_artista from album join artisti where album.fk_artista = artisti.id_artista");
+	$result = $db->query("select * from album");
 	$smarty->assign("album", $result);
-    $result = $db->query("SELECT * FROM canzoni");
+    $result = $db->query("SELECT * FROM canzoni join album on canzoni.fk_album = album.id_album join artisti on artisti.id_artista = canzoni.fk_artista");
     $smarty->assign("canzoni", $result);
 	$smarty->assign("content", $content);
 	

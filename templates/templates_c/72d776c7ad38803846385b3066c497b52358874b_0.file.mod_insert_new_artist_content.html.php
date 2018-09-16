@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 18:27:50
+/* Smarty version 3.1.32, created on 2018-09-16 21:27:01
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_artist_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9ea0a6426ad3_85960289',
+  'unifunc' => 'content_5b9ecaa519c756_02826656',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '72d776c7ad38803846385b3066c497b52358874b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_artist_content.html',
-      1 => 1537122439,
+      1 => 1537132693,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9ea0a6426ad3_85960289 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ecaa519c756_02826656 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="breadcrumbs">
     <div class="col-sm-4">
         <div class="page-header float-left">
@@ -182,7 +182,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['artista']->value) {
                             <tr>
                                 <td><?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
 </td>
-                                <td><a href=""><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
+                                <td><a href="mod_modify_artist.php?artist_id=<?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
 </a></td>
                                 <!-- link alla pagina di modifica dell'artista -->
                             </tr>
@@ -213,17 +214,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         }
     }
 	
-	function reset_new_artist_form(){
-		$('#new-artist-name-input').val('');
-		$('#new-artist-album-number-input').val('');
-		$('#new-artist-career-start-input').val('');
-		$('#fine-attivita-year').val(null);
-		$('#fine-attivita-year').prop('disabled', false);
-		$('#checkbox-in-attivita').removeAttr("checked");
-		nicEditors.findEditor( "biografia-edit" ).setContent('');
-		//Resettare select generi
-		$('#file-input').val('');
-	}
+
 <?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
@@ -234,7 +225,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
     
     (function ($) {
         $(document).ready(function () {
-            $('.js-example-basic-multiple').select2();
+            $('.js-example-basic-multiple').select2({
+                placeholder: "Select a customer"
+        });
         });
     }(jQuery));
     bkLib.onDomLoaded(function () {
@@ -244,6 +237,18 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
             buttonList: ['bold', 'italic', 'link', 'unlink']
         }).panelInstance('biografia-edit');
     });
+
+    function reset_new_artist_form(){
+        $('#new-artist-name-input').val('');
+        $('#new-artist-album-number-input').val('');
+        $('#new-artist-career-start-input').val('');
+        $('#fine-attivita-year').val(null);
+        $('#fine-attivita-year').prop('disabled', false);
+        $('#checkbox-in-attivita').removeAttr("checked");
+        nicEditors.findEditor( "biografia-edit" ).setContent('');
+        //Resettare select generi
+        $('#file-input').val('');
+    }
     
 <?php echo '</script'; ?>
 ><?php }

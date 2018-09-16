@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 19:13:16
+/* Smarty version 3.1.32, created on 2018-09-16 21:31:24
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_song_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9eab4c9e2839_79781699',
+  'unifunc' => 'content_5b9ecbac3a8dc4_30850528',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd84c9e5add38c0b730eb0c7318fc6dd3bf757095' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_song_content.html',
-      1 => 1537125189,
+      1 => 1537133482,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9eab4c9e2839_79781699 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ecbac3a8dc4_30850528 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -57,21 +57,20 @@ function content_5b9eab4c9e2839_79781699 (Smarty_Internal_Template $_smarty_tpl)
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
                             <div class="col-12 col-md-9">
-                              <select name="album-info" id="new-song-album-select" class="form-control" required>
-                                <option value=""></option>
-                                <?php
+                                  <select name="album-info" id="new-song-album-select" class="js-example-basic-single">
+                                      <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'item');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 ?>
-								<option id="album-fk-option" value='{"id_album": "<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
-","id_artista": "<?php echo $_smarty_tpl->tpl_vars['item']->value['id_artista'];?>
-"}' ><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_album'];?>
+                                      <option value="<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+"><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_album'];?>
 </option>
-								<?php
+                                      <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                                  </select>
                               </select>
                             </div>
                           </div>
@@ -126,11 +125,14 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['canzone']->value) {
 ?>
 						  <tr>
-							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['canzone']->value['nome_canzone'];?>
+							<td><a href="mod_modify_song.php?song_id=<?php echo $_smarty_tpl->tpl_vars['canzone']->value['id_canzone'];?>
+"><?php echo $_smarty_tpl->tpl_vars['canzone']->value['nome_canzone'];?>
 </a></td> <!-- link alla pagina di modifica della canzone -->
-							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['canzone']->value['fk_artista'];?>
+							<td><a href="mod_modify_artist.php?artist_id=<?php echo $_smarty_tpl->tpl_vars['canzone']->value['fk_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['canzone']->value['nome_artista'];?>
 </a></td> <!-- link alla pagina di modifica dell'artista -->
-							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['canzone']->value['fk_album'];?>
+							<td><a href="mod_modify_album.php?album_id=<?php echo $_smarty_tpl->tpl_vars['canzone']->value['fk_album'];?>
+"><?php echo $_smarty_tpl->tpl_vars['canzone']->value['nome_album'];?>
 </a></td> <!-- link alla pagina di modifica dell'album -->
 						  </tr>
 						<?php
@@ -147,15 +149,20 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-<?php echo '<script'; ?>
- src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"><?php echo '</script'; ?>
->
 <?php echo '<script'; ?>
  src="../js/dropzone.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  type="text/javascript">
+    
+    (function ($) {
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2({
+                placeholder: "Select a customer"
+            });
+        });
+    }(jQuery));
+
     Dropzone.options.songForm = {
         autoProcessQueue: false,
         paramName: "song-file",
@@ -178,6 +185,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 		//resettare select album
 		$("#file-input").val('');
 	}
+
+
+
+    
 <?php echo '</script'; ?>
 >
 

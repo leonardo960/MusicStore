@@ -1,5 +1,5 @@
 <div class="cart-page-container">
-	<form id="cart_form" action="" method="POST">
+	<form id="cart_form" action="cart_cashout.php" method="POST">
 		<div class="cart-page-title-box">
 				<a class="cartpage-title">Checkout</a>
 		</div>
@@ -31,7 +31,7 @@
 							<label>Chose your address : </label>
 								{foreach $addresses as $address}
 									<div class="left-box-single-address">
-										<input type="radio" name="address_radiobutton" value="{$address.id_indirizzo}"/>
+										<input type="radio" name="indirizzo" value="{$address.id_indirizzo}"/>
 										<div class="address-radio-info">
 											<ul>
 												<li>Costumer : {$address.cognome} {$address.nome}</li><br>
@@ -67,10 +67,11 @@
 						<div class="checkout-left-box" id="payment-method-box">
 							<div class="left-box-inner">
 								<label>Credit Card :</label><br>
-								<h1>Costumer Name</h1><input type="text" name="credit_card_name" value=""/><br>
-								<h1>Costumer Surname</h1><input type="text" name="credit_card_surname" value=""/><br>
-								<h1>Card Number</h1><input type="number" name="credit_card_number" value=""/><br>
-								<h1>Expiration Date</h1><input type="date" name="credit_card_expiration_date" value=""/><br>
+								<h1>Costumer Name</h1><input type="text" name="nome_carta" value=""/><br>
+								<h1>Costumer Surname</h1><input type="text" name="cognome_carta" value=""/><br>
+								<h1>Card Number</h1><input type="number" name="numero_carta" value=""/><br>
+								<h1>Expiration Date</h1><input type="date" name="data_scadenza" value=""/><br>
+								<input type="hidden" name="metodo_pagamento" value="carta" />
 							</div>
 						</div>
 					</section>
@@ -95,12 +96,12 @@
 								<div class="checkout-shipping-box">
 									<label>Shipping :</label><br>
 									{foreach $shipping_methods as $method}
-									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="{$method.prezzo}"/><label>{$method.nome} : <a>{$method.prezzo} &euro;</a></label>
+									<input type="radio" id="shipping-method-{$method.nome}" onclick="updateTotal()" name="tipo_spedizione" class="shipping-radiobutton" value="{$method.nome}"/><label>{$method.nome} : <a>{$method.prezzo} &euro;</a></label>
 									{/foreach}
 								</div>
 								
 								<div class="checkout-total-box">
-									<label>Total : <input type="number" id="checkout-total-input" name="checkout-total-input" value="0" readonly />&euro;</label><br>
+									<label>Total : <input type="number" title="Total" id="checkout-total-input" name="totale" value="0" readonly />&euro;</label><br>
 								</div>
 							</div>
 						</div>
@@ -152,22 +153,21 @@ function updateTotal(){
 		items_total += (Number({$item.item_quantity}) * Number({$item.prezzo}));
 	{/foreach}
 	
-	$('.shipping-radiobutton').each(function(){
-		if(this.checked == true){
-			total += Number(this.value);
-			shipping = Number(this.value);
+	{foreach $shipping_methods as $method}
+		if($("#shipping-method-{$method.nome}").is(':checked')){
+			total += {$method.prezzo};
+			shipping = {$method.prezzo};
 		}
-	});
-	
+	{/foreach}
+	total = total.toFixed(2);
 	$('#right-panel-items').text(items_total);
 	$('#right-panel-shipping').text(shipping);
 	$('#right-panel-total').text(total);
 	$('#checkout-total-input').val(total);
 }
 </script>
-		
 		<div class="cart-page-end">
-				<button onclick="">Place your order</button>
+				<button style="cursor: pointer;" type="submit" form="cart_form">Place your order</button>
 		</div>
 	</form>
 </div>

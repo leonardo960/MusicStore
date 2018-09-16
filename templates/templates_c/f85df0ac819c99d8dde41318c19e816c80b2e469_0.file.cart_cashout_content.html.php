@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 19:39:34
+/* Smarty version 3.1.32, created on 2018-09-16 21:10:09
   from 'C:\wamp64\www\MusicStore\templates\cart_cashout_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9eb176a65e19_99852869',
+  'unifunc' => 'content_5b9ec6b1252d48_81858204',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f85df0ac819c99d8dde41318c19e816c80b2e469' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_cashout_content.html',
-      1 => 1537126772,
+      1 => 1537132163,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9eb176a65e19_99852869 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ec6b1252d48_81858204 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="cart-page-container">
-	<form id="cart_form" action="" method="POST">
+	<form id="cart_form" action="cart_cashout.php" method="POST">
 		<div class="cart-page-title-box">
 				<a class="cartpage-title">Checkout</a>
 		</div>
@@ -58,7 +58,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 ?>
 									<div class="left-box-single-address">
-										<input type="radio" name="address_radiobutton" value="<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+										<input type="radio" name="indirizzo" value="<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
 "/>
 										<div class="address-radio-info">
 											<ul>
@@ -106,10 +106,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						<div class="checkout-left-box" id="payment-method-box">
 							<div class="left-box-inner">
 								<label>Credit Card :</label><br>
-								<h1>Costumer Name</h1><input type="text" name="credit_card_name" value=""/><br>
-								<h1>Costumer Surname</h1><input type="text" name="credit_card_surname" value=""/><br>
-								<h1>Card Number</h1><input type="number" name="credit_card_number" value=""/><br>
-								<h1>Expiration Date</h1><input type="date" name="credit_card_expiration_date" value=""/><br>
+								<h1>Costumer Name</h1><input type="text" name="nome_carta" value=""/><br>
+								<h1>Costumer Surname</h1><input type="text" name="cognome_carta" value=""/><br>
+								<h1>Card Number</h1><input type="number" name="numero_carta" value=""/><br>
+								<h1>Expiration Date</h1><input type="date" name="data_scadenza" value=""/><br>
+								<input type="hidden" name="metodo_pagamento" value="carta" />
 							</div>
 						</div>
 					</section>
@@ -148,7 +149,8 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['method']->value) {
 ?>
-									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="<?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
+									<input type="radio" id="shipping-method-<?php echo $_smarty_tpl->tpl_vars['method']->value['nome'];?>
+" onclick="updateTotal()" name="tipo_spedizione" class="shipping-radiobutton" value="<?php echo $_smarty_tpl->tpl_vars['method']->value['nome'];?>
 "/><label><?php echo $_smarty_tpl->tpl_vars['method']->value['nome'];?>
  : <a><?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
  &euro;</a></label>
@@ -159,7 +161,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 								</div>
 								
 								<div class="checkout-total-box">
-									<label>Total : <input type="number" id="checkout-total-input" name="checkout-total-input" value="0" readonly />&euro;</label><br>
+									<label>Total : <input type="number" title="Total" id="checkout-total-input" name="totale" value="0" readonly />&euro;</label><br>
 								</div>
 							</div>
 						</div>
@@ -227,13 +229,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	
-	$('.shipping-radiobutton').each(function(){
-		if(this.checked == true){
-			total += Number(this.value);
-			shipping = Number(this.value);
+	<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['shipping_methods']->value, 'method');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['method']->value) {
+?>
+		if($("#shipping-method-<?php echo $_smarty_tpl->tpl_vars['method']->value['nome'];?>
+").is(':checked')){
+			total += <?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
+;
+			shipping = <?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
+;
 		}
-	});
-	
+	<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+	total = total.toFixed(2);
 	$('#right-panel-items').text(items_total);
 	$('#right-panel-shipping').text(shipping);
 	$('#right-panel-total').text(total);
@@ -241,9 +253,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 <?php echo '</script'; ?>
 >
-		
 		<div class="cart-page-end">
-				<button onclick="">Place your order</button>
+				<button style="cursor: pointer;" type="submit" form="cart_form">Place your order</button>
 		</div>
 	</form>
 </div><?php }

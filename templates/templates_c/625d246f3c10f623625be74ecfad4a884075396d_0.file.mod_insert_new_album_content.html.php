@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 19:03:00
+/* Smarty version 3.1.32, created on 2018-09-16 21:28:09
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_album_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9ea8e49ed0e7_59102849',
+  'unifunc' => 'content_5b9ecae9763ad4_23069422',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '625d246f3c10f623625be74ecfad4a884075396d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_album_content.html',
-      1 => 1537124548,
+      1 => 1537133287,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9ea8e49ed0e7_59102849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ecae9763ad4_23069422 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="breadcrumbs">
     <div class="col-sm-4">
         <div class="page-header float-left">
@@ -125,7 +125,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrizione
                         : </label></div>
                     <div class="col-12 col-md-9"><textarea name="descrizione" id="descrizione-edit" rows="4"
-                                                           placeholder="..." class="form-control" required></textarea>
+                                                           placeholder="..." class="form-control" ></textarea>
                     </div>
                 </div>
 
@@ -167,7 +167,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                                                         class="form-control-file"
                                                         accept="image/x-png,image/gif,image/jpeg" required></div>
                 </div>
-
 
             </form>
         </div>
@@ -217,10 +216,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
                             <tr>
                                 <td><?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 </td>
-                                <td><a href=""><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
+                                <td><a href="mod_modify_album.php?album_id=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+"><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
 </a></td>
                                 <!-- link alla pagina di modifica dell'album -->
-                                <td><a href=""><?php echo $_smarty_tpl->tpl_vars['album']->value['fk_artista'];?>
+                                <td><a href="mod_modify_artist.php?artist_id=<?php echo $_smarty_tpl->tpl_vars['album']->value['fk_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
 </a></td>
                                 <!-- link alla pagina di modifica dell'artista -->
                             </tr>

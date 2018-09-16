@@ -6,31 +6,15 @@
 	session_start();
 	
 	if(isset($_SESSION['auth'])){
-		if(isset($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['paese']) && isset($_POST['indirizzo']) && isset($_POST['citta']) && isset($_POST['provincia']) && isset($_POST['cap']) && isset($_POST['recapito'])) { //I campi dell'ordine
-		//Prevenzione dall'SQL injection sui dati specificati dal cliente per l'ordine
-		function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-		}		
-		$_POST['metodo_pagamento'] = test_input($_POST['metodo_pagamento']); //test_input SU TUTTI I DATI DELL'ORDINE
-		if($_POST['metodo_pagamento'] === 'carta'){
-			$_POST['numero_carta'] = test_input($_POST['numero_carta']);
-			$_POST['data_scadenza'] = test_input($_POST['data_scadenza']);
-			$_POST['nome_carta'] = test_input($_POST['nome_carta']);
-			$_POST['cognome_carta'] = test_input($_POST['cognome_carta']);
-		}
-		$_POST['tipo_spedizione'] = test_input($_POST['tipo_spedizione']);
-		$_POST['paese'] = test_input($_POST['paese']);
-		$_POST['indirizzo'] = test_input($_POST['indirizzo']);
-		$_POST['citta'] = test_input($_POST['citta']);
-		$_POST['provincia'] = test_input($_POST['provincia']);
-		$_POST['cap'] = test_input($_POST['cap']);
-		$_POST['recapito'] = test_input($_POST['recapito']);
+		if(isset($_POST['metodo_pagamento']) && isset($_POST['tipo_spedizione']) && isset($_POST['indirizzo']) && isset($_POST['totale'])) { //I campi dell'ordine
 		
 		require 'include/cart_cashout.inc.php';
-		require "include/set_logged_header.inc.php";
+		
+		header("location: index.php?message=order_placed");
+		exit();
+		
+		
+		/*require "include/set_logged_header.inc.php";
 		require "include/set_active_logo.inc.php";
 		
 		$content = "../templates/order_confirm_content.html";
@@ -73,6 +57,7 @@
 		unset($_SESSION['cart']);
 		$smarty->display("../templates/frame_public.html");
 		exit();
+		*/
 	} 
 	
 	if(isset($_SESSION['cart'][0])){
@@ -88,6 +73,9 @@
 			
 			$result = $db->getResult("select * from tipo_spedizioni");
 			$smarty->assign("shipping_methods", $result);
+			
+			$result = $db->getResult("select * from indirizzi_utenti where utente = '{$_SESSION['auth']['username']}'");
+			$smarty->assign("addresses", $result);
 			
 			require "include/set_logged_header.inc.php";
 			require "include/set_cart_header.inc.php";

@@ -2,10 +2,10 @@
 if (session_status() == PHP_SESSION_NONE) {
 		session_start();
 	}
-if(isset($_POST['quantity_change'])){
-	foreach($_SESSION['cart'] as $value){
-		if($value['item_name'] === $_POST['quantity_change']['item_name']){
-			$value['item_quantity'] = $_POST['quantity_change']['amount'];
+if(isset($_POST['new_quantity'])){
+	for($i = 0; $i < count($_SESSION['cart']); $i++){
+		if($_SESSION['cart'][$i]['item_id'] === $_POST['item_id']){
+			$_SESSION['cart'][$i]['item_quantity'] = $_POST['new_quantity'];
 			echo 'changed';
 			exit();
 		}

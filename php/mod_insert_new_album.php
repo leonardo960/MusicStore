@@ -27,7 +27,7 @@
 	$smarty->assign("generi", $result);
 	$result = $db->getResult("select nome_artista, id_artista from artisti order by nome_artista");
 	$smarty->assign("artisti", $result);
-    $result = $db->getResult("select * from album");
+    $result = $db->getResult("select * from album join artisti on album.fk_artista = artisti.id_artista");
     $smarty->assign("albums", $result);
 	$smarty->assign("content", $content);
 	

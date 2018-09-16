@@ -90,8 +90,8 @@
 						{foreach $canzoni as $canzone}
 						  <tr>
 							<td><a href="mod_modify_song.php?song_id={$canzone.id_canzone}">{$canzone.nome_canzone}</a></td> <!-- link alla pagina di modifica della canzone -->
-							<td><a href="mod_modify_artist.php?artist_id={$canzone.fk_artista}">{$canzone.fk_artista}</a></td> <!-- link alla pagina di modifica dell'artista -->
-							<td><a href="mod_modify_album.php?album_id={$canzone.fk_album}">{$canzone.fk_album}</a></td> <!-- link alla pagina di modifica dell'album -->
+							<td><a href="mod_modify_artist.php?artist_id={$canzone.fk_artista}">{$canzone.nome_artista}</a></td> <!-- link alla pagina di modifica dell'artista -->
+							<td><a href="mod_modify_album.php?album_id={$canzone.fk_album}">{$canzone.nome_album}</a></td> <!-- link alla pagina di modifica dell'album -->
 						  </tr>
 						{/foreach}
                       

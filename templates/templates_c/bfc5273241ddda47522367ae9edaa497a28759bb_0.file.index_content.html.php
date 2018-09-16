@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 20:14:24
+/* Smarty version 3.1.32, created on 2018-09-16 21:00:04
   from 'C:\wamp64\www\MusicStore\templates\index_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9973a02c9053_19804151',
+  'unifunc' => 'content_5b9ec4541a4a76_90283234',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bfc5273241ddda47522367ae9edaa497a28759bb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\index_content.html',
-      1 => 1536783219,
+      1 => 1537131187,
       2 => 'file',
     ),
   ),
@@ -20,8 +20,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9973a02c9053_19804151 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ec4541a4a76_90283234 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--start-image-slider---->
+<?php if (isset($_smarty_tpl->tpl_vars['message']->value)) {
+echo $_smarty_tpl->tpl_vars['message']->value;?>
+
+<?php }?>
 					<div class="image-slider">
 						<!-- Slideshow 1 -->
 					    <ul class="rslides" id="slider1">
