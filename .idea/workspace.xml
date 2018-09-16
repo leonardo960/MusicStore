@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e245437e-1a47-4193-a66d-89bc799a61d0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/mod_insert_new_album.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mod_insert_new_album.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/mod_insert_new_artist.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mod_insert_new_artist.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/mod_insert_new_song.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/mod_insert_new_song.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mod_insert_new_album_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mod_insert_new_album_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mod_insert_new_song_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mod_insert_new_song_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mod_modify_album_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mod_modify_album_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/mod_modify_artist_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mod_modify_artist_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/mod_insert_new_artist_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/mod_insert_new_artist_content.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +66,7 @@
           <entry key="album" value="2" />
           <entry key="canzoni" value="5" />
           <entry key="css" value="1" />
-          <entry key="html" value="79" />
+          <entry key="html" value="80" />
           <entry key="immagini_slider" value="2" />
           <entry key="js" value="4" />
           <entry key="md" value="4" />
@@ -87,7 +81,7 @@
         <counts>
           <entry key="CSS" value="1" />
           <entry key="Database Element" value="13" />
-          <entry key="HTML" value="79" />
+          <entry key="HTML" value="80" />
           <entry key="JavaScript" value="4" />
           <entry key="Markdown" value="4" />
           <entry key="PHP" value="119" />
@@ -100,18 +94,18 @@
         <counts>
           <entry key="JavaScript Console" value="27" />
           <entry key="cell" value="39" />
-          <entry key="html" value="1558" />
+          <entry key="html" value="1599" />
           <entry key="php" value="2099" />
           <entry key="sql" value="52" />
-          <entry key="txt" value="564" />
+          <entry key="txt" value="571" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1558" />
+          <entry key="HTML" value="1599" />
           <entry key="JavaScript" value="27" />
           <entry key="PHP" value="2097" />
-          <entry key="PLAIN_TEXT" value="564" />
+          <entry key="PLAIN_TEXT" value="571" />
           <entry key="SQL" value="10" />
           <entry key="Scratch" value="83" />
         </counts>
@@ -123,8 +117,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/include/mod.insert_new_artist.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="255">
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -139,10 +133,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/mod_modify_artist_content.html">
+        <entry file="file://$PROJECT_DIR$/templates/mod_insert_new_artist_content.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="98" column="57" lean-forward="true" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+            <state relative-caret-position="332">
+              <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -161,7 +155,6 @@
       <find>titolo</find>
       <find>antepri</find>
       <find>arti</find>
-      <find>form</find>
       <find>multi</find>
       <find>post</find>
       <find>input</find>
@@ -170,9 +163,12 @@
       <find>nome</find>
       <find>fk_artista</find>
       <find>data</find>
-      <find>genere</find>
       <find>fk_genere</find>
       <find>nome_artista</find>
+      <find>artist-form</find>
+      <find>form</find>
+      <find>genere</find>
+      <find>procedi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,7 +208,6 @@
         <option value="$PROJECT_DIR$/templates/mod_frame_public.html" />
         <option value="$PROJECT_DIR$/php/mod_special_offers_panel.php" />
         <option value="$PROJECT_DIR$/templates/mod_special_offers_panel_content.html" />
-        <option value="$PROJECT_DIR$/templates/mod_insert_new_artist_content.html" />
         <option value="$PROJECT_DIR$/templates/mod_modify_album_content.html" />
         <option value="$PROJECT_DIR$/templates/mod_insert_new_song_content.html" />
         <option value="$PROJECT_DIR$/php/mod_insert_new_song.php" />
@@ -221,6 +216,7 @@
         <option value="$PROJECT_DIR$/php/include/mod.insert_new_album.inc.php" />
         <option value="$PROJECT_DIR$/php/mod_insert_new_artist.php" />
         <option value="$PROJECT_DIR$/templates/mod_modify_artist_content.html" />
+        <option value="$PROJECT_DIR$/templates/mod_insert_new_artist_content.html" />
       </list>
     </option>
   </component>
@@ -231,9 +227,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 5.6" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="970" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
@@ -360,7 +356,7 @@
       <workItem from="1536222792347" duration="6661000" />
       <workItem from="1536488221457" duration="4612000" />
       <workItem from="1536917007912" duration="10762000" />
-      <workItem from="1536999468158" duration="30790000" />
+      <workItem from="1536999468158" duration="34174000" />
     </task>
     <task id="LOCAL-00001" summary="Album Page">
       <created>1536078700263</created>
@@ -446,11 +442,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537088662063</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Insert">
+      <created>1537095644371</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1537095644371</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78593000" />
+    <option name="totallyTimeSpent" value="81977000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,10 +465,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="953" y="0" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14179105" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29102844" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32321042" />
@@ -477,10 +480,10 @@
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.335141" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49920762" weight="0.33077765" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49920762" weight="0.329718" />
       <window_info anchor="bottom" id="Database Changes" order="10" sideWeight="0.49920762" weight="0.32858709" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="11" sideWeight="0.49762282" weight="0.32968238" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4989059" visible="true" weight="0.31995663" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4989059" visible="true" weight="0.3231106" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5010941" side_tool="true" weight="0.3263965" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.329718" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -540,7 +543,8 @@
     <MESSAGE value="Dropzone song" />
     <MESSAGE value="Gestisci offerte" />
     <MESSAGE value="Checkbox not required" />
-    <option name="LAST_COMMIT_MESSAGE" value="Checkbox not required" />
+    <MESSAGE value="Insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert" />
   </component>
   <component name="editorHistoryManager">
     <entry file="das://d973b8d8-9789-462f-9c77-0fc01a0bca3a/schema/music_store/table/album">
@@ -808,13 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mod_insert_new_artist_content.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="44" lean-forward="true" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/mod_insert_new_song.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -859,8 +856,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/include/mod.insert_new_artist.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="255">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/mod_modify_artist_content.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="95" column="68" selection-start-line="95" selection-start-column="61" selection-end-line="95" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -871,10 +875,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mod_modify_artist_content.html">
+    <entry file="file://$PROJECT_DIR$/templates/mod_insert_new_artist_content.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="98" column="57" lean-forward="true" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+        <state relative-caret-position="332">
+          <caret line="97" column="26" lean-forward="true" selection-start-line="97" selection-start-column="26" selection-end-line="97" selection-end-column="26" />
         </state>
       </provider>
     </entry>
