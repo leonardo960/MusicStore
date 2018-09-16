@@ -21,7 +21,7 @@
 		require "include/mod.insert_new_song.inc.php";
 		
 		
-		Header("Location: mod_content_management.php?message=song_inserted");
+		Header("Location: mod_insert_new_song.php?message=song_inserted");
 		exit();
 	} elseif (isset($_GET['error'])){ 
 		switch($_GET['error']){

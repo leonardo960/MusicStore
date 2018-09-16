@@ -7,22 +7,10 @@
 	
 	if (isset($_POST['nome_artista']) && isset($_POST['biografia']) && isset($_POST['inizio_attivita']) && isset($_POST['fine_attivita']) && isset($_POST['genere'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ARTISTA
 		
-		function test_input($data) {
-		$data = trim($data);
-		$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-		}		
-		$_POST['nome_artista'] = test_input($_POST['nome_artista']); //test_input SU TUTTI I DATI DELL'ARTISTA
-		$_POST['biografia'] = test_input($_POST['biografia']);
-		$_POST['inizio_attivita'] = test_input($_POST['inizio_attivita']);
-		$_POST['fine_attivita'] = test_input($_POST['fine_attivita']);
-		$_POST['genere'] = test_input($_POST['genere']);
-		
 		$target_dir = "../images/artists/";
 		require "include/mod.insert_new_artist.inc.php";
 		
-		Header("Location: mod_content_management.php?message=artist_inserted");
+		Header("Location: mod_insert_new_artist.php?message=artist_inserted");
 		exit();
 	} elseif (isset($_GET['error'])){ 
 		switch($_GET['error']){
