@@ -82,9 +82,9 @@
 								{foreach $generi as $genere}
                                 <label for="checkbox" class="form-check-label">
 									{if ($genere.id_genere == $fk_genere)}
-									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input" required checked>{$genere.genere}
+									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input" checked>{$genere.genere}
 									{else}
-									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input" required>{$genere.genere}
+									<input type="checkbox" id="checkbox" name="fk_genere" value="{$genere.id_genere}" class="form-check-input">{$genere.genere}
 									{/if}
                                 </label>
 								{/foreach}
