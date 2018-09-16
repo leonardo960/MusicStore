@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 15:34:14
+/* Smarty version 3.1.32, created on 2018-09-16 19:13:16
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_song_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e77f65ca604_89060679',
+  'unifunc' => 'content_5b9eab4c9e2839_79781699',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd84c9e5add38c0b730eb0c7318fc6dd3bf757095' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_song_content.html',
-      1 => 1537096009,
+      1 => 1537125189,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e77f65ca604_89060679 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9eab4c9e2839_79781699 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -47,17 +47,17 @@ function content_5b9e77f65ca604_89060679 (Smarty_Internal_Template $_smarty_tpl)
                         <strong>Inserisci : </strong> Nuova Canzone
                       </div>
                       <div class="card-body card-block">
-                        <form id="song-form" action="" method="post" enctype="multipart/form-data" class="dropzone, form-horizontal">
+                        <form id="song-form" action="insert_new_song.php" method="post" enctype="multipart/form-data" class="dropzone, form-horizontal">
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Titolo : </label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_canzone" class="form-control" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="text" id="new-song-name-input" name="nome_canzone" class="form-control" autocomplete="none" required></div>
                           </div>
 
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
                             <div class="col-12 col-md-9">
-                              <select name="album-info" id="select" class="form-control" required>
+                              <select name="album-info" id="new-song-album-select" class="form-control" required>
                                 <option value=""></option>
                                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'item');
@@ -90,7 +90,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                         <button id="song-submin" type="submit" class="btn btn-primary btn-sm" form="song-form">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
+                        <button type="reset" class="btn btn-danger btn-sm" onclick="reset_song_form()">
                           <i class="fa fa-ban"></i> Reset
                         </button>
                       </div>
@@ -172,6 +172,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         myDropzone.processQueue();
         window.location.href = "mod_content_management.php";
     });
+	
+	function reset_song_form(){
+		$("#new-song-name-input").val('');
+		//resettare select album
+		$("#file-input").val('');
+	}
 <?php echo '</script'; ?>
 >
 

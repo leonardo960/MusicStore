@@ -86,8 +86,8 @@
 								
 							{foreach $cart_content as $item}
 								<div class="checkout-item-box">
-									<label>Album : <a>{$item.item_name}</a></label><br>
-									<h1>Price : </h1><input type="number" value="{$item.item_price}" readonly />&euro;<br>
+									<label>Album : <a>{$item.nome_album}</a></label><br>
+									<h1>Price : </h1><input type="number" value="{$item.prezzo}" readonly />&euro;<br>
 									<h1>Quantity : </h1><input type="number" value="{$item.item_quantity}" readonly /><br>
 								</div>
 							{/foreach}
@@ -95,7 +95,7 @@
 								<div class="checkout-shipping-box">
 									<label>Shipping :</label><br>
 									{foreach $shipping_methods as $method}
-									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="{$method.price}"/><label>{$method.name} : <a>{$method.price} &euro;</a></label>
+									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="{$method.prezzo}"/><label>{$method.nome} : <a>{$method.prezzo} &euro;</a></label>
 									{/foreach}
 								</div>
 								
@@ -141,15 +141,15 @@ function addSticky() {
 }
 </script>
 <script>
-window.onload = updateTotal();
+window.onload = updateTotal;
 function updateTotal(){
 	var total = 0;
 	var items_total = 0;
 	var shipping = 0;
 	
 	{foreach $cart_content as $item}
-		total += (Number({$item.item_quantity}) * Number({$item.item_price}));
-		items_total += (Number({$item.item_quantity}) * Number({$item.item_price}));
+		total += (Number({$item.item_quantity}) * Number({$item.prezzo}));
+		items_total += (Number({$item.item_quantity}) * Number({$item.prezzo}));
 	{/foreach}
 	
 	$('.shipping-radiobutton').each(function(){

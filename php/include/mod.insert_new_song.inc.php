@@ -13,6 +13,4 @@
 	$target_file = $target_dir . $result[0]['MAX(id_canzone)'] . '.' . $ext;
 	move_uploaded_file($_FILES["song-file"]["tmp_name"], $target_file);
 	$db->query("update canzoni set song_path = '{$target_file}' where id_canzone = '{$result[0]["MAX(id_canzone)"]}'");
-
-
 ?>

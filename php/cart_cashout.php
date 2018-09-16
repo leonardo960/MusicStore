@@ -78,11 +78,16 @@
 	if(isset($_SESSION['cart'][0])){
 			$cart_content = array();
 			for($i = 0; $i < count($_SESSION['cart']); $i++){
-				$result = $db->getResult("select * from album where id_album = '{$_SESSION['cart'][$i]['item_id']}'");
-				array_push($cart_content, $result);
+				$result = $db->getResult("select * from album left join offerte_speciali on album.id_album = offerte_speciali.album where id_album = '{$_SESSION['cart'][$i]['item_id']}'");
+				if(!($result[0]['prezzo_offerta'] === NULL)) $result[0]['prezzo'] = $result[0]['prezzo_offerta'];
+				$cart_content[$i] = $result[0];
+				$cart_content[$i]['item_quantity'] = $_SESSION['cart'][$i]['item_quantity'];
 			}
 			$smarty->assign("cart_content", $cart_content);
 			$smarty->assign("content", $content);
+			
+			$result = $db->getResult("select * from tipo_spedizioni");
+			$smarty->assign("shipping_methods", $result);
 			
 			require "include/set_logged_header.inc.php";
 			require "include/set_cart_header.inc.php";

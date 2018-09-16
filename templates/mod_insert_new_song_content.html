@@ -24,17 +24,17 @@
                         <strong>Inserisci : </strong> Nuova Canzone
                       </div>
                       <div class="card-body card-block">
-                        <form id="song-form" action="" method="post" enctype="multipart/form-data" class="dropzone, form-horizontal">
+                        <form id="song-form" action="insert_new_song.php" method="post" enctype="multipart/form-data" class="dropzone, form-horizontal">
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Titolo : </label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_canzone" class="form-control" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="text" id="new-song-name-input" name="nome_canzone" class="form-control" autocomplete="none" required></div>
                           </div>
 
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
                             <div class="col-12 col-md-9">
-                              <select name="album-info" id="select" class="form-control" required>
+                              <select name="album-info" id="new-song-album-select" class="form-control" required>
                                 <option value=""></option>
                                 {foreach $album as $item}
 								{literal}<option id="album-fk-option" value='{"id_album": {/literal}"{$item.id_album}"{literal},"id_artista": {/literal}"{$item.id_artista}"{literal}}' >{/literal}{$item.nome_album}</option>
@@ -57,7 +57,7 @@
                         <button id="song-submin" type="submit" class="btn btn-primary btn-sm" form="song-form">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
-                        <button type="reset" class="btn btn-danger btn-sm">
+                        <button type="reset" class="btn btn-danger btn-sm" onclick="reset_song_form()">
                           <i class="fa fa-ban"></i> Reset
                         </button>
                       </div>
@@ -124,5 +124,11 @@
         myDropzone.processQueue();
         window.location.href = "mod_content_management.php";
     });
+	
+	function reset_song_form(){
+		$("#new-song-name-input").val('');
+		//resettare select album
+		$("#file-input").val('');
+	}
 </script>
 
