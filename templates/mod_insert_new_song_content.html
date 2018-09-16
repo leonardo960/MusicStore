@@ -34,11 +34,11 @@
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
                             <div class="col-12 col-md-9">
-                              <select name="album-info" id="new-song-album-select" class="form-control" required>
-                                <option value=""></option>
-                                {foreach $album as $item}
-								{literal}<option id="album-fk-option" value='{"id_album": {/literal}"{$item.id_album}"{literal},"id_artista": {/literal}"{$item.id_artista}"{literal}}' >{/literal}{$item.nome_album}</option>
-								{/foreach}
+                                  <select name="album-info" id="new-song-album-select" class="js-example-basic-single">
+                                      {foreach $album as $item}
+                                      <option value="{$item.id_album}">{$item.nome_album}</option>
+                                      {/foreach}
+                                  </select>
                               </select>
                             </div>
                           </div>
@@ -104,10 +104,17 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/dropzone.js"></script>
 <script type="text/javascript">
+    {literal}
+    (function ($) {
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2({
+                placeholder: "Select a customer"
+            });
+        });
+    }(jQuery));
+
     Dropzone.options.songForm = {
         autoProcessQueue: false,
         paramName: "song-file",
@@ -130,5 +137,9 @@
 		//resettare select album
 		$("#file-input").val('');
 	}
+
+
+
+    {/literal}
 </script>
 
