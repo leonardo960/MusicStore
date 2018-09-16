@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 15:15:05
+/* Smarty version 3.1.32, created on 2018-09-16 17:28:18
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d21f9652155_11245312',
+  'unifunc' => 'content_5b9e92b22befc5_53532801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34ec6550b750fa7525adabaccb5c3d14123797eb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\cart_content.html',
-      1 => 1537024503,
+      1 => 1537118812,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d21f9652155_11245312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e92b22befc5_53532801 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .delete-cart-modal {
     position: fixed;
@@ -123,7 +123,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 " min="1" value="1"></input>
 							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 " class="cart-remove-button">Details</a>
-							<a style="cursor: pointer;" class="cart-remove-button" onclick="remove_item(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+							<a id="remove-from-cart-<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+" style="cursor: pointer;" class="cart-remove-button" onclick="remove_item(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 )">Remove</a>
 						
 						</div>
@@ -139,10 +140,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php }?>
 				</ul>
 			</div>
-			
+			<?php if (count($_smarty_tpl->tpl_vars['cart_content']->value) != 0) {?>
 			<div class="cart-page-end">
 				<button onclick="checkout()">Proceed to Checkout</button>
 			</div>
+			<?php }?>
 		</form>
 		
 	</div>

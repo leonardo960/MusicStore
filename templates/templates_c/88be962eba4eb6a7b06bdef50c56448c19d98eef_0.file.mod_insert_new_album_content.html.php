@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-14 13:08:42
+/* Smarty version 3.1.32, created on 2018-09-16 08:04:45
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\mod_insert_new_album_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9bb2daa64695_16818457',
+  'unifunc' => 'content_5b9e0e9da21692_66425664',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '88be962eba4eb6a7b06bdef50c56448c19d98eef' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\mod_insert_new_album_content.html',
-      1 => 1536665182,
+      1 => 1537018584,
       2 => 'file',
     ),
   ),
@@ -20,87 +20,209 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9bb2daa64695_16818457 (Smarty_Internal_Template $_smarty_tpl) {
-?><style>
-.menu {
-	position: absolute;
-	top: 35%;
-	right: 35%;
-}
-.back-button {
-	position: absolute;
-	top: 18%;
-	left: 5%;
-}
-</style>
-<div class="menu">
-	<form id="album-form" action="mod_insert_new_album.php" method="POST" enctype="multipart/form-data">
-		Nome Album:<input type="text" name="nome_album" maxlength="30" required />
-		<br>
-		Genere:
-		<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['generi']->value, 'genere');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
-?>
-		<input type="radio" name="fk_genere" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
-" required /> <?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+function content_5b9e0e9da21692_66425664 (Smarty_Internal_Template $_smarty_tpl) {
+?>        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Gestione Album</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-		<br>
-		Artista:<select name="fk_artista">
-					<?php
+        <div class="content mt-3">
+		
+			<div class="card">
+                      <div class="card-header">
+                        <strong>Inserisci : </strong> Nuovo Album
+                      </div>
+                      <div class="card-body card-block">
+                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista" class="form-control" autocomplete="none" required></div>
+                          </div>
+                          
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="select" class=" form-control-label">Artista : </label></div>
+                            <div class="col-12 col-md-9">
+                              <select name="fk_artista" id="select" class="form-control" required>
+                                <option value=""></option>
+                                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['artisti']->value, 'artista');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['artista']->value) {
 ?>
-					<option value="<?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
+								<option value="<?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
 "><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
 </option>
-					<?php
+								<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-				</select>
-		<br>
-		Prezzo:
-		<input type="number" name="prezzo" value="0" required />
-		<br>
-		Pubblicazione:
-		<input type="date" name="pubblicazione" required />
-		Dischi:
-		<input type="number" name="dischi" value="0" required />
-		<br>
-		Tracce:
-		<input type="number" name="tracce" value="0" required />
-		<br>
-		Etichetta:
-		<input type="text" name="etichetta" required />
-		<br>
-		Stock:
-		<input type="number" name="stock" required />
-		<br>
-		Immagine Album:
-		<input type="file" name="album-img" accept="image/x-png,image/gif,image/jpeg" required />
-		<br>
-		<input id="hidden-date" type="date" name="data_inserimento" hidden />
-	</form>
-	Descrizione:<textarea style="resize: none;" rows="4" cols="50" name="descrizione" form="album-form" maxlength="1000" required></textarea>
-	<br>
-	<br>
-	<input type="submit" value="Conferma" form="album-form" />
-</div>
-<form class="back-button"  action="mod_content_management.php">
-    <input type="submit" value="Torna alla Gestione Contenuti" />
-</form>
+                              </select>
+                            </div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Etichetta : </label></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="etichetta" class="form-control" autocomplete="none" required></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Prezzo : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="prezzo" class="form-control" value="0" autocomplete="none" required></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Dischi Contenuti : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="dischi" class="form-control" value="0" autocomplete="none" required></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tracce : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="tracce" class="form-control" value="0" autocomplete="none" required></div>
+                          </div>
+						  
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Data di Pubblicazione : </label></div>
+                            <div class="col-12 col-md-9"><input type="date" id="fine-attivita-year" name="pubblicazione" class="form-control" required></div>
+						  </div>
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrizione : </label></div>
+                            <div class="col-12 col-md-9"><textarea name="biografia" id="descrizione-edit" rows="4" placeholder="..." class="form-control" required></textarea></div>
+                          </div>
+                          
+                          
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label class=" form-control-label">Genere : </label></div>
+                            <div class="col col-md-9">
+                              <div class="form-check">
+                                
+								<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['generi']->value, 'genere');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
+?>
+                                <label for="checkbox" class="form-check-label">
+                                  <input type="checkbox" id="checkbox" name="fk_genere[]" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
+" class="form-check-input" required><?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+
+                                </label>
+								<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+								
+                              </div>
+                            </div>
+                          </div>
+                          
+						  <div class="row form-group">
+                            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Stock : </label></div>
+                            <div class="col-12 col-md-9"><input type="number" id="text-input" name="stock" class="form-control" value="0" autocomplete="none" required></div>
+                          </div>
+						  
+                          <div class="row form-group">
+                            <div class="col col-md-3"><label for="file-input" class=" form-control-label">Immagine Album : </label></div>
+                            <div class="col-12 col-md-9"><input type="file" id="file-input" name="album-img" class="form-control-file" accept="image/x-png,image/gif,image/jpeg" required></div>
+                          </div>
+                          
+						  <input id="hidden-date" type="date" name="data_inserimento" hidden />
+						  
+                        </form>
+                      </div>
+					  
+                      <div class="card-footer">
+                        <button type="submit" class="btn btn-primary btn-sm">
+                          <i class="fa fa-dot-circle-o"></i> Procedi
+                        </button>
+                        <button type="reset" class="btn btn-danger btn-sm">
+                          <i class="fa fa-ban"></i> Reset
+                        </button>
+                      </div>
+                    </div>
+
+		</div>
+           
+            <!--/.col-->
+		
+		<div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Album Inseriti</strong>
+                        </div>
+                        <div class="card-body">
+                  <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nome <small>(Clicca per modificare)</small></th>
+						<th>Artista <small>(Clicca per modificare)</small></th> 						
+                      </tr>
+                    </thead>
+                    <tbody>
+					
+						<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['albums']->value, 'album');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
+?>
+						  <tr>
+							<td><?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+</td>
+							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_album'];?>
+</a></td> <!-- link alla pagina di modifica dell'album -->
+							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
+</a></td> <!-- link alla pagina di modifica dell'artista -->
+						  </tr>
+						 <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                      
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				</div>
+                </div>
+            </div><!-- .animated -->
+        </div><!-- .content -->
+		
 <?php echo '<script'; ?>
 >
 	var myDate = document.getElementById("hidden-date");
 	var today = new Date();
 	myDate.value = today.toISOString().substr(0, 10);
 <?php echo '</script'; ?>
-><?php }
+>
+<?php echo '<script'; ?>
+ src="../assets/js/nicEdit/nicEdit.js" type="text/javascript"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript">
+bkLib.onDomLoaded(function() {
+        new nicEditor({iconsPath: 'assets/js/nicEdit/nicEditorIcons.gif', buttonList: ['bold', 'italic', 'link', 'unlink']}).panelInstance('descrizione-edit');
+});
+<?php echo '</script'; ?>
+>
+<?php }
 }

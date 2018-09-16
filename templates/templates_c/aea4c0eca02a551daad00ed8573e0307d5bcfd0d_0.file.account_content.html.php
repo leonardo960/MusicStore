@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 15:53:13
+/* Smarty version 3.1.32, created on 2018-09-16 11:49:22
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d2ae9894323_76750937',
+  'unifunc' => 'content_5b9e4342ee5552_54353229',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aea4c0eca02a551daad00ed8573e0307d5bcfd0d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\account_content.html',
-      1 => 1537026792,
+      1 => 1537096351,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d2ae9894323_76750937 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e4342ee5552_54353229 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .modalDialog {
 	position: fixed;
@@ -97,15 +97,11 @@ function content_5b9d2ae9894323_76750937 (Smarty_Internal_Template $_smarty_tpl)
 }
 
 .addressEditModalDialog > div {
-	width: 400px;
+	width: 600px;
 	position: relative;
 	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+	padding: 25px;
+	background: #2b5849;
 }
 .addressEditClose {
 	background: #606061;
@@ -314,20 +310,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 							<li><h1>Customer Surname: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
 -surname"><?php echo $_smarty_tpl->tpl_vars['address']->value['cognome'];?>
 </h6></li>
-							<li><h1>City: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
--city"><?php echo $_smarty_tpl->tpl_vars['address']->value['citta'];?>
-</h6></li>
-							<li><h1>Province: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
--province"><?php echo $_smarty_tpl->tpl_vars['address']->value['provincia'];?>
-</h6></li>
-							<li><h1>Postal Code: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
--postal-code"><?php echo $_smarty_tpl->tpl_vars['address']->value['cap'];?>
-</h6></li>
-							<li><h1>Country: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
--country"><?php echo $_smarty_tpl->tpl_vars['address']->value['paese'];?>
-</h6></li>
-						</ul>
-						<ul>
 							<li><h1>Address: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
 -address"><?php echo $_smarty_tpl->tpl_vars['address']->value['indirizzo'];?>
 </h6></li>
@@ -335,12 +317,26 @@ foreach ($_from as $_smarty_tpl->tpl_vars['address']->value) {
 -telephone"><?php echo $_smarty_tpl->tpl_vars['address']->value['recapito'];?>
 </h6></li>
 						</ul>
+						<ul>
+							<li><h1>City: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-city"><?php echo $_smarty_tpl->tpl_vars['address']->value['citta'];?>
+</h6></li>
+							<li><h1>Province: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-province"><?php echo $_smarty_tpl->tpl_vars['address']->value['provincia'];?>
+</h6></li>
+							<li><h1>Country: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-country"><?php echo $_smarty_tpl->tpl_vars['address']->value['paese'];?>
+</h6></li>
+							<li><h1>Postal Code: </h1><h6 id="address-<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+-postal-code"><?php echo $_smarty_tpl->tpl_vars['address']->value['cap'];?>
+</h6></li>
+						</ul>
 						
 						<ul class="address-buttons-container">
-							<li class="address-box-button"><a style="cursor:pointer;" href="#addressEditOpenModal" onclick="populate_address_edit_form(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
-)">Edit</a></li>
-							<li class="address-box-button"><a style="cursor: pointer;" onclick="delete_address(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
-)">Delete</a></li>
+							<li class="address-box-button" onclick="populate_address_edit_form(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+)"><a style="cursor:pointer;" href="#addressEditOpenModal">Edit</a></li>
+							<li class="address-box-button" onclick="delete_address(<?php echo $_smarty_tpl->tpl_vars['address']->value['id_indirizzo'];?>
+)"  style="cursor: pointer;"><a>Delete</a></li>
 						</ul>
 						
 					</div>
@@ -369,35 +365,36 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 					<label>New Address</label>
 					
 					<ul>
-						<li><h1>Customer Name<h1><input type="text" name="customer_name" required /></li>
-						<li><h1>Customer Surname<h1><input type="text" name="customer_surname" required /></li>
-						<li><h1>Country<h1><input type="text" name="customer_country" required /></li>
-						<li><h1>Province<h1><input type="text" name="customer_province" required /></li>
-						<li><h1>City<h1><input type="text" name="customer_city" required /></li>
-						<li><h1>Postal Code<h1><input type="text" pattern="[0-9]+" name="customer_postal_code" required /></li>
-						<li><h1>Address<h1><input type="text" name="customer_address" required /></li>
-						<li><h1>Telephone<h1><input type="text" pattern="[0-9]+" name="customer_telephone" required /></li>
+						<li><h1>Customer Name</h1><input type="text" name="customer_name" required /></li>
+						<li><h1>Customer Surname</h1><input type="text" name="customer_surname" required /></li>
+						<li><h1>Country</h1><input type="text" name="customer_country" required /></li>
+						<li><h1>Province</h1><input type="text" name="customer_province" required /></li>
+						<li><h1>City</h1><input type="text" name="customer_city" required /></li>
+						<li><h1>Postal Code</h1><input type="text" pattern="[0-9]+" name="customer_postal_code" required /></li>
+						<li><h1>Address</h1><input type="text" name="customer_address" required /></li>
+						<li><h1>Telephone</h1><input type="text" pattern="[0-9]+" name="customer_telephone" required /></li>
 					</ul>
 					<button type="button" onclick="send_address()" >Confirm</button>
 				</form>
 			</div>
 			</div>
 			<div id="addressEditOpenModal" class="addressEditModalDialog" style="display: inline-block;">
-			<div>
+			<div class="new-address-popup">
 				<a href="#addressEditClose" title="Close" class="addressEditClose">X</a>
 				<form id="edit-address-form" action="account.php" method="POST">
-					Modify address information:
-					<br>
-					<br>
-					Customer Name: <input id="edit-customer-name" type="text" name="customer_name" required /><br>
-					Customer Surname: <input id="edit-customer-surname" type="text" name="customer_surname" required /><br>
-					Country: <input id="edit-customer-country" type="text" name="customer_country" required /><br>
-					Province: <input id="edit-customer-province" type="text" name="customer_province" required /><br>
-					City: <input id="edit-customer-city" type="text" name="customer_city" required /><br>
-					Postal Code: <input id="edit-customer-postal-code" type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
-					Address: <input id="edit-customer-address" type="text" name="customer_address" required /><br>
-					Telephone: <input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br>
-					<input type="hidden" id="edit-address-id" name="address_id" value="" />
+					<label>Modify Address</label>
+					
+					<ul>
+						<li><h1>Customer Name</h1><input id="edit-customer-name" type="text" name="customer_name" required /></li>
+						<li><h1>Customer Surname</h1><input id="edit-customer-surname" type="text" name="customer_surname" required /></li>
+						<li><h1>Country</h1><input id="edit-customer-country" type="text" name="customer_country" required /></li>
+						<li><h1>Province</h1><input id="edit-customer-province" type="text" name="customer_province" required /></li>
+						<li><h1>City</h1><input id="edit-customer-city" type="text" name="customer_city" required /></li>
+						<li><h1>Postal Code</h1><input id="edit-customer-postal-code" type="text" pattern="[0-9]+" name="customer_postal_code" required /></li>
+						<li><h1>Address</h1><input id="edit-customer-address" type="text" name="customer_address" required /></li>
+						<li><h1>Telephone</h1><input id="edit-customer-telephone" type="text" pattern="[0-9]+" name="customer_telephone" required /></li>
+						<input type="hidden" id="edit-address-id" name="address_id" value="" />
+					</ul>
 					<button type="button" onclick="modify_address()" >Confirm changes</button>
 				</form>
 			</div>
