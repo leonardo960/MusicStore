@@ -58,7 +58,12 @@
 	}
 	
 	$smarty->assign("page_counter", 0);
-	
+    $result = $db->getResult("select * from album left join offerte_speciali on album.id_album = offerte_speciali.album WHERE offerte_speciali.album IS NOT NULL");
+    $smarty->assign("album", $result);
+    $result = $db->getResult("select * from album left join offerte_speciali on album.id_album = offerte_speciali.album WHERE offerte_speciali.album IS NULL");
+    $smarty->assign("album_scontati", $result);
+
+
 	require "include/mod.set_logged_header.inc.php";
 	
 	$smarty->assign("content", $content);

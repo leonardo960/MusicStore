@@ -32,13 +32,13 @@
                       </tr>
                     </thead>
                     <tbody>
-					{foreach $album as $item}
+					{foreach $album_scontati as $item}
                       <tr>
 						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func1({$item.id_album})"/></td>
 						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="" disabled="true"/></td>
 						<td>{$item.prezzo}</td>
                         <td>{$item.nome_album}</td>
-                        <td>{$item.nome_artista}</td>
+                        <td>{$item.fk_artista}</td>
                       </tr>
 					{/foreach}  
                     </tbody>
@@ -90,10 +90,10 @@
 					{foreach $album as $item}
                       <tr>
 						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func2({$item.id_album})"/></td>
-						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="" disabled="true"/></td>
-						<td>{$item.prezzo}</td>
+						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="{$item.prezzo_offerta}" disabled="true"/></td>
+						<td>{$item.prezzo} </td>
                         <td>{$item.nome_album}</td>
-                        <td>{$item.nome_artista}</td>
+                        <td>{$item.fk_artista}</td>
                       </tr>
 					{/foreach}  
                     </tbody>
