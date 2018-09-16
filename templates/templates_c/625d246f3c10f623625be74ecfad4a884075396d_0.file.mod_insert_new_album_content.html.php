@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 08:23:03
+/* Smarty version 3.1.32, created on 2018-09-16 10:53:12
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_album_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e12e7de07c8_06924301',
+  'unifunc' => 'content_5b9e3618eec198_16566030',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '625d246f3c10f623625be74ecfad4a884075396d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_album_content.html',
-      1 => 1537085999,
+      1 => 1537091116,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e12e7de07c8_06924301 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e3618eec198_16566030 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -47,7 +47,7 @@ function content_5b9e12e7de07c8_06924301 (Smarty_Internal_Template $_smarty_tpl)
                         <strong>Inserisci : </strong> Nuovo Album
                       </div>
                       <div class="card-body card-block">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form id="song-insert" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
@@ -118,7 +118,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
 ?>
                                 <label for="checkbox" class="form-check-label">
                                   <input type="checkbox" id="checkbox" name="fk_genere[]" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
-" class="form-check-input" required><?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+" class="form-check-input"><?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
 
                                 </label>
 								<?php
@@ -146,7 +146,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </div>
 					  
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
+                        <button type="submit" class="btn btn-primary btn-sm" form="song-insert">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">
@@ -178,7 +178,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </tr>
                     </thead>
                     <tbody>
-					
 						<?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['albums']->value, 'album');
 if ($_from !== null) {
