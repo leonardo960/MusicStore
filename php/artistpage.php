@@ -24,12 +24,12 @@
  $smarty->assign("artista", $artista[0]);
  
  
- $result = $db->getResult("SELECT nome_album, album.descrizione, prezzo, id_album, pubblicazione, dischi, tracce, etichetta, album.img_path, data_inserimento FROM artisti JOIN album ON artisti.id_artista = album.fk_artista JOIN genere ON genere.id_genere = album.fk_genere WHERE id_artista = '{$_GET['id_artista']}' ");
+ $result = $db->getResult("SELECT nome_album, album.descrizione, prezzo, id_album, pubblicazione, dischi, tracce, etichetta, album.img_path, data_inserimento FROM artisti JOIN album ON artisti.id_artista = album.fk_artista WHERE id_artista = '{$_GET['id_artista']}' ");
  $smarty->assign("album", $result);
  
  require "include/set_logged_header.inc.php";
  require "include/set_cart_header.inc.php";
-require "include/set_active_logo.inc.php";
+ require "include/set_active_logo.inc.php";
  
  $smarty->display("../templates/frame_public.html");
  ?>

@@ -5,34 +5,20 @@
 	
 	$content = "../templates/mod_insert_new_album_content.html";
 	
-	if (isset($_POST['data_inserimento']) && isset($_POST['nome_album']) && isset($_POST['fk_genere']) && isset($_POST['fk_artista']) && isset($_POST['descrizione']) && isset($_POST['prezzo']) && isset($_POST['pubblicazione']) && isset($_POST['dischi']) && isset($_POST['tracce']) && isset($_POST['etichetta']) && isset($_POST['stock'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ALBUM
+	if (isset($_POST['nome_album']) && isset($_POST['generi']) && isset($_POST['fk_artista']) && isset($_POST['descrizione']) && isset($_POST['prezzo']) && isset($_POST['pubblicazione']) && isset($_POST['dischi']) && isset($_POST['tracce']) && isset($_POST['etichetta']) && isset($_POST['stock'])) { //I DATI DERIVATI DALL'INSERIMENTO DELL'ALBUM
 		$target_dir = "../images/album/";
 		require "include/mod.insert_new_album.inc.php";
 		
 		
 		Header("Location: mod_insert_new_album.php?message=album_inserted");
 		exit();
-	} elseif (isset($_GET['error'])){ 
-		switch($_GET['error']){
-			case "databaseerror":
-				//Errore nella comunicazione con il DB
-				$error = "../templates/errors/database_error.html";
-				$smarty->assign("error", $error);
+	} elseif (isset($_GET['message'])){ 
+		switch($_GET['message']){
+			case "album_inserted":
+				//Album inserito con successo
+				$smarty->assign("message", 'Album inserito con successo nel sistema.');
 				break;
 		}
-
-		//Rimetto i campi del form come stavano prima di convalidare
-		$smarty->assign("nome_album", $_SESSION['new_album_data']['nome_album']);
-		$smarty->assign("fk_genere", $_SESSION['new_album_data']['fk_genere']);
-		$smarty->assign("fk_artista", $_SESSION['new_album_data']['fk_artista']);
-		$smarty->assign("descrizione", $_SESSION['new_album_data']['descrizione']);
-		$smarty->assign("prezzo", $_SESSION['new_album_data']['prezzo']);
-		$smarty->assign("pubblicazione", $_SESSION['new_album_data']['pubblicazione']);
-		$smarty->assign("dischi", $_SESSION['new_album_data']['dischi']);
-		$smarty->assign("tracce", $_SESSION['new_album_data']['tracce']);
-		$smarty->assign("etichetta", $_SESSION['new_album_data']['etichetta']);
-		$smarty->assign("stock", $_SESSION['new_album_data']['stock']);
-		$smarty->assign("data_inserimento", $_SESSION['new_album_data']['data_inserimento']);
 	}
 
 	

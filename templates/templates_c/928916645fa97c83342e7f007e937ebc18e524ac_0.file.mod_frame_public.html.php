@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 09:38:18
+/* Smarty version 3.1.32, created on 2018-09-16 16:47:47
   from 'C:\wamp64\www\MusicStore\templates\mod_frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e248a71fd05_23837436',
+  'unifunc' => 'content_5b9e8933d3c9c8_56020061',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '928916645fa97c83342e7f007e937ebc18e524ac' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_frame_public.html',
-      1 => 1537090696,
+      1 => 1537116354,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e8933d3c9c8_56020061 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -46,10 +46,17 @@ function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl)
     <link rel="stylesheet" href="../assets/scss/style.css">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
     <!-- <?php echo '<script'; ?>
  type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"><?php echo '</script'; ?>
 > -->
+    <?php echo '<script'; ?>
+ src="../assets/js/vendor/jquery-2.1.4.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"><?php echo '</script'; ?>
+>
 
 </head>
 <body>
@@ -131,7 +138,7 @@ function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl)
 
         </header><!-- /header -->
         <!-- Header-->
-	
+
 		<?php $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['content']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
 		
@@ -139,9 +146,7 @@ function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl)
 	</div>
 	<!-- Right Panel -->
 	
-	<?php echo '<script'; ?>
- src="../assets/js/vendor/jquery-2.1.4.min.js"><?php echo '</script'; ?>
->
+
     <?php echo '<script'; ?>
  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"><?php echo '</script'; ?>
 >
@@ -151,7 +156,6 @@ function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl)
     <?php echo '<script'; ?>
  src="../assets/js/main.js"><?php echo '</script'; ?>
 >
-
 
     <?php echo '<script'; ?>
  src="../assets/js/lib/chart-js/Chart.bundle.js"><?php echo '</script'; ?>

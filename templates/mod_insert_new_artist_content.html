@@ -16,7 +16,16 @@
         </div>
     </div>
 </div>
-
+{if isset($message)}
+<div class="col-sm-12">
+    <div class="alert  alert-success alert-dismissible fade show" role="alert">
+         {$message}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+</div>
+{/if}
 <div class="content mt-3">
 
     <div class="card">
@@ -24,25 +33,25 @@
             <strong>Inserisci : </strong> Nuovo Artista
         </div>
         <div class="card-body card-block">
-            <form id="artist-form" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <form id="artist-form" action="mod_insert_new_artist.php" method="post" enctype="multipart/form-data" class="form-horizontal">
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
-                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista"
+                    <div class="col-12 col-md-9"><input type="text" id="new-artist-name-input" name="nome_artista"
                                                         class="form-control" autocomplete="none"></div>
                 </div>
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Album Pubblicati
                         : </label></div>
-                    <div class="col-12 col-md-9"><input type="number" id="text-input" name="album_pubblicati"
+                    <div class="col-12 col-md-9"><input type="number" id="new-artist-album-number-input" name="album_pubblicati"
                                                         class="form-control"></div>
                 </div>
 
                 <div class="row form-group">
                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Inizio Attività
                         : </label></div>
-                    <div class="col-12 col-md-9"><input type="number" id="text-input" name="inizio_attivita"
+                    <div class="col-12 col-md-9"><input type="number" id="new-artist-career-start-input" name="inizio_attivita"
                                                         class="form-control" min="1900" max="2018"></div>
                 </div>
 
@@ -67,7 +76,7 @@
 
         <div class="row form-group">
             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Biografia : </label></div>
-            <div class="col-12 col-md-9"><textarea name="biografia" id="textarea-input" rows="4" placeholder="..."
+            <div class="col-12 col-md-9"><textarea name="biografia" id="biografia-edit" rows="4" placeholder="..."
                                                    class="form-control"></textarea></div>
         </div>
 
@@ -77,7 +86,7 @@
             <div class="col col-md-9">
                 <div class="form-check">
 
-                    <select class="js-example-basic-multiple" name="generi[]" multiple="multiple" form="artist-form">
+                    <select id="new-artist-genres-select" class="js-example-basic-multiple" name="generi[]" multiple="multiple" form="artist-form">
                         {foreach $generi as $genere}
                         <option value="{$genere.genere}">{$genere.genere}</option>
                         {/foreach}
@@ -101,7 +110,7 @@
         <button type="submit" class="btn btn-primary btn-sm" form="artist-form">
             <i class="fa fa-dot-circle-o"></i> Procedi
         </button>
-        <button type="reset" class="btn btn-danger btn-sm">
+        <button type="reset" class="btn btn-danger btn-sm" onclick="reset_new_artist_form()">
             <i class="fa fa-ban"></i> Reset
         </button>
     </div>
@@ -160,6 +169,18 @@
             yearInput.disabled = false;
         }
     }
+	
+	function reset_new_artist_form(){
+		$('#new-artist-name-input').val('');
+		$('#new-artist-album-number-input').val('');
+		$('#new-artist-career-start-input').val('');
+		$('#fine-attivita-year').val(null);
+		$('#fine-attivita-year').prop('disabled', false);
+		$('#checkbox-in-attivita').removeAttr("checked");
+		nicEditors.findEditor( "biografia-edit" ).setContent('');
+		//Resettare select generi
+		$('#file-input').val('');
+	}
 </script>
 <script src="../js/nicEdit/nicEdit.js" type = "text/javascript"></script>
 <script type="text/javascript">
