@@ -4,8 +4,9 @@
 		session_start();
 	}
 	
-	$result = $db->query("delete from album where id_album = '{$_GET["delete"]}'");
-																											 
+	$ps = $db->get_connection()->prepare("delete from album where id_album = ?");
+	$ps->bind_param('i', $_GET["delete"]);
+	$ps->execute();
 
 
 ?>

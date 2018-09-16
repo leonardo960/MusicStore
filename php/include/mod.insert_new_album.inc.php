@@ -2,20 +2,10 @@
 
 	if (session_status() == PHP_SESSION_NONE) {
 		session_start();
-	}
-	
-	$result = $db->query("INSERT INTO album (nome_album, fk_genere, fk_artista, descrizione, prezzo, pubblicazione, dischi, tracce, etichetta, stock, data_inserimento) VALUES ('{$_POST["nome_album"]}',
-															  '{$_POST["fk_genere"]}',
-														     '{$_POST["fk_artista"]}',
-															 '{$_POST["descrizione"]}',
-															 '{$_POST["prezzo"]}',
-															 '{$_POST["pubblicazione"]}',
-															 '{$_POST["dischi"]}',
-															 '{$_POST["tracce"]}',
-															 '{$_POST["etichetta"]}',
-															 '{$_POST["stock"]}',
-															 '{$_POST["data_inserimento"]}')");
-																											 
+	}																									 
+	$ps = $db->get_connection()->prepare("insert into album (nome_album, fk_genere, fk_artista, descrizione, prezzo, pubblicazione, dischi, tracce, etichetta, stock, data_inserimento) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+	$ps->bind_param('siisisiisis', $_POST["nome_album"], $_POST["fk_genere"], $_POST["fk_artista"], $_POST["descrizione"], $_POST["prezzo"], $_POST["pubblicazione"], $_POST["dischi"], $_POST["tracce"], $_POST["etichetta"], $_POST["stock"], $_POST["data_inserimento"]);
+	$ps->execute();
 	
 	$result = $db->getResult("select id_album from album where descrizione = '{$_POST["descrizione"]}'");
 	$ext = pathinfo($_FILES['album-img']['name'], PATHINFO_EXTENSION);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-14 17:20:56
+/* Smarty version 3.1.32, created on 2018-09-16 08:21:35
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9bedf8279278_67281319',
+  'unifunc' => 'content_5b9e128f6cf6c0_67242843',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1536945653,
+      1 => 1537086093,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9bedf8279278_67281319 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e128f6cf6c0_67242843 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .delete-cart-modal {
     position: fixed;
@@ -139,16 +139,17 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 				<?php }?>
 				</ul>
 			</div>
-			
+			<?php if (count($_smarty_tpl->tpl_vars['cart_content']->value) != 0) {?>
 			<div class="cart-page-end">
 				<button onclick="checkout()">Proceed to Checkout</button>
 			</div>
+			<?php }?>
 		</form>
 		
 	</div>
 	<div class="delete-cart-modal">
 		<div class="delete-cart-modal-content">
-			<button onclick="location.reload(true)" class="delete-cart-close-button">×</button>
+			<span onclick="location.reload(true)" class="delete-cart-close-button">×</span>
 			<h1>Album deleted from cart!</h1>
 		</div>
 	</div>

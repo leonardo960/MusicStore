@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 14:55:26
+/* Smarty version 3.1.32, created on 2018-09-16 09:38:18
   from 'C:\wamp64\www\MusicStore\templates\mod_frame_public.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d1d5e597a41_51558429',
+  'unifunc' => 'content_5b9e248a71fd05_23837436',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '928916645fa97c83342e7f007e937ebc18e524ac' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_frame_public.html',
-      1 => 1537020924,
+      1 => 1537090696,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d1d5e597a41_51558429 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e248a71fd05_23837436 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -64,27 +64,27 @@ function content_5b9d1d5e597a41_51558429 (Smarty_Internal_Template $_smarty_tpl)
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="../images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand"><img src="../images/logo.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href=""> <i class="menu-icon fa fa-circle"></i>Pagina Principale</a>
+                        <a href="mod_dashboard.php"> <i class="menu-icon fa fa-circle"></i>Pagina Principale</a>
                     </li>
                     <h3 class="menu-title">Attività : </h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-music"></i>Gestisci Contenuti</a>
                         <ul class="sub-menu children dropdown-menu">
 						
-							<li><i class="fa fa-plus"></i><a href="">Album</a></li>
-                            <li><i class="fa fa-plus"></i><a href="">Artisti</a></li>
-							<li><i class="fa fa-plus"></i><a href="">Canzoni</a></li>
+							<li><i class="fa fa-plus"></i><a href="mod_insert_new_album.php">Album</a></li>
+                            <li><i class="fa fa-plus"></i><a href="mod_insert_new_artist.php">Artisti</a></li>
+							<li><i class="fa fa-plus"></i><a href="mod_insert_new_song.php">Canzoni</a></li>
                             
                         </ul>
                     </li>
                     <li>
-                        <a href="#"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-gift"></i>Gestisci Offerte</a>
+                        <a href="mod_special_offers_panel.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-gift"></i>Gestisci Offerte</a>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

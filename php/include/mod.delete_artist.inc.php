@@ -4,8 +4,9 @@
 		session_start();
 	}
 	
-	$result = $db->query("delete from artisti where id_artista = '{$_GET["delete"]}'");
-																											 
+	$ps = $db->get_connection()->prepare("delete from artisti where id_artista = ?");
+	$ps->bind_param('i', $_GET["delete"]);
+	$ps->execute();																										 
 
 
 

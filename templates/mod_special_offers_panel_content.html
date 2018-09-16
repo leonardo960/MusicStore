@@ -10,7 +10,7 @@
         </div>
 		
 		<div class="content mt-3">
-			<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+			<form id="add-offers-form" action="mod_special_offers_panel.php" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="animated fadeIn">
                 <div class="row">
 
@@ -32,13 +32,13 @@
                       </tr>
                     </thead>
                     <tbody>
-					{foreach $album_scontati as $item}
+					{foreach $album as $item}
                       <tr>
-						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func1({$item.id_album})"/></td>
-						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="" disabled="true"/></td>
+						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta_add[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func1({$item.id_album})"/></td>
+						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta_add[]" value="" disabled="true" step="0.01" /></td>
 						<td>{$item.prezzo}</td>
                         <td>{$item.nome_album}</td>
-                        <td>{$item.fk_artista}</td>
+                        <td>{$item.nome_artista}</td>
                       </tr>
 					{/foreach}  
                     </tbody>
@@ -54,10 +54,10 @@
 			</form>
 			
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-primary btn-sm" onclick="add_offers()">
                         <i class="fa fa-dot-circle-o"></i> Aggiungi
                     </button>
-                    <button type="reset" class="btn btn-danger btn-sm">
+                    <button type="reset" class="btn btn-danger btn-sm" onclick="reset_add_offer_table()">
                         <i class="fa fa-ban"></i> Reset
                     </button>
                 </div>
@@ -65,7 +65,7 @@
         </div><!-- .content -->
 		
 		<div class="content mt-3">
-			<form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+			<form id="modify-offers-form" action="mod_special_offers_panel.php" method="post" enctype="multipart/form-data" class="form-horizontal">
             <div class="animated fadeIn">
                 <div class="row">
 
@@ -87,13 +87,13 @@
                       </tr>
                     </thead>
                     <tbody>
-					{foreach $album as $item}
+					{foreach $album_scontati as $item}
                       <tr>
 						<td><input type="checkbox" id="checkbox-{$item.id_album}" name="selezioni_offerta[]" value="{$item.id_album}" class="offerte-checkbox" onclick="checkbox_func2({$item.id_album})"/></td>
-						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="{$item.prezzo_offerta}" disabled="true"/></td>
+						<td><input type="number" id="offerta-{$item.id_album}" name="prezzo_offerta[]" value="{$item.prezzo_offerta}" disabled="true" step="0.01"/></td>
 						<td>{$item.prezzo} </td>
                         <td>{$item.nome_album}</td>
-                        <td>{$item.fk_artista}</td>
+                        <td>{$item.nome_artista}</td>
                       </tr>
 					{/foreach}  
                     </tbody>
@@ -101,20 +101,20 @@
                         </div>
                     </div>
                 </div>
-				
+				<input id="modify-form-submit-mode" type="hidden" name="mode" value="" />
 
 
                 </div>
             </div><!-- .animated -->
 			</form>
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">
+                    <button type="submit" class="btn btn-primary btn-sm" onclick="modify_offers()" >
                         <i class="fa fa-dot-circle-o"></i> Modifica
                     </button>
-                    <button type="reset" class="btn btn-danger btn-sm">
+                    <button type="reset" class="btn btn-danger btn-sm" onclick="reset_modify_offer_table()" >
                         <i class="fa fa-ban"></i> Reset
                     </button>
-					<button class="btn btn-danger btn-sm">
+					<button class="btn btn-danger btn-sm" onclick="delete_offers()" >
                         <i class="fa fa-times-circle"></i> Rimuovi
                     </button>
                 </div>
@@ -146,5 +146,36 @@
 		} else {
 			yearInput.disabled = true;
 		}
+	}
+	
+	function reset_add_offer_table(){
+		{foreach $album as $item}
+		$("#checkbox-{$item.id_album}").prop( "checked", false);
+		$("#offerta-{$item.id_album}").val( "" );
+		$("#offerta-{$item.id_album}").prop( "disabled", true );
+		{/foreach}
+	}
+	
+	function reset_modify_offer_table(){
+		{foreach $album_scontati as $item}
+		var def_val_{$item.id_album} = {$item.prezzo_offerta};
+		$("#offerta-{$item.id_album}").val( {$item.prezzo_offerta} );
+		$("#checkbox-{$item.id_album}").prop( "checked", false);
+		$("#offerta-{$item.id_album}").prop( "disabled", true );
+		{/foreach}
+	}
+	
+	function add_offers(){
+		$("#add-offers-form").submit();
+	}
+	
+	function modify_offers(){
+		$("#modify-form-submit-mode").val( "modify" ) ;
+		$("#modify-offers-form").submit();
+	}
+	
+	function delete_offers(){
+		$("#modify-form-submit-mode").val( "delete" ) ;
+		$("#modify-offers-form").submit();
 	}
 </script>

@@ -5,19 +5,13 @@
 	}
 	
 	if($_POST['fine_attivita'] === ''){
-		$result = $db->query("INSERT INTO artisti (nome_artista, biografia, inizio_attivita, genere, album_pubblicati) VALUES ('{$_POST["nome_artista"]}', 
-															  '{$_POST["biografia"]}',
-														     '{$_POST["inizio_attivita"]}',
-															 '{$_POST["genere"]}',
-															 '{$_POST['album_pubblicati']}')");
+		$ps = $db->get_connection()->prepare("insert into artisti (nome_artista, biografia, inizio_attivita, genere, album_pubblicati) values (?, ?, ?, ?, ?)");
+		$ps->bind_param('ssiii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST["genere"], $_POST['album_pubblicati']);
+		$ps->execute();
 	} else {
-	$result = $db->query("INSERT INTO artisti (nome_artista, biografia, inizio_attivita, fine_attivita, genere, album_pubblicati) VALUES ('{$_POST["nome_artista"]}', 
-															  '{$_POST["biografia"]}',
-														     '{$_POST["inizio_attivita"]}',
-															 '{$_POST["fine_attivita"]}',
-															 '{$_POST["genere"]}',
-															 '{$_POST['album_pubblicati']}')");
-																											 
+		$ps = $db->get_connection()->prepare("insert into artisti (nome_artista, biografia, inizio_attivita, fine_attivita, genere, album_pubblicati) values (?, ?, ?, ?, ?, ?)");
+		$ps->bind_param('ssiiii', $_POST["nome_artista"], $_POST["biografia"], $_POST["inizio_attivita"], $_POST["fine_attivita"], $_POST["genere"], $_POST['album_pubblicati']);
+		$ps->execute();
 	}
 																											 
 	

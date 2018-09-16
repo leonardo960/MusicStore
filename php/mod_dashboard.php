@@ -55,8 +55,10 @@ $smarty->assign("in_consegna", $numOrdini);
 //Soldi negli ultimi 30 giorni ""
 $result = $db->getResult("SELECT SUM(prezzo) as numero FROM ordini WHERE data BETWEEN NOW() - INTERVAL 30 DAY  AND  NOW()");
 $soldi = 0;
-if ($result) {
+if ($result[0]['numero'] !== NULL) {
     $soldi = $result[0];
+} else {
+	$soldi = array("numero" => 0);
 }
 $smarty->assign("profitto", $soldi);
 

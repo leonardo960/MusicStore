@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-11 15:49:26
+/* Smarty version 3.1.32, created on 2018-09-16 09:36:16
   from 'C:\wamp64\www\MusicStore\templates\mod_special_offers_panel_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b97e406bfa204_25750623',
+  'unifunc' => 'content_5b9e241029ee27_09002953',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '53be286f16cc63e0d338e587517381676f03804b' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_special_offers_panel_content.html',
-      1 => 1536680961,
+      1 => 1537090574,
       2 => 'file',
     ),
   ),
@@ -20,143 +20,242 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b97e406bfa204_25750623 (Smarty_Internal_Template $_smarty_tpl) {
-?><style>
-.search-bar {
-	position: absolute;
-	top: 35%;
-	right: 35%;
-}
-.back-button {
-		position: absolute;
-		top: 18%;
-		left: 5%;
-	}
-.results {
-		position: absolute;
-		top: 40%;
-		left: 25%;
-}
-.page-numbers{
-		position: absolute;
-		bottom: 15%;
-		left: 50%;
-}
+function content_5b9e241029ee27_09002953 (Smarty_Internal_Template $_smarty_tpl) {
+?>		<div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Gestisci Offerte</h1>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+		
+		<div class="content mt-3">
+			<form id="add-offers-form" action="mod_special_offers_panel.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="animated fadeIn">
+                <div class="row">
 
-</style>
-<form class="back-button" action="mod_panel.php">
-    <input type="submit" value="Torna al Pannello Moderatore" />
-</form>
-
-<form class="search-bar" action="mod_special_offers_panel.php" method="GET">
-	Cerca Album da aggiungere/rimuovere alle offerte: <input type="text" name="query" />
-	<input type="submit" value="Cerca" />
-</form>
-
-<div class="results">
-	<?php if (isset($_smarty_tpl->tpl_vars['albums']->value) && count($_smarty_tpl->tpl_vars['albums']->value) > 0) {?>
-	Album Trovati:
-	<br>
-	<br>
-	<?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['albums']->value, 'album');
+				
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Aggiungi alle Offerte</strong>
+                        </div>
+                        <div class="card-body">
+                  <table class="table table-striped table-bordered bootstrap-data-table">
+                    <thead>
+                      <tr>
+						<th>Seleziona</th>
+                        <th>Prezzo Offerta</th>
+                        <th>Prezzo</th>
+                        <th>Album</th>
+                        <th>Artista</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'item');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 ?>
-	<?php echo $_smarty_tpl->tpl_vars['album']->value['nome_album'];?>
- 
-	<br>
-	Prezzo di Listino: <?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo'];?>
-&euro;
-	<?php if (isset($_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'])) {?>
-	<div>
-		Prezzo Offerta: <?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
-&euro;
-		<button id="show-offer-change-button-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" type="button" onclick="show_offer_change(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-)" style="display: block;">Modifica</button>
-		<form action="mod_special_offers_panel.php" method="POST">
-			<input type="submit" value="Rimuovi Offerta" />
-			<input type="hidden" name="mode" value="delete" />
-			<input type="hidden" name="id_album" value="<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" />
-		</form>
-		<form id="offer-change-form-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" style="display: none;" action="mod_special_offers_panel.php" method="POST">
-			<input  type="number" step="0.01" value="<?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
-" name="prezzo_offerta" /> 
-			<input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" name="id_album" />
-			<input type="hidden" name="mode" value="change" />
-			<input type="submit" value="Conferma Modifica" />
-			<button type="button" onclick="cancel_offer_change(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-)" >Cancella</button>
-		</form>
-	</div>
-	<?php }?>
-	<?php if (!isset($_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'])) {?>
-	<div id="offerta-assente-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-">
-		Nessun prezzo offerta impostato al momento.
-		<button id="insert-offer-button-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" type="button" onclick="show_offer_input(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-)" style="display: block;">Imposta</button>
-		<form id="offer-insert-form-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" style="display: none;" action="mod_special_offers_panel.php" method="POST">
-			Prezzo Offerta da impostare: <input  type="number" step="0.01" value="0" name="prezzo_offerta" /> 
-			<input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-" name="id_album" />
-			<input type="submit" value="Conferma" />
-			<input type="hidden" name="mode" value="insert" />
-			<button type="button" onclick="cancel_offer_input(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
-)" >Cancella</button>
-		</form>
-	</div>
-	<?php }?>
-	<br>
-	<?php
+                      <tr>
+						<td><input type="checkbox" id="checkbox-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" name="selezioni_offerta_add[]" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" class="offerte-checkbox" onclick="checkbox_func1(<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+)"/></td>
+						<td><input type="number" id="offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" name="prezzo_offerta_add[]" value="" disabled="true" step="0.01" /></td>
+						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_album'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_artista'];?>
+</td>
+                      </tr>
+					<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>  
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				
+
+
+                </div>
+            </div><!-- .animated -->
+			</form>
+			
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm" onclick="add_offers()">
+                        <i class="fa fa-dot-circle-o"></i> Aggiungi
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm" onclick="reset_add_offer_table()">
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+                </div>
+            
+        </div><!-- .content -->
+		
+		<div class="content mt-3">
+			<form id="modify-offers-form" action="mod_special_offers_panel.php" method="post" enctype="multipart/form-data" class="form-horizontal">
+            <div class="animated fadeIn">
+                <div class="row">
+
+				
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Offerte Esistenti : </strong> Seleziona per Modificare o Rimuovere
+                        </div>
+                        <div class="card-body">
+                  <table class="table table-striped table-bordered bootstrap-data-table">
+                    <thead>
+                      <tr>
+						<th>Seleziona</th>
+                        <th>Prezzo Offerta</th>
+                        <th>Prezzo</th>
+                        <th>Album</th>
+                        <th>Artista</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+					<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album_scontati']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+                      <tr>
+						<td><input type="checkbox" id="checkbox-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" name="selezioni_offerta[]" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" class="offerte-checkbox" onclick="checkbox_func2(<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+)"/></td>
+						<td><input type="number" id="offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+" name="prezzo_offerta[]" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo_offerta'];?>
+" disabled="true" step="0.01"/></td>
+						<td><?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo'];?>
+ </td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_album'];?>
+</td>
+                        <td><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_artista'];?>
+</td>
+                      </tr>
+					<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>  
+                    </tbody>
+                  </table>
+                        </div>
+                    </div>
+                </div>
+				<input id="modify-form-submit-mode" type="hidden" name="mode" value="" />
+
+
+                </div>
+            </div><!-- .animated -->
+			</form>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary btn-sm" onclick="modify_offers()" >
+                        <i class="fa fa-dot-circle-o"></i> Modifica
+                    </button>
+                    <button type="reset" class="btn btn-danger btn-sm" onclick="reset_modify_offer_table()" >
+                        <i class="fa fa-ban"></i> Reset
+                    </button>
+					<button class="btn btn-danger btn-sm" onclick="delete_offers()" >
+                        <i class="fa fa-times-circle"></i> Rimuovi
+                    </button>
+                </div>
+            
+        </div><!-- .content -->
+
+<?php echo '<script'; ?>
+>
+	function checkbox_func1(id){
+	
+		var checkBox = document.getElementById("checkbox-" + id);
+		var yearInput = document.getElementById("offerta-" + id);
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = false;
+		} else {
+			yearInput.disabled = true;
+		}
+	}
+<?php echo '</script'; ?>
+>
+
+<?php echo '<script'; ?>
+>
+	function checkbox_func2(id){
+	
+		var checkBox = document.getElementById("checkbox-" + id);
+		var yearInput = document.getElementById("offerta-" + id);
+	
+		if (checkBox.checked == true){
+			yearInput.disabled = false;
+		} else {
+			yearInput.disabled = true;
+		}
+	}
+	
+	function reset_add_offer_table(){
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
+?>
+		$("#checkbox-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").prop( "checked", false);
+		$("#offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").val( "" );
+		$("#offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").prop( "disabled", true );
+		<?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-	<?php }?>
-	<br>
-</div>
-<div class="page-numbers">
-	<?php
-$_smarty_tpl->tpl_vars['counter'] = new Smarty_Variable(null, $_smarty_tpl->isRenderingCache);$_smarty_tpl->tpl_vars['counter']->step = 1;$_smarty_tpl->tpl_vars['counter']->total = (int) ceil(($_smarty_tpl->tpl_vars['counter']->step > 0 ? $_smarty_tpl->tpl_vars['page_counter']->value+1 - (1) : 1-($_smarty_tpl->tpl_vars['page_counter']->value)+1)/abs($_smarty_tpl->tpl_vars['counter']->step));
-if ($_smarty_tpl->tpl_vars['counter']->total > 0) {
-for ($_smarty_tpl->tpl_vars['counter']->value = 1, $_smarty_tpl->tpl_vars['counter']->iteration = 1;$_smarty_tpl->tpl_vars['counter']->iteration <= $_smarty_tpl->tpl_vars['counter']->total;$_smarty_tpl->tpl_vars['counter']->value += $_smarty_tpl->tpl_vars['counter']->step, $_smarty_tpl->tpl_vars['counter']->iteration++) {
-$_smarty_tpl->tpl_vars['counter']->first = $_smarty_tpl->tpl_vars['counter']->iteration === 1;$_smarty_tpl->tpl_vars['counter']->last = $_smarty_tpl->tpl_vars['counter']->iteration === $_smarty_tpl->tpl_vars['counter']->total;?>
-		<a href="mod_special_offers_panel.php?page_id=<?php echo $_smarty_tpl->tpl_vars['counter']->value;?>
-"><?php echo $_smarty_tpl->tpl_vars['counter']->value;?>
-</a>
-	<?php }
-}
+	}
+	
+	function reset_modify_offer_table(){
+		<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album_scontati']->value, 'item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 ?>
-</div>
-<?php echo '<script'; ?>
->
-	function show_offer_change(album_id){
-		document.getElementById("show-offer-change-button-"+album_id).style.display = "none";
-		document.getElementById("offer-change-form-"+album_id).style.display = "block";
+		var def_val_<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+ = <?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo_offerta'];?>
+;
+		$("#offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").val( <?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo_offerta'];?>
+ );
+		$("#checkbox-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").prop( "checked", false);
+		$("#offerta-<?php echo $_smarty_tpl->tpl_vars['item']->value['id_album'];?>
+").prop( "disabled", true );
+		<?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 	}
 	
-	function cancel_offer_change(album_id){
-		document.getElementById("show-offer-change-button-"+album_id).style.display = "block";
-		document.getElementById("offer-change-form-"+album_id).style.display = "none";
+	function add_offers(){
+		$("#add-offers-form").submit();
 	}
 	
-	function show_offer_input(album_id){
-		document.getElementById("insert-offer-button-"+album_id).style.display = "none";
-		document.getElementById("offer-insert-form-"+album_id).style.display = "block";
+	function modify_offers(){
+		$("#modify-form-submit-mode").val( "modify" ) ;
+		$("#modify-offers-form").submit();
 	}
 	
-	function cancel_offer_input(album_id){
-		document.getElementById("insert-offer-button-"+album_id).style.display = "block";
-		document.getElementById("offer-insert-form-"+album_id).style.display = "none";
+	function delete_offers(){
+		$("#modify-form-submit-mode").val( "delete" ) ;
+		$("#modify-offers-form").submit();
 	}
-	
-	
 <?php echo '</script'; ?>
 >
 <?php }

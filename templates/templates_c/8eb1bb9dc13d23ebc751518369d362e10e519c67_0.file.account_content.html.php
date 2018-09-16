@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 14:45:50
+/* Smarty version 3.1.32, created on 2018-09-16 08:20:35
   from 'C:\wamp64\www\MusicStore\templates\account_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d1b1e39bf69_65916700',
+  'unifunc' => 'content_5b9e1253c73372_96613803',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8eb1bb9dc13d23ebc751518369d362e10e519c67' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\account_content.html',
-      1 => 1537022746,
+      1 => 1537085999,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d1b1e39bf69_65916700 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e1253c73372_96613803 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .modalDialog {
 	position: fixed;
@@ -43,19 +43,15 @@ function content_5b9d1b1e39bf69_65916700 (Smarty_Internal_Template $_smarty_tpl)
 }
 
 .modalDialog > div {
-	width: 400px;
+	width: 600px;
 	position: relative;
 	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
-	border-radius: 10px;
-	background: #fff;
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999);
+	padding: 25px;
+	background: #2b5849;
 }
 .close {
-	background: #606061;
-	color: #FFFFFF;
+	background: #162b22;
+	color: #1EA180;
 	line-height: 25px;
 	position: absolute;
 	right: -12px;
@@ -63,16 +59,22 @@ function content_5b9d1b1e39bf69_65916700 (Smarty_Internal_Template $_smarty_tpl)
 	top: -10px;
 	width: 24px;
 	text-decoration: none;
+	font-family: 'Quicksand', sans-serif !important;
 	font-weight: bold;
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
+	border: 2px solid #48C9A9;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
 	-moz-box-shadow: 1px 1px 3px #000;
 	-webkit-box-shadow: 1px 1px 3px #000;
 	box-shadow: 1px 1px 3px #000;
 }
 
-.close:hover { background: #00d9ff; }
+.close:hover { 
+	background: #2b5849; 
+	color: #b8ffed;
+	border: 2px solid #b8ffed;
+}
 
 .addressEditModalDialog {
 	position: fixed;
@@ -361,20 +363,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</div>
 
 			<div id="openModal" class="modalDialog" style="display: inline-block;">
-			<div>
+			<div class="new-address-popup">
 				<a href="#close" title="Close" class="close">X</a>
 				<form id="address-form" action="account.php" method="POST">
-					Enter new address:
-					<br>
-					<br>
-					Customer Name: <input type="text" name="customer_name" required /><br>
-					Customer Surname: <input type="text" name="customer_surname" required /><br>
-					Country: <input type="text" name="customer_country" required /><br>
-					Province: <input type="text" name="customer_province" required /><br>
-					City: <input type="text" name="customer_city" required /><br>
-					Postal Code: <input type="text" pattern="[0-9]+" name="customer_postal_code" required /><br>
-					Address: <input type="text" name="customer_address" required /><br>
-					Telephone: <input type="text" pattern="[0-9]+" name="customer_telephone" required /><br><br>
+					<label>New Address</label>
+					
+					<ul>
+						<li><h1>Customer Name<h1><input type="text" name="customer_name" required /></li>
+						<li><h1>Customer Surname<h1><input type="text" name="customer_surname" required /></li>
+						<li><h1>Country<h1><input type="text" name="customer_country" required /></li>
+						<li><h1>Province<h1><input type="text" name="customer_province" required /></li>
+						<li><h1>City<h1><input type="text" name="customer_city" required /></li>
+						<li><h1>Postal Code<h1><input type="text" pattern="[0-9]+" name="customer_postal_code" required /></li>
+						<li><h1>Address<h1><input type="text" name="customer_address" required /></li>
+						<li><h1>Telephone<h1><input type="text" pattern="[0-9]+" name="customer_telephone" required /></li>
+					</ul>
 					<button type="button" onclick="send_address()" >Confirm</button>
 				</form>
 			</div>
