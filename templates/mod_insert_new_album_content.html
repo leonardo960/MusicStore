@@ -141,8 +141,8 @@
 						{foreach $albums as $album}
 						  <tr>
 							<td>{$album.id_album}</td>
-							<td><a href="">{$artista.nome_album}</a></td> <!-- link alla pagina di modifica dell'album -->
-							<td><a href="">{$artista.nome_artista}</a></td> <!-- link alla pagina di modifica dell'artista -->
+							<td><a href="">{$album.nome_album}</a></td> <!-- link alla pagina di modifica dell'album -->
+							<td><a href="">{$album.fk_artista}</a></td> <!-- link alla pagina di modifica dell'artista -->
 						  </tr>
 						 {/foreach}
                       

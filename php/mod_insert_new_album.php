@@ -59,6 +59,8 @@
 	$smarty->assign("generi", $result);
 	$result = $db->getResult("select nome_artista, id_artista from artisti order by nome_artista");
 	$smarty->assign("artisti", $result);
+    $result = $db->getResult("select * from album");
+    $smarty->assign("albums", $result);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/mod_frame_public.html");

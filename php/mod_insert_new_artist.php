@@ -42,6 +42,9 @@
 
 	$result = $db->query("select * from genere");
 	$smarty->assign("generi", $result);
+    $result = $db->getResult("select * from artisti");
+    $smarty->assign("artisti", $result);
+
 	require "include/mod.set_logged_header.inc.php";
 	
 	$smarty->assign("content", $content);

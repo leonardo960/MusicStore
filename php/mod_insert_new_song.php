@@ -44,6 +44,8 @@
 	$smarty->assign("generi", $result);
 	$result = $db->query("select id_album, nome_album, id_artista from album join artisti where album.fk_artista = artisti.id_artista");
 	$smarty->assign("album", $result);
+    $result = $db->query("SELECT * FROM canzoni");
+    $smarty->assign("canzoni", $result);
 	$smarty->assign("content", $content);
 	
 	$smarty->display("../templates/mod_frame_public.html");
