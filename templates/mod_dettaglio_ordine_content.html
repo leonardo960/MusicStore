@@ -22,24 +22,24 @@
                           <table class="table">
                           <tbody>
                           <tr>
-                              <td scope="row">ID : </td>
-                              <td>{$id_album}</td>
+                              <td scope="row">ID Ordine : </td>
+                              <td>{$ordine.id_ordine}</td>
                           </tr>
                           <tr>
-                              <td scope="row">Utente : </td>
-                              <td>{$utente}</td>
+                              <td scope="row">Cliente : </td>
+                              <td>{$ordine.cliente}</td>
                           </tr>
                           <tr>
                               <td scope="row">Album : </td>
-                              <td>{$nome_album}</td>
+                              <td>{$ordine.nome_album}</td>
                           </tr>
 						  <tr>
                               <td scope="row">Data : </td>
-                              <td>{$data_ordine}</td>
+                              <td>{$ordine.data}</td>
                           </tr>
 						  <tr>
                               <td scope="row">Spedizione : </td>
-                              <td>{$tipo_spedizione}</td>
+                              <td>{$ordine.tipo_spedizione}</td>
                           </tr>
 						  
 						</tbody>
@@ -47,30 +47,37 @@
 							<tr>
                               <th scope="column">Indirizzo</th>
 							</tr>
-							
+							<tr>
+                              <td scope="row">Nome : </td>
+                              <td>{$ordine.nome}</td>
+							</tr>
+							<tr>
+                              <td scope="row">Cognome : </td>
+                              <td>{$ordine.cognome}</td>
+							</tr>
 							<tr>
                               <td scope="row">Paese : </td>
-                              <td>{$paese}</td>
+                              <td>{$ordine.paese}</td>
 							</tr>
 							<tr>
                               <td scope="row">Indirizzo : </td>
-                              <td>{$indirizzo}</td>
+                              <td>{$ordine.indirizzo}</td>
 							</tr>
 							<tr>
                               <td scope="row">Città : </td>
-                              <td>{$citta}</td>
+                              <td>{$ordine.citta}</td>
 							</tr>
 							<tr>
                               <td scope="row">Provincia : </td>
-                              <td>{$provincia}</td>
+                              <td>{$ordine.provincia}</td>
 							</tr>
 							<tr>
                               <td scope="row">Cap : </td>
-                              <td>{$cap}</td>
+                              <td>{$ordine.cap}</td>
 							</tr>
 							<tr>
                               <td scope="row">Recapito : </td>
-                              <td>{$telefono}</td>
+                              <td>{$ordine.recapito}</td>
 							</tr>
 						</tbody>
 						<tbody>
@@ -80,15 +87,15 @@
 							
 							<tr>
                               <td scope="row">Numero Carta : </td>
-                              <td>{$numero_carta}</td>
+                              <td>{$ordine.numero_carta}</td>
 							</tr>
 							<tr>
                               <td scope="row">Data di Scadenza : </td>
-                              <td>{$scadenza_carta}</td>
+                              <td>{$ordine.data_scadenza}</td>
 							</tr>
 							<tr>
                               <td scope="row">Proprietario : </td>
-                              <td>{$cognome_proprietario} {$nome_proprietario}</td>
+                              <td>{$ordine.cognome_carta} {$ordine.nome_carta}</td>
 							</tr>
 							
 						</tbody>
@@ -107,11 +114,11 @@
 								<div class="row form-group">
 									<div class="col col-md-3"><label for="select" class=" form-control-label">Stato : </label></div>
 									<div class="col-12 col-md-9">
-									  <select name="select" id="select" class="form-control">
+									  <select name="select" id="select" class="form-control" onchange="change_order_status(this.value)">
 									  
-										<option value="Inserito" {if $status === 'Inserito'}selected{/if}>Inserito</option>
-										<option value="Spedito" {if $status === 'Spedito'}selected{/if}>Spedito</option>
-										<option value="Consegnato" {if $status === 'Consegnato'}selected{/if}>Consegnato</option>
+										<option value="Inserito" {if $ordine.status === 'Inserito'}selected{/if}>Inserito</option>
+										<option value="Spedito" {if $ordine.status === 'Spedito'}selected{/if}>Spedito</option>
+										<option value="Consegnato" {if $ordine.status === 'Consegnato'}selected{/if}>Consegnato</option>
 										
 									  </select>
 									</div>
@@ -123,3 +130,10 @@
 			</div>
 		</div>
 	</div>
+<script>
+	function change_order_status(status){
+		var ordine = {$ordine.id_ordine};
+		{literal} $.post("mod_order_details.php", { new_status: status, id_ordine: ordine }).done(function(data){location.reload(true);}); {/literal}
+		
+	}
+</script>

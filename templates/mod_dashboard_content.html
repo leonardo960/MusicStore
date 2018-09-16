@@ -126,7 +126,7 @@
             </div>
 		
 		<div class="col-xl-3 col-lg-6">
-			<a href=""><div class="card text-white">
+			<a style="cursor: pointer;" onclick="show_shipped_orders()"><div class="card text-white">
                     <div class="card-body">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-truck text-warning border-warning"></i></div>
@@ -140,7 +140,7 @@
         </div>
 		
 		<div class="col-xl-3 col-lg-6">
-            <a href=""><div class="card">
+            <a style="cursor: pointer;" onclick="show_toship_orders()"><div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-package text-danger border-danger"></i></div>
@@ -178,7 +178,7 @@
 					
 						{foreach $ordini as $ordine}
 						  <tr>
-							<td><a href="">{$ordine.id_ordine}</a></td>
+							<td><a href="mod_order_details.php?id_ordine={$ordine.id_ordine}">{$ordine.id_ordine}</a></td>
 							<td>{$ordine.cliente}</td>
 							<td><a href="">{$ordine.album}</a></td>
 							<td>{$ordine.status}</td>
@@ -195,3 +195,12 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
+<script>
+	function show_toship_orders(){
+		$('#bootstrap-data-table').DataTable().search('Inserito').draw();
+	}
+	
+	function show_shipped_orders(){
+		$('#bootstrap-data-table').DataTable().search('Spedito').draw();
+	}
+</script>
