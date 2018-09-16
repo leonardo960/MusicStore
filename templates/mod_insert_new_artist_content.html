@@ -24,7 +24,7 @@
                         <strong>Inserisci : </strong> Nuovo Artista
                       </div>
                       <div class="card-body card-block">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form id="artist-form" action="" method="post" enctype="multipart/form-data" class="form-horizontal">
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
@@ -88,7 +88,7 @@
                       </div>
 					  
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
+                        <button type="submit" class="btn btn-primary btn-sm" form="artist-form">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">
