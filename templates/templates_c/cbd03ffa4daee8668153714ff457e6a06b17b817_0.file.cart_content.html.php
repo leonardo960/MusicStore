@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 08:21:35
+/* Smarty version 3.1.32, created on 2018-09-16 15:28:58
   from 'C:\wamp64\www\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e128f6cf6c0_67242843',
+  'unifunc' => 'content_5b9e76ba28c0d8_08802657',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cbd03ffa4daee8668153714ff457e6a06b17b817' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\cart_content.html',
-      1 => 1537086093,
+      1 => 1537111360,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e128f6cf6c0_67242843 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e76ba28c0d8_08802657 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .delete-cart-modal {
     position: fixed;
@@ -123,7 +123,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 " min="1" value="1"></input>
 							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 " class="cart-remove-button">Details</a>
-							<a style="cursor: pointer;" class="cart-remove-button" onclick="remove_item(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+							<a id="remove-from-cart-<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+" style="cursor: pointer;" class="cart-remove-button" onclick="remove_item(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 )">Remove</a>
 						
 						</div>

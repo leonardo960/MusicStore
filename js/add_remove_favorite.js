@@ -1,8 +1,10 @@
 function add_to_favorites(album_id){
+	$("#add-to-favorites-"+album_id).css("pointer-events", "none");
 	$.post( "favorites.php", { "add_favorite": album_id })
 	.done(function( response ){
 		if(response === 'added'){
 			toggleAddFavoriteModal();
+			$("#add-to-favorites-"+album_id).css("pointer-events", "auto");
 		} else if(response === 'already_added') {
 			alert("Album already in your favorites.");
 		} else {
@@ -23,9 +25,11 @@ function toggleRemoveFavoriteModal() {
 
 
 function remove_from_favorites(album_id){
+	$("#remove-from-favorites-"+album_id).css("pointer-events", "none");
 	$.post( "favorites.php", { "delete_favorite": album_id })
 	.done(function( response ){
 		if(response === 'deleted'){
+			$("#remove-from-favorites-"+album_id).css("pointer-events", "auto");
 			toggleRemoveFavoriteModal();
 		} else if (response === 'already_deleted') {
 			alert("Album already removed from your favorites.");

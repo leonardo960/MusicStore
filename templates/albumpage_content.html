@@ -102,7 +102,7 @@
 										
 										<li><h2>Artist : <a href="artistpage.php?id_artista={$album.id_artista}">{$album.nome_artista}</a></h2></li>
 										<br>
-										<li><h2>Genre : {$album.genere}</h2></li>
+										<li><h2>Genres : {foreach $album.generi as $genere name=genres}{$genere}{if not $smarty.foreach.genres.last} - {/if}{/foreach}</h2></li>
 										<br>
 										<li><h2>Label : {$album.etichetta}</h2></li>
 										<br>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 08:47:39
+/* Smarty version 3.1.32, created on 2018-09-16 16:40:15
   from 'C:\wamp64\www\MusicStore\templates\resultpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9cc72b5e07b9_07308118',
+  'unifunc' => 'content_5b9e876f963f08_67650369',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1dc45e7232935d0add00748d7ff31b7e068d41cf' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\resultpage_content.html',
-      1 => 1537001256,
+      1 => 1537111425,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9cc72b5e07b9_07308118 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e876f963f08_67650369 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .add-cart-modal {
     position: fixed;
@@ -215,7 +215,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 &euro;</li>
 							<a class="result-album-detail-button" href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 "><li>See Details</li></a>
-							<a style="cursor: pointer;" onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+							<a id="add-to-cart-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+" style="cursor: pointer;" onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )" class="result-album-addcart-button"><li>Add to Cart</li></a>
 						</div>
 					</div>

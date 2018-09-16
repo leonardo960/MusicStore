@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 08:40:59
+/* Smarty version 3.1.32, created on 2018-09-16 15:34:14
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_song_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e171b203395_17401607',
+  'unifunc' => 'content_5b9e77f65ca604_89060679',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd84c9e5add38c0b730eb0c7318fc6dd3bf757095' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_song_content.html',
-      1 => 1537085999,
+      1 => 1537096009,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e171b203395_17401607 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e77f65ca604_89060679 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -87,7 +87,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       </div>
 					  
                       <div class="card-footer">
-                        <button id="song-submin" type="submit" class="btn btn-primary btn-sm">
+                        <button id="song-submin" type="submit" class="btn btn-primary btn-sm" form="song-form">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">

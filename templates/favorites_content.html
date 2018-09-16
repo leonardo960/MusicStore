@@ -150,7 +150,7 @@
 									<a href="albumpage.php?id_album={$favorite.id_album}">Go to Info</a>
 										<h4><span>Price Right Now : </span>{$favorite.prezzo}&euro;</h4>
 									<a onclick="add_to_cart({$favorite.id_album})">Add to Cart</a>
-									<a onclick="remove_from_favorites({$favorite.id_album})">Remove from Favorites</a>
+									<a id="remove-from-favorites-{$favorite.id_album}" onclick="remove_from_favorites({$favorite.id_album})">Remove from Favorites</a>
 								</div>
 								<div class="clear"> </div>
 							</div><br />

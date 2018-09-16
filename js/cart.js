@@ -1,5 +1,11 @@
 function remove_item(item_id){
-	$.post("cart.php", {remove_item: item_id}).done(function(response){toggleDeleteCartModal()});
+	$("#remove-from-cart-"+item_id).css("pointer-events", "none");
+	$.post("cart.php", {remove_item: item_id}).done(
+		function(response){
+			toggleDeleteCartModal(); 
+			$("#remove-from-cart-"+item_id).css("pointer-events", "auto");
+		}
+	);
 }
 
 
@@ -18,11 +24,13 @@ function checkout(){
 }
 
 function add_to_cart(id){
-    $.post( "cart.php", { "add_item": id })
+    $("#add-to-cart-"+id).css("pointer-events", "none");
+	$.post( "cart.php", { "add_item": id })
 	.done(function( response ){
 		if(response === 'success'){
 			toggleAddCartModal();
 			modifyCartNumber();
+			$("#add-to-cart-"+id).css("pointer-events", "auto");
 		} else if(response === 'already_added') {
 			toggleAlreadyAddedCartModal();
 		} else {
@@ -76,5 +84,7 @@ function toggleAlreadyAddedCartModal() {
 var addCartCloseButton = document.querySelector(".add-cart-close-button");
 var alreadyAddedCartCloseButton = document.querySelector(".already-added-cart-close-button");
 
-addCartCloseButton.addEventListener("click", toggleAddCartModal);
-alreadyAddedCartCloseButton.addEventListener("click", toggleAlreadyAddedCartModal);
+if(addCartCloseButton)
+	addCartCloseButton.addEventListener("click", toggleAddCartModal);
+if(alreadyAddedCartCloseButton)
+	alreadyAddedCartCloseButton.addEventListener("click", toggleAlreadyAddedCartModal);

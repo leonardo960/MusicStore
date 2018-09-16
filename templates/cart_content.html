@@ -88,7 +88,7 @@
 							 
 							<input class="cart-item-amount" id="cart-item-amount" name="{$item.item_name}" type="number" oninvalid="setCustomValidity('Available ' + this.max)" onkeypress="return event.keyCode != 13;" max="{$item.in_stock}" min="1" value="1"></input>
 							<a href="albumpage.php?id_album={$item.item_id}" class="cart-remove-button">Details</a>
-							<a style="cursor: pointer;" class="cart-remove-button" onclick="remove_item({$item.item_id})">Remove</a>
+							<a id="remove-from-cart-{$item.item_id}" style="cursor: pointer;" class="cart-remove-button" onclick="remove_item({$item.item_id})">Remove</a>
 						
 						</div>
 					</div>

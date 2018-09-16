@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 10:53:12
+/* Smarty version 3.1.32, created on 2018-09-16 11:07:34
   from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_album_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e3618eec198_16566030',
+  'unifunc' => 'content_5b9e3976c0a3d0_14306675',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '625d246f3c10f623625be74ecfad4a884075396d' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_album_content.html',
-      1 => 1537091116,
+      1 => 1537096009,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e3618eec198_16566030 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9e3976c0a3d0_14306675 (Smarty_Internal_Template $_smarty_tpl) {
 ?>        <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -51,7 +51,7 @@ function content_5b9e3618eec198_16566030 (Smarty_Internal_Template $_smarty_tpl)
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nome : </label></div>
-                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_artista" class="form-control" autocomplete="none" required></div>
+                            <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_album" class="form-control" autocomplete="none" required></div>
                           </div>
                           
 						  <div class="row form-group">
@@ -102,7 +102,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descrizione : </label></div>
-                            <div class="col-12 col-md-9"><textarea name="biografia" id="descrizione-edit" rows="4" placeholder="..." class="form-control" required></textarea></div>
+                            <div class="col-12 col-md-9"><textarea name="descrizione" id="descrizione-edit" rows="4" placeholder="..." class="form-control" required></textarea></div>
                           </div>
                           
                           
@@ -117,7 +117,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
 ?>
                                 <label for="checkbox" class="form-check-label">
-                                  <input type="checkbox" id="checkbox" name="fk_genere[]" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
+                                  <input type="checkbox" id="checkbox" name="fk_genere" value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['id_genere'];?>
 " class="form-check-input"><?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
 
                                 </label>

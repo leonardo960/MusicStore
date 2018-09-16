@@ -15,10 +15,16 @@
 }
  $_GET['id_artista'] = test_input($_GET['id_artista']);
 
- $result = $db->getResult("SELECT nome_artista, genere.genere, inizio_attivita, fine_attivita, biografia, img_path FROM artisti join genere on artisti.genere = genere.id_genere WHERE id_artista = '{$_GET['id_artista']}'");
- $smarty->assign("artista", $result[0]);
+ $artista = $db->getResult("SELECT nome_artista, inizio_attivita, fine_attivita, biografia, img_path FROM artisti WHERE id_artista = '{$_GET['id_artista']}'");
+ $genres = $db->getResult("select * from genere_artisti where artista = '{$_GET['id_artista']}'");
+ $artista[0]['generi'] = array();
+ for($i = 0; $i < count($genres); $i++){
+	array_push($artista[0]['generi'], $genres[$i]['genere']);
+ }
+ $smarty->assign("artista", $artista[0]);
  
- $result = $db->getResult("SELECT nome_album, genere.genere, album.descrizione, prezzo, id_album, pubblicazione, dischi, tracce, etichetta, album.img_path, data_inserimento FROM artisti JOIN album ON artisti.id_artista = album.fk_artista JOIN genere ON genere.id_genere = album.fk_genere WHERE id_artista = '{$_GET['id_artista']}' ");
+ 
+ $result = $db->getResult("SELECT nome_album, album.descrizione, prezzo, id_album, pubblicazione, dischi, tracce, etichetta, album.img_path, data_inserimento FROM artisti JOIN album ON artisti.id_artista = album.fk_artista JOIN genere ON genere.id_genere = album.fk_genere WHERE id_artista = '{$_GET['id_artista']}' ");
  $smarty->assign("album", $result);
  
  require "include/set_logged_header.inc.php";

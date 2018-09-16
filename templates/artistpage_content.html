@@ -11,7 +11,7 @@
 								<div class="product-value">
 								<h4><label>Artist : </label>{$artista.nome_artista}</h4>
 									<ul>
-										<li><h2>Genre : {$artista.genere}</h2></li>
+										<li><h2>Genres : {foreach $artista.generi as $genere name=genres}{$genere}{if not $smarty.foreach.genres.last} - {/if}{/foreach}</h2></li>
 										<br>
 										<li><h2>Years active : {$artista.inizio_attivita} - {if strlen($artista.fine_attivita) > 0}{$artista.fine_attivita}{else}Active{/if}</h2></li>
 										<br>
