@@ -24,13 +24,13 @@
                         <strong>Inserisci : </strong> Nuova Canzone
                       </div>
                       <div class="card-body card-block">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form id="song-form" action="" method="post" enctype="multipart/form-data" class="dropzone, form-horizontal">
 						  
                           <div class="row form-group">
                             <div class="col col-md-3"><label for="text-input" class=" form-control-label">Titolo : </label></div>
                             <div class="col-12 col-md-9"><input type="text" id="text-input" name="nome_canzone" class="form-control" autocomplete="none" required></div>
                           </div>
-                          
+
 						  <div class="row form-group">
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Album : </label></div>
                             <div class="col-12 col-md-9">
@@ -54,7 +54,7 @@
                       </div>
 					  
                       <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-sm">
+                        <button id="song-submin" type="submit" class="btn btn-primary btn-sm">
                           <i class="fa fa-dot-circle-o"></i> Procedi
                         </button>
                         <button type="reset" class="btn btn-danger btn-sm">
@@ -105,30 +105,6 @@
             </div><!-- .animated -->
         </div><!-- .content -->
 
-</style>
-<div class="menu">
-	<form id="song-form" class="dropzone" action="mod_insert_new_song.php" method="POST" enctype="multipart/form-data">
-		Nome Canzone:<input type="text" name="nome_canzone" maxlength="30" required />
-		<br>
-		Album:<select id="album-fk" name="album-info">
-					{foreach $album as $item}
-					{literal}<option id="album-fk-option" value='{"id_album": {/literal}"{$item.id_album}"{literal},"id_artista": {/literal}"{$item.id_artista}"{literal}}' >{/literal}{$item.nome_album}</option>
-					{/foreach}
-				</select>
-		<br>
-		<input type="number" hidden />
-		Preview Canzone:
-		<div class="dropzone-previews"></div>
-		<br>
-		<input id="song-submit" type="submit" value="Conferma"/>
-	</form>
-	<br>
-	<br>
-
-</div>
-<form class="back-button"  action="mod_content_management.php">
-    <input type="submit" value="Torna alla Gestione Contenuti" />
-</form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="../js/dropzone.js"></script>
 <script type="text/javascript">
