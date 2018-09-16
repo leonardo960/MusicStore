@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 17:28:18
+/* Smarty version 3.1.32, created on 2018-09-16 21:08:15
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\cart_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e92b22befc5_53532801',
+  'unifunc' => 'content_5b9ec63fd99ad3_60253937',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '34ec6550b750fa7525adabaccb5c3d14123797eb' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\cart_content.html',
-      1 => 1537118812,
+      1 => 1537132093,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e92b22befc5_53532801 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ec63fd99ad3_60253937 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .delete-cart-modal {
     position: fixed;
@@ -118,8 +118,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 							
 							 <!-- Il messaggio da visualizzare quando eccedi la quantità disponibile è dentro setCustomValidity -->
 							 
-							<input class="cart-item-amount" id="cart-item-amount" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
-" type="number" oninvalid="setCustomValidity('Available ' + this.max)" onkeypress="return event.keyCode != 13;" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
+							<input class="cart-item-amount" id="cart-item-amount-<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+" name="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
+" data-id="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+" type="number" onchange="updateQuantity(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
+)" oninvalid="setCustomValidity('Available ' + this.max)" onkeypress="return event.keyCode != 13;" max="<?php echo $_smarty_tpl->tpl_vars['item']->value['in_stock'];?>
 " min="1" value="1"></input>
 							<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['item']->value['item_id'];?>
 " class="cart-remove-button">Details</a>
@@ -142,7 +145,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 			</div>
 			<?php if (count($_smarty_tpl->tpl_vars['cart_content']->value) != 0) {?>
 			<div class="cart-page-end">
-				<button onclick="checkout()">Proceed to Checkout</button>
+				<button style="cursor: pointer;" onclick="checkout()">Proceed to Checkout</button>
 			</div>
 			<?php }?>
 		</form>

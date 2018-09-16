@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 17:28:07
+/* Smarty version 3.1.32, created on 2018-09-16 20:19:08
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\cart_cashout_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e92a75dc461_77946101',
+  'unifunc' => 'content_5b9ebabc1e72e5_33759566',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff758ba1e5b4754b9027d5c04ed1165fc6b786c2' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\cart_cashout_content.html',
-      1 => 1537118883,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e92a75dc461_77946101 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebabc1e72e5_33759566 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="cart-page-container">
 	<form id="cart_form" action="" method="POST">
 		<div class="cart-page-title-box">
@@ -129,9 +129,9 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 ?>
 								<div class="checkout-item-box">
-									<label>Album : <a><?php echo $_smarty_tpl->tpl_vars['item']->value['item_name'];?>
+									<label>Album : <a><?php echo $_smarty_tpl->tpl_vars['item']->value['nome_album'];?>
 </a></label><br>
-									<h1>Price : </h1><input type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+									<h1>Price : </h1><input type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo'];?>
 " readonly />&euro;<br>
 									<h1>Quantity : </h1><input type="number" value="<?php echo $_smarty_tpl->tpl_vars['item']->value['item_quantity'];?>
 " readonly /><br>
@@ -148,9 +148,9 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['method']->value) {
 ?>
-									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="<?php echo $_smarty_tpl->tpl_vars['method']->value['price'];?>
-"/><label><?php echo $_smarty_tpl->tpl_vars['method']->value['name'];?>
- : <a><?php echo $_smarty_tpl->tpl_vars['method']->value['price'];?>
+									<input type="radio" onclick="updateTotal()" name="shipping_radiobutton" class="shipping-radiobutton" value="<?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
+"/><label><?php echo $_smarty_tpl->tpl_vars['method']->value['nome'];?>
+ : <a><?php echo $_smarty_tpl->tpl_vars['method']->value['prezzo'];?>
  &euro;</a></label>
 									<?php
 }
@@ -205,7 +205,7 @@ function addSticky() {
 >
 <?php echo '<script'; ?>
 >
-window.onload = updateTotal();
+window.onload = updateTotal;
 function updateTotal(){
 	var total = 0;
 	var items_total = 0;
@@ -217,10 +217,10 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 ?>
 		total += (Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_quantity'];?>
-) * Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+) * Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo'];?>
 ));
 		items_total += (Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_quantity'];?>
-) * Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['item_price'];?>
+) * Number(<?php echo $_smarty_tpl->tpl_vars['item']->value['prezzo'];?>
 ));
 	<?php
 }

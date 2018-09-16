@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-12 19:12:23
+/* Smarty version 3.1.32, created on 2018-09-16 20:19:04
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\index_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b99651797f439_85490769',
+  'unifunc' => 'content_5b9ebab8f0bcb2_96426337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bbe7a471f77f116396ae75f9e182c18e4158f02c' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\index_content.html',
-      1 => 1536779499,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b99651797f439_85490769 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebab8f0bcb2_96426337 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!--start-image-slider---->
 					<div class="image-slider">
 						<!-- Slideshow 1 -->

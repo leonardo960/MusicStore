@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 16:07:10
+/* Smarty version 3.1.32, created on 2018-09-16 20:20:54
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\albumpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d2e2e6b7644_39446837',
+  'unifunc' => 'content_5b9ebb26f019c2_59361068',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8c941efcb2e8eca9c9be7980d591aed81d4da5ec' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\albumpage_content.html',
-      1 => 1537024780,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d2e2e6b7644_39446837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebb26f019c2_59361068 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .add-cart-modal {
     position: fixed;
@@ -130,8 +130,21 @@ function content_5b9d2e2e6b7644_39446837 (Smarty_Internal_Template $_smarty_tpl)
 "><?php echo $_smarty_tpl->tpl_vars['album']->value['nome_artista'];?>
 </a></h2></li>
 										<br>
-										<li><h2>Genre : <?php echo $_smarty_tpl->tpl_vars['album']->value['genere'];?>
-</h2></li>
+										<li><h2>Genres : <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['album']->value['generi'], 'genere', false, NULL, 'genres', array (
+  'last' => true,
+  'iteration' => true,
+  'total' => true,
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
+$_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['iteration']++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['iteration'] === $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['total'];
+echo $_smarty_tpl->tpl_vars['genere']->value;
+if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last'] : null)) {?> - <?php }
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h2></li>
 										<br>
 										<li><h2>Label : <?php echo $_smarty_tpl->tpl_vars['album']->value['etichetta'];?>
 </h2></li>

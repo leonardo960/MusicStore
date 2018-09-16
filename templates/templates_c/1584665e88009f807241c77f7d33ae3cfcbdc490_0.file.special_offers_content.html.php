@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 16:06:29
+/* Smarty version 3.1.32, created on 2018-09-16 20:21:14
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\special_offers_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d2e05e241d4_06292748',
+  'unifunc' => 'content_5b9ebb3a302125_60099596',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1584665e88009f807241c77f7d33ae3cfcbdc490' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\special_offers_content.html',
-      1 => 1537027552,
+      1 => 1537128316,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d2e05e241d4_06292748 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebb3a302125_60099596 (Smarty_Internal_Template $_smarty_tpl) {
 ?><style>
 .add-favorite-modal {
     position: fixed;
@@ -220,18 +220,21 @@ foreach ($_from as $_smarty_tpl->tpl_vars['album']->value) {
 								</div>
 								<div class="cartire-grid-cartinfo">
 									<h4>Info Page</h4>
-									<a href="artistpage.php?id_artista=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_artista'];?>
+									<a href="albumpage.php?id_album=<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 ">Go to Info</a>
 									<h4><span>Special Price : </span><?php echo $_smarty_tpl->tpl_vars['album']->value['prezzo_offerta'];?>
 &euro;</h4>
-									<a onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+									<a id="add-to-cart-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+" onclick="add_to_cart(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )">Add to Cart</a>
 									<?php if ($_smarty_tpl->tpl_vars['user_logged']->value == true) {?>
 										<?php if ($_smarty_tpl->tpl_vars['album']->value['preferito'] == true) {?>
-											<a onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+											<a id="remove-from-favorites-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+" onclick="remove_from_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )">Remove from Favorites</a>
 										<?php } else { ?>
-											<a onclick="add_to_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+											<a id="add-to-favorites-<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
+" onclick="add_to_favorites(<?php echo $_smarty_tpl->tpl_vars['album']->value['id_album'];?>
 )">Add to Favorites</a>
 										<?php }?>
 									<?php } else { ?>

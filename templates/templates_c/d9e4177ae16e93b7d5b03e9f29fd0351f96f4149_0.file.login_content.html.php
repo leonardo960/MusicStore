@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-07 15:26:36
+/* Smarty version 3.1.32, created on 2018-09-16 20:23:29
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\login_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9298ac4b7d66_86256510',
+  'unifunc' => 'content_5b9ebbc1e1e076_67078890',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd9e4177ae16e93b7d5b03e9f29fd0351f96f4149' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\login_content.html',
-      1 => 1534150888,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9298ac4b7d66_86256510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebbc1e1e076_67078890 (Smarty_Internal_Template $_smarty_tpl) {
 if (isset($_smarty_tpl->tpl_vars['error']->value)) {
 $_smarty_tpl->_subTemplateRender(((string)$_smarty_tpl->tpl_vars['error']->value), $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 }?>

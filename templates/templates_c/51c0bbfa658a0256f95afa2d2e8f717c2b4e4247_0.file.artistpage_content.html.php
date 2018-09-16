@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-15 14:53:32
+/* Smarty version 3.1.32, created on 2018-09-16 20:23:46
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\artistpage_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9d1cec713009_59547156',
+  'unifunc' => 'content_5b9ebbd2873697_08840701',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '51c0bbfa658a0256f95afa2d2e8f717c2b4e4247' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\artistpage_content.html',
-      1 => 1537000406,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9d1cec713009_59547156 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebbd2873697_08840701 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="content">
 	<!-- TODO completare -->
 					<div class="single-page">
@@ -36,8 +36,21 @@ function content_5b9d1cec713009_59547156 (Smarty_Internal_Template $_smarty_tpl)
 								<h4><label>Artist : </label><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
 </h4>
 									<ul>
-										<li><h2>Genre : <?php echo $_smarty_tpl->tpl_vars['artista']->value['genere'];?>
-</h2></li>
+										<li><h2>Genres : <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['artista']->value['generi'], 'genere', false, NULL, 'genres', array (
+  'last' => true,
+  'iteration' => true,
+  'total' => true,
+));
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
+$_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['iteration']++;
+$_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last'] = $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['iteration'] === $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['total'];
+echo $_smarty_tpl->tpl_vars['genere']->value;
+if (!(isset($_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last']) ? $_smarty_tpl->tpl_vars['__smarty_foreach_genres']->value['last'] : null)) {?> - <?php }
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?></h2></li>
 										<br>
 										<li><h2>Years active : <?php echo $_smarty_tpl->tpl_vars['artista']->value['inizio_attivita'];?>
  - <?php if (strlen($_smarty_tpl->tpl_vars['artista']->value['fine_attivita']) > 0) {

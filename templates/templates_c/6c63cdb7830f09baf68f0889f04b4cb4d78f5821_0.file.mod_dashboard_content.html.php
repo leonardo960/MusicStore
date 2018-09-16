@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-09-16 08:02:33
+/* Smarty version 3.1.32, created on 2018-09-16 20:19:30
   from 'C:\wamp64\www\MusicStore\MusicStore\templates\mod_dashboard_content.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b9e0e1933add3_56231417',
+  'unifunc' => 'content_5b9ebad24c1a21_73562458',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c63cdb7830f09baf68f0889f04b4cb4d78f5821' => 
     array (
       0 => 'C:\\wamp64\\www\\MusicStore\\MusicStore\\templates\\mod_dashboard_content.html',
-      1 => 1537024780,
+      1 => 1537128315,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b9e0e1933add3_56231417 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b9ebad24c1a21_73562458 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
@@ -154,7 +154,7 @@ function content_5b9e0e1933add3_56231417 (Smarty_Internal_Template $_smarty_tpl)
             </div>
 		
 		<div class="col-xl-3 col-lg-6">
-			<a href=""><div class="card text-white">
+			<a style="cursor: pointer;" onclick="show_shipped_orders()"><div class="card text-white">
                     <div class="card-body">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-truck text-warning border-warning"></i></div>
@@ -169,7 +169,7 @@ function content_5b9e0e1933add3_56231417 (Smarty_Internal_Template $_smarty_tpl)
         </div>
 		
 		<div class="col-xl-3 col-lg-6">
-            <a href=""><div class="card">
+            <a style="cursor: pointer;" onclick="show_toship_orders()"><div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-package text-danger border-danger"></i></div>
@@ -212,7 +212,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['ordine']->value) {
 ?>
 						  <tr>
-							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['ordine']->value['id_ordine'];?>
+							<td><a href="mod_order_details.php?id_ordine=<?php echo $_smarty_tpl->tpl_vars['ordine']->value['id_ordine'];?>
+"><?php echo $_smarty_tpl->tpl_vars['ordine']->value['id_ordine'];?>
 </a></td>
 							<td><?php echo $_smarty_tpl->tpl_vars['ordine']->value['cliente'];?>
 </td>
@@ -237,5 +238,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-<?php }
+<?php echo '<script'; ?>
+>
+	function show_toship_orders(){
+		$('#bootstrap-data-table').DataTable().search('Inserito').draw();
+	}
+	
+	function show_shipped_orders(){
+		$('#bootstrap-data-table').DataTable().search('Spedito').draw();
+	}
+<?php echo '</script'; ?>
+><?php }
 }
