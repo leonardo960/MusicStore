@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Creato il: Set 14, 2018 alle 13:24
+-- Creato il: Set 16, 2018 alle 09:59
 -- Versione del server: 5.7.19
 -- Versione PHP: 5.6.31
 
@@ -77,11 +77,11 @@ CREATE TABLE IF NOT EXISTS `album` (
 --
 
 INSERT INTO `album` (`nome_album`, `fk_genere`, `fk_artista`, `descrizione`, `prezzo`, `id_album`, `pubblicazione`, `dischi`, `tracce`, `etichetta`, `stock`, `img_path`, `data_inserimento`) VALUES
-('Bye Bye', 1, 2, 'Sixth studio album from singer Annalisa. The publishing was anticipated by the release of two singles: \"Direzione La Vita\", which made up for an all-women music video, and \"Il Mondo Prima di Te\", which placed third in Italian national singing competition Sanremo.', 20, 1, '2018-02-16', 1, 13, 'Warner Music Italy', 5, '../images/album/1.jpg', NULL),
-('Magellano', 1, 6, 'Third studio album by italian singer Francesco Gabbani.', 12, 2, '2017-04-28', 1, 9, 'BMG Rights Management', 3, '../images/album/2.jpg', '2018-09-11'),
-('Crazy Love', 3, 7, 'Crazy Love is the sixth studio album (and fourth major label studio album) by Canadian vocalist Michael BublÃ©. It was released by 143 Records and Reprise Records on October 9, 2009', 20, 3, '2009-10-16', 1, 12, 'Reprise Records (Warner Music)', 1, '../images/album/3.jpg', '2018-09-11'),
-('Evolve', 6, 9, 'Evolve (stylized as ÆŽVOLVE) is the third studio album by American rock band Imagine Dragons, released on June 23, 2017 through Kidinakorner and Interscope Records. The album is the band new material follow-up to their second studio album, Smoke + Mirrors.', 25, 4, '2017-06-23', 1, 11, 'Interscope Records', 6, '../images/album/4.jpg', '2018-09-11'),
-('Blood Stained Love Story', 7, 10, 'Blood Stained Love Story is the fifth studio album by American rock band Saliva which was released on January 23, 2007. This is their first album with guitarist Jonathan Montoya after the departure of Chris Dâ€™Abaldo.', 22, 5, '2007-01-23', 1, 10, 'Island Records', 2, '../images/album/5.jpg', '2018-09-11');
+('Bye Bye', 1, 2, 'Sixth studio album from singer Annalisa. The publishing was anticipated by the release of two singles: &quot;Direzione La Vita&quot;, which made up for an all-women music video, and &quot;Il Mondo Prima di Te&quot;, which placed third in Italian national singing competition Sanremo. Fabio Fiume from allmusicitalia.it described the album as being reductive for Annalisa\'s singing potential, clinging to electronic vibes which cover up much of her pure skill and talent.', 20, 1, '2018-02-16', 1, 13, 'Warner Music Italy', 5, '../images/album/1.jpg', NULL),
+('Magellano', 1, 6, 'Magellano is the third studio album by Italian singer-songwriter Francesco Gabbani. It was released in Italy through BMG Rights Management on 28 April 2017, and was released worldwide on 12 May 2017 under the title Magellan. The album debuted at number 1 on the Italian Albums Chart. It includes his Eurovision 2017 song &quot;Occidentali\'s Karma&quot;.\r\n\r\nIn April 2017, Gabbani announced on Facebook that he would be releasing his third studio album, Magellano, on 28 April 2017 and the album would include his Eurovision song &quot;Occidentali\'s Karma&quot;. To promote the album, Gabbani will embark on a Tour. He will hold several shows across Italy from 19 June to 9 September 2017.', 12, 2, '2017-04-28', 1, 9, 'BMG Rights Management', 3, '../images/album/2.jpg', '2018-09-11'),
+('Crazy Love', 3, 7, 'Crazy Love is the sixth studio album (and fourth major label studio album) by Canadian vocalist Michael BublÃ©. It was released by 143 Records and Reprise Records on October 9, 2009. After only three days of sales, it opened atop the Billboard 200 chart with 132,000 copies, making it BublÃ©\'s second No. 1 album. Spending the first full week at the top, the album increased in sales to 203,000 copies, staying again at the No. 1 spot on its second week. In Australia, the album debuted at No. 1 on the ARIA Albums Chart and spent six non-consecutive weeks as No. 1. It has since been certified five times Platinum. In the United Kingdom, Crazy Love topped the album charts.\r\n\r\nAs of October 2016, the album has sold almost 3.1 million copies in the UK. The album won the award for Best Traditional Pop Vocal Album at the 53rd Grammy Awards. It is one of his best selling albums, with approximately 6 million units sold worldwide.', 20, 3, '2009-10-16', 1, 12, 'Reprise Records (Warner Music)', 1, '../images/album/3.jpg', '2018-09-11'),
+('Evolve', 6, 9, 'Evolve (stylized as ÆŽVOLVE) is the third studio album by American rock band Imagine Dragons, released on June 23, 2017 through Kidinakorner and Interscope Records. The album is the band new material follow-up to their second studio album, Smoke + Mirrors. Evolve peaked at number 2 on the US Billboard 200, and received mixed reviews from critics. It was promoted with the singles &quot;Believer&quot;, &quot;Thunder&quot;, &quot;Whatever It Takes&quot;, and &quot;Next to Me&quot;, as well as a world tour produced by Live Nation and supported with Grouplove and K.Flay that started in September 2017. The album was also nominated for the Grammy Award for Best Pop Vocal Album at the 60th Annual Grammy Awards.', 25, 4, '2017-06-23', 1, 11, 'Interscope Records', 6, '../images/album/4.jpg', '2018-09-11'),
+('Blood Stained Love Story', 7, 10, 'Blood Stained Love Story is the fifth studio album by American rock band Saliva which was released on January 23, 2007. This is their first album with guitarist Jonathan Montoya after the departure of Chris Dâ€™Abaldo. The song &quot;Ladies and Gentlemen&quot; was the official theme song for the WWE PPV WrestleMania 23. It also has appeared on many other sporting event telecasts. The song &quot;King Of The Stereo&quot; was modified and featured as ESPN Varsity Inc\'s Theme song, under the name &quot;King Of The Stadium&quot; with appropriately edited lyrics. The original title for the album was The Rise &amp; Fall Of The Glorified Kingdom.\r\n\r\nThe album debuted on the Billboard 200 at number 19, selling 31,000 copies in its first week.', 22, 5, '2007-01-23', 1, 10, 'Island Records', 2, '../images/album/5.jpg', '2018-09-11');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ INSERT INTO `artisti` (`nome_artista`, `id_artista`, `biografia`, `genere`, `alb
 ('Francesco Gabbani', 6, 'Two times winner of the national italian singing contest Sanremo.', 1, 4, 2000, NULL, '../images/artists/6.jpg'),
 ('Micheal BublÃ©', 7, 'Michael Steven BublÃ© (born 9 September 1975) is a Canadian-Italian singer, songwriter, actor and record producer. He has won several awards, including four Grammy Awards and multiple Juno Awards.', 3, 16, 1996, NULL, '../images/artists/7.jpg'),
 ('Madonna', 8, 'Madonna Louise Ciccone (born August 16, 1958) is an American singer, songwriter, actress, and businesswoman. Referred to as the &quot;Queen of Pop&quot; since the 1980s, Madonna is known for pushing the boundaries of songwriting in mainstream popular music, as well as imagery in music videos and on stage. She has also frequently reinvented both her music and image while maintaining autonomy within the recording industry. Besides sparking controversy, her works have been praised by music critics. Madonna is often cited as an influence by other artists.', 1, 29, 1979, NULL, '../images/artists/8.jpg'),
-('Imagine Dragons', 9, '<span style=\"background-color: rgb(255, 255, 255);\">Prova prova prova</span>', 1, 5, 2008, NULL, '../images/artists/9.jpg'),
+('Imagine Dragons', 9, '<div><b>Imagine Dragons</b> is an American pop rock band from Las Vegas, <i>Nevada</i>, consisting of lead vocalist Dan Reynolds, lead guitarist Wayne Sermon, bassist Ben McKee, and drummer Daniel Platzman. The band first gained exposure with the release of single \"It\'s Time\", followed by their award-winning debut studio album Night Visions (2012), which resulted in the chart-topping singles \"Radioactive\" and \"Demons\". Billboard placed them at the top of their \"Year In Rock\" rankings for 2013 and 2017 and named them their \"Breakthrough Band of 2013\". and \"Biggest Band of 2017.\" Rolling Stone named \"Radioactive\", which holds the record for most weeks charted on the Billboard Hot 100, the \"biggest rock hit of the year\", and MTV called them \"the year\'s biggest breakout band\".</div><div><br></div><div>The band\'s second studio album Smoke + Mirrors (2015) reached number one in the US, Canada and the UK. The album was preceded by the top 40 single \"I Bet My Life\", and second and third singles, \"Gold\" and \"Shots\". The band then embarked on a ten month long world tour, which led to a brief hiatus in 2016, with occasional performances and soundtrack contributions throughout the remainder of the year.</div><div><br></div><div>The band released their third studio album, Evolve (2017) which resulted in the chart-topping singles, \"<a href=\"https://en.wikipedia.org/wiki/Believer_(Imagine_Dragons_song)\" title=\"\" target=\"\">Believer</a>\", \"Thunder\", and \"Whatever It Takes\". The album reached the top five in most countries. While all three albums were commercially successful, critical reception was mixed.</div><div><br></div><div>Imagine Dragons has won three American Music Awards, nine Billboard Music Awards, one Grammy Award, one MTV Video Music Award and one World Music Award. In May 2014, the band was nominated for fourteen Billboard Music Awards, including Top Artist of the Year and a Milestone Award, which recognizes innovation and creativity of artists across different genres. Imagine Dragons have sold 12 million albums and 35 million singles worldwide. In April 2018, the band was nominated eleven more times for Billboard Music Awards.</div>', 1, 5, 2008, NULL, '../images/artists/9.jpg'),
 ('Saliva', 10, 'Saliva is an American rock band formed in Memphis, Tennessee in 1996. Saliva released their self-titled debut album on August 26, 1997, through Rockingchair Records, a record label owned and operated by Mark Yoshida, who recorded and produced the release at his studio, Rockingchair Studios.', 7, 11, 1996, NULL, '../images/artists/10.jpg');
 
 -- --------------------------------------------------------
@@ -270,9 +270,20 @@ CREATE TABLE IF NOT EXISTS `indirizzi_utenti` (
   `provincia` varchar(10) DEFAULT NULL,
   `cap` varchar(10) DEFAULT NULL,
   `recapito` varchar(11) DEFAULT NULL,
+  `nome` varchar(50) DEFAULT NULL,
+  `cognome` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id_indirizzo`,`utente`),
   KEY `utente` (`utente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `indirizzi_utenti`
+--
+
+INSERT INTO `indirizzi_utenti` (`id_indirizzo`, `utente`, `paese`, `indirizzo`, `citta`, `provincia`, `cap`, `recapito`, `nome`, `cognome`) VALUES
+(7, 'leonardo96', 'Italia', 'Via Giovanni Pascoli, 1, Piano 5, Interno 15', 'L\'Aquila', 'AQ', '67100', '3276608228', 'Leonardo', 'Formichetti'),
+(8, 'leonardo96', 'Italia', 'Via Giovanni Pascoli, 1, Piano 5, Interno 15', 'L\'Aquila', 'AQ', '67100', '3319744710', 'Samuele', 'Petrucci'),
+(12, 'leonardo96', 'Italia', 'Via Giovanni Pascoli, 1, Piano 5, Interno 15', 'L\'Aquila', 'AQ', '67100', '3276608228', 'Oliviero', 'Vicari');
 
 -- --------------------------------------------------------
 
@@ -292,9 +303,8 @@ CREATE TABLE IF NOT EXISTS `offerte_speciali` (
 --
 
 INSERT INTO `offerte_speciali` (`album`, `prezzo_offerta`) VALUES
-(1, 14.5),
-(2, 11.99),
-(4, 19.99);
+(1, 13.5),
+(2, 11.99);
 
 -- --------------------------------------------------------
 
@@ -316,7 +326,14 @@ CREATE TABLE IF NOT EXISTS `ordini` (
   PRIMARY KEY (`id_ordine`),
   KEY `fk_cliente` (`cliente`),
   KEY `fk_indirizzo_ordine` (`indirizzo_ordine`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dump dei dati per la tabella `ordini`
+--
+
+INSERT INTO `ordini` (`id_ordine`, `cliente`, `album`, `status`, `data`, `indirizzo_ordine`, `metodo_pagamento`, `tipo_spedizione`, `prezzo`) VALUES
+(2, 'leonardo96', 1, 'Inserito', '2018-09-16', 7, 'Carta', 'Standard', 20);
 
 -- --------------------------------------------------------
 

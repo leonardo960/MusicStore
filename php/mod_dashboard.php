@@ -65,7 +65,6 @@ $smarty->assign("profitto", $soldi);
 //Ordini
 //Query coi JOIN da fare
 $result = $db->getResult("SELECT * FROM ordini");
-$ordini = 0;
 if($result){
     $ordini = $result;
 }
