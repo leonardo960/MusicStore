@@ -169,9 +169,9 @@
                             {foreach $albums as $album}
                             <tr>
                                 <td>{$album.id_album}</td>
-                                <td><a href="">{$album.nome_album}</a></td>
+                                <td><a href="mod_modify_album.php?album_id={$album.id_album}">{$album.nome_album}</a></td>
                                 <!-- link alla pagina di modifica dell'album -->
-                                <td><a href="">{$album.fk_artista}</a></td>
+                                <td><a href="mod_modify_artist.php?artist_id={$album.fk_artista}">{$album.fk_artista}</a></td>
                                 <!-- link alla pagina di modifica dell'artista -->
                             </tr>
                             {/foreach}
