@@ -34,11 +34,11 @@
 						  <div class="row form-group">l
                             <div class="col col-md-3"><label for="select" class=" form-control-label">Artista : </label></div>
                             <div class="col-12 col-md-9">
-                              <select name="fk_artista" id="select" class="form-control" required>
-                                {foreach $artisti as $artista}
-								<option value="{$artista.id_artista}" {if $album.fk_artista == $artista.id_artista}selected{/if}>{$artista.nome_artista}</option>
-								{/foreach}
-                              </select>
+                                <select class="js-example-basic-single" name="fk_artista">
+                                    {foreach $artisti as $artista}
+                                    <option value="{$artista.id_artista}">{$artista.nome_artista}</option>
+                                    {/foreach}
+                                </select>
                             </div>
                           </div>
 						  
@@ -121,3 +121,21 @@
                     </div>
 
 		</div>
+<script src="../js/nicEdit/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">
+    {literal}
+    bkLib.onDomLoaded(function () {
+
+        new nicEditor({
+            iconsPath: '../js/nicEdit/nicEditorIcons.gif',
+            buttonList: ['bold', 'italic', 'link', 'unlink']
+        }).panelInstance('descrizione-edit');
+    });
+    (function($) {
+        $(document).ready(function () {
+            $('.js-example-basic-single').select2();
+            $('.js-example-basic-multiple').select2();
+        });
+    }(jQuery));
+    {/literal}
+</script>
