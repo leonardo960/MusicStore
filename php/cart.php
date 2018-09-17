@@ -21,7 +21,7 @@ if(isset($_POST['new_quantity'])){
 } elseif(isset($_POST["add_item"])){
 	$item_id = $_POST["add_item"];
 	
-	if(!is_array($_SESSION['cart'])){
+	if(!is_array($_SESSION['cart']) || !isset($_SESSION['cart'])){
 		$_SESSION['cart'] = array();
 	}
 	

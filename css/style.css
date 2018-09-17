@@ -1192,13 +1192,25 @@ body{
 	display:inline-block;
 }
 
-.product-value h2,.product-value span,.product-value h5,.product-value li a,.product-value h3,.product-end-list h3,.product-end-list li a{
-	display: block;
+.product-value h2,.product-value span,.product-value li a,.product-value h3,.product-end-list h3,.product-end-list li a{
+	display: inline-block;
 	padding: 4px 0px;
-	font: bold 12px/16px 'Quicksand';
+	font: normal 12px/16px 'Quicksand';
 	color:#8EF2D9;
 	font-family: 'Quicksand', sans-serif;
-	font-weight: normal;
+}
+.product-value h5{
+	display: block;
+	padding: 4px 0px;
+	font-size: 12px;
+	color:#8EF2D9;
+	font-family: 'Quicksand', sans-serif;
+}
+.product-value h5 b{
+	font-weight: bold;
+}
+.product-value h5 i{
+	font-style: italic;
 }
 .product-value li a{
 	color:#48C9A9;

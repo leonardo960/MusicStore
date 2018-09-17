@@ -1,4 +1,27 @@
-<div class="breadcrumbs">
+<?php
+/* Smarty version 3.1.32, created on 2018-09-16 21:38:21
+  from 'C:\wamp64\www\MusicStore\templates\mod_insert_new_artist_content.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5b9ecd4da26337_13302949',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '72d776c7ad38803846385b3066c497b52358874b' => 
+    array (
+      0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_insert_new_artist_content.html',
+      1 => 1537133899,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5b9ecd4da26337_13302949 (Smarty_Internal_Template $_smarty_tpl) {
+?><div class="breadcrumbs">
     <div class="col-sm-4">
         <div class="page-header float-left">
             <div class="page-title">
@@ -16,16 +39,17 @@
         </div>
     </div>
 </div>
-{if isset($message)}
+<?php if (isset($_smarty_tpl->tpl_vars['message']->value)) {?>
 <div class="col-sm-12">
     <div class="alert  alert-success alert-dismissible fade show" role="alert">
-         {$message}
+         <?php echo $_smarty_tpl->tpl_vars['message']->value;?>
+
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
     </div>
 </div>
-{/if}
+<?php }?>
 <div class="content mt-3">
 
     <div class="card">
@@ -87,9 +111,18 @@
                 <div class="form-check">
 
                     <select id="new-artist-genres-select" class="js-example-basic-multiple" name="generi[]" multiple="multiple" form="artist-form">
-                        {foreach $generi as $genere}
-                        <option value="{$genere.genere}">{$genere.genere}</option>
-                        {/foreach}
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['generi']->value, 'genere');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['genere']->value) {
+?>
+                        <option value="<?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+"><?php echo $_smarty_tpl->tpl_vars['genere']->value['genere'];?>
+</option>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
                 </div>
             </div>
@@ -141,13 +174,23 @@
                             </thead>
                             <tbody>
 
-                            {foreach $artisti as $artista}
+                            <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['artisti']->value, 'artista');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['artista']->value) {
+?>
                             <tr>
-                                <td>{$artista.id_artista}</td>
-                                <td><a href="mod_modify_artist.php?artist_id={$artista.id_artista}">{$artista.nome_artista}</a></td>
+                                <td><?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
+</td>
+                                <td><a href="mod_modify_artist.php?artist_id=<?php echo $_smarty_tpl->tpl_vars['artista']->value['id_artista'];?>
+"><?php echo $_smarty_tpl->tpl_vars['artista']->value['nome_artista'];?>
+</a></td>
                                 <!-- link alla pagina di modifica dell'artista -->
                             </tr>
-                            {/foreach}
+                            <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                             </tbody>
                         </table>
@@ -158,7 +201,8 @@
     </div>
 </div><!-- .animated -->
 </div><!-- .content -->
-<script>
+<?php echo '<script'; ?>
+>
     function checkbox_func() {
         var checkBox = document.getElementById("checkbox-in-attivita");
         var yearInput = document.getElementById("fine-attivita-year");
@@ -171,10 +215,14 @@
     }
 	
 
-</script>
-<script src="../js/nicEdit/nicEdit.js" type = "text/javascript"></script>
-<script type="text/javascript">
-    {literal}
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="../js/nicEdit/nicEdit.js" type = "text/javascript"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript">
+    
     (function ($) {
         $(document).ready(function () {
             $('.js-example-basic-multiple').select2({
@@ -201,5 +249,7 @@
         //Resettare select generi
         $('#file-input').val('');
     }
-    {/literal}
-</script>
+    
+<?php echo '</script'; ?>
+><?php }
+}

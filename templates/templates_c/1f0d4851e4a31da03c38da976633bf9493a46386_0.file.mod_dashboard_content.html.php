@@ -1,4 +1,27 @@
+<?php
+/* Smarty version 3.1.32, created on 2018-09-16 21:35:56
+  from 'C:\wamp64\www\MusicStore\templates\mod_dashboard_content.html' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5b9eccbc31cee9_31944217',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1f0d4851e4a31da03c38da976633bf9493a46386' => 
+    array (
+      0 => 'C:\\wamp64\\www\\MusicStore\\templates\\mod_dashboard_content.html',
+      1 => 1537133754,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5b9eccbc31cee9_31944217 (Smarty_Internal_Template $_smarty_tpl) {
+?>
         <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
@@ -27,7 +50,8 @@
                             <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Utenti Registrati</div>
-                                <div class="stat-digit">{$numero_utenti.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['numero_utenti']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -41,7 +65,8 @@
                             <div class="stat-icon dib"><i class="ti-image text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Album Inseriti</div>
-                                <div class="stat-digit">{$numero_album.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['numero_album']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -55,7 +80,8 @@
                             <div class="stat-icon dib"><i class="ti-microphone-alt text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Artisti Inseriti</div>
-                                <div class="stat-digit">{$numero_artisti.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['numero_artisti']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +95,8 @@
                             <div class="stat-icon dib"><i class="ti-music-alt text-danger border-danger"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Canzoni Inserite</div>
-                                <div class="stat-digit">{$numero_canzoni.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['numero_canzoni']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -110,7 +137,8 @@
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Profitto (Ultimi 30 Giorni)</div>
-                                <div class="stat-digit">{$profitto.numero}&euro;</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['profitto']->value['numero'];?>
+&euro;</div>
                             </div>
                         </div>
                     </div>
@@ -124,7 +152,8 @@
                             <div class="stat-icon dib"><i class="ti-truck text-warning border-warning"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Ordini in Consegna</div>
-                                <div class="stat-digit">{$in_consegna.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['in_consegna']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -138,7 +167,8 @@
                             <div class="stat-icon dib"><i class="ti-package text-danger border-danger"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Ordini da Spedire</div>
-                                <div class="stat-digit">{$da_spedire.numero}</div>
+                                <div class="stat-digit"><?php echo $_smarty_tpl->tpl_vars['da_spedire']->value['numero'];?>
+</div>
                             </div>
                         </div>
                     </div>
@@ -168,15 +198,28 @@
                     </thead>
                     <tbody>
 					
-						{foreach $ordini as $ordine}
+						<?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['ordini']->value, 'ordine');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['ordine']->value) {
+?>
 						  <tr>
-							<td><a href="mod_order_details.php?id_ordine={$ordine.id_ordine}">{$ordine.id_ordine}</a></td>
-							<td>{$ordine.cliente}</td>
-							<td><a href="">{$ordine.nome_album}</a></td>
-							<td>{$ordine.status}</td>
-							<td>{$ordine.data}</td>
+							<td><a href="mod_order_details.php?id_ordine=<?php echo $_smarty_tpl->tpl_vars['ordine']->value['id_ordine'];?>
+"><?php echo $_smarty_tpl->tpl_vars['ordine']->value['id_ordine'];?>
+</a></td>
+							<td><?php echo $_smarty_tpl->tpl_vars['ordine']->value['cliente'];?>
+</td>
+							<td><a href=""><?php echo $_smarty_tpl->tpl_vars['ordine']->value['nome_album'];?>
+</a></td>
+							<td><?php echo $_smarty_tpl->tpl_vars['ordine']->value['status'];?>
+</td>
+							<td><?php echo $_smarty_tpl->tpl_vars['ordine']->value['data'];?>
+</td>
 						  </tr>
-						 {/foreach}
+						 <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                       
                     </tbody>
                   </table>
@@ -187,7 +230,8 @@
                 </div>
             </div><!-- .animated -->
         </div><!-- .content -->
-<script>
+<?php echo '<script'; ?>
+>
 	function show_toship_orders(){
 		$('#bootstrap-data-table').DataTable().search('Inserito').draw();
 	}
@@ -195,4 +239,6 @@
 	function show_shipped_orders(){
 		$('#bootstrap-data-table').DataTable().search('Spedito').draw();
 	}
-</script>
+<?php echo '</script'; ?>
+><?php }
+}
